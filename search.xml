@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Animal Kingdom Dataset</title>
+      <link href="/2024/03/11/Animal%20Kingdom%20dataset/"/>
+      <url>/2024/03/11/Animal%20Kingdom%20dataset/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Abstract Information</strong>: Animal action recognition isreally important for various fields, such as animal behavior science andthe protection and management of wildlife. Meanwhile, various actionrecognition methods based on Deep Learning request bigger datasets totrain. Animal Kingdom which is a large dataset containing many speciesin different scenes and weather is proposed to solve this problem. Thisdataset also presents three interesting tasks to solve, including actionrecognition, video grounding, and pose estimation.</p><h2 id="previous-datasets-weakness">Previous Dataset’s Weakness</h2><ul><li>The dataset size is small, and the types of annotations are notsufficient</li><li>The types of animals are not detailed enough, and most datasets areusually only targeted at one specific task</li><li>Not entirely sufficient for the growth stage of animals</li><li>The distribution of environmental types is not uniform, and most ofthem can only be concentrated in a few special environments</li><li>Datasets are usually only suitable for specific tasks and cannotutilize the mutual assistance of multiple tasks to achieve betterperformance</li></ul><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240305211725820.png" alt="Previous Datasets"><figcaption aria-hidden="true">Previous Datasets</figcaption></figure><h2 id="animal-kingdom">Animal Kingdom</h2><p>The dataset contains life segments of 850 species under 6 keycategories in different scenarios. The environment, weather, andperspective have all been diversified and combined with fine-grainedmulti-labels.</p><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240305212537324.png" alt="Animal class"><figcaption aria-hidden="true">Animal class</figcaption></figure><h3 id="action-recognition">Action Recognition</h3><p><strong>Task Introduction</strong>: The behavior recognition tasktakes a video as input and provides the category of behavior.<strong>Dataset content</strong>: 50 hours of animal video clipscollected from YouTube, with an average length of 6 seconds and a rangeof 1 to 117 seconds. The dataset contains 850 species and annotates 140fine-grained behaviors, ranging from short-term (long jump) to long-term(sexual behavior), including life events, daily events, and socialevents.</p><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240311201726388.png" alt="Actions"><figcaption aria-hidden="true">Actions</figcaption></figure><p><strong>Difficulties</strong>:</p><ul><li>There are numerous intra class and inter class diversitydifferences, where the same behavior is represented by different animalsor the same animal performs differently in different sceneenvironments</li><li>In nature, the behavior of animals is diverse, and usually there ismore than one manifestation of behavior.</li><li>Many behaviors, such as eating, occur much more frequently thanother behaviors, leading to the possibility of long tails in the data.Therefore, the dataset is divided into three major parts<ul><li>Head behavior: 17 action classes, each with over 500 samples, suchas perception, eating, etc.</li><li>Middle behavior: 29 action classes with 100-500 samples, such asclimbing, digging, etc.</li><li>Tail behaviors: 94 action classes, less than 100 samples, such asconditioning, attacking, etc</li></ul></li></ul><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240311164942864.png" alt="Results of action recognition"><figcaption aria-hidden="true">Results of actionrecognition</figcaption></figure><h3 id="video-grounding">Video Grounding</h3><p><strong>Task Introduction</strong>: By entering a sentence describingthe scene and behavior, the model provides the start and end times ofrelevant segments to achieve the function of a video croppingengine.</p><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240311163326348.png" alt="Video Grounding"><figcaption aria-hidden="true">Video Grounding</figcaption></figure><p><strong>Dataset Content</strong>: Contains 50 hours of video content,with a total of 4301 long videos and 188744 annotated sentences. Eachvideo usually has 3-5 sentences. <strong>Difficulty</strong>: Identifyanimals and behaviors from complex backgrounds and associate them withtext sentences.</p><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240311165041834.png" alt="Results of video grounding"><figcaption aria-hidden="true">Results of video grounding</figcaption></figure><h3 id="pose-estimation">Pose Estimation</h3><p><strong>Task Description</strong>: Receive animals as input imagesand predict their joint positions.</p><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240311163658402.png" alt="image-20240311163658402"><figcaption aria-hidden="true">image-20240311163658402</figcaption></figure><p><strong>Dataset content</strong>: Contains 33099 images andcorresponding animal joints, established for 5 different maincategories. A total of 23 key points are defined, including: 1 head, 2eyes, 4 mouth, 2 shoulders, 2 elbows, 2 wrists, 1 middle trunk, 2buttocks, 2 knees, 2 ankles, and 3 tail parts.<strong>Difficulties</strong>: Different animals are not completelyunified.</p><figure><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240311165104531.png" alt="Results of pose estimation"><figcaption aria-hidden="true">Results of pose estimation</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DeepLearning </tag>
+            
+            <tag> ActionRecognization </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Reading Notes for &quot;TSN&quot;</title>
       <link href="/2024/02/27/Reading%20Notes%20for%20%E2%80%9CTSN%E2%80%9D/"/>
       <url>/2024/02/27/Reading%20Notes%20for%20%E2%80%9CTSN%E2%80%9D/</url>
