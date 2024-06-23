@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: 2024年6月23日 --><html lang="zh-Hans" dir="ltr"
+<!-- Last Published: June 23, 2024 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -34,17 +34,17 @@
   
   
 
-  <meta name="author" content="沈骋骜" />
+  <meta name="author" content="ChengAo Shen" />
 
   
   
   
     
   
-  <meta name="description" content="四年的时间眨眼即逝，许多人口中最美好的时光从指尖匆匆溜走。毕业了有太多的回忆与不舍，对人、对事、对物，且在这里做个简单的随笔和总结。" />
+  <meta name="description" content="Overview This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named LSTF-Linear which achieve outstanding performance and conduct comprehensive studies." />
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://chengaoshen.com/zh/blogs/%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+  <link rel="alternate" hreflang="en-us" href="https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/" />
 
   
   
@@ -161,7 +161,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://chengaoshen.com/zh/blogs/%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+  <link rel="canonical" href="https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/" />
 
   
   
@@ -186,19 +186,19 @@
     <meta property="twitter:site" content="@GetResearchDev" />
     <meta property="twitter:creator" content="@GetResearchDev" />
   
-  <meta property="og:site_name" content="沈骋骜" />
-  <meta property="og:url" content="https://chengaoshen.com/zh/blogs/%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
-  <meta property="og:title" content="️毕业碎碎念☕ | 沈骋骜" />
-  <meta property="og:description" content="四年的时间眨眼即逝，许多人口中最美好的时光从指尖匆匆溜走。毕业了有太多的回忆与不舍，对人、对事、对物，且在这里做个简单的随笔和总结。" /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh-Hans" />
+  <meta property="og:site_name" content="ChengAo Shen" />
+  <meta property="og:url" content="https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/" />
+  <meta property="og:title" content="👓Reading Notes for &#34;LTSF-Linear&#34; | ChengAo Shen" />
+  <meta property="og:description" content="Overview This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named LSTF-Linear which achieve outstanding performance and conduct comprehensive studies." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2024-06-15T00:00:00&#43;00:00"
+        content="2024-06-22T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2024-06-15T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2024-06-22T00:00:00&#43;00:00">
   
 
   
@@ -208,7 +208,7 @@
   
 
 
-  <title>️毕业碎碎念☕ | 沈骋骜</title>
+  <title>👓Reading Notes for &#34;LTSF-Linear&#34; | ChengAo Shen</title>
 
   
   
@@ -489,6 +489,140 @@
 
 
 
+  
+  
+  <link type="text/css" rel="stylesheet" href="/dist/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr&#43;QR0SQDNfgglgtcM=" />
+  
+  
+  <script defer src="/dist/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw&#43;iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4="></script>
+  
+  
+  
+  
+  <script defer src="/js/katex-renderer.6579ec9683211cfb952064aedf3a3baea5eeb17a061775b32b70917474637c80.js" integrity="sha256-ZXnsloMhHPuVIGSu3zo7rqXusXoGF3WzK3CRdHRjfIA="></script>
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
 
 
 
@@ -503,8 +637,8 @@
   
   <script
     defer
-    src="/js/hugo-blox-zh.min.edad2a20315bced9792ec0d846aaf4ab2d7efe63957cb49983442d40c24349c5.js"
-    integrity="sha256-7a0qIDFbztl5LsDYRqr0qy1&#43;/mOVfLSZg0QtQMJDScU="
+    src="/js/hugo-blox-en.min.e5fa931947cac2d947732ea37a770aae2b5bd4a50b6048060cd129b46159a06d.js"
+    integrity="sha256-5fqTGUfKwtlHcy6jencKritb1KULYEgGDNEptGFZoG0="
   ></script>
 
   
@@ -544,7 +678,7 @@
   <nav class="navbar px-3 flex justify-left">
     <div class="order-0 h-100">
       
-      <a class="navbar-brand" href="/zh/" title="沈骋骜">
+      <a class="navbar-brand" href="/" title="ChengAo Shen">
         ChengAo Shen
       </a>
     </div>
@@ -582,8 +716,8 @@
         <a
           class="nav-link "
           
-          href="/zh/"
-        >信息</a
+          href="/"
+        >Bio</a
         >
       </li>
       
@@ -596,8 +730,8 @@
         <a
           class="nav-link "
           
-          href="/zh/#news"
-        >新闻</a
+          href="/#research"
+        >Research</a
         >
       </li>
       
@@ -610,8 +744,36 @@
         <a
           class="nav-link "
           
-          href="/zh/blog/"
-        >博客</a
+          href="/#papers"
+        >Papers</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/#news"
+        >News</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/blog/"
+        >Blogs</a
         >
       </li>
       
@@ -700,7 +862,7 @@
         <li class="open"><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
-    href="/zh/blogs/"
+    href="/blogs/"
     
   >Blogs
         <span data-hb-sidebar-toggle>
@@ -710,20 +872,114 @@
         <ul class="hb-sidebar-list"><li class="flex flex-col open"><a
     class="hb-sidebar-custom-link
       sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
-    href="/zh/blogs/%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/"
+    href="/blogs/reading-notes-for-ltsf-linear/"
     
-  >️毕业碎碎念☕
+  >👓Reading Notes for &#34;LTSF-Linear&#34;
     </a>
   
+    <ul class="hb-sidebar-mobile-toc"><li>
+              <a
+                href="#overview"
+                class="hb-docs-link"
+              >Overview</a>
+            </li>
+          <li>
+              <a
+                href="#background"
+                class="hb-docs-link"
+              >Background</a>
+            </li>
+          <li>
+              <a
+                href="#methods"
+                class="hb-docs-link"
+              >Methods</a>
+            </li>
+          <li>
+              <a
+                href="#experiments"
+                class="hb-docs-link"
+              >Experiments</a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blogs/graduate_bs/"
+    
+  >🎉 Graduated from Sichuan Agricultural University
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blogs/hello/"
+    
+  >🚀 A Brand New Personal Homepage!
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blogs/introduction-to-generative-models/"
+    
+  >🤗Introduction to Generative Models
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blogs/various-font-in-latex/"
+    
+  >📜Notes on LaTeX formulas
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blogs/introduction-to-transformer/"
+    
+  >💡Introduction to Transformer
+    </a>
               
             </li></ul>
       </div></li>
         <li class=""><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
-    href="/zh/blog/"
+    href="/publication/"
     
-  >博客
+  >Publications
+        <span data-hb-sidebar-toggle>
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg>
+        </span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class="hb-sidebar-list"><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/emoji-kitchen-with-controlled-fusion/"
+    
+  >Emoji kitchen with controlled fusion
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/sensing-platform/"
+    
+  >Portable, intelligent MIECL sensing platform for ciprofloxacin detection using a fast convolutional neural networks-assisted Tb@Lu2O3 nanoemitter
+    </a>
+              
+            </li></ul>
+      </div></li>
+        <li class=""><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blog/"
+    
+  >Blogs
     </a></li>
     </ul>
 
@@ -745,7 +1001,25 @@
 
 
 
-  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4">
+  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">On this page</p><ul>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#overview">Overview</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#background">Background</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#methods">Methods</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#transformer-based-methods">Transformer-Based Methods</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#lstf-linear">LSTF-Linear</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#experiments">Experiments</a>
+      </li></ul>
 
   
   
@@ -774,16 +1048,16 @@
 
       
 
-      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">️毕业碎碎念☕</h1>
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">👓Reading Notes for &#34;LTSF-Linear&#34;</h1>
 
       <div class="mt-4 mb-16">
-      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">6月 15, 2024</span>
+      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Jun 22, 2024</span>
         
 
         
         <span class="mx-1">·</span>
         <span class="mx-1">
-          1 分钟阅读时长
+          4 min read
         </span>
         
         </div>
@@ -808,82 +1082,90 @@
       
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
-        <blockquote>
-<p>四年的时间眨眼即逝，许多人口中最美好的时光从指尖匆匆溜走。毕业了有太多的回忆与不舍，对人、对事、对物，且在这里做个简单的随笔和总结。</p>
+        <h2 id="overview">Overview</h2>
+<blockquote>
+<p>This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named <strong>LSTF-Linear</strong> which achieve outstanding performance and conduct comprehensive studies.</p>
 </blockquote>
-<p>2020年突如其来的疫情和延迟的高考让所有人措手不及。刚刚成年的我，还未来得及和高中生活好好的告别，就被高考送到了一个从未想过的地方——四川农业大学。怀着复杂的心情，在毫无准备的情况下，我第一次坐上了前往四川的飞机，开启了自己的四年大学生活。</p>
+<ol>
+<li>
+<p>What problem does the paper try to solve？</p>
+<p>Attempt to verify whether the Transformer is effective in time series prediction problems and whether a simple model can surpass all current Transformer-based models.</p>
+</li>
+<li>
+<p>What is the proposed solution?</p>
+<p>The LSTF Linear model was proposed as an alternative, achieving extremely high performance with only a single-layer network</p>
+</li>
+<li>
+<p>What are the key experimental results in this paper?</p>
+<p>Achieved better performances than Transformer-based methods on multiple datasets such as electricity, healthcare, and meteorology</p>
+</li>
+<li>
+<p>What are the main contributions of the paper?</p>
+<ul>
+<li>Challenge the Transformer structure in the long-term time series forecasting task.</li>
+<li>Introduce the LTSF-Linear model which only has one layer while achieving compared results in various fields.</li>
+<li>Conduct comprehensive empirical studies on various aspects of existing Transformer-based solutions.</li>
+</ul>
+</li>
+<li>
+<p>What are the strong points and weak points in this paper?</p>
+<ul>
+<li><strong>Strong Points</strong>： Proposed potential issues in the current research route and opened up a new perspective in a simple way.</li>
+<li><strong>Weak Points</strong>: Only conducted research on prediction problems and have not explored other issues, such as anomaly detection.</li>
+</ul>
+</li>
+</ol>
+<h2 id="background">Background</h2>
+<p>Over the past several decades, the Transformer has been widely used as the TSF solution. However, the self-attention mechanism is <strong>permutation-invariant</strong> and <strong>anti-order</strong> which will cause the loss of temporal information. Typically, time series contain less semantic meaning compared with NLP or CV problems and need more temporal information, which will emphasize this problem. Thus, this paper tries to challenge the Transformer-based LSTF solution with direct multi-step forecasting strategies.</p>
+<p>For the time series containing $C$ variates, the historical data can be represented as $\mathcal{X}=\{X_1^t,\dots,X_C^t\}_{t=1}^L$, wherein $L$ is the look-back window size. The forecasting problems need to predict $T$ feature time step’s value $\hat{\mathcal{X}}=\{\hat{X}_1^t,\dots,\hat{X}_C^t\}_{t=1}^L$. When $T>1$, the methods can be divided into two parts:</p>
+<ul>
+<li>Integrated multi-step(IMS): Learn a single-step forecaster and interactively apply it to obtain multi-step predictions. This method has a smaller variance but will cause error accumulation.</li>
+<li>Direct multi-step(DMS): Directly optimize the multi-step forecasting objective at one. This method can have more accurate predictions when $T$ is large.</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h3 id="transformer-based-methods">Transformer-Based Methods</h3>
+<p>The vanilla Transformer model has some limitations when applied to time series problems, thus various works try to improve the performance by adding or replacing some parts of the Transformer. Generally speaking, it can be divided into four major parts.</p>
 <p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG20221006132316.jpg" alt="前往四川的飞机上">
-  <figcaption style="text-align: center;">前往四川的飞机上</figcaption>
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240622212351839.png" alt="The pipeline of Transformer-Based Methods">
+  <figcaption style="text-align: center;">The pipeline of Transformer-Based Methods</figcaption>
 </figure></p>
-<p>这是第一次离家这么远，远到以前的社交圈子都变得遥不可及，远到语言、饮食、生活习惯都不尽相同。初到雅安便被其略显老旧的城市环境所震撼，再加上川农那破旧的宿舍，上世纪的老房子和没有热水的八人间，更是让我难以适应。然而，当我敲开505寝室的大门时，热情的室友们让我感受到了充足的归属感。他们的热情和帮助让我得以快速的融入这个新的生活环境而不显得突兀或者奇怪，也让我对于未来的大学生活充满了憧憬和向往。</p>
+<p><strong>Preprocessing</strong>: To use Transformer to deal with time series datasets, some preprocessing is needed to adopt the data structures, such as normalization with zero-mean and adding timestamps as NLP did. Specifically, in Autoformer, seasonal-trend decomposition is proposed to get the trend part and the cyclical part, which helps data more clearly.</p>
+<p><strong>Embedding</strong>: In NLP’s Transformer, embedding will map the words to the vector in a typical space that reveals the meaning. In time series, time information is significantly important. Thus, various timestamp methods are proposed to help the model reserve the temporal information.</p>
+<p><strong>Encoder/Decoder</strong>: To help the Transformer structure adopt the time series problems, there have been many improvements made to the encoder and decoder in this work. Among them, in the encoder section, many improvements have been proposed to reduce computational consumption and increase speed. In the decoder section, to avoid cumulative errors, it has also begun to transition from IMS to DMS.</p>
+<p>The success of Transformer in the NLP field is largely attributed to its understanding of the semantic relationships between words, but in time series problems, temporary information has become even more important. However, the Transformer&rsquo;s ability to model time largely comes from the timestamp rather than its structure.</p>
+<h3 id="lstf-linear">LSTF-Linear</h3>
+<p>This paper hypothesizes that the improvement in the Transformer-Based model is due to the DMS strategy rather than the Transformer. Thus they propose LSTF-Linear that directly regresses historical time series for future prediction via a weighted sum operation to verify this thinking. The model can be a formula as :
+</p>
+$$
+\hat{X}_i=WX_i
+$$
+<p>
+Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. Furthermore, this paper proposes two sub-models, DLinear which uses decomposition to obtain the trend part and the seasonal part, and the NLinear which subtracts a portion before making the prediction and rejoined it after making the prediction.</p>
 <p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/8E48E868862B2433BE4E9BF4722044C9.jpg" alt="大一和室友的合影">
-  <figcaption style="text-align: center;">大一和室友的合影</figcaption>
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240622212512231.png" alt="The Structure of LSTF-Linear">
+  <figcaption style="text-align: center;">The Structure of LSTF-Linear</figcaption>
 </figure></p>
-<p>在上大学之前，我一直坚定的想要把计算机科学作为自己的专业，但阴差阳错之间还是选择了信息与计算科学专业这一数学性很强的专业，这对当时满脑子都是计算机的我来说提出来莫大的挑战。第一个学期要学习的数学分析和高等代数这些理论性很强的课程让我产生了强烈的不适感，许多题目和知识点存在一些困惑的地方。幸运的是，有各位老师和同学们（特别是陈华骏同学）的帮助，我才能保持良好的成绩。让我印象最深刻的是，当时为了取得好成绩，我熬夜观看丘维声教授的<a href="https://www.bilibili.com/video/BV1jR4y1M78W/?vd_source=dfcac4200a17c568f28c0f840ee960b3" target="_blank" rel="noopener">高等代数</a>和陈纪修教授的<a href="https://www.bilibili.com/video/BV12s411h7v4/?vd_source=dfcac4200a17c568f28c0f840ee960b3" target="_blank" rel="noopener">数学分析</a>。虽然最后数学分析有没有取得很好的成绩，但多少让我适应了大学自己学习自己探索的节奏。一方面让我对后续各种困难的数学课程有了充足的知识储备，同时也让我为之后在深度学习和计算机视觉等领域进行研究探索有了心理的适应。</p>
+<h2 id="experiments">Experiments</h2>
+<p>In order to verify the quality of the LSTF-Linear, the author selected some common sequence data from real life and compared with five popular Transformer-based model. All results are show as follow:</p>
 <p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/79bfcac481d5d38c5fba2a.jpg" alt="学习常去的图书馆">
-  <figcaption style="text-align: center;">学习常去的图书馆</figcaption>
-</figure></p>
-<p>在大学期间，必须提到的是一次意外的骑行，正是这次的活动让我结识了大学四年中最好的朋友——肖仕明。那天，我用来代步的自行车莫名其妙的爆胎，让我不得不去校门口修理。结果修好后被一个同学直接拉入了他们的蒙顶山骑行活动。第二天上课的时候正巧发现拉我的同学竟然也是我们专业，一来二去的多次活动也让我们渐渐熟悉起来。老肖的仗义和热情让我留下了非常深刻的印象，他是我见过最纯粹的人之一。之后的四年，我们互相帮助，共同进步，每当我遇见困难的时候，他总是可以坚定的支持的我，让我可以度过难关。我们的友谊是我大学四年中获得的最珍贵的礼物。</p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/1619630790598.jpeg" alt="肖仕明生日合影">
-  <figcaption style="text-align: center;">肖仕明生日合影</figcaption>
-</figure></p>
-<p>另外，也是在老肖的帮助下，我第一次真正的走近雅安这个“巴适”的城市。他带我找到了学校后山的一户人家，第一次感受到了当地的风土人情。张婆婆对我们川农的学生非常的热情，每次大家一起过节都让我有着非常的归属感。一起钓鱼、做饭、烧烤、摘樱桃，都给我留下了深刻的印象。</p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06759.jpg" alt="和张婆婆合影">
-  <figcaption style="text-align: center;">和张婆婆合影</figcaption>
-</figure></p>
-<p>由于对微电影和视频制作的浓厚兴趣，我也有幸在大学遇到了一群志同道合的伙伴，成立了Ten Cameras社团来进行微电影的拍摄和制作。其中有的同学擅长摄影，有的同学擅长海报制作，大家都各有所长，让我受益良多。虽然后来因为各种原因我们没有继续一起做项目，但这段经历让我结识了许多真心的朋友，他们对我的生活以及未来的计划等都产生了深远的影响。如果一定要概括一下这段经历，我想“过程远比结果重要”。</p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/QQ%E5%9B%BE%E7%89%8720210107114933.jpg" alt="Ten cameras合影">
-  <figcaption style="text-align: center;">Ten cameras合影</figcaption>
-</figure></p>
-<p>在大学后期，由于准备出国，我把大部分时间投入到了科研实验室。我在本科生中组建了“深度视觉农业实验室”。在实验室中，我结识了许多学弟学妹，共同参与了一系列生物与人工智能交叉的项目，并申请了互联网+、大学生创新创业、科研兴趣小组等项目，还发表了一些期刊论文。当然，实验室的成功离不开沈照力教授的帮助，他为我们的实验室提供了场地、经费和指导。没有他的支持，我们的实验室无法正常运行。</p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06544.jpg" alt="实验室合影">
-  <figcaption style="text-align: center;">实验室合影</figcaption>
-</figure></p>
-<p>在大学期间，我也遇到了许多对我影响深远的老师。王建军教授在数学建模和数学分析方面的指导也让我受益匪浅，而黄厚辉老师教的数值分析课程给我留下了深刻的印象，他的幽默风趣让课堂充满了活力。</p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/7254d8617bbbdfe2ed970cde721797e4.jpg" alt="和老师的合影，左为王建军教授，右边为黄厚辉老师">
-  <figcaption style="text-align: center;">和老师的合影，左为王建军教授，右边为黄厚辉老师</figcaption>
-</figure></p>
-<p>最后，我想感谢我的女朋友穆思媛同学。我们在一个科研项目中相识，并在合作中相互了解，最后相爱。我们有着相似的三观和人生理念，她是我生命中不可多得的伴侣。无论是科研、学习，还是休闲和旅行，她总是陪在我身边。如果没有她的一路支持，我很难取得今天的成就。</p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG_2545.jpg" alt="和女朋友在成都东郊记忆">
-  <figcaption style="text-align: center;">和女朋友在成都东郊记忆</figcaption>
-</figure></p>
-<p>四年的光阴眨眼就过去。在拍完毕业照那一刻，有太多的不舍都画上了句号。所以，在这个博客的最后，请允许我放一些毕业的照片，以此来缅怀我过去的四年时光。</p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG_4611.jpg" alt="和寝室的毕业合影">
-  <figcaption style="text-align: center;">和寝室的毕业合影</figcaption>
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623194839137.png" alt="Datasets Description">
+  <figcaption style="text-align: center;">Datasets Description</figcaption>
 </figure></p>
 <p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06708.jpg" alt="Ten cameras毕业合影（部分人）">
-  <figcaption style="text-align: center;">Ten cameras毕业合影（部分人）</figcaption>
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623194933447.png" alt="Model Comparison">
+  <figcaption style="text-align: center;">Model Comparison</figcaption>
 </figure></p>
 <p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06678.jpg" alt="和肖合影">
-  <figcaption style="text-align: center;">和肖合影</figcaption>
-</figure></p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06663.jpg" alt="和女朋友的毕业合影">
-  <figcaption style="text-align: center;">和女朋友的毕业合影</figcaption>
-</figure></p>
-<p><figure class="figure">
-  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06790.jpg" alt="完">
-  <figcaption style="text-align: center;">完</figcaption>
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623195006823.png" alt="Visualize results">
+  <figcaption style="text-align: center;">Visualize results</figcaption>
 </figure></p>
 
       </div>
 
       
-  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2024-06-15T00:00:00.000Z">
-    <span>最近更新于</span>
-    6月 15, 2024</time>
+  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2024-06-22T00:00:00.000Z">
+    <span>Last updated on</span>
+    Jun 22, 2024</time>
 
       <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
         
@@ -895,7 +1177,9 @@
 
 <div class="flex justify-center">
   
-  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/zh/tags/news/">News</a>
+  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/learning-content/">Learning Content</a>
+  
+  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/reading-notes/">Reading Notes</a>
   
 </div>
 
@@ -913,7 +1197,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2F%25E6%25AF%2595%25E4%25B8%259A%25E7%25A2%258E%25E7%25A2%258E%25E5%25BF%25B5%2F&amp;text=%EF%B8%8F%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5%E2%98%95"
+    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Freading-notes-for-ltsf-linear%2F&amp;text=%F0%9F%91%93Reading&#43;Notes&#43;for&#43;%22LTSF-Linear%22"
     title="X"
     aria-label="X"
     id="share-link-x"
@@ -931,7 +1215,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2F%25E6%25AF%2595%25E4%25B8%259A%25E7%25A2%258E%25E7%25A2%258E%25E5%25BF%25B5%2F&amp;t=%EF%B8%8F%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5%E2%98%95"
+    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Freading-notes-for-ltsf-linear%2F&amp;t=%F0%9F%91%93Reading&#43;Notes&#43;for&#43;%22LTSF-Linear%22"
     title="Facebook"
     aria-label="Facebook"
     id="share-link-facebook"
@@ -951,7 +1235,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="mailto:?subject=%EF%B8%8F%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5%E2%98%95&amp;body=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2F%25E6%25AF%2595%25E4%25B8%259A%25E7%25A2%258E%25E7%25A2%258E%25E5%25BF%25B5%2F"
+    href="mailto:?subject=%F0%9F%91%93Reading%20Notes%20for%20%22LTSF-Linear%22&amp;body=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Freading-notes-for-ltsf-linear%2F"
     title="Email"
     aria-label="Email"
     id="share-link-email"
@@ -969,7 +1253,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2F%25E6%25AF%2595%25E4%25B8%259A%25E7%25A2%258E%25E7%25A2%258E%25E5%25BF%25B5%2F&amp;title=%EF%B8%8F%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5%E2%98%95"
+    href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Freading-notes-for-ltsf-linear%2F&amp;title=%F0%9F%91%93Reading&#43;Notes&#43;for&#43;%22LTSF-Linear%22"
     title="LinkedIn"
     aria-label="LinkedIn"
     id="share-link-linkedin"
@@ -987,7 +1271,7 @@
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="whatsapp://send?text=%EF%B8%8F%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5%E2%98%95%20https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2F%25E6%25AF%2595%25E4%25B8%259A%25E7%25A2%258E%25E7%25A2%258E%25E5%25BF%25B5%2F"
+    href="whatsapp://send?text=%F0%9F%91%93Reading&#43;Notes&#43;for&#43;%22LTSF-Linear%22%20https%3A%2F%2Fchengaoshen.com%2Fblogs%2Freading-notes-for-ltsf-linear%2F"
     title="WhatsApp"
     aria-label="WhatsApp"
     id="share-link-whatsapp"
@@ -1027,8 +1311,8 @@
     class="mr-4 h-24 w-24 rounded-full"
     width="96"
     height="96"
-    alt="沈骋骜"
-  src="/zh/author/%E6%B2%88%E9%AA%8B%E9%AA%9C/avatar_hu30910665284931ace4f57faa1e01d828_666181_192x192_fill_q100_lanczos_center.jpg"
+    alt="ChengAo Shen"
+  src="/author/chengao-shen/avatar_hu30910665284931ace4f57faa1e01d828_666181_192x192_fill_q100_lanczos_center.jpg"
   loading="lazy"
   />
   
@@ -1038,13 +1322,13 @@
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       <a href="https://chengaoshen.com/" class="no-underline">
-      沈骋骜
+      ChengAo Shen
       </a>
     </div>
 
     
     <div class="text-sm font-bold text-neutral-700 dark:text-neutral-300">
-    博士生
+    Ph.D. student
     </div>
     
 
@@ -1091,10 +1375,10 @@
     <a
       class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
       style="will-change:transform;"
-      href="https://www.zhihu.com/people/chengaoshen"
+      href="https://twitter.com/chengao_shen"
       target="_blank" rel="noopener" rel="me noopener noreferrer"
-      aria-label="Custom/Zhihu"
-    ><svg style="height: 1em;" t="1717596485360" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5672" width="16" height="16"><path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z" fill="#ffffff" p-id="5673"></path></svg></a>
+      aria-label="Brands/X"
+    ><svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
   
     
     
@@ -1105,10 +1389,10 @@
     <a
       class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
       style="will-change:transform;"
-      href="https://space.bilibili.com/38491401"
+      href="https://www.instagram.com/chengao_shen/"
       target="_blank" rel="noopener" rel="me noopener noreferrer"
-      aria-label="Custom/Bilibili"
-    ><svg style="height: 1em;" t="1717596376648" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4476" width="32" height="32"><path d="M987.88876907 942.68845653c-8.47679467 0.032-17.050656 0.7712-25.430384-0.128-30.76051413-3.33866453-53.17330027 31.5946464-63.83356054 68.42449067-9.5999936 33.16797973-46.04370453 50.12263573-78.85861653 46.71890347-37.8890432-3.88586453-62.96636053-25.55945067-72.63142187-59.81862934-5.81226347-20.71145387-23.37598507-36.7658432-42.70504-36.6378432-133.34925013 0.7712-251.96037547 0.38613333-385.30855893 0-15.34932373-0.032-31.72371307 14.67412373-36.21971093 32.75197974-9.5999936 38.78717547-42.57597333 63.4154272-79.08474987 64.02555946-37.79197653 0.64213333-70.63995627-23.34398507-81.6532832-63.60849386-4.62293013-16.85758933-12.4266592-52.9162336-28.54398187-52.0170336-20.74345387 1.1562656-41.61384107 0.57813333-62.42129386 0.22506666-22.73278613-0.41706667-32.78291307-9.5359936-32.78291307-31.1135808 0.16-219.4014624 0.48213333-438.77092587 1.0602656-658.1713216 0.064-22.6698528 9.4719936-30.31144747 35.60851093-30.34344853 107.14766613-0.128 214.29533227-0.064 321.44406614-0.064h22.41171946c0.67413333-1.83039893 1.38133227-3.69279787 2.0554656-5.55519573-24.88531733-13.06879147-49.76956907-26.13651733-74.6218208-39.2373088-41.25970773-21.7706528-82.58448213-43.47517333-123.7801888-65.34182614-16.69652267-8.86186133-23.63305173-22.37971947-14.19199146-39.1413088 9.5359936-16.95358933 25.30131733-17.98078827 41.77384106-9.31199466 96.74447253 51.02183467 193.52094613 101.97860267 289.912352 153.54657066 24.69225173 13.22879147 69.13062293 5.29813013 85.02394667-17.050656 49.2885024-69.48262293 98.54393813-138.96738027 147.83137493-208.48413653 1.73333227-2.4394656 3.40266453-4.9759968 5.2010624-7.384528C752.2078496-33.90933333 768.16624-39.0143968 782.67929707-27.87200427c16.79358933 12.8757248 13.9029248 28.15998293 3.1146656 43.47517334-20.00425387 28.35198187-40.00744213 56.6719648-59.979696 85.02501333-27.6778496 39.3013088-55.3236992 78.6346176-86.05221334 122.3039232h28.70504854c106.41060053 0 212.78706667-0.032 319.16460053 0.032 32.4938464 0.032 37.50397653 4.94506347 37.53597653 36.53971093 0.32 215.6446656 0.60906667 431.28933013 0.80213334 646.93292907 0.032 30.8255808-5.6511968 36.05971093-38.0810432 36.25171093z m-159.90389974 64.5076928c17.018656-1.1242656 25.10931733-46.2047712 30.27944747-63.2554272h-64.34662613c6.32532907 18.75198827 15.0911904 64.5396928 34.06717866 63.2554272z m-627.08974186 0.032c18.84798827 1.1562656 27.7418496-44.40743893 33.3610464-63.12636053h-63.3834272c4.30293013 17.62772267 13.16479147 62.0991616 30.0223808 63.12529387z m760.406992-720.2704832H62.24774827v610.07215147h899.0543712V286.95766613zM126.4663744 411.60505493c0.064-29.7333152 14.41705813-58.79249707 44.34237227-58.82449706 228.3923904-0.032 438.6098592-1.66933227 667.0022496-1.60533227 30.3743808 0 59.176496 31.0175808 59.272496 60.42982933 0.38613333 141.8580448-0.224 251.02917653 0 392.88615467 0.064 30.31144747-27.42078293 60.39676267-59.272496 60.42982827-113.85912853 0.064-212.2089344 0-326.03606294 0-113.82606187 0-212.1769344 0.064-326.03499626 0-33.1370464-0.032-59.30662933-27.77491627-59.27356267-60.42982827 0.16-141.15191147-0.256-251.7353088 0-392.88615467z m715.935552 388.48722347c0-134.1193824-4.59093013-257.1945056-4.59093013-388.48722347H185.7388704c0 133.34818347-0.7712 256.35824-0.77119893 388.48722347h657.43318826zM370.75208853 489.82367253c1.86239893-0.8352 4.17386453-0.67413333 11.94452587-1.79839893 4.5279968 4.43093013 15.95732373 10.53226027 17.178656 18.17385493 1.3802656 8.92586133-3.4037312 24.49918507-10.3071936 27.99998294-42.19090667 21.4154528-85.53808 40.7135744-128.98125333 59.62662933-13.22985813 5.74613013-27.77598293 1.4122656-31.1466464-12.7157248-2.2154656-9.24799467 1.76639893-26.81171627 8.41279466-30.15038187 43.47517333-21.9946528 88.39567787-41.1647744 132.8991168-61.1359616z m13.26079147 143.1423104c8.219728-0.28906667 18.84798827 11.07732693 24.78931733 19.74718827 4.75093013 6.9034624 2.7605312 17.94878827 6.10026347 26.29651627 6.32532907 15.8943904 18.23785493 31.01864747 35.8335776 27.29278293 13.0037248-2.7285312 24.88531733-15.73332373 34.645312-26.52158293 4.8159968-5.33013013 4.01386453-15.86132373 5.17013013-24.1141184 2.1834656-15.54132373 11.36639253-25.10931733 26.7146496-24.72425174 14.0309248 0.35306667 23.14985173 8.82986133 24.94931734 24.0181184 1.15519893 9.5999936 1.4122656 21.51251947 7.1594624 27.90291627 9.18399467 10.21012693 22.41171947 22.53971947 34.261312 22.92585173 10.7231936 0.352 23.75998507-12.6186592 32.20477973-22.63678506 5.6191968-6.6474624 5.29813013-18.3989216 7.0634624-27.99998294 2.85866453-15.3151904 11.72052587-24.62718507 27.5818496-23.4069184 15.76532373 1.2202656 24.0501184 11.36639253 23.43998507 27.19678294-1.50933227 40.16744107-17.46772267 72.82235413-55.0996992 90.74021013-35.0623776 16.72852267-67.81435733 9.5359936-96.51940587-16.18345707-1.54133227-1.3802656-3.4037312-2.37653227-5.33013013-3.69279786-8.73386133 6.06932907-16.82558933 13.10079147-26.10451734 17.94878933-30.34344747 15.82932373-60.71889493 14.51412373-88.7178112-4.9439968-30.88851413-21.51358613-44.66343893-52.8522336-41.90184-89.29594453 0.57706667-7.89866133 15.2191904-20.26025387 23.75998507-20.54932054z m223.99346027-145.00470933c7.44852907-13.03679147 20.6783872-16.60052267 33.03997866-9.5679936 49.09436907 27.96691627 97.64367253 56.8959648 145.87190934 86.24421227 5.7791968 3.4997312 8.47679467 11.91252587 10.4991936 14.9311904 0.54613333 23.85705173-19.20105493 36.82877653-37.37490987 26.585584-48.58130347-27.38878293-96.35940693-56.22289813-144.0735104-85.15194667-12.5866592-7.6426624-15.2511904-20.3263872-7.96266133-33.0410464z" fill="#ffffff" p-id="4477"></path></svg></a>
+      aria-label="Brands/Instagram"
+    ><svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path fill="currentColor" fill-rule="evenodd" d="M12.91 12.909c.326-.327.582-.72.749-1.151c.16-.414.27-.886.302-1.578c.032-.693.04-.915.04-2.68c0-1.765-.008-1.987-.04-2.68c-.032-.692-.142-1.164-.302-1.578a3.185 3.185 0 0 0-.75-1.151a3.187 3.187 0 0 0-1.151-.75c-.414-.16-.886-.27-1.578-.302C9.487 1.007 9.265 1 7.5 1c-1.765 0-1.987.007-2.68.04c-.692.03-1.164.14-1.578.301a3.2 3.2 0 0 0-1.151.75a3.2 3.2 0 0 0-.75 1.151c-.16.414-.27.886-.302 1.578C1.007 5.513 1 5.735 1 7.5c0 1.765.007 1.987.04 2.68c.03.692.14 1.164.301 1.578c.164.434.42.826.75 1.151c.325.33.718.586 1.151.75c.414.16.886.27 1.578.302c.693.031.915.039 2.68.039c1.765 0 1.987-.008 2.68-.04c.692-.03 1.164-.14 1.578-.301a3.323 3.323 0 0 0 1.151-.75ZM2 6.735v1.53c-.002.821-.002 1.034.02 1.5c.026.586.058 1.016.156 1.34c.094.312.199.63.543 1.012c.344.383.675.556 1.097.684c.423.127.954.154 1.415.175c.522.024.73.024 1.826.024H8.24c.842.001 1.054.002 1.526-.02c.585-.027 1.015-.059 1.34-.156c.311-.094.629-.2 1.011-.543c.383-.344.556-.676.684-1.098c.127-.422.155-.953.176-1.414C13 9.247 13 9.04 13 7.947v-.89c0-1.096 0-1.303-.023-1.826c-.021-.461-.049-.992-.176-1.414c-.127-.423-.3-.754-.684-1.098c-.383-.344-.7-.449-1.011-.543c-.325-.097-.755-.13-1.34-.156A27.29 27.29 0 0 0 8.24 2H7.057c-1.096 0-1.304 0-1.826.023c-.461.021-.992.049-1.415.176c-.422.128-.753.301-1.097.684c-.344.383-.45.7-.543 1.012c-.098.324-.13.754-.156 1.34c-.022.466-.022.679-.02 1.5ZM7.5 5.25a2.25 2.25 0 1 0 0 4.5a2.25 2.25 0 0 0 0-4.5ZM4.25 7.5a3.25 3.25 0 1 1 6.5 0a3.25 3.25 0 0 1-6.5 0Zm6.72-2.72a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5Z" clip-rule="evenodd"/></svg></a>
   
 </div>
 
@@ -1126,6 +1410,41 @@
 
   
   
+    
+    
+    
+      
+      
+    
+<div class="pt-1 no-prose w-full">
+  <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+  <div class="flex flex-col md:flex-row flex-nowrap justify-between gap-5 pt-2">
+    <div class="">
+      
+    </div>
+    <div class="">
+      
+        <a class="group flex text-right no-underline" href="/blogs/graduate_bs/">
+          <span class="flex flex-col">
+            <span
+              class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+            >🎉 Graduated from Sichuan Agricultural University</span
+            >
+            <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+              
+                Jun 15, 2024
+              
+            </span>
+          </span>
+          <span
+            class="mt-[-0.3rem] ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+          ><span class="ltr:inline">&rarr;</span></span>
+        </a>
+      
+    </div>
+  </div>
+</div>
+
 
 
   
@@ -1226,7 +1545,7 @@
       
       
       
-      由<a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a>支持发布——免费<a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 

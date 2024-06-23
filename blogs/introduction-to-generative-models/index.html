@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: June 21, 2024 --><html lang="en-us" dir="ltr"
+<!-- Last Published: June 23, 2024 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -310,6 +310,11 @@
       
     
   
+  
+  
+  
+  
+  
     
       
       
@@ -347,11 +352,6 @@
         
       
     
-  
-  
-  
-  
-  
   
   
   
@@ -872,6 +872,14 @@
         <ul class="hb-sidebar-list"><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blogs/reading-notes-for-ltsf-linear/"
+    
+  >👓Reading Notes for &#34;LTSF-Linear&#34;
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/blogs/graduate_bs/"
     
   >🎉 Graduated from Sichuan Agricultural University
@@ -1069,27 +1077,10 @@
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
         <p>Generative Models are part of unsupervised learning models that can learned from the datasets without any labels. Unlike other unsupervised models to manipulate, denoise, interpolate between, or compress examples, generative models focus on generating plausible new samples having similar properties to the dataset.</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="flex justify-center	">
-    <div class="w-100" ><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231025211322464.png" alt="Taxonomy of unsupervised learning models" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+<p><figure class="figure">
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231025211322464.png" alt="Taxonomy of unsupervised learning models">
+  <figcaption style="text-align: center;">Taxonomy of unsupervised learning models</figcaption>
+</figure></p>
 <p><strong>Latent variable models</strong>: mapping the data examples $\mathbf{x}$ to unseen latent variables $\mathbf{z}$ which can capture the underlying structure in the dataset.</p>
 <p>In this essay, we will introduce the categories of generative models, discuss their properties, and talk about how to measure them.</p>
 <h2 id="what-are-probabilistic-models">What are probabilistic models?</h2>
@@ -1107,27 +1098,10 @@ $$
 </li>
 </ul>
 <p>There is an image to describe the training process of the two models.</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="flex justify-center	">
-    <div class="w-100" ><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/Training%20of%20generative%20models.png" alt="Training of generative models" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+<p><figure class="figure">
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/Training%20of%20generative%20models.png" alt="Training of generative models">
+  <figcaption style="text-align: center;">Training of generative models</figcaption>
+</figure></p>
 <h2 id="properties-of-generative-models">Properties of Generative Models</h2>
 <p>There are several properties that Generative Models need to have:</p>
 <ul>
@@ -1197,27 +1171,10 @@ $$
 <h2 id="performance-measurement">Performance Measurement</h2>
 <p>To measure the performance of generative models, some metrics are proposed.</p>
 <p><strong>Inception score (IS)</strong>: This metric is used in image generative models which trained on the ImageNet dataset. There are two criteria to design it. First, each generated image $\mathbf{x}^*$ should look like only one class in the ImageNet dataset which has 1000 possible classes. Second, the probability for each class in generated images should be equal.</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="flex justify-center	">
-    <div class="w-100" ><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231026144638161.png" alt="Inception score" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+<p><figure class="figure">
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231026144638161.png" alt="Inception score">
+  <figcaption style="text-align: center;">Inception score</figcaption>
+</figure></p>
 <p>This metric uses KL divergence between $Pr(y_i|\mathbf{x}_i^*)$and $Pr(y)$
 </p>
 $$
@@ -1268,8 +1225,6 @@ Where $x,g$ present real and generated images, $\mu$ is the mean and $\Sigma$ is
 <div class="flex justify-center">
   
   <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/learning-content/">Learning Content</a>
-  
-  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/deep-learning/">Deep Learning</a>
   
 </div>
 

@@ -5,7 +5,7 @@
     <link>https://chengaoshen.com/</link>
       <atom:link href="https://chengaoshen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>ChengAo Shen</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 22 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chengaoshen.com/media/icon_hu68170e94a17a2a43d6dcb45cf0e8e589_3079_512x512_fill_lanczos_center_3.png</url>
       <title>ChengAo Shen</title>
@@ -13,314 +13,161 @@
     </image>
     
     <item>
+      <title>👓Reading Notes for &#34;LTSF-Linear&#34;</title>
+      <link>https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/</link>
+      <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named &lt;strong&gt;LSTF-Linear&lt;/strong&gt; which achieve outstanding performance and conduct comprehensive studies.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;What problem does the paper try to solve？&lt;/p&gt;
+&lt;p&gt;Attempt to verify whether the Transformer is effective in time series prediction problems and whether a simple model can surpass all current Transformer-based models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What is the proposed solution?&lt;/p&gt;
+&lt;p&gt;The LSTF Linear model was proposed as an alternative, achieving extremely high performance with only a single-layer network&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What are the key experimental results in this paper?&lt;/p&gt;
+&lt;p&gt;Achieved better performances than Transformer-based methods on multiple datasets such as electricity, healthcare, and meteorology&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What are the main contributions of the paper?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Challenge the Transformer structure in the long-term time series forecasting task.&lt;/li&gt;
+&lt;li&gt;Introduce the LTSF-Linear model which only has one layer while achieving compared results in various fields.&lt;/li&gt;
+&lt;li&gt;Conduct comprehensive empirical studies on various aspects of existing Transformer-based solutions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What are the strong points and weak points in this paper?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Strong Points&lt;/strong&gt;： Proposed potential issues in the current research route and opened up a new perspective in a simple way.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weak Points&lt;/strong&gt;: Only conducted research on prediction problems and have not explored other issues, such as anomaly detection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Over the past several decades, the Transformer has been widely used as the TSF solution. However, the self-attention mechanism is &lt;strong&gt;permutation-invariant&lt;/strong&gt; and &lt;strong&gt;anti-order&lt;/strong&gt; which will cause the loss of temporal information. Typically, time series contain less semantic meaning compared with NLP or CV problems and need more temporal information, which will emphasize this problem. Thus, this paper tries to challenge the Transformer-based LSTF solution with direct multi-step forecasting strategies.&lt;/p&gt;
+&lt;p&gt;For the time series containing $C$ variates, the historical data can be represented as $\mathcal{X}=\{X_1^t,\dots,X_C^t\}_{t=1}^L$, wherein $L$ is the look-back window size. The forecasting problems need to predict $T$ feature time step’s value $\hat{\mathcal{X}}=\{\hat{X}_1^t,\dots,\hat{X}_C^t\}_{t=1}^L$. When $T&gt;1$, the methods can be divided into two parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Integrated multi-step(IMS): Learn a single-step forecaster and interactively apply it to obtain multi-step predictions. This method has a smaller variance but will cause error accumulation.&lt;/li&gt;
+&lt;li&gt;Direct multi-step(DMS): Directly optimize the multi-step forecasting objective at one. This method can have more accurate predictions when $T$ is large.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;
+&lt;h3 id=&#34;transformer-based-methods&#34;&gt;Transformer-Based Methods&lt;/h3&gt;
+&lt;p&gt;The vanilla Transformer model has some limitations when applied to time series problems, thus various works try to improve the performance by adding or replacing some parts of the Transformer. Generally speaking, it can be divided into four major parts.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240622212351839.png&#34; alt=&#34;The pipeline of Transformer-Based Methods&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;The pipeline of Transformer-Based Methods&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Preprocessing&lt;/strong&gt;: To use Transformer to deal with time series datasets, some preprocessing is needed to adopt the data structures, such as normalization with zero-mean and adding timestamps as NLP did. Specifically, in Autoformer, seasonal-trend decomposition is proposed to get the trend part and the cyclical part, which helps data more clearly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Embedding&lt;/strong&gt;: In NLP’s Transformer, embedding will map the words to the vector in a typical space that reveals the meaning. In time series, time information is significantly important. Thus, various timestamp methods are proposed to help the model reserve the temporal information.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Encoder/Decoder&lt;/strong&gt;: To help the Transformer structure adopt the time series problems, there have been many improvements made to the encoder and decoder in this work. Among them, in the encoder section, many improvements have been proposed to reduce computational consumption and increase speed. In the decoder section, to avoid cumulative errors, it has also begun to transition from IMS to DMS.&lt;/p&gt;
+&lt;p&gt;The success of Transformer in the NLP field is largely attributed to its understanding of the semantic relationships between words, but in time series problems, temporary information has become even more important. However, the Transformer&amp;rsquo;s ability to model time largely comes from the timestamp rather than its structure.&lt;/p&gt;
+&lt;h3 id=&#34;lstf-linear&#34;&gt;LSTF-Linear&lt;/h3&gt;
+&lt;p&gt;This paper hypothesizes that the improvement in the Transformer-Based model is due to the DMS strategy rather than the Transformer. Thus they propose LSTF-Linear that directly regresses historical time series for future prediction via a weighted sum operation to verify this thinking. The model can be a formula as :
+&lt;/p&gt;
+$$
+\hat{X}_i=WX_i
+$$
+&lt;p&gt;
+Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. Furthermore, this paper proposes two sub-models, DLinear which uses decomposition to obtain the trend part and the seasonal part, and the NLinear which subtracts a portion before making the prediction and rejoined it after making the prediction.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240622212512231.png&#34; alt=&#34;The Structure of LSTF-Linear&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;The Structure of LSTF-Linear&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;experiments&#34;&gt;Experiments&lt;/h2&gt;
+&lt;p&gt;In order to verify the quality of the LSTF-Linear, the author selected some common sequence data from real life and compared with five popular Transformer-based model. All results are show as follow:&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623194839137.png&#34; alt=&#34;Datasets Description&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Datasets Description&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623194933447.png&#34; alt=&#34;Model Comparison&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Model Comparison&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623195006823.png&#34; alt=&#34;Visualize results&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Visualize results&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>🎉 Graduated from Sichuan Agricultural University</title>
       <link>https://chengaoshen.com/blogs/graduate_bs/</link>
       <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/blogs/graduate_bs/</guid>
       <description>&lt;p&gt;The sudden outbreak of the pandemic in 2020 and the delayed college entrance exam caught everyone off guard. As a newly turned adult, I found myself swept along by the tide, ending up in a place I had never imagined: Ya&amp;rsquo;an, Sichuan - Sichuan Agricultural University. With mixed emotions, I boarded a plane to Sichuan for the first time, embarking on my four-year university journey.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG20221006132316.jpg&#34; alt=&#34;On the flight to Sichuan&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG20221006132316.jpg&#34; alt=&#34;On the flight to Sichuan&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;On the flight to Sichuan&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;It was my first time being so far from home, so far that my previous social circles became distant, and the language, food, and living habits were all different. I was initially shocked by Ya’an’s somewhat outdated city environment and the old dormitories at Sichuan Agricultural University—dorms from the last century with no hot water in the eight-person rooms were particularly hard to adapt to. However, when I knocked on the door of room 505, the enthusiastic roommates made me feel a strong sense of belonging. Their warmth and help allowed me to quickly integrate into this new living environment without feeling awkward or strange, and it filled me with anticipation and hope for my future university life.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/8E48E868862B2433BE4E9BF4722044C9.jpg&#34; alt=&#34;First-year with roommates&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/8E48E868862B2433BE4E9BF4722044C9.jpg&#34; alt=&#34;First-year with roommates&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;First-year with roommates&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Before going to university, I was determined to major in computer science, but by a twist of fate, I ended up in the information and computing science program, which is heavily math-oriented. For someone like me, who was entirely focused on computers, this was a significant challenge. The first semester’s courses in mathematical analysis and advanced algebra, which were highly theoretical, caused me a lot of discomfort, with many problems and concepts being quite confusing. Fortunately, with the help of various teachers and classmates (especially Huajun Chen), I managed to maintain good grades. I vividly remember staying up late watching Professor Qiu Weisheng’s Advanced Algebra and Professor Chen Jixiu’s Mathematical Analysis to achieve good results. Although I didn’t do exceptionally well in mathematical analysis in the end, it did help me adapt to the rhythm of self-study and exploration in university. This gave me a solid knowledge base for the subsequent challenging math courses and prepared me mentally for future research in deep learning and computer vision.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/79bfcac481d5d38c5fba2a.jpg&#34; alt=&#34;Library where I often studied&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/79bfcac481d5d38c5fba2a.jpg&#34; alt=&#34;Library where I often studied&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Library where I often studied&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;During university, an unexpected biking event led me to meet my best friend for the four years—Xiaoming Xiao. One day, my bike, which I used for commuting, had a flat tire, forcing me to go to the school gate for repairs. After fixing it, a classmate invited me to join their cycling trip to Mount Mengding. The next day in class, I discovered that the classmate who had invited me was also in my major, and through various activities, we gradually became familiar. Xiao’s loyalty and enthusiasm left a profound impression on me; he is one of the most genuine people I’ve ever met. In the following four years, we helped each other and progressed together. Whenever I faced difficulties, he was always there to support me firmly, helping me overcome obstacles. Our friendship is the most precious gift I received during my four years at university.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/1619630790598.jpeg&#34; alt=&#34;Xiao Shiming&amp;amp;rsquo;s birthday&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/1619630790598.jpeg&#34; alt=&#34;Xiao Shiming birthday&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Xiao Shiming birthday&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;With Xiao’s help, I also got to know Ya’an, this “bashi” city, better. He introduced me to a local family behind the school’s back hill, where I first experienced the local customs. Grandma Zhang was very hospitable to the students of Sichuan Agricultural University, and every time we celebrated together, I felt a strong sense of belonging. Fishing, cooking, barbecuing, and picking cherries left me with many unforgettable memories.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06759.jpg&#34; alt=&#34;Photo with Grandma Zhang&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06759.jpg&#34; alt=&#34;Photo with Grandma Zhang&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Photo with Grandma Zhang&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Due to my strong interest in micro-films and video production, I was fortunate to meet a group of like-minded friends in university. We founded the Ten Cameras club to shoot and produce micro-films. Some of the classmates excelled in photography, while others were good at poster making, and everyone had their own strengths, from which I benefited greatly. Although we didn’t continue working on projects together for various reasons, this experience allowed me to meet many sincere friends who had a profound impact on my life and future plans. If I had to summarize this experience, I would say, “The process is far more important than the result.”&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/QQ%E5%9B%BE%E7%89%8720210107114933.jpg&#34; alt=&#34;Ten Cameras group photo&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/QQ%E5%9B%BE%E7%89%8720210107114933.jpg&#34; alt=&#34;Ten Cameras group photo&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Ten Cameras group photo&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;In the latter part of university, while preparing to go abroad, I dedicated most of my time to the research laboratory. I formed the “Deep Vision Agriculture Lab” among undergraduates. In the lab, I met many juniors and worked on a series of projects that intersected biology and artificial intelligence. We applied for projects like “Internet+”, “Student Innovation and Entrepreneurship”, and “Research Interest Groups” and published some journal papers. Of course, the success of the lab couldn’t have been achieved without the help of Professor Zhaoli Shen, who provided us with space, funding, and guidance. Without his support, our lab wouldn’t have been able to function properly.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06544.jpg&#34; alt=&#34;Lab group photo&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06544.jpg&#34; alt=&#34;Lab group photo&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Lab group photo&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;During my university years, I encountered many teachers who had a profound impact on me. Among them was Professor Huang Houhui, who taught me Numerical Analysis. His humor and wit left a deep impression on me. Professor Wang Jianjun, who guided me in Mathematical Modeling and Mathematical Analysis, also helped me gain a lot of knowledge.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/7254d8617bbbdfe2ed970cde721797e4.jpg&#34; alt=&#34;Photo with teachers, left: Professor Wang Jianjun, right: Professor Huang Houhui&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/7254d8617bbbdfe2ed970cde721797e4.jpg&#34; alt=&#34;Photo with teachers&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Photo with teachers&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Finally, I want to thank my girlfriend, Siyuan Mu. We met in a research project, got to know each other through collaboration, and eventually fell in love. We share similar views and life philosophies, and she is a rare partner in my life. Whether in research, study, leisure, or travel, she has always been by my side. Without her support, I would not have achieved what I have today.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG_2545.jpeg&#34; alt=&#34;With girlfriend at Chengdu Eastern Memory&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG_2545.jpg&#34; alt=&#34;With girlfriend at Chengdu Eastern Memory&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;With girlfriend at Chengdu Eastern Memory&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Four years have passed in the blink of an eye. At the moment of taking graduation photos, many sentiments had to come to an end. Therefore, at the end of this blog, please allow me to post some graduation photos to commemorate the past four years.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG_4611.jpg&#34; alt=&#34;Graduation photo with dorm mates&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06708.jpg&#34; alt=&#34;Ten Cameras graduation photo (some members)&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06678.jpg&#34; alt=&#34;Graduation photo with Xiao&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06663.jpg&#34; alt=&#34;Graduation photo with girlfriend&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06790.jpg&#34; alt=&#34;The End&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IMG_4611.jpg&#34; alt=&#34;Graduation photo with dorm mates&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Graduation photo with dorm mates&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06708.jpg&#34; alt=&#34;Ten Cameras graduation photo (some members)&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Ten Cameras graduation photo (some members)&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06678.jpg&#34; alt=&#34;Graduation photo with Xiao&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Graduation photo with Xiao&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06663.jpg&#34; alt=&#34;Graduation photo with girlfriend&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Graduation photo with girlfriend&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/DSC06790.jpg&#34; alt=&#34;The End&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;The End&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -357,27 +204,10 @@
       <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/blogs/introduction-to-generative-models/</guid>
       <description>&lt;p&gt;Generative Models are part of unsupervised learning models that can learned from the datasets without any labels. Unlike other unsupervised models to manipulate, denoise, interpolate between, or compress examples, generative models focus on generating plausible new samples having similar properties to the dataset.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231025211322464.png&#34; alt=&#34;Taxonomy of unsupervised learning models&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231025211322464.png&#34; alt=&#34;Taxonomy of unsupervised learning models&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Taxonomy of unsupervised learning models&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Latent variable models&lt;/strong&gt;: mapping the data examples $\mathbf{x}$ to unseen latent variables $\mathbf{z}$ which can capture the underlying structure in the dataset.&lt;/p&gt;
 &lt;p&gt;In this essay, we will introduce the categories of generative models, discuss their properties, and talk about how to measure them.&lt;/p&gt;
 &lt;h2 id=&#34;what-are-probabilistic-models&#34;&gt;What are probabilistic models?&lt;/h2&gt;
@@ -395,27 +225,10 @@ $$
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There is an image to describe the training process of the two models.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/Training%20of%20generative%20models.png&#34; alt=&#34;Training of generative models&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/Training%20of%20generative%20models.png&#34; alt=&#34;Training of generative models&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Training of generative models&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&#34;properties-of-generative-models&#34;&gt;Properties of Generative Models&lt;/h2&gt;
 &lt;p&gt;There are several properties that Generative Models need to have:&lt;/p&gt;
 &lt;ul&gt;
@@ -485,27 +298,10 @@ $$
 &lt;h2 id=&#34;performance-measurement&#34;&gt;Performance Measurement&lt;/h2&gt;
 &lt;p&gt;To measure the performance of generative models, some metrics are proposed.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Inception score (IS)&lt;/strong&gt;: This metric is used in image generative models which trained on the ImageNet dataset. There are two criteria to design it. First, each generated image $\mathbf{x}^*$ should look like only one class in the ImageNet dataset which has 1000 possible classes. Second, the probability for each class in generated images should be equal.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure  &gt;
-  &lt;div class=&#34;flex justify-center	&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231026144638161.png&#34; alt=&#34;Inception score&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
-  &lt;/div&gt;&lt;/figure&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231026144638161.png&#34; alt=&#34;Inception score&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Inception score&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;This metric uses KL divergence between $Pr(y_i|\mathbf{x}_i^*)$and $Pr(y)$
 &lt;/p&gt;
 $$

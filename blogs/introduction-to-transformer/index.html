@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: June 21, 2024 --><html lang="en-us" dir="ltr"
+<!-- Last Published: June 23, 2024 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -310,6 +310,11 @@
       
     
   
+  
+  
+  
+  
+  
     
       
       
@@ -347,11 +352,6 @@
         
       
     
-  
-  
-  
-  
-  
   
   
   
@@ -872,6 +872,14 @@
         <ul class="hb-sidebar-list"><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/blogs/reading-notes-for-ltsf-linear/"
+    
+  >👓Reading Notes for &#34;LTSF-Linear&#34;
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/blogs/graduate_bs/"
     
   >🎉 Graduated from Sichuan Agricultural University
@@ -1140,27 +1148,10 @@ $$
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[K[X]^TQ[X]]
 $$
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="flex justify-center	">
-    <div class="w-100" ><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726112139933.png" alt="Self-attention" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+<p><figure class="figure">
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726112139933.png" alt="Self-attention">
+  <figcaption style="text-align: center;">Self-attention</figcaption>
+</figure></p>
 <p>Typically, the dot products will be really large, which means the small changes to the inputs have nearly no effect on the output because we use the softmax function. So we always use the dimension of the input, always the shape of embedding, to scale the dot products.</p>
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[\frac{K[X]^TQ[X]}{\sqrt{D_q}}]
@@ -1171,49 +1162,15 @@ $$
 $$
 \text{MhSa}[X]=\Omega_c[Sa_1[X]^T,Sa_2[X]^T,\dots,Sa_H[X]^T]^T
 $$
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="flex justify-center	">
-    <div class="w-100" ><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726201710681.png" alt="Multiple heads" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+<p><figure class="figure">
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726201710681.png" alt="Multiple heads">
+  <figcaption style="text-align: center;">Multiple heads</figcaption>
+</figure></p>
 <h2 id="transformer-layers">Transformer layers</h2>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  >
-  <div class="flex justify-center	">
-    <div class="w-100" ><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726113937045.png" alt="Transformer layers" loading="lazy" data-zoomable /></div>
-  </div></figure>
-</p>
+<p><figure class="figure">
+  <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726113937045.png" alt="Transformer layers">
+  <figcaption style="text-align: center;">Transformer layers</figcaption>
+</figure></p>
 <p>With <strong>self-attention</strong> and <strong>MLP</strong>, we can construct the transformer layers applied in many outstanding models. The process looks like this:
 </p>
 $$
@@ -1253,8 +1210,6 @@ $$
 <div class="flex justify-center">
   
   <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/learning-content/">Learning Content</a>
-  
-  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/deep-learning/">Deep Learning</a>
   
 </div>
 
