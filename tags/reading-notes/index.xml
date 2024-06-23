@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>👓Reading Notes for &#34;LTSF-Linear&#34;</title>
+      <title>📑Reading Notes for &#34;LTSF-Linear&#34;</title>
       <link>https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/</link>
       <pubDate>Sat, 22 Jun 2024 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/</guid>
@@ -93,6 +93,10 @@ Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. 
 &lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
   &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623195006823.png&#34; alt=&#34;Visualize results&#34;&gt;
   &lt;figcaption style=&#34;text-align: center;&#34;&gt;Visualize results&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240623200500165.png&#34; alt=&#34;MSE in different look-back windows size&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;MSE in different look-back windows size&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;/p&gt;
 </description>
     </item>
