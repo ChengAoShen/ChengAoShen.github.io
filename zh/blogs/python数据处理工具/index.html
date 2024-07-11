@@ -1,0 +1,1714 @@
+<!doctype html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: 2024年7月11日 --><html lang="zh-Hans" dir="ltr"
+      data-wc-theme-default="system">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="Hugo Blox Builder 0.2.0" />
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="沈骋骜" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="一、NumPy基础 import numpy as np
+1.1 ndarry——多维数组对象 1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1." />
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://chengaoshen.com/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" />
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/themes/emerald.min.css" />
+  
+
+  
+  
+    
+    <link href="/dist/wc.min.css" rel="stylesheet" />
+  
+
+  
+  
+  
+
+  
+
+  <script>
+     
+    window.hbb = {
+       defaultTheme: document.documentElement.dataset.wcThemeDefault,
+       setDarkTheme: () => {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      },
+       setLightTheme: () => {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    }
+
+    console.debug(`Default Hugo Blox Builder theme is ${window.hbb.defaultTheme}`);
+
+    if ("wc-color-theme" in localStorage) {
+      localStorage.getItem("wc-color-theme") === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+    } else {
+      window.hbb.defaultTheme === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      if (window.hbb.defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      }
+    }
+  </script>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      let checkboxes = document.querySelectorAll('li input[type=\'checkbox\'][disabled]');
+      checkboxes.forEach(e => {
+        e.parentElement.parentElement.classList.add('task-list');
+      });
+
+      
+      const liNodes = document.querySelectorAll('.task-list li');
+      liNodes.forEach(nodes => {
+        let textNodes = Array.from(nodes.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
+        if (textNodes.length > 0) {
+          const span = document.createElement('label');
+          textNodes[0].after(span);  
+          span.appendChild(nodes.querySelector('input[type=\'checkbox\']'));
+          span.appendChild(textNodes[0]);
+        }
+      });
+    });
+  </script>
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://chengaoshen.com/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@GetResearchDev" />
+    <meta property="twitter:creator" content="@GetResearchDev" />
+  
+  <meta property="og:site_name" content="沈骋骜" />
+  <meta property="og:url" content="https://chengaoshen.com/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" />
+  <meta property="og:title" content="Python数据处理工具 | 沈骋骜" />
+  <meta property="og:description" content="一、NumPy基础 import numpy as np
+1.1 ndarry——多维数组对象 1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1." /><meta property="og:image" content="https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh-Hans" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-08-21T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-08-21T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  <title>Python数据处理工具 | 沈骋骜</title>
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <style>
+    @font-face {
+      font-family: 'Inter var';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(/dist/font/Inter.var.woff2) format(woff2);
+    }
+  </style>
+
+  
+
+  
+  
+
+
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/dist/pagefind/pagefind-ui.be766eb419317a14ec769d216e9779bfe8f3737c80e780f4ba0dafb57a41a482.css" integrity="sha256-vnZutBkxehTsdp0hbpd5v&#43;jzc3yA54D0ug2vtXpBpII=" />
+
+
+<script src="/dist/pagefind/pagefind-ui.87693d7c6f2b3b347ce359d0ede762c033419f0a32b22ce508c335a81d841f1b.js" integrity="sha256-h2k9fG8rOzR841nQ7ediwDNBnwoysizlCMM1qB2EHxs="></script>
+
+
+<script>window.hbb.pagefind = {"baseUrl":"/"};</script>
+
+<style>
+  html.dark {
+    --pagefind-ui-primary: #eeeeee;
+    --pagefind-ui-text: #eeeeee;
+    --pagefind-ui-background: #152028;
+    --pagefind-ui-border: #152028;
+    --pagefind-ui-tag: #152028;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      baseUrl: window.hbb.pagefind.baseUrl,
+      bundlePath: window.hbb.pagefind.baseUrl + "pagefind/",
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    let element = document.getElementById('search');
+    let trigger = document.getElementById('search_toggle');
+
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        element.classList.toggle('hidden');
+        element.querySelector("input").value = ""
+        element.querySelector("input").focus()
+
+        if (!element.classList.contains('hidden')) {
+          let clear_trigger = document.querySelector('.pagefind-ui__search-clear');
+
+          if (clear_trigger && !clear_trigger.hasAttribute('listenerOnClick')) {
+            clear_trigger.setAttribute('listenerOnClick', 'true');
+
+            clear_trigger.addEventListener('click', () => {
+              element.classList.toggle('hidden');
+            });
+          }
+        }
+
+      });
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <script
+    defer
+    src="/js/hugo-blox-zh.min.edad2a20315bced9792ec0d846aaf4ab2d7efe63957cb49983442d40c24349c5.js"
+    integrity="sha256-7a0qIDFbztl5LsDYRqr0qy1&#43;/mOVfLSZg0QtQMJDScU="
+  ></script>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+      
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+      
+    
+  
+
+
+
+
+</head>
+
+  <body class="dark:bg-hb-dark dark:text-white page-wrapper" id="top">
+    <div id="page-bg"></div>
+    <div class="page-header sticky top-0 z-30">
+      
+      
+      
+        
+        
+        
+          <header id="site-header" class="header">
+  <nav class="navbar px-3 flex justify-left">
+    <div class="order-0 h-100">
+      
+      <a class="navbar-brand" href="/zh/" title="沈骋骜">
+        ChengAo Shen
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Open Menu</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Close Menu</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
+      ">
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/zh/"
+        >信息</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/zh/#news"
+        >新闻</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/zh/blog/"
+        >博客</a
+        >
+      </li>
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+
+      
+      
+      
+      <button
+        aria-label="search"
+        class="text-black hover:text-primary  inline-block px-3 text-xl dark:text-white"
+        id="search_toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </button>
+      
+
+      
+      
+      <div class="px-3 text-black hover:text-primary-700 dark:text-white dark:hover:text-primary-300
+            [&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white">
+        <button class="theme-toggle mt-1" accesskey="t" title="appearance">
+          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class="dark:hidden">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class=" dark:block [&:not(dark)]:hidden">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+      
+
+      
+      
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<div id="search" class="hidden p-3"></div>
+
+
+        
+      
+    </div>
+    <div class="page-body  my-10">
+      
+
+
+
+
+
+<div class="mx-auto flex max-w-screen-xl">
+  
+
+
+
+<aside class="hb-sidebar-container max-lg:[transform:translate3d(0,-100%,0)] lg:hidden xl:block">
+  
+  <div class="px-4 pt-4 lg:hidden">
+    
+    
+  </div>
+  <div class="hb-scrollbar lg:h-[calc(100vh-var(--navbar-height))]">
+    <ul class="flex flex-col gap-1 lg:hidden">
+      
+      
+        <li class="open"><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/"
+    
+  >Blogs
+        <span data-hb-sidebar-toggle>
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg>
+        </span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class="hb-sidebar-list"><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/"
+    
+  >️毕业碎碎念☕
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/fastapi%E7%AC%94%E8%AE%B0/"
+    
+  >FastAPI笔记
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/"
+    
+  >Pytorch常用代码片段
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/docker%E7%AC%94%E8%AE%B0/"
+    
+  >Docker快速入门
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E5%A3%B0%E6%98%8E%E6%95%B4%E7%90%86/"
+    
+  >️c语言指针声明整理
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    
+  >Git学习笔记
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/effectivepython/"
+    
+  >Effective Python技巧
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/markdown%E7%AC%94%E8%AE%B0/"
+    
+  >Markdown笔记
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/python%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"
+    
+  >Python基础整理
+    </a>
+              
+            </li><li class="flex flex-col open"><a
+    class="hb-sidebar-custom-link
+      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
+    href="/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/"
+    
+  >Python数据处理工具
+    </a>
+  
+    <ul class="hb-sidebar-mobile-toc"><li>
+              <a
+                href="#%e4%b8%80numpy%e5%9f%ba%e7%a1%80"
+                class="hb-docs-link"
+              >一、NumPy基础</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%ba%8cpandas%e5%9f%ba%e7%a1%80"
+                class="hb-docs-link"
+              >二、Pandas基础</a>
+            </li>
+          </ul>
+  
+              
+            </li></ul>
+      </div></li>
+        <li class=""><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blog/"
+    
+  >博客
+    </a></li>
+    </ul>
+
+    <div class="max-xl:hidden h-0 w-64 shrink-0"></div></div>
+
+</aside>
+  
+
+<nav class="hb-toc order-last hidden w-64 shrink-0 xl:block print:hidden px-4" aria-label="table of contents">
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">在本页</p><ul>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e4%b8%80numpy%e5%9f%ba%e7%a1%80">一、NumPy基础</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#11-ndarry%e5%a4%9a%e7%bb%b4%e6%95%b0%e7%bb%84%e5%af%b9%e8%b1%a1">1.1 ndarry——多维数组对象</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#12-%e5%9f%ba%e6%9c%ac%e8%bf%90%e7%94%a8">1.2 基本运用</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#13-%e9%80%9a%e7%94%a8%e5%87%bd%e6%95%b0ufunc">1.3 通用函数（ufunc）</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#14-%e9%9d%a2%e5%90%91%e6%95%b0%e7%bb%84%e7%bc%96%e7%a8%8b">1.4 面向数组编程</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#15-%e5%af%b9%e6%96%87%e4%bb%b6%e7%9a%84%e4%bd%bf%e7%94%a8">1.5 对文件的使用</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#16-%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e4%bd%bf%e7%94%a8">1.6 线性代数使用</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#17-%e4%bc%aa%e9%9a%8f%e6%9c%ba%e6%95%b0%e4%bd%bf%e7%94%a8">1.7 伪随机数使用</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e4%ba%8cpandas%e5%9f%ba%e7%a1%80">二、Pandas基础</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#21-serise">2.1 serise</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#22-dataframe">2.2 DataFrame</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#23-%e5%9f%ba%e6%9c%ac%e5%8a%9f%e8%83%bd">2.3 基本功能</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#24-%e6%9b%b4%e5%a4%9a%e6%93%8d%e4%bd%9c">2.4 更多操作</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#25-%e7%bb%9f%e8%ae%a1%e7%94%a8%e6%b3%95">2.5 统计用法</a>
+      </li></ul>
+
+  
+  
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  </nav>
+
+
+  <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+
+      
+
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Python数据处理工具</h1>
+
+      <div class="mt-4 mb-16">
+      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">8月 21, 2020</span>
+        
+
+        
+        <span class="mx-1">·</span>
+        <span class="mx-1">
+          3 分钟阅读时长
+        </span>
+        
+        </div>
+
+        <div class="mt-3">
+          
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+      
+      
+      
+
+      
+      
+
+      <div class="prose prose-slate lg:prose-xl dark:prose-invert">
+        <h2 id="一numpy基础">一、NumPy基础</h2>
+<p><code>import numpy as np</code></p>
+<h3 id="11-ndarry多维数组对象">1.1 ndarry——多维数组对象</h3>
+<p>1.1.1 <strong>创建ndarray</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">)</span> <span class="c1"># 将输入的序列类型转换为ndarray,如果不指定类型则自动判断</span>
+</span></span><span class="line"><span class="cl"><span class="n">arange</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="c1"># 返回一个等差数列</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">eye</span><span class="p">()</span>  <span class="n">identity</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的全1数组</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ones</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的全1数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">zeros</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的全0数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">empty</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的空数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">full</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">num</span><span class="p">)</span> <span class="c1">#根据给定形状和数据类型生成数值一样的数组</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#以上的函数可以加_like 变成根据一个数组的大小来生成</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">reshape</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span> <span class="c1">#使得一个序列进行array样式变化</span>
+</span></span></code></pre></div><p>1.1.2 <strong>ndarray的数据类型</strong></p>
+<p>数据类型，是dytpe属性，代表了数组里面每个数据的类型。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 常见的类型</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span> <span class="mi">64</span> <span class="c1">#有符号的64位整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">uint64</span> <span class="c1">#无符号的64位整数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float64</span> <span class="c1"># 单精度浮点数。兼容c语言的float</span>
+</span></span><span class="line"><span class="cl"><span class="n">float64</span> <span class="c1"># 双精度浮点数。兼容c语言的double</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">comple</span> <span class="c1">#64位的复数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">boll</span> <span class="c1">#布尔类型</span>
+</span></span><span class="line"><span class="cl"><span class="nb">object</span> <span class="c1">#对象类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">string_</span> <span class="c1">#字符串类型</span>
+</span></span></code></pre></div><p>可以使用<code>astype</code>来转换数据的类型，使用他转换时会生成一个全新的数组对象。</p>
+<h3 id="12-基本运用">1.2 基本运用</h3>
+<p>1.2.1 <strong>算数运算</strong></p>
+<p>优点：以ndarry为对象可以进行批量运算而不用使用<code>for</code>语句。</p>
+<p>使用：使用带有标量的运算符的时候，会把每一个都对应到元素内。</p>
+<p><em>即使是乘法也是把里面的每个元素相乘</em></p>
+<p>也可以使用=判断两个矩阵是否完全一样。</p>
+<p>1.2.2 <strong>基础索引与切片</strong></p>
+<p><em>切片提取的时候需要注意，并没有重新复制一个数组，新得到的还是指向原本是数组</em></p>
+<p>一纬数组的切片和读取与自带的列表一样。</p>
+<p>对于多维的数组(都是从0开始)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#方法一</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#方法二</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span></code></pre></div><p>我们也可以在方法一的情况下省略后面的值，返回降低一个维度的内容。</p>
+<p>我们也可以对于高维数组的部分进行切片，可以使用 :2 来代表前面2（行，列）#这只能用在使用方法2进行读取，使用一个：就是代表全部。对一个切片赋值的时候，会对全部赋值。</p>
+<p>1.2.3  <strong>布尔索引</strong></p>
+<p>在进行索引的时候使用和行数对应的bool值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 基础用法（bool值的数量与行数和列数一样）</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[[</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]]</span> <span class="c1">#读取输出date的1，3两行</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[:,[</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">]]</span> <span class="c1">#读取date的第一列</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 常见用法（读取符合是bob与alex名字位置对应的data行）</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span><span class="s1">&#39;jone&#39;</span><span class="p">,</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span><span class="s1">&#39;Alex&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[(</span><span class="n">name</span><span class="o">==</span><span class="s1">&#39;bob&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alex</span><span class="o">==</span><span class="s1">&#39;alex&#39;</span><span class="p">)</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#也可以用来设置数组的值（将负数都变成0）</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span><span class="mi">0</span>
+</span></span></code></pre></div><p>1.2.4 <strong>神奇索引</strong></p>
+<p>神奇索引又可以称为整数索引，可以使用一个整数数组来索引并<em>复制</em>出那一块的所有行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#基础用法</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span> <span class="c1">#复制出arr里面的4，3，2，5列</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#交错取值</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>  <span class="c1">#取出4行1列的元素……</span>
+</span></span></code></pre></div><p>1.2.5 <strong>数组换轴与转置</strong></p>
+<p>计算矩阵的内积：<code>np.dot()</code></p>
+<p>转置，可以直接使用数组的<code>T</code>属性，得到转置后的样子，也可以使用<code>.transpose</code>方法使数组进行转置（都不改变原数组）</p>
+<p>而对于更高纬度的数组，使用转置可以达到置换轴的作用。</p>
+<h3 id="13-通用函数ufunc">1.3 通用函数（ufunc）</h3>
+<p>对于简单函数向量化的封装。</p>
+<p>常见的一元通用函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">abs</span><span class="p">,</span><span class="n">fabs</span> <span class="c1">#计算实数或者复数的绝对值</span>
+</span></span><span class="line"><span class="cl"><span class="n">sqrt</span> <span class="c1">#取每一个的绝对值</span>
+</span></span><span class="line"><span class="cl"><span class="n">square</span> <span class="c1">#取每一个的平方</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span> <span class="c1">#取每一个的e^x</span>
+</span></span><span class="line"><span class="cl"><span class="n">log</span><span class="p">,</span><span class="n">log10</span><span class="p">,</span><span class="n">log1p</span> <span class="c1">#取每一个的loge log10 以及log（1+x）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sign</span> <span class="c1">#计算每一个的符号值</span>
+</span></span><span class="line"><span class="cl"><span class="n">ceil</span> <span class="c1">#计算比这个元素大的第一个整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">floor</span> <span class="c1">#计算比这个元素小的第一个整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">rint</span> <span class="c1">#在不改变类型的情况下将元素保留到整数位</span>
+</span></span><span class="line"><span class="cl"><span class="n">modf</span> <span class="c1">#将小数与整数两个部分分别返回</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">isnan</span> <span class="c1">#返回元素是否是一个非数值类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">isfinite</span><span class="p">,</span><span class="n">isinf</span> <span class="c1"># 返回数组内元素是否有限是否无限</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sin</span><span class="p">,</span><span class="n">cos</span><span class="p">,</span><span class="n">tan</span> <span class="c1">#三角函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">arccos</span><span class="p">,</span><span class="n">arccosh</span><span class="p">,</span><span class="n">arcsin</span> <span class="c1">#反三角函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">logical_not</span> <span class="c1">#全部取反</span>
+</span></span><span class="line"><span class="cl"><span class="nb">max</span> <span class="c1">#计算数组内的最大值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span> <span class="c1">#计算数组内的最小值</span>
+</span></span></code></pre></div><p>常见的二元通用函数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">add</span> <span class="o">=</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="n">multiply</span> <span class="o">=</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="n">divide</span><span class="p">,</span><span class="n">floor_divide</span> <span class="o">=</span> <span class="o">/</span><span class="p">,</span><span class="o">//</span>
+</span></span><span class="line"><span class="cl"><span class="n">mod</span> <span class="c1">#求模计算</span>
+</span></span><span class="line"><span class="cl"><span class="n">power</span> <span class="c1"># 将第二个作为第一个的幂次方</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">subtract</span> <span class="c1">#在第二个数组中将第一个所包含的元素去除</span>
+</span></span><span class="line"><span class="cl"><span class="n">maximun</span><span class="p">,</span><span class="n">fmax</span> <span class="c1">#两个对应的元素相互比较，计算元素的最大值（第二个可以忽略num）</span>
+</span></span><span class="line"><span class="cl"><span class="n">minimum</span><span class="p">,</span><span class="n">fmin</span> <span class="c1">#两个对应的元素相互比较，计算元素的最小值（第二个可以忽略num）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">copysign</span> <span class="c1">#将第一个的符号改为第二个的符号</span>
+</span></span></code></pre></div><h3 id="14-面向数组编程">1.4 面向数组编程</h3>
+<p>1.4.1 <strong>将条件逻辑作为数组操作</strong></p>
+<p>我们可以使用<code>np.where</code>来代替原生python的三元运算</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">result</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span><span class="n">true</span><span class="p">,</span><span class="n">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 第一个参数是判断条件，二三两个代表的是选项</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 之后两个可以不是向量而是标量</span>
+</span></span></code></pre></div><p>1.4.2 <strong>数学和统计方法</strong></p>
+<p>我们可以使用聚合函数（如sum，mean，std），他们可以作为顶层函数使用，也可以作为数组实例的一个方法来使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">arr</span><span class="o">.</span><span class="n">mean与np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="n">等价</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 基础的数学统计方法</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">sum</span>  <span class="c1">#按照轴向计算所有元素的累加</span>
+</span></span><span class="line"><span class="cl"><span class="n">mean</span> <span class="c1">#按照轴向计算元素的平均值</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="p">,</span><span class="n">var</span> <span class="c1"># 计算标准差与方差</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span><span class="p">,</span><span class="nb">max</span> <span class="c1"># 计算最小（大）值</span>
+</span></span><span class="line"><span class="cl"><span class="n">cumsun</span> <span class="c1"># 从0开始元素的累加</span>
+</span></span><span class="line"><span class="cl"><span class="n">cumprod</span> <span class="c1">#从0开始元素的累乘</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 以上函数自带一个参数：axis来给定轴向，0代表按行求和，1代表按列求和</span>
+</span></span><span class="line"><span class="cl"><span class="n">argmin</span><span class="p">,</span><span class="n">argmix</span> <span class="c1"># 找到最小（大）的位置</span>
+</span></span></code></pre></div><p>1.4.3  <strong>布尔数组的使用方法</strong></p>
+<p>布尔类型的数组有两个常用的方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">any</span> <span class="c1">#检查数组内是否有一个true</span>
+</span></span><span class="line"><span class="cl"><span class="nb">all</span> <span class="c1">#检查数组内是否全都是true</span>
+</span></span></code></pre></div><p>对于非布尔类型使用的时候，除了0都是true</p>
+<p>1.4.4 <strong>排序方法</strong></p>
+<p>我们可以使用python自带的sort方法对数组进行排序</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">)</span> <span class="c1">#来指定排序的轴</span>
+</span></span></code></pre></div><p>也可以使用numpy的sort，来返回一个排序好的拷贝数组（并未对元素组进行排序）</p>
+<p>1.4.5 <strong>唯一值和其他集合逻辑</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">#计算x中唯一值，并进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">intersectld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#计算x与y的交集再排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">unionld</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#计算x与y的并集再排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">inld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#计算x的元素是否都在y里面（返回bool）</span>
+</span></span><span class="line"><span class="cl"><span class="n">setdiffld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1"># 计算差集，在x中单不在y中的x的元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">setxorld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#异或集，在x或y中，但不同时在x与y中的元素</span>
+</span></span></code></pre></div><h3 id="15-对文件的使用">1.5 对文件的使用</h3>
+<p>我们可以使用numpy的内置函数对文件进行基础的读取。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">arr</span><span class="p">)</span> <span class="c1">#保存文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="c1">#加载文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">no</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="n">arr1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">arr2</span><span class="p">)</span> <span class="c1">#保存多个文件</span>
+</span></span></code></pre></div><h3 id="16-线性代数使用">1.6 线性代数使用</h3>
+<p>在python的矩阵运算中，矩阵的加法减法与线性代数没有区别，其中的乘法不一样。</p>
+<p>矩阵的乘法使用dot函数或@操作符完成，在作用于一维数组的时候，是向量的点乘，即把对应元素相乘再求和，而对于矩阵等高纬度，就是矩阵的叉乘，即一般的矩阵乘法。</p>
+<p><strong>常用的运算函数列表</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dot</span><span class="p">()</span> <span class="c1">#向量点乘，矩阵乘法</span>
+</span></span><span class="line"><span class="cl"><span class="n">trace</span><span class="p">()</span> <span class="c1">#计算对角元素和</span>
+</span></span><span class="line"><span class="cl"><span class="n">diag</span><span class="p">()</span> <span class="c1">#将一个方阵的对角元素作为一个一维数组返回，或者将一维数组转换成一个方阵，并且在非对角线上都为零。</span>
+</span></span><span class="line"><span class="cl"><span class="n">det</span><span class="p">()</span> <span class="c1">#计算矩阵的行列式</span>
+</span></span><span class="line"><span class="cl"><span class="n">eig</span><span class="p">()</span> <span class="c1">#计算方阵的特征值和特征向量</span>
+</span></span><span class="line"><span class="cl"><span class="n">inv</span><span class="p">()</span> <span class="c1">#计算方阵的逆矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="n">pinv</span><span class="p">()</span> <span class="c1">#计算矩阵的Moore-Penrose伪逆</span>
+</span></span><span class="line"><span class="cl"><span class="n">qr</span><span class="p">()</span> <span class="c1">#计算QR分解</span>
+</span></span><span class="line"><span class="cl"><span class="n">svd</span><span class="p">()</span> <span class="c1">#计算奇异值分解</span>
+</span></span><span class="line"><span class="cl"><span class="n">solve</span><span class="p">()</span> <span class="c1">#计算线性系统 Ax=b</span>
+</span></span><span class="line"><span class="cl"><span class="n">lstsq</span><span class="p">()</span> <span class="c1">#计算Ax=b的最小二乘解</span>
+</span></span></code></pre></div><h3 id="17-伪随机数使用">1.7 伪随机数使用</h3>
+<p>Numpy中的random模块填补了普通随机数生成的不足，可以高效的生成各种模式的样本。</p>
+<p>这些随机数是由具有确定性行为的算法根据随机数生成器中的<em>随机数种子</em>来生成的。</p>
+<p>在np.random中常用的生成函数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">normal</span> <span class="c1">#从正态高斯分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">seed</span> <span class="c1">#向随机数生成器传递随机状态种子</span>
+</span></span><span class="line"><span class="cl"><span class="n">permutation</span> <span class="c1">#返回一个数列的随机排列。或者返回一个乱序的整数范围序列</span>
+</span></span><span class="line"><span class="cl"><span class="n">shuffle</span> <span class="c1">#随机排列一个序列</span>
+</span></span><span class="line"><span class="cl"><span class="n">rand</span> <span class="c1">#从均匀分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">randint</span> <span class="c1">#根据给定的由低到高的范围抽取随机整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">randn</span> <span class="c1">#从均值0方差1的正态分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">binomial</span> <span class="c1">#从二项分布中抽去样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">beta</span> <span class="c1">#从beat分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">chisquare</span><span class="c1">#从卡方分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">gamma</span> <span class="c1">#从伽马分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">uniform</span> <span class="c1">#从均匀[0,1)分布中抽取样本</span>
+</span></span></code></pre></div><p>numpy的随机数使用一个全局随机数种子，为了避免这种全局状态，我们可以用<code>RandomState</code>创建一个随机数生成器。</p>
+<hr>
+<h2 id="二pandas基础">二、Pandas基础</h2>
+<p><code>import pandas as pd</code></p>
+<h3 id="21-serise">2.1 serise</h3>
+<p>Series是一个一维数组对象，他包含了一个值序列，同时还有数据标签（索引，<em>index</em>）。</p>
+<p>也可以理解为长度固定并且有序的字典。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 基本创建</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">series</span><span class="p">([</span><span class="nb">list</span><span class="p">])</span> <span class="c1">#只添加序列值，索引将从0到n-1</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">series</span><span class="p">([</span><span class="nb">list</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="n">list2</span><span class="p">)</span> <span class="c1">#指定索引序列创建</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj1</span> <span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span> <span class="c1"># 我们也可以使用字典类型直接声称一个series</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 我们可以获取信息</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 获取序列值</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">index</span> <span class="c1"># 获取索引</span>
+</span></span></code></pre></div><p>于ndarry相比，使用series对象来创建可以使用索引值进行索引。</p>
+<p>对于在np中可以使用的函数，对于series也同样可以使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 对于serise中可以存在缺失数据的情况</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">isnull</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">notnull</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#可以进行判断</span>
+</span></span></code></pre></div><p>同时，series对象自身和索引都有name属性，可以和其他功能一起使用。</p>
+<p>series的索引可以通过按位赋值方式进行改变。</p>
+<h3 id="22-dataframe">2.2 DataFrame</h3>
+<p>2.2.1 <strong>创建与删除列</strong></p>
+<p>DataFrame表示的是矩阵数据表，包含已排序的列集合，每一列可以是不同类型。</p>
+<p>与excle相似，dataframe有行索引与列索引，数据被储存为一个二维块。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 创建dataframe</span>
+</span></span><span class="line"><span class="cl"><span class="n">常见的方法是使用包含等长度的列表或者numpy数组的字典来生成</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:[</span><span class="n">list1</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">:[</span><span class="n">list2</span><span class="p">],</span><span class="s1">&#39;c&#39;</span><span class="p">,[</span><span class="n">list3</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 其中的list也可以换为字典类型，而字典的所有值将变成每一行的索引。</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#我们也可以指定排列的顺序,指定每一行的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">])</span>
+</span></span></code></pre></div><p>对于大型的dataframe，我我们可以使用head方法来只选出头部的五行。</p>
+<p>使用del方法，移除创建的列。</p>
+<p>2.2.2 <strong>索引与赋值</strong></p>
+<p>我们也可以直接根据列的名字进行索引。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 索引一个列</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="p">[</span><span class="n">columnsname</span><span class="p">]</span> <span class="c1">#返回的是一个series对象，返回的series对象的索引和frame是同一个，而序列的名字就是dataframe的列名。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 索引一个行</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#赋值</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="p">[</span><span class="n">columnsname</span><span class="p">]</span> <span class="o">=</span>
+</span></span></code></pre></div><p>当你的列表或数组赋值给一个列的时候，长度如果不匹配，会报错。</p>
+<p>如果被赋值的列不存在，那么会<em>产生新的列</em></p>
+<p><strong>注意：与numpy一样，我们索引出的都是原对象的内容，如果需要复制应该显性的使用copy</strong></p>
+<h3 id="23-基本功能">2.3 基本功能</h3>
+<p>2.3.1 <strong>pandas的索引</strong></p>
+<p>pandas的索引对象是用于储存标签和其他元数据的。在构造的时候，任意的数组或者标签序列都可以在内部转化为索引对象。</p>
+<p>索引对象是不可变的，可以使对于索引的操作更加安全。</p>
+<p><em>索引是可以包含重复标签的</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 索引对象的方法和属性</span>
+</span></span><span class="line"><span class="cl"><span class="n">append</span> <span class="c1"># 将一个索引粘贴到另一个索引后产生一个新的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">difference</span> <span class="c1">#计算两个索引的差集</span>
+</span></span><span class="line"><span class="cl"><span class="n">intersection</span> <span class="c1">#计算索引的交集</span>
+</span></span><span class="line"><span class="cl"><span class="n">union</span> <span class="c1">#计算索引的并集</span>
+</span></span><span class="line"><span class="cl"><span class="n">isin</span> <span class="c1">#计算每一个值是否在传值容器中的布尔数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">delete</span> <span class="c1"># 给出将位置i的元素删除的新的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">drop</span> <span class="c1"># 根据传参删除指定的索引值，产生新的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">inster</span> <span class="c1">#在位置i插入新元素并产生索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">is_monotonic</span> <span class="c1"># 索引递增就返回true</span>
+</span></span><span class="line"><span class="cl"><span class="n">is_unique</span> <span class="c1">#索引都唯一返回true</span>
+</span></span><span class="line"><span class="cl"><span class="n">unique</span> <span class="c1"># 计算索引的唯一序列</span>
+</span></span></code></pre></div><p>2.3.2 <strong>重建索引</strong></p>
+<p>pd中有reindex方法来重建一个新的索引。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># series的索引重建</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj2</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">reindex</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">])</span> <span class="c1">#将obj中的索引重建后给obj2，本身不改变</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># dataframe的索引重建</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">reindex</span><span class="p">([</span><span class="s1">&#39;oh&#39;</span><span class="p">,</span><span class="s1">&#39;co&#39;</span><span class="p">,</span><span class="s1">&#39;ut&#39;</span><span class="p">,</span><span class="s1">&#39;ny&#39;</span><span class="p">,</span><span class="s1">&#39;aa&#39;</span><span class="p">])</span><span class="c1"># 对于行标的转换</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;oh&#39;</span><span class="p">,</span><span class="s1">&#39;co&#39;</span><span class="p">,</span><span class="s1">&#39;ut&#39;</span><span class="p">,</span><span class="s1">&#39;ny&#39;</span><span class="p">,</span><span class="s1">&#39;aa&#39;</span><span class="p">])</span><span class="c1"># 对于列标的转换</span>
+</span></span></code></pre></div><p>2.3.3 <strong>轴向删除目录</strong></p>
+<p>我们通常使用<code>drop</code>方法来返回一个删除后的对象</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 对于series对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">indexlist</span><span class="p">)</span> <span class="c1"># 返回去掉索引列表内索引值的对象</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 对于DataFeame对象，一般情况下会根据轴向为0的删除（按照行标签）</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果要删除竖列，则应该设置参数axis</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果要直接更改元对象 要使用inplace=True参数</span>
+</span></span></code></pre></div><p>2.3.4 <strong>基本索引</strong></p>
+<p>series的索引功能十分强大，不光可以使用index，也可以使用位置，以及值的内容</p>
+<p>series的切片功能与python自带的列表不一样，series的索引双闭区间。</p>
+<p>对于DataFrame的索引，可以直接从中索引出一个或多个列</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="c1"># 列索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="c1"># 行索引</span>
+</span></span></code></pre></div><p>直接索引都是对列进行索引，而有数字范围选择的是行索引，也可以使用自己索引自己，如<code>data[data&lt;10]=5</code></p>
+<p><em>在索引的时候，可能出现 index 也是数字的情况，因此可能出现歧义，请保持统一性，或者使用下面的 loc 来索引</em></p>
+<p>2.3.5 <strong>选择数据区域</strong></p>
+<p>我们可以使用<strong>loc与iloc</strong>来选择数据</p>
+<p>loc：轴标签</p>
+<p>iloc：整数标签</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;列标&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">行标</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="s1">&#39;列数&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">行数</span><span class="p">]]</span>
+</span></span></code></pre></div><p>2.3.6 <strong>算术与数据对齐</strong></p>
+<p>pandas会按照索引对进行求和，如果两个索引对不相同，则会取两个索引的并集</p>
+<p>不是同时存在于两个索引的，则求和之后会是空位置（NaN），并不会取一半的数值。</p>
+<p><em>如果是两个完全不同索引的对象进行数学运算，则全部为空</em></p>
+<p>而如果我们不想出现NaN而是需要其他的值来填充，我们可以使用函数，并给定fill_value参数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#如果两个有不一样的序列，那么我们会使用0来填充</span>
+</span></span></code></pre></div><h3 id="24-更多操作">2.4 更多操作</h3>
+<p>2.4.1 series与DataFrame之间的操作</p>
+<p>在numpy中，如果我们使用一个二维的矩阵减去一个一维的数组，那么每一行都会减去这个数组（这就是广播机制）</p>
+<p>而这一做法在pandas中也被继续沿用，在默认状况下，会将s与d的索引进行匹配，并广播到每一行。</p>
+<p>而如果有索引无法匹配，也会和和算数运算一样产生NaN值。</p>
+<p>如果要改为在列上传播，我们可以增加一个axis值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 示例代码</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># 直接在行上对每一行相减（默认axis=1）</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#在列上进行广播</span>
+</span></span></code></pre></div><p>2.4.2 <strong>函数的应用与映射</strong></p>
+<p>我们也可以将在np中使用的通用函数直接在pd中使用。将直接对每一个元素产生作用。</p>
+<p>而如果只想对某一行或者一列进行作用，则可以使用匿名函数和apply方法的搭配使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1">#对每一列求最大值与最小值的差，然后以列表为索引，变成一个series</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#如果对行进行操作，可以加上anxi = 1这一参数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#而如果对每一个元素要进行一次自定义，可以使用</span>
+</span></span><span class="line"><span class="cl"><span class="n">Frame</span><span class="o">.</span><span class="n">applymap</span><span class="p">()</span>
+</span></span></code></pre></div><p>2.4.3 <strong>排序</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 使用sort_index方法可以按照索引值进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">series</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span> <span class="c1">#默认是升序，可以给ascending=false参数来变成逆序</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在frame中使用这个类型，可以通过给定参数来在不同的轴上排序</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用sort_values方法可以按照数值进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 对于dataframe来说可以使用一列或者多列作为排序的关键序列</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">indexlist</span><span class="p">)</span>
+</span></span></code></pre></div><p>默认情况下，所有的缺失值都会排到队尾。</p>
+<p>2.4.4 <strong>排名</strong></p>
+<p>使用排名<code>rank</code>方法可以得到一个将数值改变成为排名的对象。</p>
+<p>一般情况下如果出现同级情况就会产生小数来平均分配，也可以使用	<code>method</code>来改变方式。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span> <span class="c1"># 基础</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="n">false</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span> <span class="c1"># 倒着排序，第一次出现的大</span>
+</span></span></code></pre></div><p>常见的平级处理方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">average</span> <span class="c1">#默认方法取平均</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span> <span class="c1">#使用最小的排名</span>
+</span></span><span class="line"><span class="cl"><span class="nb">max</span> <span class="c1"># 使用最大排名</span>
+</span></span><span class="line"><span class="cl"><span class="n">first</span> <span class="c1">#先出现的先排</span>
+</span></span><span class="line"><span class="cl"><span class="n">dense</span> <span class="c1">#与min类似，但排名总是增加一</span>
+</span></span></code></pre></div><h3 id="25-统计用法">2.5 统计用法</h3>
+<p>2.5.1 描述性统计</p>
+<p>我们可以使用很多方法来对数值进行操作</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># 每一行求和</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#通常情况下是以横向为轴，自动忽略了不存在值的位置，也可以通过参数来改变</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">skipna</span><span class="o">=</span><span class="n">false</span><span class="p">)</span>
+</span></span></code></pre></div><p>比较常用的方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">count</span> <span class="c1"># 计算非NA的个数</span>
+</span></span><span class="line"><span class="cl"><span class="n">describe</span> <span class="c1">#给出部分统计结果</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span><span class="p">,</span><span class="nb">max</span> <span class="c1">#计算最大值或最小值</span>
+</span></span><span class="line"><span class="cl"><span class="n">argmin</span><span class="p">,</span><span class="n">argmax</span> <span class="c1">#分别计算最大值最小值的索引位置</span>
+</span></span><span class="line"><span class="cl"><span class="n">idmin</span><span class="p">,</span><span class="n">idmax</span> <span class="c1">#给出最大值最小值的标签</span>
+</span></span><span class="line"><span class="cl"><span class="nb">sum</span> <span class="c1">#求和</span>
+</span></span><span class="line"><span class="cl"><span class="n">mean</span> <span class="c1">#求均值</span>
+</span></span><span class="line"><span class="cl"><span class="n">median</span> <span class="c1">#求中位数</span>
+</span></span><span class="line"><span class="cl"><span class="n">prod</span> <span class="c1"># 求所有值的积</span>
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="c1">#所有值的分差</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span> <span class="c1">#所有值的标准差</span>
+</span></span><span class="line"><span class="cl"><span class="n">cunsum</span> <span class="c1">#求累计值</span>
+</span></span><span class="line"><span class="cl"><span class="n">cumprod</span> <span class="c1">#求累计值</span>
+</span></span><span class="line"><span class="cl"><span class="n">pct_change</span> <span class="c1"># 求百分比</span>
+</span></span></code></pre></div><p>2.5.2 <strong>相关性和协方差</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 获得相关性（协方差）矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="n">DF</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">DF</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 计算一个列于另一个列的相关性</span>
+</span></span><span class="line"><span class="cl"><span class="n">DF</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">DF</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+</span></span></code></pre></div><p>2.5.3 <strong>唯一值、计数和成员属性</strong></p>
+<p><code>unique</code>:给出series中的唯一值（去掉重复出现的内容）。</p>
+<p><em>使用这个方法返回的不一定是排序后的</em></p>
+<p><code>value_counts</code>:降序返回出现元素的次数。</p>
+<p>可以通过加入<code>sort=False</code>来关闭排序。</p>
+<p><code>inis</code>:通过给定一个列表，判断列表里面的元素是否存在。</p>
+<p><code>match</code>:计算数组中每个值的整数索引，形成一个唯一值的数值。</p>
+
+      </div>
+
+      
+  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2020-08-21T00:00:00.000Z">
+    <span>最近更新于</span>
+    8月 21, 2020</time>
+
+      <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
+        
+        <div class="max-w-prose print:hidden">
+  
+  
+
+  
+
+<div class="flex justify-center">
+  
+  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/zh/tags/learning-content/">Learning Content</a>
+  
+</div>
+
+
+  
+<section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fpython%25E6%2595%25B0%25E6%258D%25AE%25E5%25A4%2584%25E7%2590%2586%25E5%25B7%25A5%25E5%2585%25B7%2F&amp;text=Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7"
+    title="X"
+    aria-label="X"
+    id="share-link-x"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fpython%25E6%2595%25B0%25E6%258D%25AE%25E5%25A4%2584%25E7%2590%2586%25E5%25B7%25A5%25E5%2585%25B7%2F&amp;t=Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7"
+    title="Facebook"
+    aria-label="Facebook"
+    id="share-link-facebook"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="mailto:?subject=Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7&amp;body=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fpython%25E6%2595%25B0%25E6%258D%25AE%25E5%25A4%2584%25E7%2590%2586%25E5%25B7%25A5%25E5%2585%25B7%2F"
+    title="Email"
+    aria-label="Email"
+    id="share-link-email"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fpython%25E6%2595%25B0%25E6%258D%25AE%25E5%25A4%2584%25E7%2590%2586%25E5%25B7%25A5%25E5%2585%25B7%2F&amp;title=Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7"
+    title="LinkedIn"
+    aria-label="LinkedIn"
+    id="share-link-linkedin"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="whatsapp://send?text=Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%20https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fpython%25E6%2595%25B0%25E6%258D%25AE%25E5%25A4%2584%25E7%2590%2586%25E5%25B7%25A5%25E5%2585%25B7%2F"
+    title="WhatsApp"
+    aria-label="WhatsApp"
+    id="share-link-whatsapp"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="m187.58 144.84-32-16a8 8 0 0 0-8 .5l-14.69 9.8a40.55 40.55 0 0 1-16-16l9.8-14.69a8 8 0 0 0 .5-8l-16-32A8 8 0 0 0 104 64a40 40 0 0 0-40 40 88.1 88.1 0 0 0 88 88 40 40 0 0 0 40-40 8 8 0 0 0-4.42-7.16ZM152 176a72.08 72.08 0 0 1-72-72 24 24 0 0 1 19.29-23.54l11.48 23L101 118a8 8 0 0 0-.73 7.51 56.47 56.47 0 0 0 30.15 30.15A8 8 0 0 0 138 155l14.61-9.74 23 11.48A24 24 0 0 1 152 176ZM128 24a104 104 0 0 0-91.82 152.88l-11.35 34.05a16 16 0 0 0 20.24 20.24l34.05-11.35A104 104 0 1 0 128 24Zm0 192a87.87 87.87 0 0 1-44.06-11.81 8 8 0 0 0-6.54-.67L40 216l12.47-37.4a8 8 0 0 0-.66-6.54A88 88 0 1 1 128 216Z"/></svg>
+  </a>
+  
+</section>
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+
+<div class="flex pt-12 pb-4">
+  
+  
+  <img
+    class="mr-4 h-24 w-24 rounded-full"
+    width="96"
+    height="96"
+    alt="沈骋骜"
+  src="/zh/author/%E6%B2%88%E9%AA%8B%E9%AA%9C/avatar_hu30910665284931ace4f57faa1e01d828_666181_192x192_fill_q100_lanczos_center.jpg"
+  loading="lazy"
+  />
+  
+  <div class="place-self-center">
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Authors
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      <a href="https://chengaoshen.com/" class="no-underline">
+      沈骋骜
+      </a>
+    </div>
+
+    
+    <div class="text-sm font-bold text-neutral-700 dark:text-neutral-300">
+    博士生
+    </div>
+    
+
+
+    
+
+    <div class="text-2xl sm:text-lg pt-1">
+
+      
+<div class="flex flex-wrap text-neutral-500 dark:text-neutral-300">
+  
+    
+    
+    
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="mailto:chengaoshen2002@gmail.com"
+      
+      aria-label="At-Symbol"
+    ><svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"/></svg></a>
+  
+    
+    
+    
+    
+      
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="https://github.com/chengaoshen"
+      target="_blank" rel="noopener" rel="me noopener noreferrer"
+      aria-label="Brands/Github"
+    ><svg style="height: 1em;" fill="currentColor" viewBox="3 3 18 18"><path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path></svg></a>
+  
+    
+    
+    
+    
+      
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="https://www.zhihu.com/people/chengaoshen"
+      target="_blank" rel="noopener" rel="me noopener noreferrer"
+      aria-label="Custom/Zhihu"
+    ><svg style="height: 1em;" t="1717596485360" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5672" width="16" height="16"><path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z" fill="#ffffff" p-id="5673"></path></svg></a>
+  
+    
+    
+    
+    
+      
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="https://space.bilibili.com/38491401"
+      target="_blank" rel="noopener" rel="me noopener noreferrer"
+      aria-label="Custom/Bilibili"
+    ><svg style="height: 1em;" t="1717596376648" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4476" width="32" height="32"><path d="M987.88876907 942.68845653c-8.47679467 0.032-17.050656 0.7712-25.430384-0.128-30.76051413-3.33866453-53.17330027 31.5946464-63.83356054 68.42449067-9.5999936 33.16797973-46.04370453 50.12263573-78.85861653 46.71890347-37.8890432-3.88586453-62.96636053-25.55945067-72.63142187-59.81862934-5.81226347-20.71145387-23.37598507-36.7658432-42.70504-36.6378432-133.34925013 0.7712-251.96037547 0.38613333-385.30855893 0-15.34932373-0.032-31.72371307 14.67412373-36.21971093 32.75197974-9.5999936 38.78717547-42.57597333 63.4154272-79.08474987 64.02555946-37.79197653 0.64213333-70.63995627-23.34398507-81.6532832-63.60849386-4.62293013-16.85758933-12.4266592-52.9162336-28.54398187-52.0170336-20.74345387 1.1562656-41.61384107 0.57813333-62.42129386 0.22506666-22.73278613-0.41706667-32.78291307-9.5359936-32.78291307-31.1135808 0.16-219.4014624 0.48213333-438.77092587 1.0602656-658.1713216 0.064-22.6698528 9.4719936-30.31144747 35.60851093-30.34344853 107.14766613-0.128 214.29533227-0.064 321.44406614-0.064h22.41171946c0.67413333-1.83039893 1.38133227-3.69279787 2.0554656-5.55519573-24.88531733-13.06879147-49.76956907-26.13651733-74.6218208-39.2373088-41.25970773-21.7706528-82.58448213-43.47517333-123.7801888-65.34182614-16.69652267-8.86186133-23.63305173-22.37971947-14.19199146-39.1413088 9.5359936-16.95358933 25.30131733-17.98078827 41.77384106-9.31199466 96.74447253 51.02183467 193.52094613 101.97860267 289.912352 153.54657066 24.69225173 13.22879147 69.13062293 5.29813013 85.02394667-17.050656 49.2885024-69.48262293 98.54393813-138.96738027 147.83137493-208.48413653 1.73333227-2.4394656 3.40266453-4.9759968 5.2010624-7.384528C752.2078496-33.90933333 768.16624-39.0143968 782.67929707-27.87200427c16.79358933 12.8757248 13.9029248 28.15998293 3.1146656 43.47517334-20.00425387 28.35198187-40.00744213 56.6719648-59.979696 85.02501333-27.6778496 39.3013088-55.3236992 78.6346176-86.05221334 122.3039232h28.70504854c106.41060053 0 212.78706667-0.032 319.16460053 0.032 32.4938464 0.032 37.50397653 4.94506347 37.53597653 36.53971093 0.32 215.6446656 0.60906667 431.28933013 0.80213334 646.93292907 0.032 30.8255808-5.6511968 36.05971093-38.0810432 36.25171093z m-159.90389974 64.5076928c17.018656-1.1242656 25.10931733-46.2047712 30.27944747-63.2554272h-64.34662613c6.32532907 18.75198827 15.0911904 64.5396928 34.06717866 63.2554272z m-627.08974186 0.032c18.84798827 1.1562656 27.7418496-44.40743893 33.3610464-63.12636053h-63.3834272c4.30293013 17.62772267 13.16479147 62.0991616 30.0223808 63.12529387z m760.406992-720.2704832H62.24774827v610.07215147h899.0543712V286.95766613zM126.4663744 411.60505493c0.064-29.7333152 14.41705813-58.79249707 44.34237227-58.82449706 228.3923904-0.032 438.6098592-1.66933227 667.0022496-1.60533227 30.3743808 0 59.176496 31.0175808 59.272496 60.42982933 0.38613333 141.8580448-0.224 251.02917653 0 392.88615467 0.064 30.31144747-27.42078293 60.39676267-59.272496 60.42982827-113.85912853 0.064-212.2089344 0-326.03606294 0-113.82606187 0-212.1769344 0.064-326.03499626 0-33.1370464-0.032-59.30662933-27.77491627-59.27356267-60.42982827 0.16-141.15191147-0.256-251.7353088 0-392.88615467z m715.935552 388.48722347c0-134.1193824-4.59093013-257.1945056-4.59093013-388.48722347H185.7388704c0 133.34818347-0.7712 256.35824-0.77119893 388.48722347h657.43318826zM370.75208853 489.82367253c1.86239893-0.8352 4.17386453-0.67413333 11.94452587-1.79839893 4.5279968 4.43093013 15.95732373 10.53226027 17.178656 18.17385493 1.3802656 8.92586133-3.4037312 24.49918507-10.3071936 27.99998294-42.19090667 21.4154528-85.53808 40.7135744-128.98125333 59.62662933-13.22985813 5.74613013-27.77598293 1.4122656-31.1466464-12.7157248-2.2154656-9.24799467 1.76639893-26.81171627 8.41279466-30.15038187 43.47517333-21.9946528 88.39567787-41.1647744 132.8991168-61.1359616z m13.26079147 143.1423104c8.219728-0.28906667 18.84798827 11.07732693 24.78931733 19.74718827 4.75093013 6.9034624 2.7605312 17.94878827 6.10026347 26.29651627 6.32532907 15.8943904 18.23785493 31.01864747 35.8335776 27.29278293 13.0037248-2.7285312 24.88531733-15.73332373 34.645312-26.52158293 4.8159968-5.33013013 4.01386453-15.86132373 5.17013013-24.1141184 2.1834656-15.54132373 11.36639253-25.10931733 26.7146496-24.72425174 14.0309248 0.35306667 23.14985173 8.82986133 24.94931734 24.0181184 1.15519893 9.5999936 1.4122656 21.51251947 7.1594624 27.90291627 9.18399467 10.21012693 22.41171947 22.53971947 34.261312 22.92585173 10.7231936 0.352 23.75998507-12.6186592 32.20477973-22.63678506 5.6191968-6.6474624 5.29813013-18.3989216 7.0634624-27.99998294 2.85866453-15.3151904 11.72052587-24.62718507 27.5818496-23.4069184 15.76532373 1.2202656 24.0501184 11.36639253 23.43998507 27.19678294-1.50933227 40.16744107-17.46772267 72.82235413-55.0996992 90.74021013-35.0623776 16.72852267-67.81435733 9.5359936-96.51940587-16.18345707-1.54133227-1.3802656-3.4037312-2.37653227-5.33013013-3.69279786-8.73386133 6.06932907-16.82558933 13.10079147-26.10451734 17.94878933-30.34344747 15.82932373-60.71889493 14.51412373-88.7178112-4.9439968-30.88851413-21.51358613-44.66343893-52.8522336-41.90184-89.29594453 0.57706667-7.89866133 15.2191904-20.26025387 23.75998507-20.54932054z m223.99346027-145.00470933c7.44852907-13.03679147 20.6783872-16.60052267 33.03997866-9.5679936 49.09436907 27.96691627 97.64367253 56.8959648 145.87190934 86.24421227 5.7791968 3.4997312 8.47679467 11.91252587 10.4991936 14.9311904 0.54613333 23.85705173-19.20105493 36.82877653-37.37490987 26.585584-48.58130347-27.38878293-96.35940693-56.22289813-144.0735104-85.15194667-12.5866592-7.6426624-15.2511904-20.3263872-7.96266133-33.0410464z" fill="#ffffff" p-id="4477"></path></svg></a>
+  
+</div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+      
+      
+    
+<div class="pt-1 no-prose w-full">
+  <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+  <div class="flex flex-col md:flex-row flex-nowrap justify-between gap-5 pt-2">
+    <div class="">
+      
+        <a class="group flex no-underline" href="/zh/blogs/python%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/">
+          <span
+            class="mt-[-0.3rem] me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+          ><span class="ltr:inline rtl:hidden">&larr;</span></span>
+          <span class="flex flex-col">
+            <span
+              class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+            >Python基础整理</span>
+            <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+              
+                8月 21, 2020
+              
+            </span>
+          </span>
+        </a>
+      
+    </div>
+    <div class="">
+      
+    </div>
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+
+</div>
+
+      </div>
+
+    </main>
+  </article>
+</div>
+
+    </div>
+    <div class="page-footer">
+      <footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by text-center">
+    © 2024 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by text-center">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      由<a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a>支持发布——免费<a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+    
+  </p>
+
+</footer>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

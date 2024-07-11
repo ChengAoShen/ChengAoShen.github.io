@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: 2024年7月10日 --><html lang="zh-Hans" dir="ltr"
+<!-- Last Published: 2024年7月11日 --><html lang="zh-Hans" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -351,6 +351,18 @@
         
       
     
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -743,6 +755,265 @@
       <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
         四年的时间眨眼即逝，许多人口中最美好的时光从指尖匆匆溜走。毕业了有太多的回忆与不舍，对人、对事、对物，且在这里做个简单的随笔和总结。</p>
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">6月 15, 2024</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Pytorch常用代码片段</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        仿照d2l的pytorch内容进行记录
+设备切换 尝试使用GPU
+def try_gpu(i=0): if torch.cuda.device_count() &gt;= i &#43; 1: return torch.device(f&#39;cuda:{i}&#39;) return torch.device(&#39;cpu&#39;) def try_all_gpus(): &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34; devices = [torch.device(f&#39;cuda:{i}&#39;) for i in range(torch.cuda.device_count())] return devices if devices else [torch.</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">3月 21, 2023</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/fastapi%E7%AC%94%E8%AE%B0/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">FastAPI笔记</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        引入 介绍 FastAPI 是一个用于构建 API 的现代、快速（高性能）的 web 框架，使用 Python 3.6&#43; 并基于标准的 Python 类型提示。
+安装 完整安装：pip install &#34;fastapi[all]&#34;，这种安装方式包括了unicorn
+部分安装：pip install fastapi
+服务的启动 一个最简单的FastAPI如下所示：
+from fastapi import FastAPI app = FastAPI() @app.get(&#34;/&#34;) async def root(): return {&#34;message&#34;: &#34;Hello World&#34;} 需要将这个文件所描述的服务进行启动可以使用命令：uvicorn main:app --reload，最后一个reload表示是在更新代码后重新启动</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">3月 21, 2023</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/docker%E7%AC%94%E8%AE%B0/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Docker快速入门</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        一、Doker快速使用 1.1 构建一个容器 拉取并使用docker的ubuntu镜像构建一个交互式的容器。
+sudo docker run --name containerName -i -t ubuntu /bin/bash 参数解释：
+``–name`是对于容器的命名
+-i保证容器的STDIN开启，保证持续的标准输入；
+-t为docker为容器分配一个tty终端
+ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
+/bin/bash告知容器需要运行的命令
+1.2 关闭容器与查看 在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
+docker ps -a 来查看所拥有的全部容器。
+1.3 启动并附着到容器 当知道容器的名字或者uuid的时候可以使用
+sudo docker start containerName sudo docker start UUID 来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">12月 30, 2022</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E5%A3%B0%E6%98%8E%E6%95%B4%E7%90%86/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">️c语言指针声明整理</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        一、常见声明 int a：声明a是一个整形变量。
+int const a：声明一个不可改变的常量a。
+int *a：可以理解为*a是一个整形，所以a就是指向整形的一个指针。
+int **a：**a是一个整形，则a就是一个指向*a的一个指针。
+需要注意的是int *a,b，这样声明后只有a是指针。
+int const *p：p表示一个指向不可改变的整形常量的指针。
+int *const p：声明一个不可改变的指针，指向一个可变的整形变量。
+二、与函数声明结合 int f()：声明了一个函数f（此处采用的是旧式声明，不提供形式参数）。
+int *f()：此处f()优先级高，先进行结合，所以f表示一个返回指向整形的指针的函数。
+int (*f)()：此处*f先发生了结合，对其进行函数求值后会返回一个整形，所以f代表的是一个指向返回整形的函数的函数指针。
+int *(*f)()：声明了f为一个指向一个返回整形指针的函数的指针。
+三、与数组结合 int a[]：声明一个整形数组。</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">5月 30, 2022</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Git学习笔记</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        一、准备工作 1.1 安装Git ​	在https://git-scm.com/上下载安装包后傻瓜式安装。
+1.2 初始化Git ​	初始化用户
+git config --global user.name &#34;your name&#34; git config --global user.email &#34;your email&#34; ​	提高输出可读性
+git config --global color.ui.auto 1.3 准备GitHub 注册账户。</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">8月 30, 2021</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/effectivepython/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Effective Python技巧</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        一、pythonic思维 1.1遵守PEP8风格 关于命名 函数、变量、属性使用小写字母，每个单词之间使用下划线相连。 受保护的实例属性使用一个下划线开头。 私有的实例属性应当使用两个下划线开头。 类（异常）命名时候首字母应当大写。 模块级别常量所有字母大写，各个单词下划线连接。 类中的实例方法应当把第一个参数命名为self来表示对象本身。 类方法的第一个参数应答命名为cls表示类本身。 关于表达式 采用行内否定（把否定词直接写在要否定的内容前）。如：if a is not b 判断是否为空可以直接进行（空则为False）。如if not somelist 表达式一行写不下应当用括号括起来并进行换行 多行表达式用括号括起来而不是使用\进行续行。 关于引入 import语句应当放在开头 使用绝对名称来进行引入 在引用的时候首先应当分为三部分：标准库、第三方模块、自己的模块。 1.2 使用插值格式字符串（f-string） 在格式化字符串的时候，可以使用python特殊的f-string方法。
+key = &#34;my_var&#34; value = 1.</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">11月 21, 2020</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/markdown%E7%AC%94%E8%AE%B0/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Markdown笔记</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        〇、使用什么来学习 0.1	Typora ​	所见即所得的一款免费而好用的编辑器。
+0.2	VS Code ​	宇宙最强大的编辑器
+一、基础语法 1.1	标题的使用 # 文档标题 作者 摘要 目录 ## 标题1 ### 标题1.1 ## 标题2 ###标题2.2 1.2	粗体与斜体 **粗体 ** 斜体</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">9月 21, 2020</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Python数据处理工具</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        一、NumPy基础 import numpy as np
+1.1 ndarry——多维数组对象 1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1.</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">8月 21, 2020</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/zh/blogs/python%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Python基础整理</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        一、学前准备 1.1 安装 ​	建议直接下载anaconda的发行版。同时还包括了所有以后会经常使用到的包。
+1.2 编程环境 ​	可以下载并使用pycharm、也可以使用jupyter notebook作为环境。
+二、Python的语言基础 2.1 缩进 ​	python中缩进是一切的根本，使用缩进来标识了语言的范围
+2.2标量类型 2.2.1 数值类型
+​	python中只有两个基本数值类型：int与float
+​	int可以储存任意大小的整数值而没有范围限制，float是双精度的64位数值。
+备注：整数的除法会自己变成浮点的类型，如果只要整数部分可以使用：// 2.2.2 布尔类型
+​	只有正确和错误两种，分别是true和false
+备注：在整型中代表着1与0。 2.2.3 字符串类型</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">8月 21, 2020</p>
     </div>
   </div>
 </a>

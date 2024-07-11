@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: 2024年7月10日 --><html lang="zh-Hans" dir="ltr"
+<!-- Last Published: 2024年7月11日 --><html lang="zh-Hans" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -350,6 +350,18 @@
         
       
     
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -869,7 +881,7 @@
   
 
 
-<div class="container px-8 mx-auto xl:px-5 py-5 lg:py-8 max-w-[500px] justify-center">
+<div class="container px-8 mx-auto xl:px-5 py-5 lg:py-8 max-w-screen-lg ">
   <div class="grid gap-10 md:grid-cols-3 lg:gap-10">
 
 
@@ -919,6 +931,213 @@
 </div>
 
   
+    
+
+
+
+
+
+
+
+
+
+<div class="group cursor-pointer">
+
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/zh/tags/learning-content/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">Learning Content</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="/zh/blogs/fastapi%E7%AC%94%E8%AE%B0/" ><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">FastAPI笔记
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="/zh/blogs/fastapi%E7%AC%94%E8%AE%B0/" >
+        引入 介绍 FastAPI 是一个用于构建 API 的现代、快速（高性能）的 web 框架，使用 Python 3.6&#43; 并基于标准的 Python 类型提示。
+安装 完整安装：pip install &#34;fastapi[all]&#34;，这种安装方式包括了unicorn
+部分安装：pip install fastapi
+服务的启动 一个最简单的FastAPI如下所示：
+from fastapi import FastAPI app = FastAPI() @app.get(&#34;/&#34;) async def root(): return {&#34;message&#34;: &#34;Hello World&#34;} 需要将这个文件所描述的服务进行启动可以使用命令：uvicorn main:app --reload，最后一个reload表示是在更新代码后重新启动</a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2023-03-21">3月 21, 2023</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<div class="group cursor-pointer">
+
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/zh/tags/learning-content/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">Learning Content</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/" ><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">Pytorch常用代码片段
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/" >
+        仿照d2l的pytorch内容进行记录
+设备切换 尝试使用GPU
+def try_gpu(i=0): if torch.cuda.device_count() &gt;= i &#43; 1: return torch.device(f&#39;cuda:{i}&#39;) return torch.device(&#39;cpu&#39;) def try_all_gpus(): &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34; devices = [torch.device(f&#39;cuda:{i}&#39;) for i in range(torch.cuda.device_count())] return devices if devices else [torch.</a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2023-03-21">3月 21, 2023</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<div class="group cursor-pointer">
+
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/zh/tags/learning-content/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">Learning Content</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="/zh/blogs/docker%E7%AC%94%E8%AE%B0/" ><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">Docker快速入门
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="/zh/blogs/docker%E7%AC%94%E8%AE%B0/" >
+        一、Doker快速使用 1.1 构建一个容器 拉取并使用docker的ubuntu镜像构建一个交互式的容器。
+sudo docker run --name containerName -i -t ubuntu /bin/bash 参数解释：
+``–name`是对于容器的命名
+-i保证容器的STDIN开启，保证持续的标准输入；
+-t为docker为容器分配一个tty终端
+ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
+/bin/bash告知容器需要运行的命令
+1.2 关闭容器与查看 在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
+docker ps -a 来查看所拥有的全部容器。
+1.3 启动并附着到容器 当知道容器的名字或者uuid的时候可以使用
+sudo docker start containerName sudo docker start UUID 来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用</a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2022-12-30">12月 30, 2022</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<div class="group cursor-pointer">
+
+  
+  <div class="">
+    <div class="">
+      <div class="flex gap-3">
+        
+        <a href="/zh/tags/learning-content/"><span
+          class="inline-block text-xs font-medium tracking-wider uppercase mt-5 text-primary-700 dark:text-primary-300">Learning Content</span></a>
+        
+      </div>
+      
+      <h2 class="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white"><a
+        href="/zh/blogs/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E5%A3%B0%E6%98%8E%E6%95%B4%E7%90%86/" ><span
+        class="bg-gradient-to-r from-primary-200 to-primary-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-primary-800 dark:to-primary-900">️c语言指针声明整理
+          </span></a>
+      </h2>
+      
+      <div class="grow"><p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
+        href="/zh/blogs/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E5%A3%B0%E6%98%8E%E6%95%B4%E7%90%86/" >
+        一、常见声明 int a：声明a是一个整形变量。
+int const a：声明一个不可改变的常量a。
+int *a：可以理解为*a是一个整形，所以a就是指向整形的一个指针。
+int **a：**a是一个整形，则a就是一个指向*a的一个指针。
+需要注意的是int *a,b，这样声明后只有a是指针。
+int const *p：p表示一个指向不可改变的整形常量的指针。
+int *const p：声明一个不可改变的指针，指向一个可变的整形变量。
+二、与函数声明结合 int f()：声明了一个函数f（此处采用的是旧式声明，不提供形式参数）。
+int *f()：此处f()优先级高，先进行结合，所以f表示一个返回指向整形的指针的函数。
+int (*f)()：此处*f先发生了结合，对其进行函数求值后会返回一个整形，所以f代表的是一个指向返回整形的函数的函数指针。
+int *(*f)()：声明了f为一个指向一个返回整形指针的函数的指针。
+三、与数组结合 int a[]：声明一个整形数组。</a></p>
+      </div>
+      <div class="flex-none">
+        <div class="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400 cursor-default">
+          
+          
+          <time class="truncate text-sm" datetime="2022-05-30">5月 30, 2022</time>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
 
     </div>
 </div>
@@ -927,6 +1146,32 @@
 </div>
 
 
+
+
+
+  
+  
+    
+  
+
+  
+  
+  
+  
+    
+  
+
+  
+
+  <div class="container mx-auto max-w-screen-lg px-8 xl:px-5 pb-5 lg:pb-8">
+    <div class="mt-10 flex justify-center">
+      <a
+        class="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300"
+        href="/zh/blogs/">
+          <span>查看全部</span>
+        </a>
+      </div>
+  </div>
 
 
 

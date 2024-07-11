@@ -1,0 +1,2011 @@
+<!doctype html>
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: 2024年7月11日 --><html lang="zh-Hans" dir="ltr"
+      data-wc-theme-default="system">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="Hugo Blox Builder 0.2.0" />
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="沈骋骜" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="〇、使用什么来学习 0.1	Typora ​	所见即所得的一款免费而好用的编辑器。
+0.2	VS Code ​	宇宙最强大的编辑器
+一、基础语法 1.1	标题的使用 # 文档标题 作者 摘要 目录 ## 标题1 ### 标题1.1 ## 标题2 ###标题2.2 1.2	粗体与斜体 **粗体 ** 斜体" />
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://chengaoshen.com/zh/blogs/markdown%E7%AC%94%E8%AE%B0/" />
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/themes/emerald.min.css" />
+  
+
+  
+  
+    
+    <link href="/dist/wc.min.css" rel="stylesheet" />
+  
+
+  
+  
+  
+
+  
+
+  <script>
+     
+    window.hbb = {
+       defaultTheme: document.documentElement.dataset.wcThemeDefault,
+       setDarkTheme: () => {
+        document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
+      },
+       setLightTheme: () => {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
+      }
+    }
+
+    console.debug(`Default Hugo Blox Builder theme is ${window.hbb.defaultTheme}`);
+
+    if ("wc-color-theme" in localStorage) {
+      localStorage.getItem("wc-color-theme") === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+    } else {
+      window.hbb.defaultTheme === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      if (window.hbb.defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
+      }
+    }
+  </script>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+      
+      let checkboxes = document.querySelectorAll('li input[type=\'checkbox\'][disabled]');
+      checkboxes.forEach(e => {
+        e.parentElement.parentElement.classList.add('task-list');
+      });
+
+      
+      const liNodes = document.querySelectorAll('.task-list li');
+      liNodes.forEach(nodes => {
+        let textNodes = Array.from(nodes.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
+        if (textNodes.length > 0) {
+          const span = document.createElement('label');
+          textNodes[0].after(span);  
+          span.appendChild(nodes.querySelector('input[type=\'checkbox\']'));
+          span.appendChild(textNodes[0]);
+        }
+      });
+    });
+  </script>
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://chengaoshen.com/zh/blogs/markdown%E7%AC%94%E8%AE%B0/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@GetResearchDev" />
+    <meta property="twitter:creator" content="@GetResearchDev" />
+  
+  <meta property="og:site_name" content="沈骋骜" />
+  <meta property="og:url" content="https://chengaoshen.com/zh/blogs/markdown%E7%AC%94%E8%AE%B0/" />
+  <meta property="og:title" content="Markdown笔记 | 沈骋骜" />
+  <meta property="og:description" content="〇、使用什么来学习 0.1	Typora ​	所见即所得的一款免费而好用的编辑器。
+0.2	VS Code ​	宇宙最强大的编辑器
+一、基础语法 1.1	标题的使用 # 文档标题 作者 摘要 目录 ## 标题1 ### 标题1.1 ## 标题2 ###标题2.2 1.2	粗体与斜体 **粗体 ** 斜体" /><meta property="og:image" content="https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh-Hans" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-09-21T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-09-21T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  <title>Markdown笔记 | 沈骋骜</title>
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <style>
+    @font-face {
+      font-family: 'Inter var';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url(/dist/font/Inter.var.woff2) format(woff2);
+    }
+  </style>
+
+  
+
+  
+  
+
+
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+  
+  
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/dist/pagefind/pagefind-ui.be766eb419317a14ec769d216e9779bfe8f3737c80e780f4ba0dafb57a41a482.css" integrity="sha256-vnZutBkxehTsdp0hbpd5v&#43;jzc3yA54D0ug2vtXpBpII=" />
+
+
+<script src="/dist/pagefind/pagefind-ui.87693d7c6f2b3b347ce359d0ede762c033419f0a32b22ce508c335a81d841f1b.js" integrity="sha256-h2k9fG8rOzR841nQ7ediwDNBnwoysizlCMM1qB2EHxs="></script>
+
+
+<script>window.hbb.pagefind = {"baseUrl":"/"};</script>
+
+<style>
+  html.dark {
+    --pagefind-ui-primary: #eeeeee;
+    --pagefind-ui-text: #eeeeee;
+    --pagefind-ui-background: #152028;
+    --pagefind-ui-border: #152028;
+    --pagefind-ui-tag: #152028;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      baseUrl: window.hbb.pagefind.baseUrl,
+      bundlePath: window.hbb.pagefind.baseUrl + "pagefind/",
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    let element = document.getElementById('search');
+    let trigger = document.getElementById('search_toggle');
+
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        element.classList.toggle('hidden');
+        element.querySelector("input").value = ""
+        element.querySelector("input").focus()
+
+        if (!element.classList.contains('hidden')) {
+          let clear_trigger = document.querySelector('.pagefind-ui__search-clear');
+
+          if (clear_trigger && !clear_trigger.hasAttribute('listenerOnClick')) {
+            clear_trigger.setAttribute('listenerOnClick', 'true');
+
+            clear_trigger.addEventListener('click', () => {
+              element.classList.toggle('hidden');
+            });
+          }
+        }
+
+      });
+    }
+  });
+</script>
+
+
+
+
+  
+  
+  
+  
+  <script defer src="/js/mermaid.bundle.addbbabb71331768410cfb03a610179690ff1dfd413519d34219c06a8fd39202.js" integrity="sha256-rdu6u3EzF2hBDPsDphAXlpD/Hf1BNRnTQhnAao/TkgI="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <script
+    defer
+    src="/js/hugo-blox-zh.min.edad2a20315bced9792ec0d846aaf4ab2d7efe63957cb49983442d40c24349c5.js"
+    integrity="sha256-7a0qIDFbztl5LsDYRqr0qy1&#43;/mOVfLSZg0QtQMJDScU="
+  ></script>
+
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+      
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+      
+    
+  
+
+
+
+
+</head>
+
+  <body class="dark:bg-hb-dark dark:text-white page-wrapper" id="top">
+    <div id="page-bg"></div>
+    <div class="page-header sticky top-0 z-30">
+      
+      
+      
+        
+        
+        
+          <header id="site-header" class="header">
+  <nav class="navbar px-3 flex justify-left">
+    <div class="order-0 h-100">
+      
+      <a class="navbar-brand" href="/zh/" title="沈骋骜">
+        ChengAo Shen
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Open Menu</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Close Menu</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
+      ">
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/zh/"
+        >信息</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/zh/#news"
+        >新闻</a
+        >
+      </li>
+      
+      
+      
+      
+      
+      
+      <li class="nav-item">
+        <a
+          class="nav-link "
+          
+          href="/zh/blog/"
+        >博客</a
+        >
+      </li>
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+
+      
+      
+      
+      <button
+        aria-label="search"
+        class="text-black hover:text-primary  inline-block px-3 text-xl dark:text-white"
+        id="search_toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </button>
+      
+
+      
+      
+      <div class="px-3 text-black hover:text-primary-700 dark:text-white dark:hover:text-primary-300
+            [&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white">
+        <button class="theme-toggle mt-1" accesskey="t" title="appearance">
+          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class="dark:hidden">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" class=" dark:block [&:not(dark)]:hidden">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+      
+
+      
+      
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<div id="search" class="hidden p-3"></div>
+
+
+        
+      
+    </div>
+    <div class="page-body  my-10">
+      
+
+
+
+
+
+<div class="mx-auto flex max-w-screen-xl">
+  
+
+
+
+<aside class="hb-sidebar-container max-lg:[transform:translate3d(0,-100%,0)] lg:hidden xl:block">
+  
+  <div class="px-4 pt-4 lg:hidden">
+    
+    
+  </div>
+  <div class="hb-scrollbar lg:h-[calc(100vh-var(--navbar-height))]">
+    <ul class="flex flex-col gap-1 lg:hidden">
+      
+      
+        <li class="open"><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/"
+    
+  >Blogs
+        <span data-hb-sidebar-toggle>
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg>
+        </span>
+    </a><div class="ltr:pr-0 overflow-hidden">
+        <ul class="hb-sidebar-list"><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/"
+    
+  >️毕业碎碎念☕
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/fastapi%E7%AC%94%E8%AE%B0/"
+    
+  >FastAPI笔记
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/"
+    
+  >Pytorch常用代码片段
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/docker%E7%AC%94%E8%AE%B0/"
+    
+  >Docker快速入门
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/c%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E5%A3%B0%E6%98%8E%E6%95%B4%E7%90%86/"
+    
+  >️c语言指针声明整理
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    
+  >Git学习笔记
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/effectivepython/"
+    
+  >Effective Python技巧
+    </a>
+              
+            </li><li class="flex flex-col open"><a
+    class="hb-sidebar-custom-link
+      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
+    href="/zh/blogs/markdown%E7%AC%94%E8%AE%B0/"
+    
+  >Markdown笔记
+    </a>
+  
+    <ul class="hb-sidebar-mobile-toc"><li>
+              <a
+                href="#%e4%bd%bf%e7%94%a8%e4%bb%80%e4%b9%88%e6%9d%a5%e5%ad%a6%e4%b9%a0"
+                class="hb-docs-link"
+              >〇、使用什么来学习</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%b8%80%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95"
+                class="hb-docs-link"
+              >一、基础语法</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%ba%8cgfm%e8%af%ad%e6%b3%95"
+                class="hb-docs-link"
+              >二、GFM语法</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%b8%89%e6%9b%b4%e5%a5%bd%e7%9a%84%e4%bd%bf%e7%94%a8typora"
+                class="hb-docs-link"
+              >三、更好的使用Typora</a>
+            </li>
+          <li>
+              <a
+                href="#%e5%9b%9b%e6%9b%b4%e5%a5%bd%e7%9a%84%e4%bd%bf%e7%94%a8vs-code"
+                class="hb-docs-link"
+              >四、更好的使用VS Code</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%ba%94revealjs%e5%86%99%e5%b9%bb%e7%81%af%e7%89%87"
+                class="hb-docs-link"
+              >五、reveal.js(写幻灯片)</a>
+            </li>
+          <li>
+              <a
+                href="#%e9%99%84%e5%bd%95"
+                class="hb-docs-link"
+              >附录</a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/python%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/"
+    
+  >Python基础整理
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/"
+    
+  >Python数据处理工具
+    </a>
+              
+            </li></ul>
+      </div></li>
+        <li class=""><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/zh/blog/"
+    
+  >博客
+    </a></li>
+    </ul>
+
+    <div class="max-xl:hidden h-0 w-64 shrink-0"></div></div>
+
+</aside>
+  
+
+<nav class="hb-toc order-last hidden w-64 shrink-0 xl:block print:hidden px-4" aria-label="table of contents">
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4 rtl:-ml-4"><p class="mb-4 font-semibold tracking-tight">在本页</p><ul>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e4%bd%bf%e7%94%a8%e4%bb%80%e4%b9%88%e6%9d%a5%e5%ad%a6%e4%b9%a0">〇、使用什么来学习</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#01typora">0.1	Typora</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#02vs-code">0.2	VS Code</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e4%b8%80%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95">一、基础语法</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#11%e6%a0%87%e9%a2%98%e7%9a%84%e4%bd%bf%e7%94%a8">1.1	标题的使用</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#12%e7%b2%97%e4%bd%93%e4%b8%8e%e6%96%9c%e4%bd%93">1.2	粗体与斜体</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#13%e6%ae%b5%e8%90%bd%e4%b8%8e%e6%8d%a2%e8%a1%8c">1.3	段落与换行</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#14%e5%88%97%e8%a1%a8">1.4	列表</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#15%e5%88%86%e5%89%b2%e7%ba%bf">1.5	分割线</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#16%e5%9b%be%e7%89%87">1.6	图片</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#17%e9%93%be%e6%8e%a5">1.7	链接</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#18%e4%bb%a3%e7%a0%81%e5%9d%97">1.8	代码块</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#19%e5%bc%95%e7%94%a8">1.9	引用</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e4%ba%8cgfm%e8%af%ad%e6%b3%95">二、GFM语法</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#21%e5%88%a0%e9%99%a4%e7%ba%bf">2.1	删除线</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#22-%e8%a1%a8%e6%83%85">2.2 表情</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#23%e8%a1%a8%e6%a0%bc">2.3	表格</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#24%e4%bb%bb%e5%8a%a1%e5%88%97%e8%a1%a8">2.4	任务列表</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#25%e9%94%9a%e7%82%b9">2.5	锚点</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e4%b8%89%e6%9b%b4%e5%a5%bd%e7%9a%84%e4%bd%bf%e7%94%a8typora">三、更好的使用Typora</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#31typora%e7%9a%84%e6%8b%93%e5%b1%95%e8%af%ad%e6%b3%95">3.1	Typora的拓展语法</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#311-%e4%b8%8b%e5%88%92%e7%ba%bf">3.1.1 下划线</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#312-%e5%86%85%e8%81%94%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f">3.1.2 内联数学公式</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#313-%e4%b8%8a%e4%b8%8b%e6%a0%87">3.1.3 上下标</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#314-%e9%ab%98%e4%ba%ae">3.1.4 高亮</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#315-%e6%b3%a8%e9%87%8a">3.1.5 注释</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#316-%e8%84%9a%e6%b3%a8">3.1.6 脚注</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#317-%e6%b8%85%e9%99%a4%e6%a0%b7%e5%bc%8f">3.1.7 清除样式</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#32%e5%9f%ba%e7%a1%80%e7%9a%84%e5%9b%be%e8%a1%a8%e5%8a%9f%e8%83%bd%e5%9f%ba%e4%ba%8emermaid">3.2	基础的图表功能(基于Mermaid)</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#321-%e5%ba%8f%e5%88%97%e5%9b%be">3.2.1 序列图</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#322-%e6%b5%81%e7%a8%8b%e5%9b%be">3.2.2 流程图</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#323-%e7%94%98%e7%89%b9%e5%9b%be">3.2.3 甘特图</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#33%e4%b8%80%e4%ba%9b%e5%ae%9e%e7%94%a8%e7%9a%84%e5%8a%9f%e8%83%bd">3.3	一些实用的功能</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#331-%e6%9f%a5%e6%89%be%e5%92%8c%e6%9b%bf%e6%8d%a2">3.3.1 查找和替换</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#332-%e5%9b%be%e7%89%87%e7%ae%a1%e7%90%86">3.3.2 图片管理</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#333-%e6%98%be%e7%a4%ba%e6%a8%a1%e5%bc%8f">3.3.3 显示模式</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e5%9b%9b%e6%9b%b4%e5%a5%bd%e7%9a%84%e4%bd%bf%e7%94%a8vs-code">四、更好的使用VS Code</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#41%e6%8f%92%e4%bb%b6mpe">4.1	插件：MPE</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#411-%e5%bc%95%e7%94%a8%e6%96%87%e4%bb%b6">4.1.1 引用文件</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#412-%e5%b9%bb%e7%81%af%e7%89%87">4.1.2 幻灯片</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#42%e6%9b%b4%e5%a5%bd%e7%9a%84%e7%bc%96%e8%be%91">4.2	更好的编辑</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#421-%e8%af%ad%e6%b3%95%e6%a3%80%e6%9f%a5">4.2.1 语法检查</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#422-%e6%8b%bc%e5%86%99%e6%a3%80%e6%9f%a5">4.2.2 拼写检查</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#423-%e6%8f%92%e5%85%a5%e5%9b%be%e7%89%87">4.2.3 插入图片</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#424-%e7%a6%85%e6%a8%a1%e5%bc%8f">4.2.4 禅模式</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e4%ba%94revealjs%e5%86%99%e5%b9%bb%e7%81%af%e7%89%87">五、reveal.js(写幻灯片)</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#51%e5%87%86%e5%a4%87%e5%bc%80%e5%a7%8b">5.1	准备开始</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#511-%e4%b8%8b%e8%bd%bd">5.1.1 下载</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#512-%e9%85%8d%e7%bd%ae%e7%8e%af%e5%a2%83">5.1.2 配置环境</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#52%e5%88%9d%e6%ad%a5%e4%ba%86%e8%a7%a3">5.2	初步了解</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#521-%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84">5.2.1 基本结构</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#522-%e5%b9%bb%e7%81%af%e7%89%87%e7%bb%93%e6%9e%84">5.2.2 幻灯片结构</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#523-%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8markdown">5.2.3 如何使用markdown</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-8 rtl:pr-8 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#524-js%e7%9a%84%e4%be%9d%e8%b5%96">5.2.4 js的依赖</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#53%e7%a4%ba%e8%8c%83%e4%bb%a3%e7%a0%81">5.3	示范代码</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e9%99%84%e5%bd%95">附录</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e9%99%84%e5%bd%951%e6%8e%92%e7%89%88">附录1：排版</a>
+      </li>
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#%e9%99%84%e5%bd%952%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">附录2：实用工具</a>
+      </li></ul>
+
+  
+  
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  </nav>
+
+
+  <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+
+      
+
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Markdown笔记</h1>
+
+      <div class="mt-4 mb-16">
+      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">9月 21, 2020</span>
+        
+
+        
+        <span class="mx-1">·</span>
+        <span class="mx-1">
+          3 分钟阅读时长
+        </span>
+        
+        </div>
+
+        <div class="mt-3">
+          
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+      
+      
+      
+
+      
+      
+
+      <div class="prose prose-slate lg:prose-xl dark:prose-invert">
+        <h2 id="使用什么来学习">〇、使用什么来学习</h2>
+<h3 id="01typora">0.1	Typora</h3>
+<p>​	所见即所得的一款免费而好用的编辑器。</p>
+<h3 id="02vs-code">0.2	VS Code</h3>
+<p>​	宇宙最强大的编辑器</p>
+<hr>
+<h2 id="一基础语法">一、基础语法</h2>
+<h3 id="11标题的使用">1.1	标题的使用</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 文档标题
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">作者
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">摘要
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">目录
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## 标题1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### 标题1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## 标题2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">###标题2.2
+</span></span></code></pre></div><h3 id="12粗体与斜体">1.2	粗体与斜体</h3>
+<p>**粗体 **  <em>斜体</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">**粗体**
+</span></span><span class="line"><span class="cl">*斜体*
+</span></span></code></pre></div><h3 id="13段落与换行">1.3	段落与换行</h3>
+<ol>
+<li>
+<p>空一行才是换了段落</p>
+</li>
+<li>
+<p>如果段内要换行（软回车）需要在上一行的末尾插入两个以上的空格再回车</p>
+</li>
+</ol>
+<h3 id="14列表">1.4	列表</h3>
+<ol>
+<li>
+<p>有序列表</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">数字符号+.+ +内容
+</span></span></code></pre></div><p>如果列表有换行，在.之前应该有两个空格</p>
+</li>
+<li>
+<p>无序列表</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-+ +内容
+</span></span></code></pre></div><p>如果列表有换行，应该有三个空格</p>
+</li>
+<li>
+<p>嵌套列表</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">第一层
+</span></span><span class="line"><span class="cl">Tab+第二层
+</span></span><span class="line"><span class="cl">Tab +Tab +第三层
+</span></span></code></pre></div></li>
+<li>
+<p>注意</p>
+<p>如果列表都只是一行，建议之间别空行</p>
+<p>如果列表有很多行，建议列表之间空一行</p>
+<p>首尾最好都空一行</p>
+</li>
+</ol>
+<h3 id="15分割线">1.5	分割线</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">三个以上的---
+</span></span></code></pre></div><h3 id="16图片">1.6	图片</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">！[无法显示图片的代替文字]（地址）
+</span></span></code></pre></div><h3 id="17链接">1.7	链接</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">标准写法：[链接文字]（链接地址）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">引用写法：[链接文字]
+</span></span><span class="line"><span class="cl">[链接文字]:地址
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">网页链接
+</span></span><span class="line"><span class="cl">&lt;链接地址&gt;
+</span></span></code></pre></div><h3 id="18代码块">1.8	代码块</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">行内代码用` `
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">代码块:
+</span></span><span class="line"><span class="cl">​```c++
+</span></span><span class="line"><span class="cl">​```
+</span></span></code></pre></div><p>建议：若有输出内容，可以在输入的内容前加上$</p>
+<h3 id="19引用">1.9	引用</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;+引用的内容
+</span></span></code></pre></div><blockquote>
+<p>可以多层引用</p>
+<blockquote>
+<p>比如这里有个第二层</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="二gfm语法">二、GFM语法</h2>
+<h3 id="21删除线">2.1	删除线</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">~~删除的文字~~
+</span></span></code></pre></div><p>如<del>删除</del></p>
+<h3 id="22-表情">2.2 表情</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">：表情：
+</span></span></code></pre></div><p>如&#x1f95a;</p>
+<h3 id="23表格">2.3	表格</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">基本样式
+</span></span><span class="line"><span class="cl">| 这是表格的一半    | 这是表格的另一半 |
+</span></span><span class="line"><span class="cl">| ----------------- | ---------------- |
+</span></span><span class="line"><span class="cl">| 这是一个2*2的表格 | 你没有看错       |
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th>这是表格的一半</th>
+<th>这是表格的另一半</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>这是一个2*2的表格</td>
+<td>你没有看错</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>左对齐   :&mdash;-</li>
+<li>右对齐    &mdash;-:</li>
+<li>居中对齐   :&mdash;-:</li>
+</ol>
+<h3 id="24任务列表">2.4	任务列表</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">- [x] 已完成
+</span></span><span class="line"><span class="cl">- [ ] 还没完成
+</span></span></code></pre></div><ul>
+<li>
+<p><input checked="" disabled="" type="checkbox"> 已完成</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> 还没完成</p>
+</li>
+</ul>
+<h3 id="25锚点">2.5	锚点</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[锚点描述]（#锚点名字）
+</span></span></code></pre></div><p><a href="#%e7%9b%ae%e5%bd%95">回到目录</a></p>
+<hr>
+<h2 id="三更好的使用typora">三、更好的使用Typora</h2>
+<h3 id="31typora的拓展语法">3.1	Typora的拓展语法</h3>
+<h4 id="311-下划线">3.1.1 下划线</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">语法：&lt;u&gt;这段文字有下划线&lt;/u&gt;
+</span></span></code></pre></div><p>样例：<u>这段文字有下划线</u></p>
+<p>快捷键：Ctrl+U</p>
+<h4 id="312-内联数学公式">3.1.2 内联数学公式</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$公式$
+</span></span></code></pre></div><p>比如在这句话内联$\frac{-b\pm \sqrt{b^2-4ac}}{2a}$一个求根公式</p>
+<h4 id="313-上下标">3.1.3 上下标</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">~下标~
+</span></span><span class="line"><span class="cl">^上标^
+</span></span></code></pre></div><p>H<sub>2</sub>O与X<sup>2</sup></p>
+<h4 id="314-高亮">3.1.4 高亮</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">==light==
+</span></span></code></pre></div><p><mark>light</mark></p>
+<h4 id="315-注释">3.1.5 注释</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;!--我是导出不显示的注释--&gt;
+</span></span></code></pre></div><!--注释在导出可是不显示的哦-->
+<h4 id="316-脚注">3.1.6 脚注</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">脚注是这样添加的[^参考]
+</span></span><span class="line"><span class="cl">[^参考]：这是对这段文字的描述
+</span></span></code></pre></div><p>脚注是这样添加的<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h4 id="317-清除样式">3.1.7 清除样式</h4>
+<p>使用Ctrl+\可以清除样式</p>
+<h3 id="32基础的图表功能基于mermaid">3.2	基础的图表功能(基于Mermaid)</h3>
+<p><strong>注意</strong>：只支持在Typora中使用</p>
+<h4 id="321-序列图">3.2.1 序列图</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">```mermaid
+</span></span><span class="line"><span class="cl">mermaid 序列图语法
+</span></span><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">下图源代码
+</span></span><span class="line"><span class="cl">sequenceDiagram
+</span></span><span class="line"><span class="cl">张三-&gt;李四:好久不见？
+</span></span><span class="line"><span class="cl">note right of 李四:李四和王五说
+</span></span><span class="line"><span class="cl">李四-&gt;&gt;王五:张三说的对啊！
+</span></span><span class="line"><span class="cl">王五--&gt;张三:对啊对啊！
+</span></span></code></pre></div><div class="mermaid">sequenceDiagram
+张三->李四:好久不见？
+note right of 李四:李四和王五说
+李四->>王五:张三说的对啊！
+王五-->张三:对啊对啊！
+</div>
+<h4 id="322-流程图">3.2.2 流程图</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">```flow
+</span></span><span class="line"><span class="cl">mermaid流程图语法
+</span></span><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">下图源代码
+</span></span><span class="line"><span class="cl">graph TD
+</span></span><span class="line"><span class="cl">A(开始)--&gt;B[流程1]
+</span></span><span class="line"><span class="cl">B--&gt;C{判断框}
+</span></span><span class="line"><span class="cl">C--&gt;|yes|D(结束)
+</span></span><span class="line"><span class="cl">C--&gt;|No|B
+</span></span></code></pre></div><div class="mermaid">graph TD
+A(开始)-->B[流程1]
+B-->C{判断框}
+C-->|yes|D(结束)
+C-->|No|B
+</div>
+<h4 id="323-甘特图">3.2.3 甘特图</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">```mermaid
+</span></span><span class="line"><span class="cl">Mermaind甘特图语法
+</span></span><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">下图源码
+</span></span><span class="line"><span class="cl">gantt
+</span></span><span class="line"><span class="cl">dateFormat YYYY-MM-DD
+</span></span><span class="line"><span class="cl">title 项目开发周期
+</span></span><span class="line"><span class="cl">section 需求评审
+</span></span><span class="line"><span class="cl">开始阶段:	 2018-01-01,2018-01-02
+</span></span><span class="line"><span class="cl">section 功能开发
+</span></span><span class="line"><span class="cl">准备阶段:	2020-03-18,2020-05-01
+</span></span></code></pre></div><div class="mermaid">gantt
+dateFormat YYYY-MM-DD
+title 项目开发周期
+section 需求评审
+开始阶段:	 2018-01-01,2018-01-02
+section 功能开发
+准备阶段:	2020-03-18,2020-05-01
+</div>
+<h3 id="33一些实用的功能">3.3	一些实用的功能</h3>
+<h4 id="331-查找和替换">3.3.1 查找和替换</h4>
+<p>快捷键</p>
+<p>Ctrl+F：查找面板</p>
+<p>F3：下一个</p>
+<p>Shift+F3：上一个</p>
+<p>Ctrl+H：替换面板</p>
+<h4 id="332-图片管理">3.3.2 图片管理</h4>
+<ol>
+<li>可以开启<strong>复制到指定文件夹</strong>便于管理</li>
+<li>支持直接右键开启缩放图片</li>
+</ol>
+<h4 id="333-显示模式">3.3.3 显示模式</h4>
+<p>F11:全屏</p>
+<p>F9：打字机</p>
+<p>F8：专注模式</p>
+<hr>
+<h2 id="四更好的使用vs-code">四、更好的使用VS Code</h2>
+<p><del>不会吧，不会吧，有程序员不会用vs code吗？</del></p>
+<h3 id="41插件mpe">4.1	插件：MPE</h3>
+<h4 id="411-引用文件">4.1.1 引用文件</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@import &#34;文件名&#34;
+</span></span></code></pre></div><p><strong>支持</strong>md，csv，jpg，png，gif，html，pdf</p>
+<h4 id="412-幻灯片">4.1.2 幻灯片</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;!-- slide --&gt;来分页
+</span></span></code></pre></div><p><strong>切换主题</strong></p>
+<p>将代码放在文件头部</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">presentation:
+</span></span><span class="line"><span class="cl">	theme: solarized.css
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><h3 id="42更好的编辑">4.2	更好的编辑</h3>
+<h4 id="421-语法检查">4.2.1 语法检查</h4>
+<p>使用：markdownlint插件</p>
+<h4 id="422-拼写检查">4.2.2 拼写检查</h4>
+<p>使用code spell Checker插件</p>
+<h4 id="423-插入图片">4.2.3 插入图片</h4>
+<p>“截图”–&gt;“粘贴”</p>
+<p>方法1：命令行[paste image]</p>
+<p>方法2：Ctrl+Alt+V</p>
+<h4 id="424-禅模式">4.2.4 禅模式</h4>
+<p>开启：命令行内搜索禅</p>
+<p>关闭：fn+esc</p>
+<hr>
+<h2 id="五revealjs写幻灯片">五、reveal.js(写幻灯片)</h2>
+<h3 id="51准备开始">5.1	准备开始</h3>
+<h4 id="511-下载">5.1.1 下载</h4>
+<p>需要先有git、Node.js。</p>
+<p>下载reveal.js</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://github.com/hakimel/reveal.js.git
+</span></span></code></pre></div><h4 id="512-配置环境">5.1.2 配置环境</h4>
+<ol>
+<li>
+<p>安装依赖的模块</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm install
+</span></span></code></pre></div></li>
+<li>
+<p>启动web服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm start
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="52初步了解">5.2	初步了解</h3>
+<h4 id="521-基本结构">5.2.1 基本结构</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;dist/reveal.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="c">&lt;!-- 这里可以修改幻灯片主题 --&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;plugin/highlight/monokai.css&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;highlight-theme&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;reveal&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;slides&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="c">&lt;!-- 在section中编写幻灯片的内容 --&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>Slide 1<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>Slide 2<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;plugin/highlight/highlight.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//这里修改幻灯片配置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">Reveal</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({});</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h4 id="522-幻灯片结构">5.2.2 幻灯片结构</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- 最外层水平幻灯片--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-markdown</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">data-template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        	## 我是第一页
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h4 id="523-如何使用markdown">5.2.3 如何使用markdown</h4>
+<p>1）在HTML中直接使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-markdown</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">data-template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    # 我们的内容
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span></code></pre></div><ol start="2">
+<li>HTML文件中调用外部的markdown文件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-markdown</span><span class="o">=</span><span class="s">&#34;外部文件md&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	指定分页规则
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h4 id="524-js的依赖">5.2.4 js的依赖</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;dist/reveal.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;plugin/notes/notes.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;plugin/markdown/markdown.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;plugin/highlight/highlight.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Reveal</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">hash</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="nx">RevealMarkdown</span><span class="p">,</span> <span class="nx">RevealHighlight</span><span class="p">,</span> <span class="nx">RevealNotes</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">});</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="53示范代码">5.3	示范代码</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>reveal.js<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;dist/reset.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;dist/reveal.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;dist/theme/black.css&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;theme&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c">&lt;!-- Theme used for syntax highlighted code --&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;plugin/highlight/monokai.css&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;highlight-theme&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;reveal&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;slides&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-markdown</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">data-template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">				# 第一次用md写ppt
+</span></span><span class="line"><span class="cl">				作者：沈悟为
+</span></span><span class="line"><span class="cl">				<span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">&lt;</span><span class="nt">section</span> <span class="na">data-markdown</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">data-template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">				本年度的报表
+</span></span><span class="line"><span class="cl">				1. 我们获得了更多的资金
+</span></span><span class="line"><span class="cl">				2. 我们成功上市
+</span></span><span class="line"><span class="cl">				<span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;dist/reveal.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;plugin/notes/notes.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;plugin/markdown/markdown.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;plugin/highlight/highlight.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Reveal</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">hash</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="nx">RevealMarkdown</span><span class="p">,</span> <span class="nx">RevealHighlight</span><span class="p">,</span> <span class="nx">RevealNotes</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">});</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h2 id="附录">附录</h2>
+<h3 id="附录1排版">附录1：排版</h3>
+<ol>
+<li>
+<p>空格的使用</p>
+<ul>
+<li>英文标点之后需要加空格</li>
+<li>使用 &gt; 是两边都要加空格</li>
+<li>数字与单位之间不加空格</li>
+<li>货币之后不加空格</li>
+</ul>
+</li>
+<li>
+<p>全角与半角</p>
+<ul>
+<li>中文全角标点占位比英文半角标点宽</li>
+</ul>
+</li>
+</ol>
+<h3 id="附录2实用工具">附录2：实用工具</h3>
+<ol>
+<li>
+<p>记笔记</p>
+<ul>
+<li>notion（个人正在使用的笔记平台）</li>
+<li>印象笔记（据说不错）</li>
+<li>有道云笔记（国内大厂）</li>
+</ul>
+</li>
+<li>
+<p>多人协助</p>
+<ul>
+<li>Teambition（阿里的，除了网盘还没开放基本可以说是完美）</li>
+<li>腾讯文档（只要用QQ、微信，应该哪里都能看到吧）</li>
+<li>石墨文档</li>
+</ul>
+</li>
+<li>
+<p>博客</p>
+<ul>
+<li>gitpgae（免费搭建个人博客平台）</li>
+<li>CSDN(程序员)</li>
+<li>知乎、简书等</li>
+</ul>
+</li>
+<li>
+<p>微信公众号</p>
+<ul>
+<li>online-Markdown</li>
+<li>MD2All</li>
+</ul>
+</li>
+<li>
+<p>写邮件</p>
+<ul>
+<li>Markdown Here</li>
+</ul>
+</li>
+<li>
+<p>交互式文档</p>
+<ul>
+<li>Jupyter Notebook</li>
+</ul>
+</li>
+<li>
+<p>写书</p>
+<ul>
+<li>Gitbook</li>
+</ul>
+</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>这是对这段文字的描述&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+      </div>
+
+      
+  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2020-09-21T00:00:00.000Z">
+    <span>最近更新于</span>
+    9月 21, 2020</time>
+
+      <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
+        
+        <div class="max-w-prose print:hidden">
+  
+  
+
+  
+
+<div class="flex justify-center">
+  
+  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/zh/tags/learning-content/">Learning Content</a>
+  
+</div>
+
+
+  
+<section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fmarkdown%25E7%25AC%2594%25E8%25AE%25B0%2F&amp;text=Markdown%E7%AC%94%E8%AE%B0"
+    title="X"
+    aria-label="X"
+    id="share-link-x"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fmarkdown%25E7%25AC%2594%25E8%25AE%25B0%2F&amp;t=Markdown%E7%AC%94%E8%AE%B0"
+    title="Facebook"
+    aria-label="Facebook"
+    id="share-link-facebook"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="mailto:?subject=Markdown%E7%AC%94%E8%AE%B0&amp;body=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fmarkdown%25E7%25AC%2594%25E8%25AE%25B0%2F"
+    title="Email"
+    aria-label="Email"
+    id="share-link-email"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fmarkdown%25E7%25AC%2594%25E8%25AE%25B0%2F&amp;title=Markdown%E7%AC%94%E8%AE%B0"
+    title="LinkedIn"
+    aria-label="LinkedIn"
+    id="share-link-linkedin"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+  </a>
+  
+
+  
+  
+  
+  
+  
+  
+  <a
+    target="_blank" rel="noopener"
+    class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+    href="whatsapp://send?text=Markdown%E7%AC%94%E8%AE%B0%20https%3A%2F%2Fchengaoshen.com%2Fzh%2Fblogs%2Fmarkdown%25E7%25AC%2594%25E8%25AE%25B0%2F"
+    title="WhatsApp"
+    aria-label="WhatsApp"
+    id="share-link-whatsapp"
+  >
+    <svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="m187.58 144.84-32-16a8 8 0 0 0-8 .5l-14.69 9.8a40.55 40.55 0 0 1-16-16l9.8-14.69a8 8 0 0 0 .5-8l-16-32A8 8 0 0 0 104 64a40 40 0 0 0-40 40 88.1 88.1 0 0 0 88 88 40 40 0 0 0 40-40 8 8 0 0 0-4.42-7.16ZM152 176a72.08 72.08 0 0 1-72-72 24 24 0 0 1 19.29-23.54l11.48 23L101 118a8 8 0 0 0-.73 7.51 56.47 56.47 0 0 0 30.15 30.15A8 8 0 0 0 138 155l14.61-9.74 23 11.48A24 24 0 0 1 152 176ZM128 24a104 104 0 0 0-91.82 152.88l-11.35 34.05a16 16 0 0 0 20.24 20.24l34.05-11.35A104 104 0 1 0 128 24Zm0 192a87.87 87.87 0 0 1-44.06-11.81 8 8 0 0 0-6.54-.67L40 216l12.47-37.4a8 8 0 0 0-.66-6.54A88 88 0 1 1 128 216Z"/></svg>
+  </a>
+  
+</section>
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+
+<div class="flex pt-12 pb-4">
+  
+  
+  <img
+    class="mr-4 h-24 w-24 rounded-full"
+    width="96"
+    height="96"
+    alt="沈骋骜"
+  src="/zh/author/%E6%B2%88%E9%AA%8B%E9%AA%9C/avatar_hu30910665284931ace4f57faa1e01d828_666181_192x192_fill_q100_lanczos_center.jpg"
+  loading="lazy"
+  />
+  
+  <div class="place-self-center">
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Authors
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      <a href="https://chengaoshen.com/" class="no-underline">
+      沈骋骜
+      </a>
+    </div>
+
+    
+    <div class="text-sm font-bold text-neutral-700 dark:text-neutral-300">
+    博士生
+    </div>
+    
+
+
+    
+
+    <div class="text-2xl sm:text-lg pt-1">
+
+      
+<div class="flex flex-wrap text-neutral-500 dark:text-neutral-300">
+  
+    
+    
+    
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="mailto:chengaoshen2002@gmail.com"
+      
+      aria-label="At-Symbol"
+    ><svg style="height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"/></svg></a>
+  
+    
+    
+    
+    
+      
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="https://github.com/chengaoshen"
+      target="_blank" rel="noopener" rel="me noopener noreferrer"
+      aria-label="Brands/Github"
+    ><svg style="height: 1em;" fill="currentColor" viewBox="3 3 18 18"><path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path></svg></a>
+  
+    
+    
+    
+    
+      
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="https://www.zhihu.com/people/chengaoshen"
+      target="_blank" rel="noopener" rel="me noopener noreferrer"
+      aria-label="Custom/Zhihu"
+    ><svg style="height: 1em;" t="1717596485360" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5672" width="16" height="16"><path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z" fill="#ffffff" p-id="5673"></path></svg></a>
+  
+    
+    
+    
+    
+      
+    
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="https://space.bilibili.com/38491401"
+      target="_blank" rel="noopener" rel="me noopener noreferrer"
+      aria-label="Custom/Bilibili"
+    ><svg style="height: 1em;" t="1717596376648" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4476" width="32" height="32"><path d="M987.88876907 942.68845653c-8.47679467 0.032-17.050656 0.7712-25.430384-0.128-30.76051413-3.33866453-53.17330027 31.5946464-63.83356054 68.42449067-9.5999936 33.16797973-46.04370453 50.12263573-78.85861653 46.71890347-37.8890432-3.88586453-62.96636053-25.55945067-72.63142187-59.81862934-5.81226347-20.71145387-23.37598507-36.7658432-42.70504-36.6378432-133.34925013 0.7712-251.96037547 0.38613333-385.30855893 0-15.34932373-0.032-31.72371307 14.67412373-36.21971093 32.75197974-9.5999936 38.78717547-42.57597333 63.4154272-79.08474987 64.02555946-37.79197653 0.64213333-70.63995627-23.34398507-81.6532832-63.60849386-4.62293013-16.85758933-12.4266592-52.9162336-28.54398187-52.0170336-20.74345387 1.1562656-41.61384107 0.57813333-62.42129386 0.22506666-22.73278613-0.41706667-32.78291307-9.5359936-32.78291307-31.1135808 0.16-219.4014624 0.48213333-438.77092587 1.0602656-658.1713216 0.064-22.6698528 9.4719936-30.31144747 35.60851093-30.34344853 107.14766613-0.128 214.29533227-0.064 321.44406614-0.064h22.41171946c0.67413333-1.83039893 1.38133227-3.69279787 2.0554656-5.55519573-24.88531733-13.06879147-49.76956907-26.13651733-74.6218208-39.2373088-41.25970773-21.7706528-82.58448213-43.47517333-123.7801888-65.34182614-16.69652267-8.86186133-23.63305173-22.37971947-14.19199146-39.1413088 9.5359936-16.95358933 25.30131733-17.98078827 41.77384106-9.31199466 96.74447253 51.02183467 193.52094613 101.97860267 289.912352 153.54657066 24.69225173 13.22879147 69.13062293 5.29813013 85.02394667-17.050656 49.2885024-69.48262293 98.54393813-138.96738027 147.83137493-208.48413653 1.73333227-2.4394656 3.40266453-4.9759968 5.2010624-7.384528C752.2078496-33.90933333 768.16624-39.0143968 782.67929707-27.87200427c16.79358933 12.8757248 13.9029248 28.15998293 3.1146656 43.47517334-20.00425387 28.35198187-40.00744213 56.6719648-59.979696 85.02501333-27.6778496 39.3013088-55.3236992 78.6346176-86.05221334 122.3039232h28.70504854c106.41060053 0 212.78706667-0.032 319.16460053 0.032 32.4938464 0.032 37.50397653 4.94506347 37.53597653 36.53971093 0.32 215.6446656 0.60906667 431.28933013 0.80213334 646.93292907 0.032 30.8255808-5.6511968 36.05971093-38.0810432 36.25171093z m-159.90389974 64.5076928c17.018656-1.1242656 25.10931733-46.2047712 30.27944747-63.2554272h-64.34662613c6.32532907 18.75198827 15.0911904 64.5396928 34.06717866 63.2554272z m-627.08974186 0.032c18.84798827 1.1562656 27.7418496-44.40743893 33.3610464-63.12636053h-63.3834272c4.30293013 17.62772267 13.16479147 62.0991616 30.0223808 63.12529387z m760.406992-720.2704832H62.24774827v610.07215147h899.0543712V286.95766613zM126.4663744 411.60505493c0.064-29.7333152 14.41705813-58.79249707 44.34237227-58.82449706 228.3923904-0.032 438.6098592-1.66933227 667.0022496-1.60533227 30.3743808 0 59.176496 31.0175808 59.272496 60.42982933 0.38613333 141.8580448-0.224 251.02917653 0 392.88615467 0.064 30.31144747-27.42078293 60.39676267-59.272496 60.42982827-113.85912853 0.064-212.2089344 0-326.03606294 0-113.82606187 0-212.1769344 0.064-326.03499626 0-33.1370464-0.032-59.30662933-27.77491627-59.27356267-60.42982827 0.16-141.15191147-0.256-251.7353088 0-392.88615467z m715.935552 388.48722347c0-134.1193824-4.59093013-257.1945056-4.59093013-388.48722347H185.7388704c0 133.34818347-0.7712 256.35824-0.77119893 388.48722347h657.43318826zM370.75208853 489.82367253c1.86239893-0.8352 4.17386453-0.67413333 11.94452587-1.79839893 4.5279968 4.43093013 15.95732373 10.53226027 17.178656 18.17385493 1.3802656 8.92586133-3.4037312 24.49918507-10.3071936 27.99998294-42.19090667 21.4154528-85.53808 40.7135744-128.98125333 59.62662933-13.22985813 5.74613013-27.77598293 1.4122656-31.1466464-12.7157248-2.2154656-9.24799467 1.76639893-26.81171627 8.41279466-30.15038187 43.47517333-21.9946528 88.39567787-41.1647744 132.8991168-61.1359616z m13.26079147 143.1423104c8.219728-0.28906667 18.84798827 11.07732693 24.78931733 19.74718827 4.75093013 6.9034624 2.7605312 17.94878827 6.10026347 26.29651627 6.32532907 15.8943904 18.23785493 31.01864747 35.8335776 27.29278293 13.0037248-2.7285312 24.88531733-15.73332373 34.645312-26.52158293 4.8159968-5.33013013 4.01386453-15.86132373 5.17013013-24.1141184 2.1834656-15.54132373 11.36639253-25.10931733 26.7146496-24.72425174 14.0309248 0.35306667 23.14985173 8.82986133 24.94931734 24.0181184 1.15519893 9.5999936 1.4122656 21.51251947 7.1594624 27.90291627 9.18399467 10.21012693 22.41171947 22.53971947 34.261312 22.92585173 10.7231936 0.352 23.75998507-12.6186592 32.20477973-22.63678506 5.6191968-6.6474624 5.29813013-18.3989216 7.0634624-27.99998294 2.85866453-15.3151904 11.72052587-24.62718507 27.5818496-23.4069184 15.76532373 1.2202656 24.0501184 11.36639253 23.43998507 27.19678294-1.50933227 40.16744107-17.46772267 72.82235413-55.0996992 90.74021013-35.0623776 16.72852267-67.81435733 9.5359936-96.51940587-16.18345707-1.54133227-1.3802656-3.4037312-2.37653227-5.33013013-3.69279786-8.73386133 6.06932907-16.82558933 13.10079147-26.10451734 17.94878933-30.34344747 15.82932373-60.71889493 14.51412373-88.7178112-4.9439968-30.88851413-21.51358613-44.66343893-52.8522336-41.90184-89.29594453 0.57706667-7.89866133 15.2191904-20.26025387 23.75998507-20.54932054z m223.99346027-145.00470933c7.44852907-13.03679147 20.6783872-16.60052267 33.03997866-9.5679936 49.09436907 27.96691627 97.64367253 56.8959648 145.87190934 86.24421227 5.7791968 3.4997312 8.47679467 11.91252587 10.4991936 14.9311904 0.54613333 23.85705173-19.20105493 36.82877653-37.37490987 26.585584-48.58130347-27.38878293-96.35940693-56.22289813-144.0735104-85.15194667-12.5866592-7.6426624-15.2511904-20.3263872-7.96266133-33.0410464z" fill="#ffffff" p-id="4477"></path></svg></a>
+  
+</div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+      
+      
+    
+<div class="pt-1 no-prose w-full">
+  <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+  <div class="flex flex-col md:flex-row flex-nowrap justify-between gap-5 pt-2">
+    <div class="">
+      
+        <a class="group flex no-underline" href="/zh/blogs/effectivepython/">
+          <span
+            class="mt-[-0.3rem] me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+          ><span class="ltr:inline rtl:hidden">&larr;</span></span>
+          <span class="flex flex-col">
+            <span
+              class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+            >Effective Python技巧</span>
+            <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+              
+                11月 21, 2020
+              
+            </span>
+          </span>
+        </a>
+      
+    </div>
+    <div class="">
+      
+        <a class="group flex text-right no-underline" href="/zh/blogs/python%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/">
+          <span class="flex flex-col">
+            <span
+              class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+            >Python基础整理</span
+            >
+            <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+              
+                8月 21, 2020
+              
+            </span>
+          </span>
+          <span
+            class="mt-[-0.3rem] ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+          ><span class="ltr:inline">&rarr;</span></span>
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+
+</div>
+
+      </div>
+
+    </main>
+  </article>
+</div>
+
+    </div>
+    <div class="page-footer">
+      <footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by text-center">
+    © 2024 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+
+  <p class="powered-by text-center">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      由<a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a>支持发布——免费<a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+    
+  </p>
+
+</footer>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
