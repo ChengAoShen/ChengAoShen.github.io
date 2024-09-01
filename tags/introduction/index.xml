@@ -7,7 +7,7 @@
     <description>Introduction</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png</url>
+      <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
       <title>Introduction</title>
       <link>https://chengaoshen.com/tags/introduction/</link>
     </image>
@@ -136,8 +136,7 @@
 &lt;/p&gt;
 $$
   L[\phi]=-\sum_{i=1}^{I}\mathrm{log}[Pr(\mathbf{x}_i|\phi)]
-  $$
-&lt;/li&gt;
+  $$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There is an image to describe the training process of the two models.&lt;/p&gt;
 &lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
@@ -221,22 +220,19 @@ $$
 &lt;/p&gt;
 $$
 IS=\mathrm{exp}\bigg[\frac{1}{I}\sum_{i=1}^{I}D_{KL}\big[Pr(y_i|\mathbf{x}_i^*)||Pr(y)\big]\bigg]
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 Where $I$ is the number of generated images and:
 &lt;/p&gt;
 $$
 Pr(y)=\frac{1}{I}\sum_{i=1}^{I}Pr(y_i|\mathbf{x}_i^*)
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 &lt;strong&gt;Fréchet inception distance&lt;/strong&gt;: To decrease the reliance on the ImageNet dataset and characterize either distribution, the Fréchet inception distance is estimated.&lt;/p&gt;
 &lt;p&gt;First, use the inception model accepting both observed and generated images as input to produce $1\times 2048$ feature vector. And, because the images follow the normal distribution which can be defined by mean and variance, we can use them to calculate the distance between real and generated images.&lt;/p&gt;
 &lt;p&gt;Above all, the formula for calculating FID can be written as follows:
 &lt;/p&gt;
 $$
 FID(x,g)=||\mu_x-\mu_g||_2^2+Tr\big(\Sigma_x+\Sigma_g-2(\Sigma_x\Sigma_g)^{0.5}\big)
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 Where $x,g$ present real and generated images, $\mu$ is the mean and $\Sigma$ is the covariance.&lt;/p&gt;
 &lt;p&gt;However, this metric uses the inception network output to calculate, which will more focus on the semantic information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Manifold precision/recall&lt;/strong&gt;: To disentangle the realism of the samples and their diversity, we consider the overlap between the data manifold and the model manifold.&lt;/p&gt;

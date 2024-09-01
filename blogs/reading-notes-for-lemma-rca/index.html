@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: July 17, 2024 --><html lang="en-us" dir="ltr"
+<!-- Last Published: September 1, 2024 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -158,8 +158,8 @@
   
 
   
-  <link rel="icon" type="image/png" href="/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_180x180_fill_lanczos_center_3.png" />
+  <link rel="icon" type="image/png" href="/media/icon_hu3047632630725281052.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8352921021171964137.png" />
 
   <link rel="canonical" href="https://chengaoshen.com/blogs/reading-notes-for-lemma-rca/" />
 
@@ -189,8 +189,8 @@
   <meta property="og:site_name" content="ChengAo Shen" />
   <meta property="og:url" content="https://chengaoshen.com/blogs/reading-notes-for-lemma-rca/" />
   <meta property="og:title" content="📊Reading Notes for &#34;LEMMA-RCA&#34; | ChengAo Shen" />
-  <meta property="og:description" content="Overview This paper introduces a new large dataset named LEMMA-RCA for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world." /><meta property="og:image" content="https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="Overview This paper introduces a new large dataset named LEMMA-RCA for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" />
+    <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -1244,17 +1244,14 @@
 <p><strong>Precision@K (PR@K)</strong>: It measures the probability that the top $K$ predicted root causes are real, formulated as:</p>
 $$
 \text{PR@K}=\frac{1}{|\mathbb{A}|}\sum_{a\in\mathbb{A}}\frac{\sum_{i\le k}R_a(i)\in V_a}{\text{min}(K,|v_a|)}
-$$
-<p>Where $\mathbb{A}$ is the set of system faults, $a$ is one fault, $V_a$ is the real root cause of $a$, $R_a$ is the predicted root cause of $a$, and $i$ is the $i$-th predicted cause of $R_a$.</p>
+$$<p>Where $\mathbb{A}$ is the set of system faults, $a$ is one fault, $V_a$ is the real root cause of $a$, $R_a$ is the predicted root cause of $a$, and $i$ is the $i$-th predicted cause of $R_a$.</p>
 <p><strong>Mean Average Precision@K (MAP@K)</strong>: It assesses the top $K$ predicted causes from the overall perspective, formulated as:</p>
 $$
 \text{MAP@K}=\frac{1}{K|\mathbb{A}|}\sum_{a\in \mathbb{A}}\sum_{i\le j\le K}\text{PR@j}
-$$
-<p><strong>Mean Reciprocal Rank (MRR)</strong>: It evaluates the ranking capability of models, formulated as:</p>
+$$<p><strong>Mean Reciprocal Rank (MRR)</strong>: It evaluates the ranking capability of models, formulated as:</p>
 $$
 \text{MRR@K}=\frac{1}{|\mathbb{A}|}\sum_{a\in \mathbb{A}}\frac{1}{\text{rank}_{R_a}}
-$$
-<p>Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly predicted root cause for system fault $a$.</p>
+$$<p>Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly predicted root cause for system fault $a$.</p>
 <h3 id="baselines">Baselines</h3>
 <p>Causal-graph-based RCA methods can provide deeper insights into system failures, thus all baseline methods fall into this category.</p>
 <ul>
@@ -1433,7 +1430,7 @@ $$
     width="96"
     height="96"
     alt="ChengAo Shen"
-  src="/author/chengao-shen/avatar_hu30910665284931ace4f57faa1e01d828_666181_192x192_fill_q100_lanczos_center.jpg"
+  src="/author/chengao-shen/avatar_hu4482875392737245466.jpg"
   loading="lazy"
   />
   

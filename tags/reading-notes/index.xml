@@ -7,7 +7,7 @@
     <description>Reading Notes</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png</url>
+      <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
       <title>Reading Notes</title>
       <link>https://chengaoshen.com/tags/reading-notes/</link>
     </image>
@@ -105,17 +105,14 @@
 &lt;p&gt;&lt;strong&gt;Precision@K (PR@K)&lt;/strong&gt;: It measures the probability that the top $K$ predicted root causes are real, formulated as:&lt;/p&gt;
 $$
 \text{PR@K}=\frac{1}{|\mathbb{A}|}\sum_{a\in\mathbb{A}}\frac{\sum_{i\le k}R_a(i)\in V_a}{\text{min}(K,|v_a|)}
-$$
-&lt;p&gt;Where $\mathbb{A}$ is the set of system faults, $a$ is one fault, $V_a$ is the real root cause of $a$, $R_a$ is the predicted root cause of $a$, and $i$ is the $i$-th predicted cause of $R_a$.&lt;/p&gt;
+$$&lt;p&gt;Where $\mathbb{A}$ is the set of system faults, $a$ is one fault, $V_a$ is the real root cause of $a$, $R_a$ is the predicted root cause of $a$, and $i$ is the $i$-th predicted cause of $R_a$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Mean Average Precision@K (MAP@K)&lt;/strong&gt;: It assesses the top $K$ predicted causes from the overall perspective, formulated as:&lt;/p&gt;
 $$
 \text{MAP@K}=\frac{1}{K|\mathbb{A}|}\sum_{a\in \mathbb{A}}\sum_{i\le j\le K}\text{PR@j}
-$$
-&lt;p&gt;&lt;strong&gt;Mean Reciprocal Rank (MRR)&lt;/strong&gt;: It evaluates the ranking capability of models, formulated as:&lt;/p&gt;
+$$&lt;p&gt;&lt;strong&gt;Mean Reciprocal Rank (MRR)&lt;/strong&gt;: It evaluates the ranking capability of models, formulated as:&lt;/p&gt;
 $$
 \text{MRR@K}=\frac{1}{|\mathbb{A}|}\sum_{a\in \mathbb{A}}\frac{1}{\text{rank}_{R_a}}
-$$
-&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly predicted root cause for system fault $a$.&lt;/p&gt;
+$$&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly predicted root cause for system fault $a$.&lt;/p&gt;
 &lt;h3 id=&#34;baselines&#34;&gt;Baselines&lt;/h3&gt;
 &lt;p&gt;Causal-graph-based RCA methods can provide deeper insights into system failures, thus all baseline methods fall into this category.&lt;/p&gt;
 &lt;ul&gt;
@@ -196,8 +193,7 @@ $$
 &lt;/p&gt;
 $$
 \hat{X}_i=WX_i
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. Furthermore, this paper proposes two sub-models, DLinear which uses decomposition to obtain the trend part and the seasonal part, and the NLinear which subtracts a portion before making the prediction and rejoined it after making the prediction.&lt;/p&gt;
 &lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
   &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240622212512231.png&#34; alt=&#34;The Structure of LSTF-Linear&#34;&gt;

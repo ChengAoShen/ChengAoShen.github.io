@@ -7,7 +7,7 @@
     <description>Blogs</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 31 Dec 2099 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chengaoshen.com/media/icon_huf8822cd1fbcd26e1bebe153d7c6d678c_133892_512x512_fill_lanczos_center_3.png</url>
+      <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
       <title>Blogs</title>
       <link>https://chengaoshen.com/blogs/</link>
     </image>
@@ -206,17 +206,14 @@
 &lt;p&gt;&lt;strong&gt;Precision@K (PR@K)&lt;/strong&gt;: It measures the probability that the top $K$ predicted root causes are real, formulated as:&lt;/p&gt;
 $$
 \text{PR@K}=\frac{1}{|\mathbb{A}|}\sum_{a\in\mathbb{A}}\frac{\sum_{i\le k}R_a(i)\in V_a}{\text{min}(K,|v_a|)}
-$$
-&lt;p&gt;Where $\mathbb{A}$ is the set of system faults, $a$ is one fault, $V_a$ is the real root cause of $a$, $R_a$ is the predicted root cause of $a$, and $i$ is the $i$-th predicted cause of $R_a$.&lt;/p&gt;
+$$&lt;p&gt;Where $\mathbb{A}$ is the set of system faults, $a$ is one fault, $V_a$ is the real root cause of $a$, $R_a$ is the predicted root cause of $a$, and $i$ is the $i$-th predicted cause of $R_a$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Mean Average Precision@K (MAP@K)&lt;/strong&gt;: It assesses the top $K$ predicted causes from the overall perspective, formulated as:&lt;/p&gt;
 $$
 \text{MAP@K}=\frac{1}{K|\mathbb{A}|}\sum_{a\in \mathbb{A}}\sum_{i\le j\le K}\text{PR@j}
-$$
-&lt;p&gt;&lt;strong&gt;Mean Reciprocal Rank (MRR)&lt;/strong&gt;: It evaluates the ranking capability of models, formulated as:&lt;/p&gt;
+$$&lt;p&gt;&lt;strong&gt;Mean Reciprocal Rank (MRR)&lt;/strong&gt;: It evaluates the ranking capability of models, formulated as:&lt;/p&gt;
 $$
 \text{MRR@K}=\frac{1}{|\mathbb{A}|}\sum_{a\in \mathbb{A}}\frac{1}{\text{rank}_{R_a}}
-$$
-&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly predicted root cause for system fault $a$.&lt;/p&gt;
+$$&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly predicted root cause for system fault $a$.&lt;/p&gt;
 &lt;h3 id=&#34;baselines&#34;&gt;Baselines&lt;/h3&gt;
 &lt;p&gt;Causal-graph-based RCA methods can provide deeper insights into system failures, thus all baseline methods fall into this category.&lt;/p&gt;
 &lt;ul&gt;
@@ -297,8 +294,7 @@ $$
 &lt;/p&gt;
 $$
 \hat{X}_i=WX_i
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. Furthermore, this paper proposes two sub-models, DLinear which uses decomposition to obtain the trend part and the seasonal part, and the NLinear which subtracts a portion before making the prediction and rejoined it after making the prediction.&lt;/p&gt;
 &lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
   &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240622212512231.png&#34; alt=&#34;The Structure of LSTF-Linear&#34;&gt;
@@ -433,8 +429,7 @@ Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. 
 &lt;/p&gt;
 $$
   L[\phi]=-\sum_{i=1}^{I}\mathrm{log}[Pr(\mathbf{x}_i|\phi)]
-  $$
-&lt;/li&gt;
+  $$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There is an image to describe the training process of the two models.&lt;/p&gt;
 &lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
@@ -518,22 +513,19 @@ $$
 &lt;/p&gt;
 $$
 IS=\mathrm{exp}\bigg[\frac{1}{I}\sum_{i=1}^{I}D_{KL}\big[Pr(y_i|\mathbf{x}_i^*)||Pr(y)\big]\bigg]
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 Where $I$ is the number of generated images and:
 &lt;/p&gt;
 $$
 Pr(y)=\frac{1}{I}\sum_{i=1}^{I}Pr(y_i|\mathbf{x}_i^*)
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 &lt;strong&gt;Fréchet inception distance&lt;/strong&gt;: To decrease the reliance on the ImageNet dataset and characterize either distribution, the Fréchet inception distance is estimated.&lt;/p&gt;
 &lt;p&gt;First, use the inception model accepting both observed and generated images as input to produce $1\times 2048$ feature vector. And, because the images follow the normal distribution which can be defined by mean and variance, we can use them to calculate the distance between real and generated images.&lt;/p&gt;
 &lt;p&gt;Above all, the formula for calculating FID can be written as follows:
 &lt;/p&gt;
 $$
 FID(x,g)=||\mu_x-\mu_g||_2^2+Tr\big(\Sigma_x+\Sigma_g-2(\Sigma_x\Sigma_g)^{0.5}\big)
-$$
-&lt;p&gt;
+$$&lt;p&gt;
 Where $x,g$ present real and generated images, $\mu$ is the mean and $\Sigma$ is the covariance.&lt;/p&gt;
 &lt;p&gt;However, this metric uses the inception network output to calculate, which will more focus on the semantic information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Manifold precision/recall&lt;/strong&gt;: To disentangle the realism of the samples and their diversity, we consider the overlap between the data manifold and the model manifold.&lt;/p&gt;
@@ -652,54 +644,46 @@ Where $x,g$ present real and generated images, $\mu$ is the mean and $\Sigma$ is
 &lt;/p&gt;
 $$
 v=\beta_v+\Omega_vx
-$$
-&lt;p&gt;Where $x$ is embedding word, $v$ is abstract meaning of word(present by number), and $\beta_v,\Omega_v$ is the parameter mapping the words to their meanings.&lt;/p&gt;
+$$&lt;p&gt;Where $x$ is embedding word, $v$ is abstract meaning of word(present by number), and $\beta_v,\Omega_v$ is the parameter mapping the words to their meanings.&lt;/p&gt;
 &lt;p&gt;As we can use one dictionary to map every word to their meanings, we can just use $\beta_v,\Omega_v$ to map every embedding word, called &lt;strong&gt;parameter sharing&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Normally, the inputs and outputs are represented as $D\times N$ matrix, so we can rewrite our equation as follows
 &lt;/p&gt;
 $$
 V[X]=\beta_v1^T+\Omega_vX
-$$
-&lt;h3 id=&#34;from-weight-to-self-attention&#34;&gt;From weight to self-attention&lt;/h3&gt;
+$$&lt;h3 id=&#34;from-weight-to-self-attention&#34;&gt;From weight to self-attention&lt;/h3&gt;
 &lt;p&gt;In the last section, we use “dictionary” to map words, but the problem is we haven’t considered the context of the words. So, how can we let our “dictionary” know the context?
 One simple thinking is we can give every “meaning” a &lt;strong&gt;weight&lt;/strong&gt; and weighted sum the values.
 &lt;/p&gt;
 $$
 O[X]=V[X]\times W
-$$
-$$
+$$$$
 W=\begin{pmatrix}
  w_1 &amp;\dots  &amp;w_n \\
  \vdots  &amp;  &amp;\vdots  \\
  w_1 &amp; \dots &amp;w_n
 \end{pmatrix}
-$$
-&lt;p&gt;How can we get this weight that measures the relationship between the words in the sentence? Inspired by the search system, we can use “queries” to match “key”. Same as we did before, we can just use linear transformation to get them.
+$$&lt;p&gt;How can we get this weight that measures the relationship between the words in the sentence? Inspired by the search system, we can use “queries” to match “key”. Same as we did before, we can just use linear transformation to get them.
 &lt;/p&gt;
 $$
 \begin{split}
 Q[X]=\beta_q1^T+\Omega_qX\\
 K[X]=\beta_k1^T+\Omega_kX
 \end{split}
-$$
-&lt;p&gt;Where $\beta_q,\Omega_q,\beta_k,\Omega_q$ are also shared for every word.&lt;/p&gt;
+$$&lt;p&gt;Where $\beta_q,\Omega_q,\beta_k,\Omega_q$ are also shared for every word.&lt;/p&gt;
 &lt;p&gt;Then, we can use $K$ to query the $Q$, telling us which word should pay how much &lt;strong&gt;attention&lt;/strong&gt; to others. Typically, the attention should sum up as $1$, so we can use the softmax function to achieve this. Because we use $X$ to pay attention to itself, we call this &lt;strong&gt;Self-attention&lt;/strong&gt;. To sum up, our model is described as follows:
 &lt;/p&gt;
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[K[X]^TQ[X]]
-$$
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726112139933.png&#34; alt=&#34;Self-attention&#34;&gt;&lt;/p&gt;
+$$&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726112139933.png&#34; alt=&#34;Self-attention&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Typically, the dot products will be really large, which means the small changes to the inputs have nearly no effect on the output because we use the softmax function. So we always use the dimension of the input, always the shape of embedding, to scale the dot products.&lt;/p&gt;
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[\frac{K[X]^TQ[X]}{\sqrt{D_q}}]
-$$
-&lt;h3 id=&#34;multiple-heads&#34;&gt;Multiple heads&lt;/h3&gt;
+$$&lt;h3 id=&#34;multiple-heads&#34;&gt;Multiple heads&lt;/h3&gt;
 &lt;p&gt;To increase the information that model learning, we always use more attention units when we calculate the output. We will divide the input to $h$ parts, and calculate the self-attention with them. After that, we will combine all of them to recreate our output.
 &lt;/p&gt;
 $$
 \text{MhSa}[X]=\Omega_c[Sa_1[X]^T,Sa_2[X]^T,\dots,Sa_H[X]^T]^T
-$$
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726201710681.png&#34; alt=&#34;Multiple heads&#34;&gt;&lt;/p&gt;
+$$&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726201710681.png&#34; alt=&#34;Multiple heads&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;transformer-layers&#34;&gt;Transformer layers&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726113937045.png&#34; alt=&#34;Transformer layers&#34;&gt;&lt;/p&gt;
 &lt;p&gt;With &lt;strong&gt;self-attention&lt;/strong&gt; and &lt;strong&gt;MLP&lt;/strong&gt;, we can construct the transformer layers applied in many outstanding models. The process looks like this:
@@ -711,12 +695,10 @@ X\leftarrow \text{LayerNorm}[X]\\
 x_n\leftarrow x_n+\text{MLP}[x_n]\\
 X\leftarrow \text{LayerNorm}[X]
 \end{split}
-$$
-&lt;p&gt;Where $\text{MLP}$ is fully connected network works separately on each word and $\text{LayerNorm}$ is the normalization happens in the channel, like:&lt;/p&gt;
+$$&lt;p&gt;Where $\text{MLP}$ is fully connected network works separately on each word and $\text{LayerNorm}$ is the normalization happens in the channel, like:&lt;/p&gt;
 $$
 y=\frac{x-E[x]}{\sqrt{Var[x]+\epsilon }}*\gamma+\beta
-$$
-&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+$$&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;[1] S. J. D. Prince, &lt;em&gt;Understanding Deep Learning&lt;/em&gt;. MIT Press, 2023.&lt;/p&gt;
 &lt;p&gt;[2] A. Vaswani &lt;em&gt;et al.&lt;/em&gt;, ‘Attention Is All You Need’, &lt;em&gt;CoRR&lt;/em&gt;, vol. abs/1706.03762, 2017.&lt;/p&gt;
 &lt;blockquote&gt;
