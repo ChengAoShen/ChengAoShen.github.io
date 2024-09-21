@@ -120,7 +120,8 @@
       <guid>https://chengaoshen.com/blogs/reading-notes-for-lemma-rca/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This paper introduces a new large dataset named &lt;strong&gt;LEMMA-RCA&lt;/strong&gt; for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world. They also evaluate eight baseline methods on this dataset to prove the high quality of LEMMA_RCA. The official website is &lt;a href=&#34;https://lemma-rca.github.io/&#34;&gt;https://lemma-rca.github.io/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This paper introduces a new large dataset named &lt;strong&gt;LEMMA-RCA&lt;/strong&gt; for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world. They also evaluate eight baseline methods on this dataset to prove the high quality of LEMMA_RCA. The official website is 
+.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -160,11 +161,17 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_workflow.png&#34; alt=&#34;RCA workflow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_workflow.png&#34; alt=&#34;RCA workflow&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;RCA workflow&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&#34;dataset&#34;&gt;Dataset&lt;/h2&gt;
 &lt;h3 id=&#34;base-information&#34;&gt;Base Information&lt;/h3&gt;
 &lt;p&gt;LEMMA-RCA is a multi-domain, multi-modal dataset that includes textual system logs with millions of event records and time series metric data collected from real system faults. This dataset includes IT and OT scenes, such as microservice and water treatment.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_datasets.png&#34; alt=&#34;Existing datasets for root cause analysis.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_datasets.png&#34; alt=&#34;Existing datasets for root cause analysis.&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Existing datasets for root cause analysis.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;h3 id=&#34;collection&#34;&gt;Collection&lt;/h3&gt;
 &lt;p&gt;The dataset collected from two domains, divided into four sub-datasets:&lt;/p&gt;
 &lt;ul&gt;
@@ -174,7 +181,10 @@
 &lt;li&gt;
 &lt;p&gt;Product Review&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Platform&lt;/strong&gt;: Composed of six OpenShift nodes and 216 system pods.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240710000718711.png&#34; alt=&#34;The architecture of Product Review Platform&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20240710000718711.png&#34; alt=&#34;The architecture of Product Review Platform&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;The architecture of Product Review Platform&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Faults&lt;/strong&gt;: out-of-memory, high-CPU-usage, external-storage-full, DDos attack.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Using Prometheus to record eleven types of node-level metrics and six types of pod-level metrics; Using ElasticSearch to collect log data including timestamp, pod name, log message, etc; Using JMeter to collect the system status information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;KPI&lt;/strong&gt;: Consider latency as system KPI due to system failure will result in latency significantly increasing.&lt;/p&gt;
@@ -186,7 +196,10 @@
 &lt;p&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: Extracting system metrics from CloudWatch Metrics on EC2 instances; Extracting three logs types (log messages, API debug log, and MySQL log) from CloudWatch Logs; Using JMeter tools to record error rate and utilization rate as KPIs.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IT_Sub.png&#34; alt=&#34;Data statistics of IT operation sub-datasets.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/IT_Sub.png&#34; alt=&#34;Data statistics of IT operation sub-datasets.&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Data statistics of IT operation sub-datasets.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;OT operations&lt;/p&gt;
@@ -196,7 +209,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/OT_sub.png&#34; alt=&#34;Data statistics of OT operation sub-datasets.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/OT_sub.png&#34; alt=&#34;Data statistics of OT operation sub-datasets.&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Data statistics of OT operation sub-datasets.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;h3 id=&#34;preprocessing&#34;&gt;Preprocessing&lt;/h3&gt;
 &lt;p&gt;Some non-stationary data are unpredictable and cannot be effectively modeled, which means they should be excluded. Thus this paper introduces some methods to preprocessing the data.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Log Feature Extraction&lt;/strong&gt;. Due to the log data being unstructured and some of them being unmeaning,  this paper transforms the log data into the time-series format. First, they use log-parsing tools to structure the log message. Then they segment the data using &lt;em&gt;10-minute windows&lt;/em&gt; with &lt;em&gt;30-second intervals&lt;/em&gt; and calculate the occurrence frequency as the first feature type donated as $X_1^L\in \mathbb{R}^T$. Then, they introduce a second feature type based on &amp;ldquo;Golden signals&amp;rdquo; derived from domain knowledge, such as the frequency of abnormal logs associated with system failures like DDoS attacks, storage failures, and resource over-utilization. This feature is donated as $X_2^L\in \mathbb{R}^T$. Finally, they segment the log using the same time windows and apply PCA to reduce feature dimensionality, selecting the most significant component as $X_3^L\in \mathbb{R}^T$. The overall data can form as matrix $X^L=[X_1^L,X_2^L,X_3^L]\in \mathbb{R}^{3\times T}$.&lt;/p&gt;
@@ -227,9 +243,18 @@ $$&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly
 &lt;li&gt;CORAL: An online single-modal RCA method based on incremental disentangled causal graph learning.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_Product.png&#34; alt=&#34;Results for offline RCA baselines with multiple modalities on the Product Review dataset.&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_SAT.png&#34; alt=&#34;Results for offline RCA baselines on the SWaT and WADI dataset.&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA.png&#34; alt=&#34;Results for online root cause analysis baselines on all sub-datasets.&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_Product.png&#34; alt=&#34;Results for offline RCA baselines with multiple modalities on the Product Review dataset.&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Results for offline RCA baselines with multiple modalities on the Product Review dataset.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA_SAT.png&#34; alt=&#34;Results for offline RCA baselines on the SWaT and WADI dataset.&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Results for offline RCA baselines on the SWaT and WADI dataset.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/RCA.png&#34; alt=&#34;Results for online root cause analysis baselines on all sub-datasets.&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Results for online root cause analysis baselines on all sub-datasets.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -402,7 +427,8 @@ Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. 
       <guid>https://chengaoshen.com/blogs/hello/</guid>
       <description>&lt;p&gt;In the upcoming Fall of 2024, I will be completing my undergraduate studies and beginning my Ph.D. journey. To better present my academic experience and personal information, I have used Hugo to create a new personal homepage (which is the page you are currently viewing)!&lt;/p&gt;
 &lt;p&gt;I will continue to update my academic blog and personal news on this homepage. Stay tuned!&lt;/p&gt;
-&lt;p&gt;More information about me can be found in &lt;a href=&#34;https://chengaoshen.com/&#34;&gt;Bio&lt;/a&gt;. I sincerely hope my posts can help you. If you have any questions, please feel free to contact me.&lt;/p&gt;
+&lt;p&gt;More information about me can be found in 
+. I sincerely hope my posts can help you. If you have any questions, please feel free to contact me.&lt;/p&gt;
 </description>
     </item>
     
@@ -463,60 +489,60 @@ $$
 &lt;/ul&gt;
 &lt;p&gt;It’s hard for only one type of Generative Model to obtain all properties, following is a table to describe some generative model’s features:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Model&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Probabilistic&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Efficient&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Sample quality&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Coverage&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Well-behaved latent space&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Disentangled latent space&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;Efficient likelihood&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;GANs&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;❔&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;\&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Flows&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;❔&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;❔&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;VAEs&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;❔&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;❔&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;Diffusion&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✔️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;❔&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;✖️&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Model&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Probabilistic&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Efficient&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Sample quality&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Coverage&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Well-behaved latent space&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Disentangled latent space&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Efficient likelihood&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;GANs&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;❔&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;\&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;Flows&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;❔&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;❔&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;VAEs&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;❔&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;❔&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&lt;strong&gt;Diffusion&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✔️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;❔&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;✖️&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;performance-measurement&#34;&gt;Performance Measurement&lt;/h2&gt;
 &lt;p&gt;To measure the performance of generative models, some metrics are proposed.&lt;/p&gt;
@@ -690,7 +716,10 @@ $$&lt;p&gt;Where $\beta_q,\Omega_q,\beta_k,\Omega_q$ are also shared for every w
 &lt;/p&gt;
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[K[X]^TQ[X]]
-$$&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726112139933.png&#34; alt=&#34;Self-attention&#34;&gt;&lt;/p&gt;
+$$&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726112139933.png&#34; alt=&#34;Self-attention&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Self-attention&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Typically, the dot products will be really large, which means the small changes to the inputs have nearly no effect on the output because we use the softmax function. So we always use the dimension of the input, always the shape of embedding, to scale the dot products.&lt;/p&gt;
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[\frac{K[X]^TQ[X]}{\sqrt{D_q}}]
@@ -699,9 +728,15 @@ $$&lt;h3 id=&#34;multiple-heads&#34;&gt;Multiple heads&lt;/h3&gt;
 &lt;/p&gt;
 $$
 \text{MhSa}[X]=\Omega_c[Sa_1[X]^T,Sa_2[X]^T,\dots,Sa_H[X]^T]^T
-$$&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726201710681.png&#34; alt=&#34;Multiple heads&#34;&gt;&lt;/p&gt;
+$$&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726201710681.png&#34; alt=&#34;Multiple heads&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Multiple heads&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&#34;transformer-layers&#34;&gt;Transformer layers&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726113937045.png&#34; alt=&#34;Transformer layers&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&#34;figure&#34;&gt;
+  &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726113937045.png&#34; alt=&#34;Transformer layers&#34;&gt;
+  &lt;figcaption style=&#34;text-align: center;&#34;&gt;Transformer layers&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;With &lt;strong&gt;self-attention&lt;/strong&gt; and &lt;strong&gt;MLP&lt;/strong&gt;, we can construct the transformer layers applied in many outstanding models. The process looks like this:
 &lt;/p&gt;
 $$
@@ -718,7 +753,8 @@ $$&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;[1] S. J. D. Prince, &lt;em&gt;Understanding Deep Learning&lt;/em&gt;. MIT Press, 2023.&lt;/p&gt;
 &lt;p&gt;[2] A. Vaswani &lt;em&gt;et al.&lt;/em&gt;, ‘Attention Is All You Need’, &lt;em&gt;CoRR&lt;/em&gt;, vol. abs/1706.03762, 2017.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;All photos in this article are from &lt;a href=&#34;https://udlbook.github.io/udlbook/&#34;&gt;Understanding Deep Learning&lt;/a&gt;. It’s a great book and I really recommend it&lt;/p&gt;
+&lt;p&gt;All photos in this article are from 
+. It’s a great book and I really recommend it&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
     </item>

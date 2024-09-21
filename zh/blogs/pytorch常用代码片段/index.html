@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: 2024年9月1日 --><html lang="zh-Hans" dir="ltr"
+<!-- Last Published: 2024年9月21日 --><html lang="zh-Hans" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -41,9 +41,37 @@
   
     
   
-  <meta name="description" content="仿照d2l的pytorch内容进行记录
-设备切换 尝试使用GPU
-def try_gpu(i=0): if torch.cuda.device_count() &gt;= i &#43; 1: return torch.device(f&#39;cuda:{i}&#39;) return torch.device(&#39;cpu&#39;) def try_all_gpus(): &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34; devices = [torch.device(f&#39;cuda:{i}&#39;) for i in range(torch.cuda.device_count())] return devices if devices else [torch." />
+  <meta name="description" content="
+仿照d2l的pytorch内容进行记录
+
+设备切换
+尝试使用GPU
+def try_gpu(i=0):
+    if torch.cuda.device_count() &gt;= i &#43; 1:
+        return torch.device(f&#39;cuda:{i}&#39;)
+    return torch.device(&#39;cpu&#39;)
+def try_all_gpus():
+    &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34;
+    devices = [torch.device(f&#39;cuda:{i}&#39;)
+               for i in range(torch.cuda.device_count())]
+    return devices if devices else [torch.device(&#39;cpu&#39;)]
+计数器
+class Accumulator:
+    &#34;&#34;&#34;用于计数&#34;&#34;&#34;
+    def __init__(self, n):
+        self.data = [0.0] * n
+
+    def add(self, *args):
+        &#34;&#34;&#34;将一组数据加载本身的数据之上&#34;&#34;&#34;
+        self.data = [a &#43; float(b) for a, b in zip(self.data, args)]
+
+    def reset(self):
+        self.data = [0.0] * len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
+精确性
+对于训练精度评价可以使用如下代码" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://chengaoshen.com/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/" />
@@ -191,9 +219,37 @@ def try_gpu(i=0): if torch.cuda.device_count() &gt;= i &#43; 1: return torch.dev
   <meta property="og:site_name" content="沈骋骜" />
   <meta property="og:url" content="https://chengaoshen.com/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/" />
   <meta property="og:title" content="Pytorch常用代码片段 | 沈骋骜" />
-  <meta property="og:description" content="仿照d2l的pytorch内容进行记录
-设备切换 尝试使用GPU
-def try_gpu(i=0): if torch.cuda.device_count() &gt;= i &#43; 1: return torch.device(f&#39;cuda:{i}&#39;) return torch.device(&#39;cpu&#39;) def try_all_gpus(): &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34; devices = [torch.device(f&#39;cuda:{i}&#39;) for i in range(torch.cuda.device_count())] return devices if devices else [torch." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" />
+  <meta property="og:description" content="
+仿照d2l的pytorch内容进行记录
+
+设备切换
+尝试使用GPU
+def try_gpu(i=0):
+    if torch.cuda.device_count() &gt;= i &#43; 1:
+        return torch.device(f&#39;cuda:{i}&#39;)
+    return torch.device(&#39;cpu&#39;)
+def try_all_gpus():
+    &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34;
+    devices = [torch.device(f&#39;cuda:{i}&#39;)
+               for i in range(torch.cuda.device_count())]
+    return devices if devices else [torch.device(&#39;cpu&#39;)]
+计数器
+class Accumulator:
+    &#34;&#34;&#34;用于计数&#34;&#34;&#34;
+    def __init__(self, n):
+        self.data = [0.0] * n
+
+    def add(self, *args):
+        &#34;&#34;&#34;将一组数据加载本身的数据之上&#34;&#34;&#34;
+        self.data = [a &#43; float(b) for a, b in zip(self.data, args)]
+
+    def reset(self):
+        self.data = [0.0] * len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx]
+精确性
+对于训练精度评价可以使用如下代码" /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" />
     <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" /><meta property="og:locale" content="zh-Hans" />
   
     

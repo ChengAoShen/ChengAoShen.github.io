@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: 2024年9月1日 --><html lang="zh-Hans" dir="ltr"
+<!-- Last Published: 2024年9月21日 --><html lang="zh-Hans" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -41,9 +41,37 @@
   
     
   
-  <meta name="description" content="一、NumPy基础 import numpy as np
-1.1 ndarry——多维数组对象 1.1.1 创建ndarray
-array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1." />
+  <meta name="description" content="一、NumPy基础
+import numpy as np
+1.1 ndarry——多维数组对象
+1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断
+arange(num) # 返回一个等差数列
+
+eye()  identity() #生成与给定形状一样的全1数组
+
+ones() #生成与给定形状一样的全1数组
+zeros() #生成与给定形状一样的全0数组
+empty() #生成与给定形状一样的空数组
+full(size,num) #根据给定形状和数据类型生成数值一样的数组
+#以上的函数可以加_like 变成根据一个数组的大小来生成
+
+reshape((x,y)) #使得一个序列进行array样式变化
+1.1.2 ndarray的数据类型
+数据类型，是dytpe属性，代表了数组里面每个数据的类型。
+# 常见的类型
+int 64 #有符号的64位整数
+uint64 #无符号的64位整数
+
+float64 # 单精度浮点数。兼容c语言的float
+float64 # 双精度浮点数。兼容c语言的double
+
+comple #64位的复数
+
+boll #布尔类型
+object #对象类型
+string_ #字符串类型
+可以使用astype来转换数据的类型，使用他转换时会生成一个全新的数组对象。" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://chengaoshen.com/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" />
@@ -191,9 +219,37 @@ array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类
   <meta property="og:site_name" content="沈骋骜" />
   <meta property="og:url" content="https://chengaoshen.com/zh/blogs/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7/" />
   <meta property="og:title" content="Python数据处理工具 | 沈骋骜" />
-  <meta property="og:description" content="一、NumPy基础 import numpy as np
-1.1 ndarry——多维数组对象 1.1.1 创建ndarray
-array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" />
+  <meta property="og:description" content="一、NumPy基础
+import numpy as np
+1.1 ndarry——多维数组对象
+1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断
+arange(num) # 返回一个等差数列
+
+eye()  identity() #生成与给定形状一样的全1数组
+
+ones() #生成与给定形状一样的全1数组
+zeros() #生成与给定形状一样的全0数组
+empty() #生成与给定形状一样的空数组
+full(size,num) #根据给定形状和数据类型生成数值一样的数组
+#以上的函数可以加_like 变成根据一个数组的大小来生成
+
+reshape((x,y)) #使得一个序列进行array样式变化
+1.1.2 ndarray的数据类型
+数据类型，是dytpe属性，代表了数组里面每个数据的类型。
+# 常见的类型
+int 64 #有符号的64位整数
+uint64 #无符号的64位整数
+
+float64 # 单精度浮点数。兼容c语言的float
+float64 # 双精度浮点数。兼容c语言的double
+
+comple #64位的复数
+
+boll #布尔类型
+object #对象类型
+string_ #字符串类型
+可以使用astype来转换数据的类型，使用他转换时会生成一个全新的数组对象。" /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" />
     <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" /><meta property="og:locale" content="zh-Hans" />
   
     

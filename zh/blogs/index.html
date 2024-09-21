@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: 2024年9月1日 --><html lang="zh-Hans" dir="ltr"
+<!-- Last Published: 2024年9月21日 --><html lang="zh-Hans" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -779,9 +779,9 @@
     <div class="p-8">
       <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Pytorch常用代码片段</div>
       <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
-        仿照d2l的pytorch内容进行记录
+         仿照d2l的pytorch内容进行记录
 设备切换 尝试使用GPU
-def try_gpu(i=0): if torch.cuda.device_count() &gt;= i &#43; 1: return torch.device(f&#39;cuda:{i}&#39;) return torch.device(&#39;cpu&#39;) def try_all_gpus(): &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34; devices = [torch.device(f&#39;cuda:{i}&#39;) for i in range(torch.cuda.device_count())] return devices if devices else [torch.</p>
+def try_gpu(i=0): if torch.cuda.device_count() &gt;= i &#43; 1: return torch.device(f&#39;cuda:{i}&#39;) return torch.device(&#39;cpu&#39;) def try_all_gpus(): &#34;&#34;&#34;找到所有可以使用的GPU&#34;&#34;&#34; devices = [torch.device(f&#39;cuda:{i}&#39;) for i in range(torch.cuda.device_count())] return devices if devices else [torch.device(&#39;cpu&#39;)] 计数器 class Accumulator: &#34;&#34;&#34;用于计数&#34;&#34;&#34; def __init__(self, n): self.data = [0.0] * n def add(self, *args): &#34;&#34;&#34;将一组数据加载本身的数据之上&#34;&#34;&#34; self.data = [a &#43; float(b) for a, b in zip(self.data, args)] def reset(self): self.data = [0.0] * len(self.data) def __getitem__(self, idx): return self.data[idx] 精确性 对于训练精度评价可以使用如下代码</p>
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">3月 21, 2023</p>
     </div>
   </div>
@@ -842,8 +842,7 @@ ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub�
 /bin/bash告知容器需要运行的命令
 1.2 关闭容器与查看 在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
 docker ps -a 来查看所拥有的全部容器。
-1.3 启动并附着到容器 当知道容器的名字或者uuid的时候可以使用
-sudo docker start containerName sudo docker start UUID 来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用</p>
+1.3 启动并附着到容器 当知道容器的名字或者uuid的时候可以使用</p>
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">12月 30, 2022</p>
     </div>
   </div>
@@ -905,7 +904,8 @@ int *(*f)()：声明了f为一个指向一个返回整形指针的函数的指�
         一、准备工作 1.1 安装Git ​	在https://git-scm.com/上下载安装包后傻瓜式安装。
 1.2 初始化Git ​	初始化用户
 git config --global user.name &#34;your name&#34; git config --global user.email &#34;your email&#34; ​	提高输出可读性
-git config --global color.ui.auto 1.3 准备GitHub 注册账户。</p>
+git config --global color.ui.auto 1.3 准备GitHub 注册账户。
+设置SSH Key</p>
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">8月 30, 2021</p>
     </div>
   </div>
@@ -930,7 +930,7 @@ git config --global color.ui.auto 1.3 准备GitHub 注册账户。</p>
       <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Effective Python技巧</div>
       <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
         一、pythonic思维 1.1遵守PEP8风格 关于命名 函数、变量、属性使用小写字母，每个单词之间使用下划线相连。 受保护的实例属性使用一个下划线开头。 私有的实例属性应当使用两个下划线开头。 类（异常）命名时候首字母应当大写。 模块级别常量所有字母大写，各个单词下划线连接。 类中的实例方法应当把第一个参数命名为self来表示对象本身。 类方法的第一个参数应答命名为cls表示类本身。 关于表达式 采用行内否定（把否定词直接写在要否定的内容前）。如：if a is not b 判断是否为空可以直接进行（空则为False）。如if not somelist 表达式一行写不下应当用括号括起来并进行换行 多行表达式用括号括起来而不是使用\进行续行。 关于引入 import语句应当放在开头 使用绝对名称来进行引入 在引用的时候首先应当分为三部分：标准库、第三方模块、自己的模块。 1.2 使用插值格式字符串（f-string） 在格式化字符串的时候，可以使用python特殊的f-string方法。
-key = &#34;my_var&#34; value = 1.</p>
+key = &#34;my_var&#34; value = 1.23 print(f&#34;{key!r:&lt;10}={value:.2f}&#34;) 通过在字符串前面加入f（format）来表示这个字符串为插入字符串，{}中的内容可以为变量，而:右边的则是格式化的方式。使用!表示把值转换为Unicode及repr形式的字符串。我们甚至可以在多重格式化</p>
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">11月 21, 2020</p>
     </div>
   </div>
@@ -982,7 +982,9 @@ key = &#34;my_var&#34; value = 1.</p>
       <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
         一、NumPy基础 import numpy as np
 1.1 ndarry——多维数组对象 1.1.1 创建ndarray
-array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1.</p>
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1.1.2 ndarray的数据类型
+数据类型，是dytpe属性，代表了数组里面每个数据的类型。
+# 常见的类型 int 64 #有符号的64位整数 uint64 #无符号的64位整数 float64 # 单精度浮点数。兼容c语言的float float64 # 双精度浮点数。兼容c语言的double comple #64位的复数 boll #布尔类型 object #对象类型 string_ #字符串类型 可以使用astype来转换数据的类型，使用他转换时会生成一个全新的数组对象。</p>
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">8月 21, 2020</p>
     </div>
   </div>

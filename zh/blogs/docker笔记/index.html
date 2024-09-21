@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: 2024年9月1日 --><html lang="zh-Hans" dir="ltr"
+<!-- Last Published: 2024年9月21日 --><html lang="zh-Hans" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -41,17 +41,24 @@
   
     
   
-  <meta name="description" content="一、Doker快速使用 1.1 构建一个容器 拉取并使用docker的ubuntu镜像构建一个交互式的容器。
-sudo docker run --name containerName -i -t ubuntu /bin/bash 参数解释：
+  <meta name="description" content="一、Doker快速使用
+1.1 构建一个容器
+拉取并使用docker的ubuntu镜像构建一个交互式的容器。
+sudo docker run --name containerName -i -t ubuntu /bin/bash
+
+参数解释：
 ``&ndash;name`是对于容器的命名
 -i保证容器的STDIN开启，保证持续的标准输入；
 -t为docker为容器分配一个tty终端
 ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
 /bin/bash告知容器需要运行的命令
-1.2 关闭容器与查看 在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
-docker ps -a 来查看所拥有的全部容器。
-1.3 启动并附着到容器 当知道容器的名字或者uuid的时候可以使用
-sudo docker start containerName sudo docker start UUID 来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用" />
+
+1.2 关闭容器与查看
+在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
+docker ps -a
+来查看所拥有的全部容器。
+1.3 启动并附着到容器
+当知道容器的名字或者uuid的时候可以使用" />
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://chengaoshen.com/zh/blogs/docker%E7%AC%94%E8%AE%B0/" />
@@ -199,17 +206,24 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
   <meta property="og:site_name" content="沈骋骜" />
   <meta property="og:url" content="https://chengaoshen.com/zh/blogs/docker%E7%AC%94%E8%AE%B0/" />
   <meta property="og:title" content="Docker快速入门 | 沈骋骜" />
-  <meta property="og:description" content="一、Doker快速使用 1.1 构建一个容器 拉取并使用docker的ubuntu镜像构建一个交互式的容器。
-sudo docker run --name containerName -i -t ubuntu /bin/bash 参数解释：
+  <meta property="og:description" content="一、Doker快速使用
+1.1 构建一个容器
+拉取并使用docker的ubuntu镜像构建一个交互式的容器。
+sudo docker run --name containerName -i -t ubuntu /bin/bash
+
+参数解释：
 ``&ndash;name`是对于容器的命名
 -i保证容器的STDIN开启，保证持续的标准输入；
 -t为docker为容器分配一个tty终端
 ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
 /bin/bash告知容器需要运行的命令
-1.2 关闭容器与查看 在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
-docker ps -a 来查看所拥有的全部容器。
-1.3 启动并附着到容器 当知道容器的名字或者uuid的时候可以使用
-sudo docker start containerName sudo docker start UUID 来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用" /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" />
+
+1.2 关闭容器与查看
+在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
+docker ps -a
+来查看所拥有的全部容器。
+1.3 启动并附着到容器
+当知道容器的名字或者uuid的时候可以使用" /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" />
     <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu13846342205060721621.png" /><meta property="og:locale" content="zh-Hans" />
   
     
