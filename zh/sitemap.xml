@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chengaoshen.com/zh/</loc>
-    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
+    <lastmod>2099-12-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -17,7 +17,7 @@
                 />
   </url><url>
     <loc>https://chengaoshen.com/zh/blogs/</loc>
-    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
+    <lastmod>2099-12-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <xhtml:link
                 rel="alternate"
@@ -29,38 +29,6 @@
                 hreflang="zh-Hans"
                 href="https://chengaoshen.com/zh/blogs/"
                 />
-  </url><url>
-    <loc>https://chengaoshen.com/zh/tags/news/</loc>
-    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://chengaoshen.com/tags/news/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-Hans"
-                href="https://chengaoshen.com/zh/tags/news/"
-                />
-  </url><url>
-    <loc>https://chengaoshen.com/zh/tags/</loc>
-    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://chengaoshen.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-Hans"
-                href="https://chengaoshen.com/zh/tags/"
-                />
-  </url><url>
-    <loc>https://chengaoshen.com/zh/blogs/%E6%AF%95%E4%B8%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2024-06-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://chengaoshen.com/zh/blogs/fastapi%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-03-21T00:00:00+00:00</lastmod>
@@ -83,6 +51,20 @@
     <loc>https://chengaoshen.com/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</loc>
     <lastmod>2023-03-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://chengaoshen.com/zh/tags/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://chengaoshen.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-Hans"
+                href="https://chengaoshen.com/zh/tags/"
+                />
   </url><url>
     <loc>https://chengaoshen.com/zh/blogs/docker%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-12-30T00:00:00+00:00</lastmod>

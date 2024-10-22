@@ -1341,14 +1341,14 @@ The key&#39;s randomart image is:
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;这是表格的一半&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;这是表格的另一半&lt;/th&gt;
+          &lt;th&gt;这是表格的一半&lt;/th&gt;
+          &lt;th&gt;这是表格的另一半&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;这是一个2*2的表格&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;你没有看错&lt;/td&gt;
+          &lt;td&gt;这是一个2*2的表格&lt;/td&gt;
+          &lt;td&gt;你没有看错&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
