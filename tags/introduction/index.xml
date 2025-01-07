@@ -132,8 +132,6 @@
 &lt;p&gt;Direct generative models, such as generative adversarial models, aim to provide a mechanism for generating samples similar to observed data $\{\mathbf{x}_i\}$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Probabilistic models learn the probability distribution over the train data. These models will assign a probability $Pr(\mathbf{x}|\phi)$ to each data point $\mathbf{x}$. The models aim to maximize the probability of the observed data $\{\mathbf{x}_i\}$.
-&lt;/p&gt;
 $$
   L[\phi]=-\sum_{i=1}^{I}\mathrm{log}[Pr(\mathbf{x}_i|\phi)]
   $$&lt;/li&gt;
@@ -216,20 +214,13 @@ $$
   &lt;img class=&#34;img&#34; src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231026144638161.png&#34; alt=&#34;Inception score&#34;&gt;
   &lt;figcaption style=&#34;text-align: center;&#34;&gt;Inception score&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;This metric uses KL divergence between $Pr(y_i|\mathbf{x}_i^*)$and $Pr(y)$
-&lt;/p&gt;
 $$
 IS=\mathrm{exp}\bigg[\frac{1}{I}\sum_{i=1}^{I}D_{KL}\big[Pr(y_i|\mathbf{x}_i^*)||Pr(y)\big]\bigg]
-$$&lt;p&gt;
-Where $I$ is the number of generated images and:
-&lt;/p&gt;
-$$
+$$$$
 Pr(y)=\frac{1}{I}\sum_{i=1}^{I}Pr(y_i|\mathbf{x}_i^*)
 $$&lt;p&gt;
 &lt;strong&gt;Fréchet inception distance&lt;/strong&gt;: To decrease the reliance on the ImageNet dataset and characterize either distribution, the Fréchet inception distance is estimated.&lt;/p&gt;
 &lt;p&gt;First, use the inception model accepting both observed and generated images as input to produce $1\times 2048$ feature vector. And, because the images follow the normal distribution which can be defined by mean and variance, we can use them to calculate the distance between real and generated images.&lt;/p&gt;
-&lt;p&gt;Above all, the formula for calculating FID can be written as follows:
-&lt;/p&gt;
 $$
 FID(x,g)=||\mu_x-\mu_g||_2^2+Tr\big(\Sigma_x+\Sigma_g-2(\Sigma_x\Sigma_g)^{0.5}\big)
 $$&lt;p&gt;

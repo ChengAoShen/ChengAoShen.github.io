@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: October 22, 2024 --><html lang="en-us" dir="ltr"
+<!-- Last Published: January 6, 2025 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -1098,7 +1098,7 @@ Transformer is a really popular method in modern neural networks. We have BERT o
         
         <span class="mx-1">·</span>
         <span class="mx-1">
-          4 min read
+          3 min read
         </span>
         
         </div>
@@ -1146,20 +1146,13 @@ Transformer is a really popular method in modern neural networks. We have BERT o
 <h2 id="self-attention">Self-attention</h2>
 <h3 id="parameter-sharing">Parameter sharing</h3>
 <p>A standard neural network layer $f[x]$, take $D\times 1$ inputs and return $D'\times 1$. When we process embedding text, our input’s dimensions are changed to $D\times N$. To hold enough information in our model, we assume the size of our data remains unchanged, which means the size of outputs is also $D\times N$. Where $D$ is the size of the embedding vector, $N$ is the number of the word.</p>
-<p>Roughly, different words have their meanings just like the dictionary shows, which inspires us to use the neural network to approximate the dictionary - mapping the words to their abstract meanings described by numbers.
-</p>
 $$
 v=\beta_v+\Omega_vx
 $$<p>Where $x$ is embedding word, $v$ is abstract meaning of word(present by number), and $\beta_v,\Omega_v$ is the parameter mapping the words to their meanings.</p>
 <p>As we can use one dictionary to map every word to their meanings, we can just use $\beta_v,\Omega_v$ to map every embedding word, called <strong>parameter sharing</strong></p>
-<p>Normally, the inputs and outputs are represented as $D\times N$ matrix, so we can rewrite our equation as follows
-</p>
 $$
 V[X]=\beta_v1^T+\Omega_vX
 $$<h3 id="from-weight-to-self-attention">From weight to self-attention</h3>
-<p>In the last section, we use “dictionary” to map words, but the problem is we haven’t considered the context of the words. So, how can we let our “dictionary” know the context?
-One simple thinking is we can give every “meaning” a <strong>weight</strong> and weighted sum the values.
-</p>
 $$
 O[X]=V[X]\times W
 $$$$
@@ -1168,16 +1161,12 @@ W=\begin{pmatrix}
  \vdots  &  &\vdots  \\
  w_1 & \dots &w_n
 \end{pmatrix}
-$$<p>How can we get this weight that measures the relationship between the words in the sentence? Inspired by the search system, we can use “queries” to match “key”. Same as we did before, we can just use linear transformation to get them.
-</p>
-$$
+$$$$
 \begin{split}
 Q[X]=\beta_q1^T+\Omega_qX\\
 K[X]=\beta_k1^T+\Omega_kX
 \end{split}
 $$<p>Where $\beta_q,\Omega_q,\beta_k,\Omega_q$ are also shared for every word.</p>
-<p>Then, we can use $K$ to query the $Q$, telling us which word should pay how much <strong>attention</strong> to others. Typically, the attention should sum up as $1$, so we can use the softmax function to achieve this. Because we use $X$ to pay attention to itself, we call this <strong>Self-attention</strong>. To sum up, our model is described as follows:
-</p>
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[K[X]^TQ[X]]
 $$<p><figure class="figure">
@@ -1188,8 +1177,6 @@ $$<p><figure class="figure">
 $$
 Sa[X]=V[X]\cdot \text{Softmax}[\frac{K[X]^TQ[X]}{\sqrt{D_q}}]
 $$<h3 id="multiple-heads">Multiple heads</h3>
-<p>To increase the information that model learning, we always use more attention units when we calculate the output. We will divide the input to $h$ parts, and calculate the self-attention with them. After that, we will combine all of them to recreate our output.
-</p>
 $$
 \text{MhSa}[X]=\Omega_c[Sa_1[X]^T,Sa_2[X]^T,\dots,Sa_H[X]^T]^T
 $$<p><figure class="figure">
@@ -1201,8 +1188,6 @@ $$<p><figure class="figure">
   <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726113937045.png" alt="Transformer layers">
   <figcaption style="text-align: center;">Transformer layers</figcaption>
 </figure></p>
-<p>With <strong>self-attention</strong> and <strong>MLP</strong>, we can construct the transformer layers applied in many outstanding models. The process looks like this:
-</p>
 $$
 \begin{split}
 X \leftarrow X+\text{MhSa}[X]\\
@@ -1588,7 +1573,7 @@ $$<h2 id="reference">Reference</h2>
 
   
   <p class="powered-by text-center">
-    © 2024 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+    © 2025 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
   </p>
   
 

@@ -214,8 +214,6 @@ $$&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly
 &lt;p&gt;&lt;strong&gt;Encoder/Decoder&lt;/strong&gt;: To help the Transformer structure adopt the time series problems, there have been many improvements made to the encoder and decoder in this work. Among them, in the encoder section, many improvements have been proposed to reduce computational consumption and increase speed. In the decoder section, to avoid cumulative errors, it has also begun to transition from IMS to DMS.&lt;/p&gt;
 &lt;p&gt;The success of Transformer in the NLP field is largely attributed to its understanding of the semantic relationships between words, but in time series problems, temporary information has become even more important. However, the Transformer&amp;rsquo;s ability to model time largely comes from the timestamp rather than its structure.&lt;/p&gt;
 &lt;h3 id=&#34;lstf-linear&#34;&gt;LSTF-Linear&lt;/h3&gt;
-&lt;p&gt;This paper hypothesizes that the improvement in the Transformer-Based model is due to the DMS strategy rather than the Transformer. Thus they propose LSTF-Linear that directly regresses historical time series for future prediction via a weighted sum operation to verify this thinking. The model can be a formula as :
-&lt;/p&gt;
 $$
 \hat{X}_i=WX_i
 $$&lt;p&gt;
