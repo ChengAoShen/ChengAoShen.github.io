@@ -30,6 +30,28 @@
                 href="https://chengaoshen.com/blogs/"
                 />
   </url><url>
+    <loc>https://chengaoshen.com/blogs/join_uh/</loc>
+    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/news/</loc>
+    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/</loc>
+    <lastmod>2025-01-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-Hans"
+                href="https://chengaoshen.com/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://chengaoshen.com/tags/"
+                />
+  </url><url>
     <loc>https://chengaoshen.com/blogs/introduction-to-prompt-engineering/</loc>
     <lastmod>2024-07-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -52,20 +74,6 @@
                 href="https://chengaoshen.com/tags/learning-content/"
                 />
   </url><url>
-    <loc>https://chengaoshen.com/tags/</loc>
-    <lastmod>2024-07-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-Hans"
-                href="https://chengaoshen.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://chengaoshen.com/tags/"
-                />
-  </url><url>
     <loc>https://chengaoshen.com/blogs/reading-notes-for-lemma-rca/</loc>
     <lastmod>2024-07-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -79,10 +87,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://chengaoshen.com/blogs/hello/</loc>
-    <lastmod>2024-06-06T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://chengaoshen.com/tags/news/</loc>
     <lastmod>2024-06-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>

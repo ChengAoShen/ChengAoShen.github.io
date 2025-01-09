@@ -5,12 +5,24 @@
     <link>https://chengaoshen.com/tags/news/</link>
       <atom:link href="https://chengaoshen.com/tags/news/index.xml" rel="self" type="application/rss+xml" />
     <description>News</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 06 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 07 Jan 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
       <title>News</title>
       <link>https://chengaoshen.com/tags/news/</link>
     </image>
+    
+    <item>
+      <title>🎉 Joined the University of Houston as a PhD student</title>
+      <link>https://chengaoshen.com/blogs/join_uh/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/blogs/join_uh/</guid>
+      <description>&lt;p&gt;Hi everyone, I&amp;rsquo;m starting my PhD journey at the University of Houston. I&amp;rsquo;m excited to be part of the UH-D2i-group under the supervision of Professor 
+.&lt;/p&gt;
+&lt;p&gt;My research focuses on applying machine learning and data science methods for time series prediction and anomaly detection. I am also exploring data science techniques to uncover causal relationships across various fields and develop new methods for causal discovery. Additionally, I am interested in integrating language and vision models through multimodal learning to tackle challenges in time series analysis and causal discovery.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m looking forward to working with you all!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>🚀 A Brand New Personal Homepage!</title>
