@@ -44,7 +44,7 @@
   <meta name="description" content="The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://chengaoshen.com/publication_types/conference/" />
+  <link rel="alternate" hreflang="en-us" href="https://chengaoshen.com/publication_types/preprint/" />
 
   
   
@@ -156,14 +156,14 @@
 
   
   
-    <link rel="alternate" href="/publication_types/conference/index.xml" type="application/rss+xml" title="ChengAo Shen" />
+    <link rel="alternate" href="/publication_types/preprint/index.xml" type="application/rss+xml" title="ChengAo Shen" />
   
 
   
   <link rel="icon" type="image/png" href="/media/icon_hu_e409df0d284c0712.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_93a4420cf32886dd.png" />
 
-  <link rel="canonical" href="https://chengaoshen.com/publication_types/conference/" />
+  <link rel="canonical" href="https://chengaoshen.com/publication_types/preprint/" />
 
   
   
@@ -189,13 +189,13 @@
     <meta property="twitter:creator" content="@GetResearchDev" />
   
   <meta property="og:site_name" content="ChengAo Shen" />
-  <meta property="og:url" content="https://chengaoshen.com/publication_types/conference/" />
-  <meta property="og:title" content="Conference | ChengAo Shen" />
+  <meta property="og:url" content="https://chengaoshen.com/publication_types/preprint/" />
+  <meta property="og:title" content="Preprint | ChengAo Shen" />
   <meta property="og:description" content="The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png" />
     <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2024-05-31T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2025-02-13T00:00:00&#43;00:00" />
     
   
 
@@ -204,7 +204,7 @@
 
 
 
-  <title>Conference | ChengAo Shen</title>
+  <title>Preprint | ChengAo Shen</title>
 
   
   
@@ -774,7 +774,7 @@
 
 <div class="max-w-prose mx-auto flex justify-center">
   <article class="prose prose-slate lg:prose-xl dark:prose-invert">
-    <h1 class="lg:text-6xl">Conference</h1>
+    <h1 class="lg:text-6xl">Preprint</h1>
     
   </article>
 </div>
@@ -798,16 +798,40 @@
 
 
 
-<a href="/publication/emoji_cfn/"  class="mb-5">
+<a href="/publication/v4ts_survey/"  class="mb-5">
   <div class="md:flex">
     <div class="md:flex-shrink-0 overflow-hidden">
       
     </div>
     <div class="p-8">
-      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Emoji kitchen with controlled fusion</div>
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Harnessing Vision Models for Time Series Analysis: A Survey</div>
       <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
-        The image fusion method is widely used in many different fields. The fusion processes both need models to extract semantic information and contain details. Traditional image processing techniques used for this issue have limited ability to extract semantic features from images, and advanced deep learning techniques often lose the details. In this work, we propose the Controlled Fusion Network (CFN) that adopts a multi-step progressive generation method and injects control elements at every step. We test the model in the emoji fusion task which accepts various emojis and combines them. We find that the generated emojis sufficiently retain and reasonably combine the semantic information of the input images, while the result images also conform to human intuitive perception.</p>
-      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">May 31, 2024</p>
+        Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models.</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Feb 13, 2025</p>
+    </div>
+  </div>
+</a>
+
+  
+  
+
+
+
+
+
+
+
+
+<a href="/publication/matmcd/"  class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">Exploring Multi-Modal Integration with Tool-Augmented LLM Agents for Precise Causal Discovery</div>
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        Causal inference is an imperative foundation for decision-making across domains, such as smart health, AI for drug discovery and AIOps. Traditional statistical causal discovery methods, while well-established, predominantly rely on observational data and often overlook the semantic cues inherent in cause-and-effect relationships. The advent of Large Language Models (LLMs) has ushered in an affordable way of leveraging the semantic cues for knowledge-driven causal discovery, but the development of LLMs for causal discovery lags behind other areas, particularly in the exploration of multi-modality data. To bridge the gap, we introduce MATMCD, a multi-agent system powered by tool-augmented LLMs. MATMCD has two key agents: a Data Augmentation agent that retrieves and processes modality-augmented data, and a Causal Constraint agent that integrates multi-modal data for knowledge-driven inference. Delicate design of the inner-workings ensures successful cooperation of the agents. Our empirical study across seven datasets suggests the significant potential of multi-modality enhanced causal discovery.</p>
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">Dec 18, 2024</p>
     </div>
   </div>
 </a>

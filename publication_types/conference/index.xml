@@ -5,28 +5,12 @@
     <link>https://chengaoshen.com/publication_types/conference/</link>
       <atom:link href="https://chengaoshen.com/publication_types/conference/index.xml" rel="self" type="application/rss+xml" />
     <description>Conference</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 31 May 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png</url>
       <title>Conference</title>
       <link>https://chengaoshen.com/publication_types/conference/</link>
     </image>
-    
-    <item>
-      <title>Harnessing Vision Models for Time Series Analysis: A Survey</title>
-      <link>https://chengaoshen.com/publication/v4ts_survey/</link>
-      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/publication/v4ts_survey/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Exploring Multi-Modal Integration with Tool-Augmented LLM Agents for Precise Causal Discovery</title>
-      <link>https://chengaoshen.com/publication/matmcd/</link>
-      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/publication/matmcd/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Emoji kitchen with controlled fusion</title>
