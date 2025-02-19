@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://chengaoshen.com/</loc>
-    <lastmod>2099-12-31T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-Hans"
-                href="https://chengaoshen.com/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://chengaoshen.com/"
-                />
-  </url><url>
     <loc>https://chengaoshen.com/blogs/</loc>
     <lastmod>2099-12-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -29,6 +15,32 @@
                 hreflang="en-us"
                 href="https://chengaoshen.com/blogs/"
                 />
+  </url><url>
+    <loc>https://chengaoshen.com/publication/v4ts_survey/index-copy/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://chengaoshen.com/publication_types/preprint/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://chengaoshen.com/publication_types/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-Hans"
+                href="https://chengaoshen.com/zh/publication_types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://chengaoshen.com/publication_types/"
+                />
+  </url><url>
+    <loc>https://chengaoshen.com/publication/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://chengaoshen.com/blogs/join_uh/</loc>
     <lastmod>2025-01-07T00:00:00+00:00</lastmod>
@@ -51,6 +63,10 @@
                 hreflang="en-us"
                 href="https://chengaoshen.com/tags/"
                 />
+  </url><url>
+    <loc>https://chengaoshen.com/publication/matmcd/</loc>
+    <lastmod>2024-12-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://chengaoshen.com/blogs/introduction-to-prompt-engineering/</loc>
     <lastmod>2024-07-15T00:00:00+00:00</lastmod>
@@ -90,6 +106,34 @@
     <lastmod>2024-06-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://chengaoshen.com/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-Hans"
+                href="https://chengaoshen.com/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://chengaoshen.com/"
+                />
+  </url><url>
+    <loc>https://chengaoshen.com/blog/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-Hans"
+                href="https://chengaoshen.com/zh/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://chengaoshen.com/blog/"
+                />
+  </url><url>
     <loc>https://chengaoshen.com/publication_types/acticle/</loc>
     <lastmod>2024-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -98,29 +142,11 @@
     <lastmod>2024-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://chengaoshen.com/publication/emoji-kitchen-with-controlled-fusion/</loc>
+    <loc>https://chengaoshen.com/publication/emoji_cfn/</loc>
     <lastmod>2024-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://chengaoshen.com/publication/sensing-platform/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://chengaoshen.com/publication_types/</loc>
-    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-Hans"
-                href="https://chengaoshen.com/zh/publication_types/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://chengaoshen.com/publication_types/"
-                />
-  </url><url>
-    <loc>https://chengaoshen.com/publication/</loc>
     <lastmod>2024-05-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -143,18 +169,5 @@
     <loc>https://chengaoshen.com/blogs/using-custom-dataset-in-pytorch/</loc>
     <lastmod>2022-10-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://chengaoshen.com/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-Hans"
-                href="https://chengaoshen.com/zh/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://chengaoshen.com/blog/"
-                />
   </url>
 </urlset>
