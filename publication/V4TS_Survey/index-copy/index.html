@@ -41,12 +41,10 @@
   
     
   
-  <meta name="description" content="Hi everyone, I&rsquo;m starting my PhD journey at the University of Houston. I&rsquo;m excited to be part of the UH-D2i-group under the supervision of Professor Jingchao Ni.
-My research focuses on applying machine learning and data science methods for time series prediction and anomaly detection. I am also exploring data science techniques to uncover causal relationships across various fields and develop new methods for causal discovery. Additionally, I am interested in integrating language and vision models through multimodal learning to tackle challenges in time series analysis and causal discovery.
-" />
+  <meta name="description" content="Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://chengaoshen.com/blogs/join_uh/" />
+  <link rel="alternate" hreflang="en-us" href="https://chengaoshen.com/publication/v4ts_survey/index-copy/" />
 
   
   
@@ -163,7 +161,7 @@ My research focuses on applying machine learning and data science methods for ti
   <link rel="icon" type="image/png" href="/media/icon_hu_e409df0d284c0712.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_93a4420cf32886dd.png" />
 
-  <link rel="canonical" href="https://chengaoshen.com/blogs/join_uh/" />
+  <link rel="canonical" href="https://chengaoshen.com/publication/v4ts_survey/index-copy/" />
 
   
   
@@ -189,29 +187,69 @@ My research focuses on applying machine learning and data science methods for ti
     <meta property="twitter:creator" content="@GetResearchDev" />
   
   <meta property="og:site_name" content="ChengAo Shen" />
-  <meta property="og:url" content="https://chengaoshen.com/blogs/join_uh/" />
-  <meta property="og:title" content="🎉 Joined the University of Houston as a PhD student | ChengAo Shen" />
-  <meta property="og:description" content="Hi everyone, I&rsquo;m starting my PhD journey at the University of Houston. I&rsquo;m excited to be part of the UH-D2i-group under the supervision of Professor Jingchao Ni.
-My research focuses on applying machine learning and data science methods for time series prediction and anomaly detection. I am also exploring data science techniques to uncover causal relationships across various fields and develop new methods for causal discovery. Additionally, I am interested in integrating language and vision models through multimodal learning to tackle challenges in time series analysis and causal discovery." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png" />
+  <meta property="og:url" content="https://chengaoshen.com/publication/v4ts_survey/index-copy/" />
+  <meta property="og:title" content="Harnessing Vision Models for Time Series Analysis: A Survey | ChengAo Shen" />
+  <meta property="og:description" content="Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png" />
     <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2025-01-07T00:00:00&#43;00:00"
+        content="2025-02-13T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2025-01-07T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2025-02-13T00:00:00&#43;00:00">
   
 
   
 
 
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://chengaoshen.com/publication/v4ts_survey/index-copy/"
+  },
+  "headline": "Harnessing Vision Models for Time Series Analysis: A Survey",
+  
+  "datePublished": "2025-02-13T00:00:00Z",
+  "dateModified": "2025-02-13T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Jingchao Ni"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "ChengAo Shen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chengaoshen.com/media/icon_hu_7c9966dc99fae72b.png"
+    }
+  },
+  "description": "Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models."
+}
+</script>
+
+  
 
   
 
 
-  <title>🎉 Joined the University of Houston as a PhD student | ChengAo Shen</title>
+  <title>Harnessing Vision Models for Time Series Analysis: A Survey | ChengAo Shen</title>
 
   
   
@@ -781,6 +819,11 @@ My research focuses on applying machine learning and data science methods for ti
 
 
 
+  
+    
+    
+  
+
 
 <div class="mx-auto flex max-w-screen-xl">
   
@@ -797,7 +840,7 @@ My research focuses on applying machine learning and data science methods for ti
     <ul class="flex flex-col gap-1 lg:hidden">
       
       
-        <li class="open"><a
+        <li class=""><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/blogs/"
@@ -807,14 +850,13 @@ My research focuses on applying machine learning and data science methods for ti
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg>
         </span>
     </a><div class="ltr:pr-0 overflow-hidden">
-        <ul class="hb-sidebar-list"><li class="flex flex-col open"><a
+        <ul class="hb-sidebar-list"><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
-      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/blogs/join_uh/"
     
   >🎉 Joined the University of Houston as a PhD student
     </a>
-  
               
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
@@ -890,7 +932,7 @@ My research focuses on applying machine learning and data science methods for ti
               
             </li></ul>
       </div></li>
-        <li class=""><a
+        <li class="open"><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/publication/"
@@ -900,13 +942,14 @@ My research focuses on applying machine learning and data science methods for ti
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-[18px] min-w-[18px] rounded-sm p-0.5 hover:bg-gray-800/5 dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="origin-center transition-transform rtl:-rotate-180"></path></svg>
         </span>
     </a><div class="ltr:pr-0 overflow-hidden">
-        <ul class="hb-sidebar-list"><li class="flex flex-col "><a
+        <ul class="hb-sidebar-list"><li class="flex flex-col open"><a
     class="hb-sidebar-custom-link
-      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+      sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900"
     href="/publication/v4ts_survey/index-copy/"
     
   >Harnessing Vision Models for Time Series Analysis: A Survey
     </a>
+  
               
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
@@ -993,16 +1036,83 @@ My research focuses on applying machine learning and data science methods for ti
 
       
 
-      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">🎉 Joined the University of Houston as a PhD student</h1>
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Harnessing Vision Models for Time Series Analysis: A Survey</h1>
 
       <div class="mt-4 mb-16">
-      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Jan 7, 2025</span>
+      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Feb 13, 2025</span><span class="mx-1">·</span>
+        
+          
+          
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            <div >Jingchao Ni</div>
+          </div>
+          
+        
+          
+          <span class="mr-1">,</span>
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            <div >Ziming Zhao</div>
+          </div>
+          
+        
+          
+          
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            
+            <img src="/author/chengao-shen/avatar_hu_b354e7c61195d068.webp" alt="ChengAo Shen" class="inline-block h-4 w-4 rounded-full border border-current" loading="lazy" />
+            
+            <div >ChengAo Shen</div>
+          </div>
+          
+        
+          
+          <span class="mr-1">,</span>
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            <div >Hanghang Tong</div>
+          </div>
+          
+        
+          
+          <span class="mr-1">,</span>
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            <div >Dongjin Song</div>
+          </div>
+          
+        
+          
+          <span class="mr-1">,</span>
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            <div >Wei Cheng</div>
+          </div>
+          
+        
+          
+          <span class="mr-1">,</span>
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            <div >Dongsheng Luo</div>
+          </div>
+          
+        
+          
+          <span class="mr-1">,</span>
+          <div class="group inline-flex items-center text-current gap-x-1.5 mx-1">
+            
+            <div >Haifeng Chen</div>
+          </div>
+          
         
 
         
         <span class="mx-1">·</span>
         <span class="mx-1">
-          1 min read
+          0 min read
         </span>
         
         </div>
@@ -1013,6 +1123,48 @@ My research focuses on applying machine learning and data science methods for ti
 
 
 
+<div class="">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="hb-attachment-link hb-attachment-large" href="https://github.com/D2I-Group/awesome-vision-time-series" target="_blank" rel="noopener">
+  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+  Code
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
         </div>
       </div>
@@ -1025,18 +1177,45 @@ My research focuses on applying machine learning and data science methods for ti
 
       
       
+        <div class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
+
+        
+          <div class="font-bold text-2xl">Abstract</div>
+          <div>Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models.</div>
+        
+
+        
+        
+          <div class="font-bold text-2xl">Type</div>
+          <div>
+            <a href="/publication_types/conference/">
+            Conference
+            </a>
+          </div>
+        
+
+        
+          <div class="font-bold text-2xl">Publication</div>
+          <div>arXiv</div>
+        
+
+        
+
+        
+
+        
+
+      </div>
+      
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
-        <p>Hi everyone, I&rsquo;m starting my PhD journey at the University of Houston. I&rsquo;m excited to be part of the UH-D2i-group under the supervision of Professor <a href="https://nijingchao.github.io/" target="_blank" rel="noopener">Jingchao Ni</a>.</p>
-<p>My research focuses on applying machine learning and data science methods for time series prediction and anomaly detection. I am also exploring data science techniques to uncover causal relationships across various fields and develop new methods for causal discovery. Additionally, I am interested in integrating language and vision models through multimodal learning to tackle challenges in time series analysis and causal discovery.</p>
-<p>I&rsquo;m looking forward to working with you all!</p>
-
+        
       </div>
 
       
-  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2025-01-07T00:00:00.000Z">
+  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2025-02-13T00:00:00.000Z">
     <span>Last updated on</span>
-    Jan 7, 2025</time>
+    Feb 13, 2025</time>
 
       <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
         
@@ -1045,12 +1224,6 @@ My research focuses on applying machine learning and data science methods for ti
   
 
   
-
-<div class="flex justify-center">
-  
-  <a class="no-underline bg-primary-100 hover:bg-primary-300 text-primary-800 text-xs font-medium mr-2 px-2.5 py-0.5 lg:px-5 lg:py-2 rounded dark:bg-primary-900 dark:hover:bg-primary-700 dark:text-primary-300" href="/tags/news/">News</a>
-  
-</div>
 
 
   
@@ -1066,7 +1239,7 @@ My research focuses on applying machine learning and data science methods for ti
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Fjoin_uh%2F&amp;text=%F0%9F%8E%89&#43;Joined&#43;the&#43;University&#43;of&#43;Houston&#43;as&#43;a&#43;PhD&#43;student"
+    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fchengaoshen.com%2Fpublication%2Fv4ts_survey%2Findex-copy%2F&amp;text=Harnessing&#43;Vision&#43;Models&#43;for&#43;Time&#43;Series&#43;Analysis%3A&#43;A&#43;Survey"
     title="X"
     aria-label="X"
     id="share-link-x"
@@ -1084,7 +1257,7 @@ My research focuses on applying machine learning and data science methods for ti
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Fjoin_uh%2F&amp;t=%F0%9F%8E%89&#43;Joined&#43;the&#43;University&#43;of&#43;Houston&#43;as&#43;a&#43;PhD&#43;student"
+    href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fchengaoshen.com%2Fpublication%2Fv4ts_survey%2Findex-copy%2F&amp;t=Harnessing&#43;Vision&#43;Models&#43;for&#43;Time&#43;Series&#43;Analysis%3A&#43;A&#43;Survey"
     title="Facebook"
     aria-label="Facebook"
     id="share-link-facebook"
@@ -1104,7 +1277,7 @@ My research focuses on applying machine learning and data science methods for ti
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="mailto:?subject=%F0%9F%8E%89%20Joined%20the%20University%20of%20Houston%20as%20a%20PhD%20student&amp;body=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Fjoin_uh%2F"
+    href="mailto:?subject=Harnessing%20Vision%20Models%20for%20Time%20Series%20Analysis%3A%20A%20Survey&amp;body=https%3A%2F%2Fchengaoshen.com%2Fpublication%2Fv4ts_survey%2Findex-copy%2F"
     title="Email"
     aria-label="Email"
     id="share-link-email"
@@ -1122,7 +1295,7 @@ My research focuses on applying machine learning and data science methods for ti
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fchengaoshen.com%2Fblogs%2Fjoin_uh%2F&amp;title=%F0%9F%8E%89&#43;Joined&#43;the&#43;University&#43;of&#43;Houston&#43;as&#43;a&#43;PhD&#43;student"
+    href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fchengaoshen.com%2Fpublication%2Fv4ts_survey%2Findex-copy%2F&amp;title=Harnessing&#43;Vision&#43;Models&#43;for&#43;Time&#43;Series&#43;Analysis%3A&#43;A&#43;Survey"
     title="LinkedIn"
     aria-label="LinkedIn"
     id="share-link-linkedin"
@@ -1140,7 +1313,7 @@ My research focuses on applying machine learning and data science methods for ti
   <a
     target="_blank" rel="noopener"
     class="m-1 rounded-md bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-    href="whatsapp://send?text=%F0%9F%8E%89&#43;Joined&#43;the&#43;University&#43;of&#43;Houston&#43;as&#43;a&#43;PhD&#43;student%20https%3A%2F%2Fchengaoshen.com%2Fblogs%2Fjoin_uh%2F"
+    href="whatsapp://send?text=Harnessing&#43;Vision&#43;Models&#43;for&#43;Time&#43;Series&#43;Analysis%3A&#43;A&#43;Survey%20https%3A%2F%2Fchengaoshen.com%2Fpublication%2Fv4ts_survey%2Findex-copy%2F"
     title="WhatsApp"
     aria-label="WhatsApp"
     id="share-link-whatsapp"
@@ -1162,6 +1335,19 @@ My research focuses on applying machine learning and data science methods for ti
 
   
   
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
 
 
 
@@ -1273,6 +1459,37 @@ My research focuses on applying machine learning and data science methods for ti
 
 
 
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
 
 
 
@@ -1293,15 +1510,15 @@ My research focuses on applying machine learning and data science methods for ti
     </div>
     <div class="">
       
-        <a class="group flex text-right no-underline" href="/blogs/introduction-to-prompt-engineering/">
+        <a class="group flex text-right no-underline" href="/publication/matmcd/">
           <span class="flex flex-col">
             <span
               class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-            >⚽️Introduction to Prompt Engineering</span
+            >Exploring Multi-Modal Integration with Tool-Augmented LLM Agents for Precise Causal Discovery</span
             >
             <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
               
-                Jul 15, 2024
+                Dec 18, 2024
               
             </span>
           </span>

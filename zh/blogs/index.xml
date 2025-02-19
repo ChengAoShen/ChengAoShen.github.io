@@ -7,7 +7,7 @@
     <description>Blogs</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>zh-Hans</language><lastBuildDate>Thu, 31 Dec 2099 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
+      <url>https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png</url>
       <title>Blogs</title>
       <link>https://chengaoshen.com/zh/blogs/</link>
     </image>
@@ -87,8 +87,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://127.0.0.1:8000/items/?skip=0&amp;amp;limit=10
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;对于这一类型的参数，一般会提供默认值，或者使用&lt;code&gt;None&lt;/code&gt;来声明，将其变化为可选参数。若不提供任何默认值，则在请求的时候必须提供这一参数，否则会报错。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;路径参数与查询参数使用名称进行检测，可以&lt;strong&gt;以任特定的顺序&lt;/strong&gt;来进行声明&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;路径参数与查询参数使用名称进行检测，可以&lt;strong&gt;以任特定的顺序&lt;/strong&gt;来进行声明&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;除了一些基础的校验外，有时候需要为查询参数加入更多的校验（例如字符串长度），可以使用&lt;code&gt;Query&lt;/code&gt;来进行实现&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;fastapi&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FastAPI&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Query&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -141,8 +140,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;q&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;item_id&lt;/code&gt;根据路径参数获得，&lt;code&gt;item&lt;/code&gt;在请求体中获得、&lt;code&gt;q&lt;/code&gt;在两者都没有，因此上查询参数获得&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;item_id&lt;/code&gt;根据路径参数获得，&lt;code&gt;item&lt;/code&gt;在请求体中获得、&lt;code&gt;q&lt;/code&gt;在两者都没有，因此上查询参数获得&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -154,8 +152,7 @@
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/zh/blogs/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;仿照d2l的pytorch内容进行记录&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;仿照d2l的pytorch内容进行记录&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;设备切换&#34;&gt;设备切换&lt;/h2&gt;
 &lt;p&gt;尝试使用GPU&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;try_gpu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
@@ -402,8 +399,7 @@
 &lt;p&gt;&lt;code&gt;-i&lt;/code&gt;保证容器的STDIN开启，保证持续的标准输入；&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-t&lt;/code&gt;为docker为容器分配一个tty终端&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ubuntu&lt;/code&gt;提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;/bin/bash&lt;/code&gt;告知容器需要运行的命令&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;/bin/bash&lt;/code&gt;告知容器需要运行的命令&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;12-关闭容器与查看&#34;&gt;1.2 关闭容器与查看&lt;/h3&gt;
 &lt;p&gt;在容器内键入&lt;code&gt;exit&lt;/code&gt;可以退出容器，之后在宿主机上可以通过使用&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker ps -a
@@ -420,15 +416,13 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker run --name containerName -d ubuntu /bin/sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;-d&lt;/code&gt;将容器放在后台运行&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;-d&lt;/code&gt;将容器放在后台运行&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;15-查看守护式容器信息&#34;&gt;1.5 查看守护式容器信息&lt;/h3&gt;
 &lt;p&gt;对于在后台运行的守护式容器，我们可以获取容器的日志。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker logs -f containerName
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;-f&lt;/code&gt;跟踪式运行&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;-f&lt;/code&gt;跟踪式运行&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;在运行容器的时候可以选用不同的日志驱动，常见的有&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;json-file（默认）&lt;/li&gt;
@@ -442,8 +436,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-d&lt;/code&gt;表示在后台运行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;command&lt;/code&gt;是需要的命令&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;command&lt;/code&gt;是需要的命令&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;或者使用如下命令来启动前端的程序&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -i -t containerName &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;17-守护式容器的关闭与重启&#34;&gt;1.7 守护式容器的关闭与重启&lt;/h3&gt;
@@ -452,20 +445,17 @@
 &lt;p&gt;容器有可能因为某种错误而停止，可以通过在run的时候进行标记，来使其自动重启。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker run --name containerName --restrat&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;always -i -t ubuntu /bin/bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;这个属性具有两种标价，可以使用always来设置为自动重启，也可以使用&lt;code&gt;on-failure：n&lt;/code&gt;中的n来指定最多重启次数。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;这个属性具有两种标价，可以使用always来设置为自动重启，也可以使用&lt;code&gt;on-failure：n&lt;/code&gt;中的n来指定最多重启次数。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;18-删除容器&#34;&gt;1.8 删除容器&lt;/h3&gt;
 &lt;p&gt;当容器已经不在使用的时候，可以通过rm命令&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker rm -f containerName
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释：&lt;/p&gt;
-&lt;p&gt;使用f可以无需关闭容器强行删除，不然则需要在删除容器前先关闭当前的容器。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;使用f可以无需关闭容器强行删除，不然则需要在删除容器前先关闭当前的容器。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;删除所有容器需要多个命令的组合，如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker rm &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;sudo docker ps -a -q&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;在ps命令中，可以使用&lt;code&gt;-a&lt;/code&gt;获得所有的容器，而&lt;code&gt;-q&lt;/code&gt;的标志使得这条命令只返回id表&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;在ps命令中，可以使用&lt;code&gt;-a&lt;/code&gt;获得所有的容器，而&lt;code&gt;-q&lt;/code&gt;的标志使得这条命令只返回id表&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;二docker的镜像与容器&#34;&gt;二、Docker的镜像与容器&lt;/h2&gt;
 &lt;h3 id=&#34;21-基本概念介绍&#34;&gt;2.1 基本概念介绍&lt;/h3&gt;
 &lt;p&gt;  Docker镜像是由文件系统叠加而成，最底端是一个引导文件系统（bootfs）。接下来第二层是root文件系统（rootfs），这可以是一种或者多种操作系统。接下来docker会使用联合加载（union mount)的技术在root文件系统层上加载更多的&lt;strong&gt;只读系统&lt;/strong&gt;，将各层文件系统叠加到一起。&lt;/p&gt;
@@ -478,14 +468,12 @@
 &lt;p&gt;  Docker Hub中有两种类型的仓库，分别是用户仓库（user repository）和顶层仓库（top-level repository）&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;用户仓库：userName/repositoryName&lt;/p&gt;
-&lt;p&gt;顶层仓库：Name&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;顶层仓库：Name&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;对于镜像文件，可以在使用&lt;code&gt;run&lt;/code&gt;之前使用docker拉取相应的镜像文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker pull image:tag
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释&lt;/p&gt;
-&lt;p&gt;tag是image的版本，都在image的仓库之中。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;tag是image的版本，都在image的仓库之中。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;23-查找镜像&#34;&gt;2.3 查找镜像&lt;/h3&gt;
 &lt;p&gt;我们可以通过使用search命令查找，所有可用的公共镜像。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker search imageName
@@ -506,8 +494,7 @@
 &lt;p&gt;repositoryName：选择的镜像仓库名称，通常为自己的用户名&lt;/p&gt;
 &lt;p&gt;imageName：镜像名&lt;/p&gt;
 &lt;p&gt;tag：标签名&lt;/p&gt;
-&lt;p&gt;注：这个命令提交的只是创建容器的镜像和容器当前状态的差别部分，使得更新十分&lt;strong&gt;轻量&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;注：这个命令提交的只是创建容器的镜像和容器当前状态的差别部分，使得更新十分&lt;strong&gt;轻量&lt;/strong&gt;。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;25-基于dockerfile来构建镜像&#34;&gt;2.5 基于Dockerfile来构建镜像&lt;/h3&gt;
 &lt;p&gt;  使用基于DSL语法的dockerfile可以构建镜像，具有更高的重复性、透明性、幂等性。&lt;/p&gt;
 &lt;h4 id=&#34;251-快速尝试&#34;&gt;2.5.1 快速尝试&lt;/h4&gt;
@@ -521,8 +508,7 @@
 &lt;p&gt;参数解释：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;FROM&lt;/code&gt;指定了所用的基础镜像&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;LABLE&lt;/code&gt;可以告知镜像的作者以及邮箱&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;EXPOSE&lt;/code&gt;可以指定应用程序使用容器的端口&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;EXPOSE&lt;/code&gt;可以指定应用程序使用容器的端口&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;在使用Dockfile构建镜像的时候，每一条指令&lt;strong&gt;都会&lt;/strong&gt;创建一个&lt;strong&gt;新的镜像&lt;/strong&gt;并提交，这样的操作逻辑即使在某一条失败而没有正常的结束，仍可以保留一个最后的镜像文件，可以用于调试。&lt;/p&gt;
 &lt;p&gt;  默认情况下&lt;code&gt;RUN&lt;/code&gt;指令会使用命令包装器来执行，而对于不希望在Shell中运行的可以使用&lt;code&gt;exec&lt;/code&gt;格式来运行指令，这种方式运行使用一个数组来指定要运行的命令和每一个参数。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;apt-get&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;install&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;-y&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;nginx&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
@@ -531,8 +517,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-t=&lt;/code&gt;用于表示镜像的仓库名，镜像名以及标签&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;path&lt;/code&gt;表示dockerfile&lt;strong&gt;所处&lt;/strong&gt;的路径，这个路径也可以是远端仓库的位置&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;path&lt;/code&gt;表示dockerfile&lt;strong&gt;所处&lt;/strong&gt;的路径，这个路径也可以是远端仓库的位置&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;当使用构建的时候，dokerfile所处的上下文也会被传送到docker守护进程，如果有不想被传送的文件可以通过设置&lt;code&gt;.dockerignore&lt;/code&gt;文件来选择需要过滤匹配的文件。&lt;/p&gt;
 &lt;h4 id=&#34;252-dockerfile的缓存逻辑&#34;&gt;2.5.2 Dockerfile的缓存逻辑&lt;/h4&gt;
 &lt;p&gt;  因为在构建镜像的过程中，每一个步骤都会被构建为单独的镜像层，当再次使用dockerfile进行构建的时候，就会从最新一次有发生更改的部分继续进行构建。如果需要忽略所有缓存，则可以使用&lt;code&gt;--no-cache&lt;/code&gt;命令来忽略所有缓存构建。&lt;/p&gt;
@@ -545,21 +530,18 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;EXPOSE &lt;span class=&#34;m&#34;&gt;80&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ENV&lt;/code&gt;：设置了一个名为REFRESHED_AT的环境变量，指明了模板最新更新的时间，当更改时间后，后面的所有内容都会重新运行，使得包可以进行刷新。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;ENV&lt;/code&gt;：设置了一个名为REFRESHED_AT的环境变量，指明了模板最新更新的时间，当更改时间后，后面的所有内容都会重新运行，使得包可以进行刷新。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h4 id=&#34;253-查看与使用新的镜像&#34;&gt;2.5.3 查看与使用新的镜像&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker images repositoryName/imageName
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;history&lt;/span&gt; repositoryName/imageName
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;上面的第一个代码，可以查看自己构建的镜像的具体状况，而需要查看具体的构建全步骤过程，则可以使用下面的，查看到每一层的镜像文件以及相应的构建指令。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;上面的第一个代码，可以查看自己构建的镜像的具体状况，而需要查看具体的构建全步骤过程，则可以使用下面的，查看到每一层的镜像文件以及相应的构建指令。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;  当我们使用这种自己构建的镜像运行时候，我们的&lt;code&gt;run&lt;/code&gt;命令需要加入新的内容&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker run -d -p 127.0.0.1:8080:80 --name containerName repositoryName/imageName &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-p&lt;/code&gt;参数用于配置容器与宿主机的端口链接，如上述命令是把容器的80映射到宿主机127ip的8080端口上，当其中有参数被省略时，则会使用默认（随机）参数。当我们使用&lt;code&gt;-P&lt;/code&gt;的时候，会将容器的80绑定到一个宿主机随机端口，然后将dockerfile中EXPOSE指定的端口全部公开.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;command&lt;/code&gt;命令是直接在容器内运行的内容，通常用于打开需要的服务&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;command&lt;/code&gt;命令是直接在容器内运行的内容，通常用于打开需要的服务&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;  我们可以使用&lt;code&gt;docker ps -l&lt;/code&gt;命令查看所有容器被映射的端口，也可以使用&lt;code&gt;docker port uuid 80&lt;/code&gt;查看这一容器80端口被映射到的宿主机端口位置。&lt;/p&gt;
 &lt;h3 id=&#34;26-dockerfile指令&#34;&gt;2.6 Dockerfile指令&lt;/h3&gt;
 &lt;h4 id=&#34;261-cmd&#34;&gt;2.6.1 CMD&lt;/h4&gt;
@@ -569,8 +551,7 @@
 &lt;h4 id=&#34;262-entrypoint&#34;&gt;2.6.2 ENTRYPOINT&lt;/h4&gt;
 &lt;p&gt;  这个指令与CMD十分类似，而最大的区别在于其不会被命令中的指令覆盖&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;实际上所有的指令都会作为参数传入&lt;code&gt;ENTRYPOINT&lt;/code&gt;中。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;实际上所有的指令都会作为参数传入&lt;code&gt;ENTRYPOINT&lt;/code&gt;中。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;在使用这个指令的时候我们也会使用数组进行内容的传输&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;ENTRYPOINT&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/usr/sbin/nginx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-g&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;daemon off;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;将这个命令，&lt;code&gt;CMD&lt;/code&gt;命令以及&lt;code&gt;docker run&lt;/code&gt;时选择的命令进行组合，可以得到默认参数的使用方法。&lt;/p&gt;
@@ -583,8 +564,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /opt/webapp&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; command&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;我们为command指令设置了路径&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;我们为command指令设置了路径&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;我们可以在run的时候通过&lt;code&gt;-w&lt;/code&gt;来覆盖工作的目录。&lt;/p&gt;
 &lt;h4 id=&#34;264-env&#34;&gt;2.6.4 ENV&lt;/h4&gt;
 &lt;p&gt;在镜像构建的过程中设置环境变量，这个环境变量可以在之后任何RUN指令中使用，就如同&lt;strong&gt;在命令前面指定了环境变量的前缀&lt;/strong&gt;。&lt;/p&gt;
@@ -593,8 +573,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; $TARGET_FIR&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释：&lt;/p&gt;
-&lt;p&gt;设置了&lt;code&gt;RVM_PATH&lt;/code&gt;与&lt;code&gt;TARGET_FIR&lt;/code&gt;两个环境变量，第一个可以为第二条&lt;code&gt;RUN&lt;/code&gt;指令提供前缀条件，变成如&lt;code&gt;RVM_PATH=/home/rvm RUN gem install unicorn&lt;/code&gt;而第二个则被用于提供了工作目录的位置。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;设置了&lt;code&gt;RVM_PATH&lt;/code&gt;与&lt;code&gt;TARGET_FIR&lt;/code&gt;两个环境变量，第一个可以为第二条&lt;code&gt;RUN&lt;/code&gt;指令提供前缀条件，变成如&lt;code&gt;RVM_PATH=/home/rvm RUN gem install unicorn&lt;/code&gt;而第二个则被用于提供了工作目录的位置。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;注意：在Dockerfile中设置的环境变量都是在容器中具有持久化作用的，而如果只是在使用&lt;code&gt;docker run&lt;/code&gt;时候加入&lt;code&gt;-e&lt;/code&gt;来传递的环境变量则只在运行的时候有效。&lt;/p&gt;
 &lt;h4 id=&#34;265-user&#34;&gt;2.6.5 USER&lt;/h4&gt;
 &lt;p&gt;指定这个镜像以什么用户去运行，可以通过指定用户名（或uid）以及组（或gid）来选择。&lt;strong&gt;如果不选择默认会使用root&lt;/strong&gt;&lt;/p&gt;
@@ -607,8 +586,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;VOLUME&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/opt/project&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释：&lt;/p&gt;
-&lt;p&gt;为基于此镜像的任何容器创建了这两个挂载点。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;为基于此镜像的任何容器创建了这两个挂载点。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h4 id=&#34;267-add&#34;&gt;2.6.7 ADD&lt;/h4&gt;
 &lt;p&gt;将构建环境下的文件和目录复制到镜像之中，需要指定源文件位置和目的文件位置两个参数。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; contentPath aimPath&lt;span class=&#34;err&#34;&gt;
@@ -616,8 +594,7 @@
 &lt;p&gt;参数解释：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;contentPath&lt;/code&gt;是上下文的文件，通过末尾的字符来判断是目录还是文件，如果以&lt;code&gt;/&lt;/code&gt;结尾的就被认为是目录。&lt;/p&gt;
 &lt;p&gt;在处理本地文件的时候，当归档文件被指定为源文件的时候，docker会把文件自动解开。（以URL指定目前不行）&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;aimPath&lt;/code&gt;是镜像内的目标位置，如果目录不存在的话，会自动创建这样的新目录，其模式为文件模式为&lt;strong&gt;0755&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;aimPath&lt;/code&gt;是镜像内的目标位置，如果目录不存在的话，会自动创建这样的新目录，其模式为文件模式为&lt;strong&gt;0755&lt;/strong&gt;。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;ADD&lt;/code&gt;指令会使得构建的缓存变得无效，当添加后，所有的后续指令都需要重新进行构建。&lt;/p&gt;
 &lt;h4 id=&#34;268-copy&#34;&gt;2.6.8 COPY&lt;/h4&gt;
 &lt;p&gt;  与&lt;code&gt;ADD&lt;/code&gt;命令基本类似，但不会做文件提取以及解压等方面的内容，需要注意，所有的文件源路径&lt;strong&gt;都必须是在Dockerfile&lt;/strong&gt;的相对文件夹下，不能复制这个目录以外其他目录的内容。&lt;/p&gt;
@@ -634,16 +611,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ARG&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;webapp_user&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;user
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释&lt;/p&gt;
-&lt;p&gt;定义了两个变量，第二个给了一个默认值，接下来可以在使用&lt;code&gt;docker build --build-arg build=1234&lt;/code&gt;这样的命令来添加参数&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;定义了两个变量，第二个给了一个默认值，接下来可以在使用&lt;code&gt;docker build --build-arg build=1234&lt;/code&gt;这样的命令来添加参数&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h4 id=&#34;2612-onbuild&#34;&gt;2.6.12 ONBUILD&lt;/h4&gt;
 &lt;p&gt;为当前的镜像添加触发器，当这个镜像被用作为其他镜像的基础镜像的时候，该镜像中的触发器会被执行。触发器会在下一个继承他的镜像的&lt;code&gt;FORM&lt;/code&gt;之后添加这些被触发的指令&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;ONBUILD&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; . /app/src&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ONBUILD&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /app&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;此处使用了两条命令，当有新的镜像Dockerfile继承当前的镜像时候，运行后回在FORM之后插入这两句话&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：触发器只能被子镜像继承，当孙镜像运行时候则不会再进行继承。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：触发器只能被子镜像继承，当孙镜像运行时候则不会再进行继承。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;27-删除自己的镜像&#34;&gt;2.7 删除自己的镜像&lt;/h3&gt;
 &lt;p&gt;当我们不再需要一个镜像的时候，我们可以使用&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker rmi repositoryName/imageName1 repositoryName/imageName2
@@ -661,8 +636,7 @@
 &lt;li&gt;同时对代码进行开发与测试&lt;/li&gt;
 &lt;li&gt;代码改动十分频繁，不想在开发过程中重构镜像&lt;/li&gt;
 &lt;li&gt;希望在多个容器之间共享代码&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
 &lt;p&gt;这时候我们就需要使用docker的卷挂在来实现，通过在运行容器的时候使用&lt;code&gt;-v 宿主机目录：容器内目录：读写权限&lt;/code&gt;来对本地与容器内的文件进行映射挂载。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d -p &lt;span class=&#34;m&#34;&gt;80&lt;/span&gt; --name web -v ./web:/var/www/html/website:ro repositoryName/imageName2 cmd
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;32-容器的链接&#34;&gt;3.2 容器的链接&lt;/h3&gt;
@@ -696,8 +670,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;redis &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参数解释：&lt;/p&gt;
-&lt;p&gt;开启了分别名为&lt;code&gt;web&lt;/code&gt;与&lt;code&gt;redis&lt;/code&gt;的两个容器文件，并为其配置了相应的参数,Compose会使用这些参数生产多个容器并组成相应的容器栈。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;开启了分别名为&lt;code&gt;web&lt;/code&gt;与&lt;code&gt;redis&lt;/code&gt;的两个容器文件，并为其配置了相应的参数,Compose会使用这些参数生产多个容器并组成相应的容器栈。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;当切换至有&lt;code&gt;YAML&lt;/code&gt;文件的目录下后，我们有一些常用的指令&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker-compose up -d &lt;span class=&#34;c1&#34;&gt;# 在后台运行容器栈&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker-compose ps &lt;span class=&#34;c1&#34;&gt;# 列出本地docker-compose.yml 文件中正在运行的所有服务&lt;/span&gt;
@@ -1003,8 +976,7 @@ The key&#39;s randomart image is:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;pass&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;在 / 左边的只能由位置指定，在*右边的只能由关键字指定,而中间的则为默认模式。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;在 / 左边的只能由位置指定，在*右边的只能由关键字指定,而中间的则为默认模式。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;32-更好的使用位置参数&#34;&gt;3.2 更好的使用位置参数&lt;/h3&gt;
 &lt;p&gt;  有时候，我们需要一次性传入多个位置参数，就可以使用列表“拆包”来一次性传入多个变量。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;function1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
@@ -1059,8 +1031,7 @@ The key&#39;s randomart image is:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;helper&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;通过内层函数来实现在组内的优先，其次根据数值排序。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;通过内层函数来实现在组内的优先，其次根据数值排序。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;在上述的例子中，我们内层函数可以对外层的函数读取，但如果我们此时对内层函数的变量进行修改，则不会对外层函数的变量产生影响，产生这样的原因是在python的三层作用域中，即使当前函数的变量名与外围的变量名重复，当我们对其进行赋值的时候，也会在当前作用域产生新的变量，这是为了防止作用域相互污染的“作用域bug”。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;三层作用域&lt;/p&gt;
@@ -1068,8 +1039,7 @@ The key&#39;s randomart image is:
 &lt;li&gt;当前函数的作用域&lt;/li&gt;
 &lt;li&gt;外围作用域（包含当前函数的函数）&lt;/li&gt;
 &lt;li&gt;包含当前代码的模块对应的作用域（全局作用域）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
 &lt;p&gt;而如果我们需要拓展当前变量的作用域，我们可以使用&lt;code&gt;nonlocal&lt;/code&gt;来扩展到外围作用域，使用&lt;code&gt;global&lt;/code&gt;来拓展到全局作用域。&lt;/p&gt;
 &lt;h3 id=&#34;35-函数的装饰器&#34;&gt;3.5 函数的装饰器&lt;/h3&gt;
 &lt;p&gt;  Python可以用装饰器对某个函数进行封装，从而在执行函数之前与之后分别运行其他代码。这可以确保用户以正确的方式使用函数，也能够用来调试程序或者实现函数的注册。&lt;/p&gt;
@@ -1087,8 +1057,7 @@ The key&#39;s randomart image is:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fun1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;上面的代码是一个计时装饰器，将一个函数封装为另一个函数（wrapper）并返回，在函数的前后分别加上了记录开始与结束时间的代码。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;上面的代码是一个计时装饰器，将一个函数封装为另一个函数（wrapper）并返回，在函数的前后分别加上了记录开始与结束时间的代码。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;但我们会发现一个问题，被装饰过的函数其名字并不是本身，而是变成了装饰器所返回的名字与其他很多标准属性都发生改变，为了保留这些数据，我们需要使用另一个自带的装饰器来修饰函数，把重要的元数据保留。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;time&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;functools&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;wraps&lt;/span&gt;
@@ -1135,8 +1104,7 @@ The key&#39;s randomart image is:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;line&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;line&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;python在运行for x in l等迭代语句的时，会先运行iter(l)，触发&lt;code&gt;l.__iter__&lt;/code&gt;方法，这个方法会返回迭代器对象(这个对象本身实现了&lt;code&gt;__next__&lt;/code&gt;方法)，最后python会反复调用内置的next函数，直到数据用尽。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;python在运行for x in l等迭代语句的时，会先运行iter(l)，触发&lt;code&gt;l.__iter__&lt;/code&gt;方法，这个方法会返回迭代器对象(这个对象本身实现了&lt;code&gt;__next__&lt;/code&gt;方法)，最后python会反复调用内置的next函数，直到数据用尽。&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;有时候我们需要连续使用多个生成器，可以通过&lt;code&gt;yield from&lt;/code&gt;来简化代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;move&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;period&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;speed&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;period&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
@@ -1322,9 +1290,7 @@ The key&#39;s randomart image is:
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;可以多层引用&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;比如这里有个第二层&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;比如这里有个第二层&lt;/p&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;二gfm语法&#34;&gt;二、GFM语法&lt;/h2&gt;
 &lt;h3 id=&#34;21删除线&#34;&gt;2.1	删除线&lt;/h3&gt;
@@ -1370,8 +1336,7 @@ The key&#39;s randomart image is:
 &lt;/ul&gt;
 &lt;h3 id=&#34;25锚点&#34;&gt;2.5	锚点&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[锚点描述]（#锚点名字）
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
-&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;#%e7%9b%ae%e5%bd%95&#34;&gt;回到目录&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;三更好的使用typora&#34;&gt;三、更好的使用Typora&lt;/h2&gt;
 &lt;h3 id=&#34;31typora的拓展语法&#34;&gt;3.1	Typora的拓展语法&lt;/h3&gt;

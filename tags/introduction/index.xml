@@ -7,7 +7,7 @@
     <description>Introduction</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
+      <url>https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png</url>
       <title>Introduction</title>
       <link>https://chengaoshen.com/tags/introduction/</link>
     </image>
@@ -29,8 +29,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The general recommendation is to alter temperature or Top P but not both.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The general recommendation is to alter temperature or Top P but not both.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Max Length - This parameter controls the number of tokens the model generates in its output. Using a typical max length will help to prevent long or irrelevant responses and control costs.&lt;/p&gt;

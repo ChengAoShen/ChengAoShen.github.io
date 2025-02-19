@@ -5,23 +5,38 @@
     <link>https://chengaoshen.com/</link>
       <atom:link href="https://chengaoshen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>ChengAo Shen</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 31 Dec 2099 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 05 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
+      <url>https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png</url>
       <title>ChengAo Shen</title>
       <link>https://chengaoshen.com/</link>
     </image>
+    
+    <item>
+      <title>Harnessing Vision Models for Time Series Analysis: A Survey</title>
+      <link>https://chengaoshen.com/publication/v4ts_survey/index-copy/</link>
+      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/publication/v4ts_survey/index-copy/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>🎉 Joined the University of Houston as a PhD student</title>
       <link>https://chengaoshen.com/blogs/join_uh/</link>
       <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/blogs/join_uh/</guid>
-      <description>&lt;p&gt;Hi everyone, I&amp;rsquo;m starting my PhD journey at the University of Houston. I&amp;rsquo;m excited to be part of the UH-D2i-group under the supervision of Professor 
-.&lt;/p&gt;
+      <description>&lt;p&gt;Hi everyone, I&amp;rsquo;m starting my PhD journey at the University of Houston. I&amp;rsquo;m excited to be part of the UH-D2i-group under the supervision of Professor &lt;a href=&#34;https://nijingchao.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jingchao Ni&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My research focuses on applying machine learning and data science methods for time series prediction and anomaly detection. I am also exploring data science techniques to uncover causal relationships across various fields and develop new methods for causal discovery. Additionally, I am interested in integrating language and vision models through multimodal learning to tackle challenges in time series analysis and causal discovery.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m looking forward to working with you all!&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Exploring Multi-Modal Integration with Tool-Augmented LLM Agents for Precise Causal Discovery</title>
+      <link>https://chengaoshen.com/publication/matmcd/</link>
+      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/publication/matmcd/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -41,8 +56,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The general recommendation is to alter temperature or Top P but not both.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The general recommendation is to alter temperature or Top P but not both.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Max Length - This parameter controls the number of tokens the model generates in its output. Using a typical max length will help to prevent long or irrelevant responses and control costs.&lt;/p&gt;
@@ -132,9 +146,7 @@
       <guid>https://chengaoshen.com/blogs/reading-notes-for-lemma-rca/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This paper introduces a new large dataset named &lt;strong&gt;LEMMA-RCA&lt;/strong&gt; for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world. They also evaluate eight baseline methods on this dataset to prove the high quality of LEMMA_RCA. The official website is 
-.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This paper introduces a new large dataset named &lt;strong&gt;LEMMA-RCA&lt;/strong&gt; for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world. They also evaluate eight baseline methods on this dataset to prove the high quality of LEMMA_RCA. The official website is &lt;a href=&#34;https://lemma-rca.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://lemma-rca.github.io/&lt;/a&gt;.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;What problem does the paper try to solve？&lt;/p&gt;
@@ -277,8 +289,7 @@ $$&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly
       <guid>https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named &lt;strong&gt;LSTF-Linear&lt;/strong&gt; which achieve outstanding performance and conduct comprehensive studies.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named &lt;strong&gt;LSTF-Linear&lt;/strong&gt; which achieve outstanding performance and conduct comprehensive studies.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;What problem does the paper try to solve？&lt;/p&gt;
@@ -363,16 +374,23 @@ Wherein $W\in\mathbb{R}^{T\times L}$ is a linear layer along the temporal axis. 
       <guid>https://chengaoshen.com/blogs/hello/</guid>
       <description>&lt;p&gt;In the upcoming Fall of 2024, I will be completing my undergraduate studies and beginning my Ph.D. journey. To better present my academic experience and personal information, I have used Hugo to create a new personal homepage (which is the page you are currently viewing)!&lt;/p&gt;
 &lt;p&gt;I will continue to update my academic blog and personal news on this homepage. Stay tuned!&lt;/p&gt;
-&lt;p&gt;More information about me can be found in 
-. I sincerely hope my posts can help you. If you have any questions, please feel free to contact me.&lt;/p&gt;
+&lt;p&gt;More information about me can be found in &lt;a href=&#34;https://chengaoshen.com/&#34;&gt;Bio&lt;/a&gt;. I sincerely hope my posts can help you. If you have any questions, please feel free to contact me.&lt;/p&gt;
 </description>
     </item>
     
     <item>
+      <title>Blogs</title>
+      <link>https://chengaoshen.com/blog/</link>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Emoji kitchen with controlled fusion</title>
-      <link>https://chengaoshen.com/publication/emoji-kitchen-with-controlled-fusion/</link>
+      <link>https://chengaoshen.com/publication/emoji_cfn/</link>
       <pubDate>Fri, 31 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/publication/emoji-kitchen-with-controlled-fusion/</guid>
+      <guid>https://chengaoshen.com/publication/emoji_cfn/</guid>
       <description></description>
     </item>
     
@@ -587,8 +605,7 @@ Where $x,g$ present real and generated images, $\mu$ is the mean and $\Sigma$ is
       <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/blogs/introduction-to-transformer/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Transformer is a really popular method in modern neural networks. We have BERT or GPT to process the natural language and ViT to deal with computer vision. In this essay, you will understand what is the transformer and why the transformer works. But be careful, limited by my knowledge, I can’t show some mathematical theories or code of transformer for you.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Transformer is a really popular method in modern neural networks. We have BERT or GPT to process the natural language and ViT to deal with computer vision. In this essay, you will understand what is the transformer and why the transformer works. But be careful, limited by my knowledge, I can’t show some mathematical theories or code of transformer for you.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;why-do-we-need-the-transformer&#34;&gt;Why do we need the Transformer?&lt;/h2&gt;
 &lt;p&gt;In the NLP( Natural Language Processing) field, the text dataset always has some obvious features that prevent us from using MLP.&lt;/p&gt;
 &lt;ol&gt;
@@ -665,9 +682,7 @@ $$&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;[1] S. J. D. Prince, &lt;em&gt;Understanding Deep Learning&lt;/em&gt;. MIT Press, 2023.&lt;/p&gt;
 &lt;p&gt;[2] A. Vaswani &lt;em&gt;et al.&lt;/em&gt;, ‘Attention Is All You Need’, &lt;em&gt;CoRR&lt;/em&gt;, vol. abs/1706.03762, 2017.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;All photos in this article are from 
-. It’s a great book and I really recommend it&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;All photos in this article are from &lt;a href=&#34;https://udlbook.github.io/udlbook/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Understanding Deep Learning&lt;/a&gt;. It’s a great book and I really recommend it&lt;/p&gt;&lt;/blockquote&gt;
 </description>
     </item>
     
@@ -704,8 +719,7 @@ $$&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ones_t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ones&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;zeros_t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zeros&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: If you initialize the tensors from Numpy, they will share the same underlying memory, which means that if changing the numpy array, the tensor will change too.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: If you initialize the tensors from Numpy, they will share the same underlying memory, which means that if changing the numpy array, the tensor will change too.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;attributes-of-a-tensor&#34;&gt;Attributes of a Tensor&lt;/h2&gt;
 &lt;p&gt;We can get some attributes of a tensor by code followed&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;t_data&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shape&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# Get the shape of the tensor&lt;/span&gt;
@@ -854,17 +868,8 @@ $$&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;ToTensor&lt;/code&gt;:converts a PIL image or NumPy array into a Tensor,scales the image&amp;rsquo;s pixel intensity values in the range [0., 1.]&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Lambda Transforms&lt;/code&gt;:Lambda transforms apply any user-defined lambda function.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;Lambda Transforms&lt;/code&gt;:Lambda transforms apply any user-defined lambda function.&lt;/p&gt;&lt;/blockquote&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Blogs</title>
-      <link>https://chengaoshen.com/blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/blog/</guid>
-      <description></description>
     </item>
     
   </channel>

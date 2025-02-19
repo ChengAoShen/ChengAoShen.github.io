@@ -7,7 +7,7 @@
     <description>Reading Notes</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chengaoshen.com/media/icon_hu13846342205060721621.png</url>
+      <url>https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png</url>
       <title>Reading Notes</title>
       <link>https://chengaoshen.com/tags/reading-notes/</link>
     </image>
@@ -19,9 +19,7 @@
       <guid>https://chengaoshen.com/blogs/reading-notes-for-lemma-rca/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This paper introduces a new large dataset named &lt;strong&gt;LEMMA-RCA&lt;/strong&gt; for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world. They also evaluate eight baseline methods on this dataset to prove the high quality of LEMMA_RCA. The official website is 
-.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This paper introduces a new large dataset named &lt;strong&gt;LEMMA-RCA&lt;/strong&gt; for diverse RCA tasks across multiple domains and modalities. This dataset contains IT and OT operation systems from the real world. They also evaluate eight baseline methods on this dataset to prove the high quality of LEMMA_RCA. The official website is &lt;a href=&#34;https://lemma-rca.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://lemma-rca.github.io/&lt;/a&gt;.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;What problem does the paper try to solve？&lt;/p&gt;
@@ -164,8 +162,7 @@ $$&lt;p&gt;Where $\text{rank}_{R_{a}}$ is the rank number of the first correctly
       <guid>https://chengaoshen.com/blogs/reading-notes-for-ltsf-linear/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named &lt;strong&gt;LSTF-Linear&lt;/strong&gt; which achieve outstanding performance and conduct comprehensive studies.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This paper insists that the time series is an ordered set of continuous points that will result in the loss of temporal information when using the Transformer structure. To prove this opinion, they propose models named &lt;strong&gt;LSTF-Linear&lt;/strong&gt; which achieve outstanding performance and conduct comprehensive studies.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;What problem does the paper try to solve？&lt;/p&gt;
