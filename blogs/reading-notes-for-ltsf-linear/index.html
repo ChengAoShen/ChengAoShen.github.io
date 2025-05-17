@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 20, 2025 --><html lang="en-us" dir="ltr"
+<!-- Last Published: May 16, 2025 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -418,7 +418,6 @@ This paper insists that the time series is an ordered set of continuous points t
         
       
     
-  
   
   
   
@@ -1257,6 +1256,8 @@ This paper insists that the time series is an ordered set of continuous points t
 <p><strong>Encoder/Decoder</strong>: To help the Transformer structure adopt the time series problems, there have been many improvements made to the encoder and decoder in this work. Among them, in the encoder section, many improvements have been proposed to reduce computational consumption and increase speed. In the decoder section, to avoid cumulative errors, it has also begun to transition from IMS to DMS.</p>
 <p>The success of Transformer in the NLP field is largely attributed to its understanding of the semantic relationships between words, but in time series problems, temporary information has become even more important. However, the Transformer&rsquo;s ability to model time largely comes from the timestamp rather than its structure.</p>
 <h3 id="lstf-linear">LSTF-Linear</h3>
+<p>This paper hypothesizes that the improvement in the Transformer-Based model is due to the DMS strategy rather than the Transformer. Thus they propose LSTF-Linear that directly regresses historical time series for future prediction via a weighted sum operation to verify this thinking. The model can be a formula as :
+</p>
 $$
 \hat{X}_i=WX_i
 $$<p>

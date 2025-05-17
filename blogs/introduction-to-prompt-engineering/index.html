@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 20, 2025 --><html lang="en-us" dir="ltr"
+<!-- Last Published: May 16, 2025 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -445,7 +445,6 @@ Prompt engineering is a relatively new discipline for developing and optimizing 
   
   
   
-  
 
 
 
@@ -539,6 +538,28 @@ Prompt engineering is a relatively new discipline for developing and optimizing 
 
 
 
+
+<style>
+  .markmap > svg {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  window.markmap = {
+    autoLoader: {
+      manual: false,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+    },
+  };
+</script>
+
+
+<script defer src="/dist/lib/markmap/index.min.c9d7aae44c6040009be2304689eae39673e6614f1a92d8f4a69f581bed004b9b.js" integrity="sha256-ydeq5ExgQACb4jBGierjlnPmYU8aktj0pp9YG&#43;0AS5s="></script>
 
 
 
@@ -1232,20 +1253,32 @@ Prompt engineering is a relatively new discipline for developing and optimizing 
 <p>Normally we only use user prompts to interact with the model.</p>
 <h3 id="prompt-format">Prompt Format</h3>
 <p>The prompt can be formatted with different structures divided into zero-shot or few-shot. Zero-shot prompting means it can directly prompt the model for a response without any examples or demonstrations of the task. One typical zero-shot example is the Question/Answering (QA) format:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Q: &lt;Question&gt;?
-</span></span><span class="line"><span class="cl">A: &lt;Answer&gt;
-</span></span><span class="line"><span class="cl">Q: &lt;Question&gt;?
-</span></span><span class="line"><span class="cl">A: &lt;Answer&gt;
-</span></span><span class="line"><span class="cl">Q: &lt;Question&gt;?
-</span></span><span class="line"><span class="cl">A: 
-</span></span></code></pre></div><p>Different formats of prompts can be used in various tasks, such as classification prompts:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">This is awesome! // Positive
-</span></span><span class="line"><span class="cl">This is bad! // Negative
-</span></span><span class="line"><span class="cl">Wow, that movie was rad! // Positive
-</span></span><span class="line"><span class="cl">What a horrible show! //
-</span></span></code></pre></div><p>Output:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Negative
-</span></span></code></pre></div><p>This format is a few-shot that can enable in-context learning.</p>
+<div class="markmap" style="height: 500px;">
+
+<pre>Q: <Question>?
+A: <Answer>
+Q: <Question>?
+A: <Answer>
+Q: <Question>?
+A: </pre>
+</div>
+
+<p>Different formats of prompts can be used in various tasks, such as classification prompts:</p>
+<div class="markmap" style="height: 500px;">
+
+<pre>This is awesome! // Positive
+This is bad! // Negative
+Wow, that movie was rad! // Positive
+What a horrible show! //</pre>
+</div>
+
+<p>Output:</p>
+<div class="markmap" style="height: 500px;">
+
+<pre>Negative</pre>
+</div>
+
+<p>This format is a few-shot that can enable in-context learning.</p>
 <h3 id="prompt-elements">Prompt Elements</h3>
 <p>One typical prompt often contains any of the following elements:</p>
 <ul>
@@ -1268,18 +1301,26 @@ Prompt engineering is a relatively new discipline for developing and optimizing 
 <li>
 <p>Specificity</p>
 <p>More detailed requirements can help the model output meet the requirements.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Extract the name of places in the following text. 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Desired format:
-</span></span><span class="line"><span class="cl">Place: &lt;comma_separated_list_of_places&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Input: &#34;Although these developments are encouraging to researchers, much is still a mystery. “We often have a black box between the brain and the effect we see in the periphery,” says Henrique Veiga-Fernandes, a neuroimmunologist at the Champalimaud Centre for the Unknown in Lisbon. “If we want to use it in the therapeutic context, we actually need to understand the mechanism.&#34;
-</span></span></code></pre></div></li>
+<div class="markmap" style="height: 500px;">
+
+<pre>Extract the name of places in the following text. 
+
+Desired format:
+Place: <comma_separated_list_of_places>
+
+Input: "Although these developments are encouraging to researchers, much is still a mystery. “We often have a black box between the brain and the effect we see in the periphery,” says Henrique Veiga-Fernandes, a neuroimmunologist at the Champalimaud Centre for the Unknown in Lisbon. “If we want to use it in the therapeutic context, we actually need to understand the mechanism."</pre>
+</div>
+
+</li>
 <li>
 <p>Avoid Imprecisseness</p>
 <p>Use the most straightforward language to communicate.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Use 2-3 sentences to explain the concept of prompt engineering to a high school student.
-</span></span></code></pre></div></li>
+<div class="markmap" style="height: 500px;">
+
+<pre>Use 2-3 sentences to explain the concept of prompt engineering to a high school student.</pre>
+</div>
+
+</li>
 <li>
 <p>Say Do What</p>
 <p>Avoid saying what not to do but say what to do instead</p>

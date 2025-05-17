@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 20, 2025 --><html lang="en-us" dir="ltr"
+<!-- Last Published: May 16, 2025 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head>
@@ -416,7 +416,6 @@
         
       
     
-  
   
   
   
@@ -1173,7 +1172,7 @@
         
         <span class="mx-1">·</span>
         <span class="mx-1">
-          3 min read
+          4 min read
         </span>
         
         </div>
@@ -1212,6 +1211,8 @@
 <p>Direct generative models, such as generative adversarial models, aim to provide a mechanism for generating samples similar to observed data $\{\mathbf{x}_i\}$</p>
 </li>
 <li>
+<p>Probabilistic models learn the probability distribution over the train data. These models will assign a probability $Pr(\mathbf{x}|\phi)$ to each data point $\mathbf{x}$. The models aim to maximize the probability of the observed data $\{\mathbf{x}_i\}$.
+</p>
 $$
   L[\phi]=-\sum_{i=1}^{I}\mathrm{log}[Pr(\mathbf{x}_i|\phi)]
   $$</li>
@@ -1294,13 +1295,20 @@ $$
   <img class="img" src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231026144638161.png" alt="Inception score">
   <figcaption style="text-align: center;">Inception score</figcaption>
 </figure></p>
+<p>This metric uses KL divergence between $Pr(y_i|\mathbf{x}_i^*)$and $Pr(y)$
+</p>
 $$
 IS=\mathrm{exp}\bigg[\frac{1}{I}\sum_{i=1}^{I}D_{KL}\big[Pr(y_i|\mathbf{x}_i^*)||Pr(y)\big]\bigg]
-$$$$
+$$<p>
+Where $I$ is the number of generated images and:
+</p>
+$$
 Pr(y)=\frac{1}{I}\sum_{i=1}^{I}Pr(y_i|\mathbf{x}_i^*)
 $$<p>
 <strong>Fréchet inception distance</strong>: To decrease the reliance on the ImageNet dataset and characterize either distribution, the Fréchet inception distance is estimated.</p>
 <p>First, use the inception model accepting both observed and generated images as input to produce $1\times 2048$ feature vector. And, because the images follow the normal distribution which can be defined by mean and variance, we can use them to calculate the distance between real and generated images.</p>
+<p>Above all, the formula for calculating FID can be written as follows:
+</p>
 $$
 FID(x,g)=||\mu_x-\mu_g||_2^2+Tr\big(\Sigma_x+\Sigma_g-2(\Sigma_x\Sigma_g)^{0.5}\big)
 $$<p>
