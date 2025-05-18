@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  📊Python with Data Science(Chinese) · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="
+  一、NumPy基础
+  
+    
+    Link to heading
+  
+
+import numpy as np
+
+  1.1 ndarry——多维数组对象
+  
+    
+    Link to heading
+  
+
+1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断
+arange(num) # 返回一个等差数列
+
+eye()  identity() #生成与给定形状一样的全1数组
+
+ones() #生成与给定形状一样的全1数组
+zeros() #生成与给定形状一样的全0数组
+empty() #生成与给定形状一样的空数组
+full(size,num) #根据给定形状和数据类型生成数值一样的数组
+#以上的函数可以加_like 变成根据一个数组的大小来生成
+
+reshape((x,y)) #使得一个序列进行array样式变化
+1.1.2 ndarray的数据类型
+数据类型，是dytpe属性，代表了数组里面每个数据的类型。
+# 常见的类型
+int 64 #有符号的64位整数
+uint64 #无符号的64位整数
+
+float64 # 单精度浮点数。兼容c语言的float
+float64 # 双精度浮点数。兼容c语言的double
+
+comple #64位的复数
+
+boll #布尔类型
+object #对象类型
+string_ #字符串类型
+可以使用astype来转换数据的类型，使用他转换时会生成一个全新的数组对象。
+
+  1.2 基本运用
+  
+    
+    Link to heading
+  
+
+1.2.1 算数运算">
+<meta name="keywords" content="ChengAo Shen, homepage,university of houston, personal blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="📊Python with Data Science(Chinese)">
+  <meta name="twitter:description" content="一、NumPy基础 Link to heading import numpy as np
+1.1 ndarry——多维数组对象 Link to heading 1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1.1.2 ndarray的数据类型
+数据类型，是dytpe属性，代表了数组里面每个数据的类型。
+# 常见的类型 int 64 #有符号的64位整数 uint64 #无符号的64位整数 float64 # 单精度浮点数。兼容c语言的float float64 # 双精度浮点数。兼容c语言的double comple #64位的复数 boll #布尔类型 object #对象类型 string_ #字符串类型 可以使用astype来转换数据的类型，使用他转换时会生成一个全新的数组对象。
+1.2 基本运用 Link to heading 1.2.1 算数运算">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/python-with-data-sciencechinese/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="📊Python with Data Science(Chinese)">
+  <meta property="og:description" content="一、NumPy基础 Link to heading import numpy as np
+1.1 ndarry——多维数组对象 Link to heading 1.1.1 创建ndarray
+array(list,dtype=) # 将输入的序列类型转换为ndarray,如果不指定类型则自动判断 arange(num) # 返回一个等差数列 eye() identity() #生成与给定形状一样的全1数组 ones() #生成与给定形状一样的全1数组 zeros() #生成与给定形状一样的全0数组 empty() #生成与给定形状一样的空数组 full(size,num) #根据给定形状和数据类型生成数值一样的数组 #以上的函数可以加_like 变成根据一个数组的大小来生成 reshape((x,y)) #使得一个序列进行array样式变化 1.1.2 ndarray的数据类型
+数据类型，是dytpe属性，代表了数组里面每个数据的类型。
+# 常见的类型 int 64 #有符号的64位整数 uint64 #无符号的64位整数 float64 # 单精度浮点数。兼容c语言的float float64 # 双精度浮点数。兼容c语言的double comple #64位的复数 boll #布尔类型 object #对象类型 string_ #字符串类型 可以使用astype来转换数据的类型，使用他转换时会生成一个全新的数组对象。
+1.2 基本运用 Link to heading 1.2.1 算数运算">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2020-08-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-08-21T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/python-with-data-sciencechinese/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/python-with-data-sciencechinese/">
+          📊Python with Data Science(Chinese)
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="一numpy基础">
+  一、NumPy基础
+  <a class="heading-link" href="#%e4%b8%80numpy%e5%9f%ba%e7%a1%80">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>import numpy as np</code></p>
+<h3 id="11-ndarry多维数组对象">
+  1.1 ndarry——多维数组对象
+  <a class="heading-link" href="#11-ndarry%e5%a4%9a%e7%bb%b4%e6%95%b0%e7%bb%84%e5%af%b9%e8%b1%a1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>1.1.1 <strong>创建ndarray</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="p">)</span> <span class="c1"># 将输入的序列类型转换为ndarray,如果不指定类型则自动判断</span>
+</span></span><span class="line"><span class="cl"><span class="n">arange</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="c1"># 返回一个等差数列</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">eye</span><span class="p">()</span>  <span class="n">identity</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的全1数组</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ones</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的全1数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">zeros</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的全0数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">empty</span><span class="p">()</span> <span class="c1">#生成与给定形状一样的空数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">full</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">num</span><span class="p">)</span> <span class="c1">#根据给定形状和数据类型生成数值一样的数组</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#以上的函数可以加_like 变成根据一个数组的大小来生成</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">reshape</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span> <span class="c1">#使得一个序列进行array样式变化</span>
+</span></span></code></pre></div><p>1.1.2 <strong>ndarray的数据类型</strong></p>
+<p>数据类型，是dytpe属性，代表了数组里面每个数据的类型。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 常见的类型</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span> <span class="mi">64</span> <span class="c1">#有符号的64位整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">uint64</span> <span class="c1">#无符号的64位整数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">float64</span> <span class="c1"># 单精度浮点数。兼容c语言的float</span>
+</span></span><span class="line"><span class="cl"><span class="n">float64</span> <span class="c1"># 双精度浮点数。兼容c语言的double</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">comple</span> <span class="c1">#64位的复数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">boll</span> <span class="c1">#布尔类型</span>
+</span></span><span class="line"><span class="cl"><span class="nb">object</span> <span class="c1">#对象类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">string_</span> <span class="c1">#字符串类型</span>
+</span></span></code></pre></div><p>可以使用<code>astype</code>来转换数据的类型，使用他转换时会生成一个全新的数组对象。</p>
+<h3 id="12-基本运用">
+  1.2 基本运用
+  <a class="heading-link" href="#12-%e5%9f%ba%e6%9c%ac%e8%bf%90%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>1.2.1 <strong>算数运算</strong></p>
+<p>优点：以ndarry为对象可以进行批量运算而不用使用<code>for</code>语句。</p>
+<p>使用：使用带有标量的运算符的时候，会把每一个都对应到元素内。</p>
+<p><em>即使是乘法也是把里面的每个元素相乘</em></p>
+<p>也可以使用=判断两个矩阵是否完全一样。</p>
+<p>1.2.2 <strong>基础索引与切片</strong></p>
+<p><em>切片提取的时候需要注意，并没有重新复制一个数组，新得到的还是指向原本是数组</em></p>
+<p>一纬数组的切片和读取与自带的列表一样。</p>
+<p>对于多维的数组(都是从0开始)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#方法一</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#方法二</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span></code></pre></div><p>我们也可以在方法一的情况下省略后面的值，返回降低一个维度的内容。</p>
+<p>我们也可以对于高维数组的部分进行切片，可以使用 :2 来代表前面2（行，列）#这只能用在使用方法2进行读取，使用一个：就是代表全部。对一个切片赋值的时候，会对全部赋值。</p>
+<p>1.2.3  <strong>布尔索引</strong></p>
+<p>在进行索引的时候使用和行数对应的bool值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 基础用法（bool值的数量与行数和列数一样）</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[[</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]]</span> <span class="c1">#读取输出date的1，3两行</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[:,[</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">]]</span> <span class="c1">#读取date的第一列</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 常见用法（读取符合是bob与alex名字位置对应的data行）</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span><span class="s1">&#39;jone&#39;</span><span class="p">,</span><span class="s1">&#39;bob&#39;</span><span class="p">,</span><span class="s1">&#39;Alex&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[(</span><span class="n">name</span><span class="o">==</span><span class="s1">&#39;bob&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">alex</span><span class="o">==</span><span class="s1">&#39;alex&#39;</span><span class="p">)</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#也可以用来设置数组的值（将负数都变成0）</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span><span class="mi">0</span>
+</span></span></code></pre></div><p>1.2.4 <strong>神奇索引</strong></p>
+<p>神奇索引又可以称为整数索引，可以使用一个整数数组来索引并<em>复制</em>出那一块的所有行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#基础用法</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span> <span class="c1">#复制出arr里面的4，3，2，5列</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#交错取值</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>  <span class="c1">#取出4行1列的元素……</span>
+</span></span></code></pre></div><p>1.2.5 <strong>数组换轴与转置</strong></p>
+<p>计算矩阵的内积：<code>np.dot()</code></p>
+<p>转置，可以直接使用数组的<code>T</code>属性，得到转置后的样子，也可以使用<code>.transpose</code>方法使数组进行转置（都不改变原数组）</p>
+<p>而对于更高纬度的数组，使用转置可以达到置换轴的作用。</p>
+<h3 id="13-通用函数ufunc">
+  1.3 通用函数（ufunc）
+  <a class="heading-link" href="#13-%e9%80%9a%e7%94%a8%e5%87%bd%e6%95%b0ufunc">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>对于简单函数向量化的封装。</p>
+<p>常见的一元通用函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">abs</span><span class="p">,</span><span class="n">fabs</span> <span class="c1">#计算实数或者复数的绝对值</span>
+</span></span><span class="line"><span class="cl"><span class="n">sqrt</span> <span class="c1">#取每一个的绝对值</span>
+</span></span><span class="line"><span class="cl"><span class="n">square</span> <span class="c1">#取每一个的平方</span>
+</span></span><span class="line"><span class="cl"><span class="n">exp</span> <span class="c1">#取每一个的e^x</span>
+</span></span><span class="line"><span class="cl"><span class="n">log</span><span class="p">,</span><span class="n">log10</span><span class="p">,</span><span class="n">log1p</span> <span class="c1">#取每一个的loge log10 以及log（1+x）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sign</span> <span class="c1">#计算每一个的符号值</span>
+</span></span><span class="line"><span class="cl"><span class="n">ceil</span> <span class="c1">#计算比这个元素大的第一个整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">floor</span> <span class="c1">#计算比这个元素小的第一个整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">rint</span> <span class="c1">#在不改变类型的情况下将元素保留到整数位</span>
+</span></span><span class="line"><span class="cl"><span class="n">modf</span> <span class="c1">#将小数与整数两个部分分别返回</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">isnan</span> <span class="c1">#返回元素是否是一个非数值类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">isfinite</span><span class="p">,</span><span class="n">isinf</span> <span class="c1"># 返回数组内元素是否有限是否无限</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sin</span><span class="p">,</span><span class="n">cos</span><span class="p">,</span><span class="n">tan</span> <span class="c1">#三角函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">arccos</span><span class="p">,</span><span class="n">arccosh</span><span class="p">,</span><span class="n">arcsin</span> <span class="c1">#反三角函数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">logical_not</span> <span class="c1">#全部取反</span>
+</span></span><span class="line"><span class="cl"><span class="nb">max</span> <span class="c1">#计算数组内的最大值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span> <span class="c1">#计算数组内的最小值</span>
+</span></span></code></pre></div><p>常见的二元通用函数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">add</span> <span class="o">=</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl"><span class="n">multiply</span> <span class="o">=</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="n">divide</span><span class="p">,</span><span class="n">floor_divide</span> <span class="o">=</span> <span class="o">/</span><span class="p">,</span><span class="o">//</span>
+</span></span><span class="line"><span class="cl"><span class="n">mod</span> <span class="c1">#求模计算</span>
+</span></span><span class="line"><span class="cl"><span class="n">power</span> <span class="c1"># 将第二个作为第一个的幂次方</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">subtract</span> <span class="c1">#在第二个数组中将第一个所包含的元素去除</span>
+</span></span><span class="line"><span class="cl"><span class="n">maximun</span><span class="p">,</span><span class="n">fmax</span> <span class="c1">#两个对应的元素相互比较，计算元素的最大值（第二个可以忽略num）</span>
+</span></span><span class="line"><span class="cl"><span class="n">minimum</span><span class="p">,</span><span class="n">fmin</span> <span class="c1">#两个对应的元素相互比较，计算元素的最小值（第二个可以忽略num）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">copysign</span> <span class="c1">#将第一个的符号改为第二个的符号</span>
+</span></span></code></pre></div><h3 id="14-面向数组编程">
+  1.4 面向数组编程
+  <a class="heading-link" href="#14-%e9%9d%a2%e5%90%91%e6%95%b0%e7%bb%84%e7%bc%96%e7%a8%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>1.4.1 <strong>将条件逻辑作为数组操作</strong></p>
+<p>我们可以使用<code>np.where</code>来代替原生python的三元运算</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">result</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span><span class="n">true</span><span class="p">,</span><span class="n">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 第一个参数是判断条件，二三两个代表的是选项</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 之后两个可以不是向量而是标量</span>
+</span></span></code></pre></div><p>1.4.2 <strong>数学和统计方法</strong></p>
+<p>我们可以使用聚合函数（如sum，mean，std），他们可以作为顶层函数使用，也可以作为数组实例的一个方法来使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">arr</span><span class="o">.</span><span class="n">mean与np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="n">等价</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 基础的数学统计方法</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">sum</span>  <span class="c1">#按照轴向计算所有元素的累加</span>
+</span></span><span class="line"><span class="cl"><span class="n">mean</span> <span class="c1">#按照轴向计算元素的平均值</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="p">,</span><span class="n">var</span> <span class="c1"># 计算标准差与方差</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span><span class="p">,</span><span class="nb">max</span> <span class="c1"># 计算最小（大）值</span>
+</span></span><span class="line"><span class="cl"><span class="n">cumsun</span> <span class="c1"># 从0开始元素的累加</span>
+</span></span><span class="line"><span class="cl"><span class="n">cumprod</span> <span class="c1">#从0开始元素的累乘</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 以上函数自带一个参数：axis来给定轴向，0代表按行求和，1代表按列求和</span>
+</span></span><span class="line"><span class="cl"><span class="n">argmin</span><span class="p">,</span><span class="n">argmix</span> <span class="c1"># 找到最小（大）的位置</span>
+</span></span></code></pre></div><p>1.4.3  <strong>布尔数组的使用方法</strong></p>
+<p>布尔类型的数组有两个常用的方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">any</span> <span class="c1">#检查数组内是否有一个true</span>
+</span></span><span class="line"><span class="cl"><span class="nb">all</span> <span class="c1">#检查数组内是否全都是true</span>
+</span></span></code></pre></div><p>对于非布尔类型使用的时候，除了0都是true</p>
+<p>1.4.4 <strong>排序方法</strong></p>
+<p>我们可以使用python自带的sort方法对数组进行排序</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">)</span> <span class="c1">#来指定排序的轴</span>
+</span></span></code></pre></div><p>也可以使用numpy的sort，来返回一个排序好的拷贝数组（并未对元素组进行排序）</p>
+<p>1.4.5 <strong>唯一值和其他集合逻辑</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">#计算x中唯一值，并进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">intersectld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#计算x与y的交集再排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">unionld</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#计算x与y的并集再排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">inld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#计算x的元素是否都在y里面（返回bool）</span>
+</span></span><span class="line"><span class="cl"><span class="n">setdiffld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1"># 计算差集，在x中单不在y中的x的元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">setxorld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c1">#异或集，在x或y中，但不同时在x与y中的元素</span>
+</span></span></code></pre></div><h3 id="15-对文件的使用">
+  1.5 对文件的使用
+  <a class="heading-link" href="#15-%e5%af%b9%e6%96%87%e4%bb%b6%e7%9a%84%e4%bd%bf%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>我们可以使用numpy的内置函数对文件进行基础的读取。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">arr</span><span class="p">)</span> <span class="c1">#保存文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="c1">#加载文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">no</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="n">arr1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">arr2</span><span class="p">)</span> <span class="c1">#保存多个文件</span>
+</span></span></code></pre></div><h3 id="16-线性代数使用">
+  1.6 线性代数使用
+  <a class="heading-link" href="#16-%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e4%bd%bf%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在python的矩阵运算中，矩阵的加法减法与线性代数没有区别，其中的乘法不一样。</p>
+<p>矩阵的乘法使用dot函数或@操作符完成，在作用于一维数组的时候，是向量的点乘，即把对应元素相乘再求和，而对于矩阵等高纬度，就是矩阵的叉乘，即一般的矩阵乘法。</p>
+<p><strong>常用的运算函数列表</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dot</span><span class="p">()</span> <span class="c1">#向量点乘，矩阵乘法</span>
+</span></span><span class="line"><span class="cl"><span class="n">trace</span><span class="p">()</span> <span class="c1">#计算对角元素和</span>
+</span></span><span class="line"><span class="cl"><span class="n">diag</span><span class="p">()</span> <span class="c1">#将一个方阵的对角元素作为一个一维数组返回，或者将一维数组转换成一个方阵，并且在非对角线上都为零。</span>
+</span></span><span class="line"><span class="cl"><span class="n">det</span><span class="p">()</span> <span class="c1">#计算矩阵的行列式</span>
+</span></span><span class="line"><span class="cl"><span class="n">eig</span><span class="p">()</span> <span class="c1">#计算方阵的特征值和特征向量</span>
+</span></span><span class="line"><span class="cl"><span class="n">inv</span><span class="p">()</span> <span class="c1">#计算方阵的逆矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="n">pinv</span><span class="p">()</span> <span class="c1">#计算矩阵的Moore-Penrose伪逆</span>
+</span></span><span class="line"><span class="cl"><span class="n">qr</span><span class="p">()</span> <span class="c1">#计算QR分解</span>
+</span></span><span class="line"><span class="cl"><span class="n">svd</span><span class="p">()</span> <span class="c1">#计算奇异值分解</span>
+</span></span><span class="line"><span class="cl"><span class="n">solve</span><span class="p">()</span> <span class="c1">#计算线性系统 Ax=b</span>
+</span></span><span class="line"><span class="cl"><span class="n">lstsq</span><span class="p">()</span> <span class="c1">#计算Ax=b的最小二乘解</span>
+</span></span></code></pre></div><h3 id="17-伪随机数使用">
+  1.7 伪随机数使用
+  <a class="heading-link" href="#17-%e4%bc%aa%e9%9a%8f%e6%9c%ba%e6%95%b0%e4%bd%bf%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Numpy中的random模块填补了普通随机数生成的不足，可以高效的生成各种模式的样本。</p>
+<p>这些随机数是由具有确定性行为的算法根据随机数生成器中的<em>随机数种子</em>来生成的。</p>
+<p>在np.random中常用的生成函数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">normal</span> <span class="c1">#从正态高斯分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">seed</span> <span class="c1">#向随机数生成器传递随机状态种子</span>
+</span></span><span class="line"><span class="cl"><span class="n">permutation</span> <span class="c1">#返回一个数列的随机排列。或者返回一个乱序的整数范围序列</span>
+</span></span><span class="line"><span class="cl"><span class="n">shuffle</span> <span class="c1">#随机排列一个序列</span>
+</span></span><span class="line"><span class="cl"><span class="n">rand</span> <span class="c1">#从均匀分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">randint</span> <span class="c1">#根据给定的由低到高的范围抽取随机整数</span>
+</span></span><span class="line"><span class="cl"><span class="n">randn</span> <span class="c1">#从均值0方差1的正态分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">binomial</span> <span class="c1">#从二项分布中抽去样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">beta</span> <span class="c1">#从beat分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">chisquare</span><span class="c1">#从卡方分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">gamma</span> <span class="c1">#从伽马分布中抽取样本</span>
+</span></span><span class="line"><span class="cl"><span class="n">uniform</span> <span class="c1">#从均匀[0,1)分布中抽取样本</span>
+</span></span></code></pre></div><p>numpy的随机数使用一个全局随机数种子，为了避免这种全局状态，我们可以用<code>RandomState</code>创建一个随机数生成器。</p>
+<hr>
+<h2 id="二pandas基础">
+  二、Pandas基础
+  <a class="heading-link" href="#%e4%ba%8cpandas%e5%9f%ba%e7%a1%80">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><code>import pandas as pd</code></p>
+<h3 id="21-serise">
+  2.1 serise
+  <a class="heading-link" href="#21-serise">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Series是一个一维数组对象，他包含了一个值序列，同时还有数据标签（索引，<em>index</em>）。</p>
+<p>也可以理解为长度固定并且有序的字典。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 基本创建</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">series</span><span class="p">([</span><span class="nb">list</span><span class="p">])</span> <span class="c1">#只添加序列值，索引将从0到n-1</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">series</span><span class="p">([</span><span class="nb">list</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="n">list2</span><span class="p">)</span> <span class="c1">#指定索引序列创建</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj1</span> <span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span> <span class="c1"># 我们也可以使用字典类型直接声称一个series</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 我们可以获取信息</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 获取序列值</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">index</span> <span class="c1"># 获取索引</span>
+</span></span></code></pre></div><p>于ndarry相比，使用series对象来创建可以使用索引值进行索引。</p>
+<p>对于在np中可以使用的函数，对于series也同样可以使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 对于serise中可以存在缺失数据的情况</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">isnull</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">notnull</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#可以进行判断</span>
+</span></span></code></pre></div><p>同时，series对象自身和索引都有name属性，可以和其他功能一起使用。</p>
+<p>series的索引可以通过按位赋值方式进行改变。</p>
+<h3 id="22-dataframe">
+  2.2 DataFrame
+  <a class="heading-link" href="#22-dataframe">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>2.2.1 <strong>创建与删除列</strong></p>
+<p>DataFrame表示的是矩阵数据表，包含已排序的列集合，每一列可以是不同类型。</p>
+<p>与excle相似，dataframe有行索引与列索引，数据被储存为一个二维块。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 创建dataframe</span>
+</span></span><span class="line"><span class="cl"><span class="n">常见的方法是使用包含等长度的列表或者numpy数组的字典来生成</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:[</span><span class="n">list1</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">:[</span><span class="n">list2</span><span class="p">],</span><span class="s1">&#39;c&#39;</span><span class="p">,[</span><span class="n">list3</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 其中的list也可以换为字典类型，而字典的所有值将变成每一行的索引。</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#我们也可以指定排列的顺序,指定每一行的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">])</span>
+</span></span></code></pre></div><p>对于大型的dataframe，我我们可以使用head方法来只选出头部的五行。</p>
+<p>使用del方法，移除创建的列。</p>
+<p>2.2.2 <strong>索引与赋值</strong></p>
+<p>我们也可以直接根据列的名字进行索引。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 索引一个列</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="p">[</span><span class="n">columnsname</span><span class="p">]</span> <span class="c1">#返回的是一个series对象，返回的series对象的索引和frame是同一个，而序列的名字就是dataframe的列名。</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 索引一个行</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#赋值</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="p">[</span><span class="n">columnsname</span><span class="p">]</span> <span class="o">=</span>
+</span></span></code></pre></div><p>当你的列表或数组赋值给一个列的时候，长度如果不匹配，会报错。</p>
+<p>如果被赋值的列不存在，那么会<em>产生新的列</em></p>
+<p><strong>注意：与numpy一样，我们索引出的都是原对象的内容，如果需要复制应该显性的使用copy</strong></p>
+<h3 id="23-基本功能">
+  2.3 基本功能
+  <a class="heading-link" href="#23-%e5%9f%ba%e6%9c%ac%e5%8a%9f%e8%83%bd">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>2.3.1 <strong>pandas的索引</strong></p>
+<p>pandas的索引对象是用于储存标签和其他元数据的。在构造的时候，任意的数组或者标签序列都可以在内部转化为索引对象。</p>
+<p>索引对象是不可变的，可以使对于索引的操作更加安全。</p>
+<p><em>索引是可以包含重复标签的</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 索引对象的方法和属性</span>
+</span></span><span class="line"><span class="cl"><span class="n">append</span> <span class="c1"># 将一个索引粘贴到另一个索引后产生一个新的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">difference</span> <span class="c1">#计算两个索引的差集</span>
+</span></span><span class="line"><span class="cl"><span class="n">intersection</span> <span class="c1">#计算索引的交集</span>
+</span></span><span class="line"><span class="cl"><span class="n">union</span> <span class="c1">#计算索引的并集</span>
+</span></span><span class="line"><span class="cl"><span class="n">isin</span> <span class="c1">#计算每一个值是否在传值容器中的布尔数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">delete</span> <span class="c1"># 给出将位置i的元素删除的新的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">drop</span> <span class="c1"># 根据传参删除指定的索引值，产生新的索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">inster</span> <span class="c1">#在位置i插入新元素并产生索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">is_monotonic</span> <span class="c1"># 索引递增就返回true</span>
+</span></span><span class="line"><span class="cl"><span class="n">is_unique</span> <span class="c1">#索引都唯一返回true</span>
+</span></span><span class="line"><span class="cl"><span class="n">unique</span> <span class="c1"># 计算索引的唯一序列</span>
+</span></span></code></pre></div><p>2.3.2 <strong>重建索引</strong></p>
+<p>pd中有reindex方法来重建一个新的索引。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># series的索引重建</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj2</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">reindex</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">])</span> <span class="c1">#将obj中的索引重建后给obj2，本身不改变</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># dataframe的索引重建</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">reindex</span><span class="p">([</span><span class="s1">&#39;oh&#39;</span><span class="p">,</span><span class="s1">&#39;co&#39;</span><span class="p">,</span><span class="s1">&#39;ut&#39;</span><span class="p">,</span><span class="s1">&#39;ny&#39;</span><span class="p">,</span><span class="s1">&#39;aa&#39;</span><span class="p">])</span><span class="c1"># 对于行标的转换</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;oh&#39;</span><span class="p">,</span><span class="s1">&#39;co&#39;</span><span class="p">,</span><span class="s1">&#39;ut&#39;</span><span class="p">,</span><span class="s1">&#39;ny&#39;</span><span class="p">,</span><span class="s1">&#39;aa&#39;</span><span class="p">])</span><span class="c1"># 对于列标的转换</span>
+</span></span></code></pre></div><p>2.3.3 <strong>轴向删除目录</strong></p>
+<p>我们通常使用<code>drop</code>方法来返回一个删除后的对象</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 对于series对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">indexlist</span><span class="p">)</span> <span class="c1"># 返回去掉索引列表内索引值的对象</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 对于DataFeame对象，一般情况下会根据轴向为0的删除（按照行标签）</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果要删除竖列，则应该设置参数axis</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果要直接更改元对象 要使用inplace=True参数</span>
+</span></span></code></pre></div><p>2.3.4 <strong>基本索引</strong></p>
+<p>series的索引功能十分强大，不光可以使用index，也可以使用位置，以及值的内容</p>
+<p>series的切片功能与python自带的列表不一样，series的索引双闭区间。</p>
+<p>对于DataFrame的索引，可以直接从中索引出一个或多个列</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="c1"># 列索引</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="c1"># 行索引</span>
+</span></span></code></pre></div><p>直接索引都是对列进行索引，而有数字范围选择的是行索引，也可以使用自己索引自己，如<code>data[data&lt;10]=5</code></p>
+<p><em>在索引的时候，可能出现 index 也是数字的情况，因此可能出现歧义，请保持统一性，或者使用下面的 loc 来索引</em></p>
+<p>2.3.5 <strong>选择数据区域</strong></p>
+<p>我们可以使用<strong>loc与iloc</strong>来选择数据</p>
+<p>loc：轴标签</p>
+<p>iloc：整数标签</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;列标&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">行标</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="s1">&#39;列数&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">行数</span><span class="p">]]</span>
+</span></span></code></pre></div><p>2.3.6 <strong>算术与数据对齐</strong></p>
+<p>pandas会按照索引对进行求和，如果两个索引对不相同，则会取两个索引的并集</p>
+<p>不是同时存在于两个索引的，则求和之后会是空位置（NaN），并不会取一半的数值。</p>
+<p><em>如果是两个完全不同索引的对象进行数学运算，则全部为空</em></p>
+<p>而如果我们不想出现NaN而是需要其他的值来填充，我们可以使用函数，并给定fill_value参数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#如果两个有不一样的序列，那么我们会使用0来填充</span>
+</span></span></code></pre></div><h3 id="24-更多操作">
+  2.4 更多操作
+  <a class="heading-link" href="#24-%e6%9b%b4%e5%a4%9a%e6%93%8d%e4%bd%9c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>2.4.1 series与DataFrame之间的操作</p>
+<p>在numpy中，如果我们使用一个二维的矩阵减去一个一维的数组，那么每一行都会减去这个数组（这就是广播机制）</p>
+<p>而这一做法在pandas中也被继续沿用，在默认状况下，会将s与d的索引进行匹配，并广播到每一行。</p>
+<p>而如果有索引无法匹配，也会和和算数运算一样产生NaN值。</p>
+<p>如果要改为在列上传播，我们可以增加一个axis值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 示例代码</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># 直接在行上对每一行相减（默认axis=1）</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#在列上进行广播</span>
+</span></span></code></pre></div><p>2.4.2 <strong>函数的应用与映射</strong></p>
+<p>我们也可以将在np中使用的通用函数直接在pd中使用。将直接对每一个元素产生作用。</p>
+<p>而如果只想对某一行或者一列进行作用，则可以使用匿名函数和apply方法的搭配使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1">#对每一列求最大值与最小值的差，然后以列表为索引，变成一个series</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#如果对行进行操作，可以加上anxi = 1这一参数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#而如果对每一个元素要进行一次自定义，可以使用</span>
+</span></span><span class="line"><span class="cl"><span class="n">Frame</span><span class="o">.</span><span class="n">applymap</span><span class="p">()</span>
+</span></span></code></pre></div><p>2.4.3 <strong>排序</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 使用sort_index方法可以按照索引值进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">series</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span> <span class="c1">#默认是升序，可以给ascending=false参数来变成逆序</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在frame中使用这个类型，可以通过给定参数来在不同的轴上排序</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用sort_values方法可以按照数值进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 对于dataframe来说可以使用一列或者多列作为排序的关键序列</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">indexlist</span><span class="p">)</span>
+</span></span></code></pre></div><p>默认情况下，所有的缺失值都会排到队尾。</p>
+<p>2.4.4 <strong>排名</strong></p>
+<p>使用排名<code>rank</code>方法可以得到一个将数值改变成为排名的对象。</p>
+<p>一般情况下如果出现同级情况就会产生小数来平均分配，也可以使用	<code>method</code>来改变方式。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span> <span class="c1"># 基础</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="n">false</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span> <span class="c1"># 倒着排序，第一次出现的大</span>
+</span></span></code></pre></div><p>常见的平级处理方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">average</span> <span class="c1">#默认方法取平均</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span> <span class="c1">#使用最小的排名</span>
+</span></span><span class="line"><span class="cl"><span class="nb">max</span> <span class="c1"># 使用最大排名</span>
+</span></span><span class="line"><span class="cl"><span class="n">first</span> <span class="c1">#先出现的先排</span>
+</span></span><span class="line"><span class="cl"><span class="n">dense</span> <span class="c1">#与min类似，但排名总是增加一</span>
+</span></span></code></pre></div><h3 id="25-统计用法">
+  2.5 统计用法
+  <a class="heading-link" href="#25-%e7%bb%9f%e8%ae%a1%e7%94%a8%e6%b3%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>2.5.1 描述性统计</p>
+<p>我们可以使用很多方法来对数值进行操作</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># 每一行求和</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#通常情况下是以横向为轴，自动忽略了不存在值的位置，也可以通过参数来改变</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">skipna</span><span class="o">=</span><span class="n">false</span><span class="p">)</span>
+</span></span></code></pre></div><p>比较常用的方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">count</span> <span class="c1"># 计算非NA的个数</span>
+</span></span><span class="line"><span class="cl"><span class="n">describe</span> <span class="c1">#给出部分统计结果</span>
+</span></span><span class="line"><span class="cl"><span class="nb">min</span><span class="p">,</span><span class="nb">max</span> <span class="c1">#计算最大值或最小值</span>
+</span></span><span class="line"><span class="cl"><span class="n">argmin</span><span class="p">,</span><span class="n">argmax</span> <span class="c1">#分别计算最大值最小值的索引位置</span>
+</span></span><span class="line"><span class="cl"><span class="n">idmin</span><span class="p">,</span><span class="n">idmax</span> <span class="c1">#给出最大值最小值的标签</span>
+</span></span><span class="line"><span class="cl"><span class="nb">sum</span> <span class="c1">#求和</span>
+</span></span><span class="line"><span class="cl"><span class="n">mean</span> <span class="c1">#求均值</span>
+</span></span><span class="line"><span class="cl"><span class="n">median</span> <span class="c1">#求中位数</span>
+</span></span><span class="line"><span class="cl"><span class="n">prod</span> <span class="c1"># 求所有值的积</span>
+</span></span><span class="line"><span class="cl"><span class="n">var</span> <span class="c1">#所有值的分差</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span> <span class="c1">#所有值的标准差</span>
+</span></span><span class="line"><span class="cl"><span class="n">cunsum</span> <span class="c1">#求累计值</span>
+</span></span><span class="line"><span class="cl"><span class="n">cumprod</span> <span class="c1">#求累计值</span>
+</span></span><span class="line"><span class="cl"><span class="n">pct_change</span> <span class="c1"># 求百分比</span>
+</span></span></code></pre></div><p>2.5.2 <strong>相关性和协方差</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 获得相关性（协方差）矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="n">DF</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">DF</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 计算一个列于另一个列的相关性</span>
+</span></span><span class="line"><span class="cl"><span class="n">DF</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">DF</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+</span></span></code></pre></div><p>2.5.3 <strong>唯一值、计数和成员属性</strong></p>
+<p><code>unique</code>:给出series中的唯一值（去掉重复出现的内容）。</p>
+<p><em>使用这个方法返回的不一定是排序后的</em></p>
+<p><code>value_counts</code>:降序返回出现元素的次数。</p>
+<p>可以通过加入<code>sort=False</code>来关闭排序。</p>
+<p><code>inis</code>:通过给定一个列表，判断列表里面的元素是否存在。</p>
+<p><code>match</code>:计算数组中每个值的整数索引，形成一个唯一值的数值。</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

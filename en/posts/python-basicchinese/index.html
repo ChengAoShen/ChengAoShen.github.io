@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  🐍Python Basic(Chinese) · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="
+  一、学前准备
+  
+    
+    Link to heading
+  
+
+
+  1.1 安装
+  
+    
+    Link to heading
+  
+
+​		建议直接下载anaconda的发行版。同时还包括了所有以后会经常使用到的包。
+
+  1.2 编程环境
+  
+    
+    Link to heading
+  
+
+​		可以下载并使用pycharm、也可以使用jupyter notebook作为环境。
+
+
+  二、Python的语言基础
+  
+    
+    Link to heading
+  
+
+
+  2.1 缩进
+  
+    
+    Link to heading
+  
+
+​		python中缩进是一切的根本，使用缩进来标识了语言的范围
+
+  2.2标量类型
+  
+    
+    Link to heading
+  
+
+2.2.1 数值类型
+​		python中只有两个基本数值类型：int与float
+​		int可以储存任意大小的整数值而没有范围限制，float是双精度的64位数值。">
+<meta name="keywords" content="ChengAo Shen, homepage,university of houston, personal blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="🐍Python Basic(Chinese)">
+  <meta name="twitter:description" content="一、学前准备 Link to heading 1.1 安装 Link to heading ​	建议直接下载anaconda的发行版。同时还包括了所有以后会经常使用到的包。
+1.2 编程环境 Link to heading ​	可以下载并使用pycharm、也可以使用jupyter notebook作为环境。
+二、Python的语言基础 Link to heading 2.1 缩进 Link to heading ​	python中缩进是一切的根本，使用缩进来标识了语言的范围
+2.2标量类型 Link to heading 2.2.1 数值类型
+​	python中只有两个基本数值类型：int与float
+​	int可以储存任意大小的整数值而没有范围限制，float是双精度的64位数值。">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/python-basicchinese/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="🐍Python Basic(Chinese)">
+  <meta property="og:description" content="一、学前准备 Link to heading 1.1 安装 Link to heading ​	建议直接下载anaconda的发行版。同时还包括了所有以后会经常使用到的包。
+1.2 编程环境 Link to heading ​	可以下载并使用pycharm、也可以使用jupyter notebook作为环境。
+二、Python的语言基础 Link to heading 2.1 缩进 Link to heading ​	python中缩进是一切的根本，使用缩进来标识了语言的范围
+2.2标量类型 Link to heading 2.2.1 数值类型
+​	python中只有两个基本数值类型：int与float
+​	int可以储存任意大小的整数值而没有范围限制，float是双精度的64位数值。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2020-08-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-08-21T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/python-basicchinese/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/python-basicchinese/">
+          🐍Python Basic(Chinese)
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="一学前准备">
+  一、学前准备
+  <a class="heading-link" href="#%e4%b8%80%e5%ad%a6%e5%89%8d%e5%87%86%e5%a4%87">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="11-安装">
+  1.1 安装
+  <a class="heading-link" href="#11-%e5%ae%89%e8%a3%85">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		建议直接下载anaconda的发行版。同时还包括了所有以后会经常使用到的包。</p>
+<h3 id="12-编程环境">
+  1.2 编程环境
+  <a class="heading-link" href="#12-%e7%bc%96%e7%a8%8b%e7%8e%af%e5%a2%83">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		可以下载并使用pycharm、也可以使用jupyter notebook作为环境。</p>
+<hr>
+<h2 id="二python的语言基础">
+  二、Python的语言基础
+  <a class="heading-link" href="#%e4%ba%8cpython%e7%9a%84%e8%af%ad%e8%a8%80%e5%9f%ba%e7%a1%80">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="21-缩进">
+  2.1 缩进
+  <a class="heading-link" href="#21-%e7%bc%a9%e8%bf%9b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		python中缩进是一切的根本，使用缩进来标识了语言的范围</p>
+<h3 id="22标量类型">
+  2.2标量类型
+  <a class="heading-link" href="#22%e6%a0%87%e9%87%8f%e7%b1%bb%e5%9e%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>2.2.1 <strong>数值类型</strong></p>
+<p>​		python中只有两个基本数值类型：int与float</p>
+<p>​		int可以储存任意大小的整数值而没有范围限制，float是双精度的64位数值。</p>
+<pre><code>备注：整数的除法会自己变成浮点的类型，如果只要整数部分可以使用：//
+</code></pre>
+<p>2.2.2 <strong>布尔类型</strong></p>
+<p>​		只有正确和错误两种，分别是true和false</p>
+<pre><code>备注：在整型中代表着1与0。
+</code></pre>
+<p>2.2.3 <strong>字符串类型</strong></p>
+<p>​		使用单（双）引号包裹的一个不可变对象。是Unicode字符的序列。是一个可迭代的对象。</p>
+<p>2.2.4 <strong>None型</strong></p>
+<p>​		是Python中的null，表示没有东西</p>
+<h3 id="23-控制语句">
+  2.3 控制语句
+  <a class="heading-link" href="#23-%e6%8e%a7%e5%88%b6%e8%af%ad%e5%8f%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>2.3.1 <strong>判断语句</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">code</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">code</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">code</span> <span class="mi">3</span>
+</span></span></code></pre></div><p>2.3.2 <strong>循环语句</strong></p>
+<p>for语句用于遍历一个集合或者一个迭代器。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 用i来做什么</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1"># 也可以让for与range（）配合实现计数</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span></code></pre></div><p>while语句用于在符合一定条件的情况下执行代码块</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="n">conditional</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 代码块</span>
+</span></span></code></pre></div><p>有两个方式可以改变循环的结构</p>
+<ol>
+<li>continue：用于跳过本次循环进入下一次的循环之中</li>
+<li>break：结束这一个循环</li>
+</ol>
+<h3 id="24-数据结构">
+  2.4 数据结构
+  <a class="heading-link" href="#24-%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>2.4.1 <strong>元组</strong></p>
+<p>​		元组是一种长度固定的，不可变的对象序列</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 元组的创建</span>
+</span></span><span class="line"><span class="cl"><span class="n">tup</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用tuple函数将其他可迭代的变成元组</span>
+</span></span><span class="line"><span class="cl"><span class="nb">tuple</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">tuple</span><span class="p">(</span><span class="s2">&#34;abc&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用[]索引元组（从0开始）</span>
+</span></span><span class="line"><span class="cl"><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></div><p>拆包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#将tup的元素拆到三个变量之中去</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">tup</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#拆包的应用（快速交换两个元素）</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span><span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#只拆部分元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">_</span><span class="o">=</span><span class="n">tup</span>  <span class="c1">#后面的元素*_会存a之后的所有元素，可以舍弃，也可以更换名作为继续用的元组</span>
+</span></span></code></pre></div><p>元组方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 计数</span>
+</span></span><span class="line"><span class="cl"><span class="n">tup</span><span class="o">.</span><span class="n">couut</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><p>2.4.2 <strong>列表</strong></p>
+<p>一个不指定里面的类型，可以任意改变内容的高端数组。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 创建列表</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#使用迭代器创建</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>增加元素</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 末尾增加一个</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定位置加入一个</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&#34;123&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 加入多个元素</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用方法来增加元素不创建新的对象，而使用+则创建返回一个新的对象。</span>
+</span></span></code></pre></div><p><strong>删除元素</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 移去指定位置的元素</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#移去第一个出现的符合要求的元素</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&#34;123&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>其他方法</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 排序（内部排序不会新建对象）</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">括号内可以设定排序的key</span>
+</span></span><span class="line"><span class="cl"><span class="n">如list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 排序（新建对象的排序）</span>
+</span></span><span class="line"><span class="cl"><span class="n">list2</span><span class="o">=</span><span class="n">list1</span><span class="o">.</span><span class="n">sorted</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#将列表倒置</span>
+</span></span><span class="line"><span class="cl"><span class="nb">list</span><span class="o">.</span><span class="n">reversed</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 二分查找和插入数据</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">bisect</span>
+</span></span><span class="line"><span class="cl"><span class="n">其中bisect</span><span class="o">.</span><span class="n">bisect</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="n">是向c列表插入元素2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 缝合两个列表，按顺序两两搭配为元组，构成新列表</span>
+</span></span><span class="line"><span class="cl"><span class="n">list3</span><span class="o">=</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span><span class="n">list2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 返回列表内元素的内容以及其索引</span>
+</span></span><span class="line"><span class="cl"><span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">常用于</span><span class="p">:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span> <span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 以得到下标的方式来遍历一个列表</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span></code></pre></div><p>2.4.3 <strong>字典</strong></p>
+<p>又被成为哈希表或者是关联数组，是有灵活尺寸的键值对集合</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 创建字典</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">&#34;st&#34;</span><span class="p">,</span><span class="mi">2</span><span class="p">:[</span><span class="mi">123</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 根据键来获取值</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 序列生成字典（因为字典的本质上是一个二元组）</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查是否存在</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;st&#39;</span> <span class="ow">in</span> <span class="n">d1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 判断一个对象能不能作为键（不可变、可哈希化）</span>
+</span></span><span class="line"><span class="cl"><span class="nb">hash</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+</span></span></code></pre></div><p>加入与删除</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 加入一个新的元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">=</span><span class="n">元素</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 直接根据键来删除元素</span>
+</span></span><span class="line"><span class="cl"><span class="k">del</span> <span class="n">d1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除对应的元素并返回他的键</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="o">.</span><span class="n">pop</span> <span class="p">(</span><span class="s1">&#39;st&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>获取与分类</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 获取一个字典中的元素，且在没有时候返回特定的值</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">returnvalue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将列表进行分类进入字典</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d1</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</span></span></code></pre></div><p>其他方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 迭代字典（没有特定的迭代顺序）</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="c1"># 迭代字典键</span>
+</span></span><span class="line"><span class="cl"><span class="n">d2</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="c1"># 迭代值</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 合并字典</span>
+</span></span><span class="line"><span class="cl"><span class="n">d1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+</span></span></code></pre></div><p>2.4.4 <strong>集合</strong></p>
+<p>无序且唯一的元素的容器</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 创建集合</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+</span></span></code></pre></div><p>对集合内元素进行操作</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 加入元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">add</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清空集合</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">clear</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除某个元素</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">remove</span>
+</span></span></code></pre></div><p>对多个集合的操作</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 并集</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">|</span><span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 交集</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">&amp;</span><span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 补集(在a但不在b)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">-</span><span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在a在b，但不是同时在a和b</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">^</span><span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 判断a是否包含（包含于）b</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">.</span><span class="n">issubet</span><span class="p">(</span><span class="n">b</span><span class="p">)(</span><span class="n">a</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 判断子集</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">&lt;=</span><span class="n">b</span>
+</span></span></code></pre></div><p>2.4.5  <strong>序列推导式</strong></p>
+<p>过滤一个容器的元素。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 列表推导式</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="n">i</span> <span class="nb">list</span> <span class="k">if</span> <span class="n">condition</span><span class="p">]</span>
+</span></span></code></pre></div><p>这个语句可以以列表的形式返回满足condition的所有在list中的元素</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 字典推导式</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="n">key</span><span class="p">:</span><span class="n">value</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">collection</span> <span class="k">if</span> <span class="n">condition</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 集合推导式</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="n">x</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">collection</span> <span class="k">if</span> <span class="n">condition</span><span class="p">}</span>
+</span></span></code></pre></div><p><strong>嵌套列表推导</strong></p>
+<p><em>内层在前，外层在后</em></p>
+<hr>
+<h2 id="三python函数">
+  三、Python函数
+  <a class="heading-link" href="#%e4%b8%89python%e5%87%bd%e6%95%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>​		如果有多条可以重复的代码，可以使用一个函数来简化代码量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">function</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#your code</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span>   <span class="c1">#python的函数可以同时返回多个值</span>
+</span></span></code></pre></div><h3 id="31-命名空间">
+  3.1 命名空间
+  <a class="heading-link" href="#31-%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		在函数内第一次使用的变量在函数结束后会销毁，而函数内想要对函数外的变量进行使用则应该使用<code>global</code>进行声明。使得外部的变量在内部也可以进行使用。</p>
+<h3 id="32-函数对象">
+  3.2 函数=对象
+  <a class="heading-link" href="#32-%e5%87%bd%e6%95%b0%e5%af%b9%e8%b1%a1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>可以将函数作为对象传到另一个函数之中</p>
+<h3 id="33-匿名lambda函数">
+  3.3 匿名（Lambda）函数
+  <a class="heading-link" href="#33-%e5%8c%bf%e5%90%8dlambda%e5%87%bd%e6%95%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		通过单个语句生成函数，结果是返回值。使用<strong>Lambda</strong>关键字进行定义。可以用在将一个判断函数传入另一个函数的过程中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">lambda</span> <span class="n">variable</span> <span class="p">:</span><span class="n">code</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 根据字符串中不同字符的数量进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+</span></span></code></pre></div><h3 id="34-迭代器与生成器">
+  3.4 迭代器与生成器
+  <a class="heading-link" href="#34-%e8%bf%ad%e4%bb%a3%e5%99%a8%e4%b8%8e%e7%94%9f%e6%88%90%e5%99%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		<strong>迭代器</strong>：用于在上下文中向python解释器生成对象的对象。</p>
+<p>​		<strong>生成器</strong>：构造新的可遍历对象的方式。</p>
+<p>通过将函数的return改为yield，使得调用该生成器的时候代码不会立刻被执行，而在请求其中的元素后才会被执行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">squares</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="n">gen</span> <span class="o">=</span> <span class="n">squares</span><span class="p">()</span> <span class="c1">#此处的gen还没有值</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span> <span class="c1">#调用生成器</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>可以利用生成器表达式来创建一个生成器（将列表推导式内的括号换成小括号）</p>
+<p>如上面的可以改写为</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">gen</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span> <span class="c1">#调用生成器</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>可以使用生成器表达式来代替我们的列表推导式</p>
+<h3 id="35-可变长参数元组">
+  3.5 可变长参数元组
+  <a class="heading-link" href="#35-%e5%8f%af%e5%8f%98%e9%95%bf%e5%8f%82%e6%95%b0%e5%85%83%e7%bb%84">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>函数可以接受不指定个数的参数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">pr</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span></code></pre></div><p>上面的这个函数可以读取多个参数，到一个args元组中。</p>
+<p>相反，除了<strong>收集</strong>也有<strong>分散</strong>方法，可以在调用的时候前面加上<code>*</code>来实现把参数列表里面的元组打散</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">t</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">divmod</span><span class="p">(</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+</span></span></code></pre></div><p>很多可以接受不止一个变量的函数也是使用了<strong>分散</strong>方法来完成多个参量的读取。</p>
+<p><em>关键字参数的收集</em>：</p>
+<p>​		只使用<code>*</code>并不会收集关键字实参，而使用<code>**</code>则可以收集所有的关键字实参，并将其变成一个映射字典。当处理很多关键字的函数十分有用。</p>
+<p>更多内容可见[[python进阶技巧#三、函数]]</p>
+<h2 id="四错误与异常">
+  四、错误与异常
+  <a class="heading-link" href="#%e5%9b%9b%e9%94%99%e8%af%af%e4%b8%8e%e5%bc%82%e5%b8%b8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="41-捕获异常">
+  4.1 捕获异常
+  <a class="heading-link" href="#41-%e6%8d%95%e8%8e%b7%e5%bc%82%e5%b8%b8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tryfunction</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 想要测试的内容</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span><span class="err">（</span><span class="c1">#可以选择想要捕获的错误类型）:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 测试失败后执行</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 无论如何都要执行的代码</span>
+</span></span></code></pre></div><hr>
+<h2 id="五操作系统与文件">
+  五、操作系统与文件
+  <a class="heading-link" href="#%e4%ba%94%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%b8%8e%e6%96%87%e4%bb%b6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="51-对文件的基础操作">
+  5.1 对文件的基础操作
+  <a class="heading-link" href="#51-%e5%af%b9%e6%96%87%e4%bb%b6%e7%9a%84%e5%9f%ba%e7%a1%80%e6%93%8d%e4%bd%9c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>5.1.1 <strong>打开与关闭</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="c1">#打开</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">close</span> <span class="c1">#关闭</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#自动关闭方式</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># use path</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#with内代码结束后自动关闭</span>
+</span></span></code></pre></div><p>默认打开是在只读模式下进行。</p>
+<p>打开模式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">r</span> <span class="c1">#只读模式</span>
+</span></span><span class="line"><span class="cl"><span class="n">w</span> <span class="c1">#只写模式（创建新文件并覆盖同名文件）</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="c1">#只写模式（如果有同名则创建失败）</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="c1">#添加已存在文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">r</span><span class="o">+</span> <span class="c1">#读写模式</span>
+</span></span></code></pre></div><p>5.1.2 <strong>对文件的方法</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">read</span><span class="p">([</span><span class="n">size</span><span class="p">])</span> <span class="c1">#将文件数据作为字符串返回</span>
+</span></span><span class="line"><span class="cl"><span class="n">readlines</span><span class="p">([</span><span class="n">size</span><span class="p">])</span> <span class="c1">#返回文件中行内容的列表</span>
+</span></span><span class="line"><span class="cl"><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1">#将字符串写入文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">writelines</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="c1">#将字符串序列写入文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">close</span><span class="p">()</span> <span class="c1">#关闭文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">seek</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span> <span class="c1">#移动到指定位置</span>
+</span></span><span class="line"><span class="cl"><span class="n">tell</span><span class="p">()</span> <span class="c1">#返回当前的文件位置</span>
+</span></span></code></pre></div><h3 id="52-pathos">
+  5.2 path（os）
+  <a class="heading-link" href="#52-pathos">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="c1"># get current working directory</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">()</span> <span class="c1"># 寻找绝对路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="c1"># 检查一个文件是否存在</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">()</span> <span class="c1"># 检查是否为目录</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="c1"># 返回指定目录的列表</span>
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(,)</span> <span class="c1"># 接受一个目录和一个文件名字，并将它们拼成一个完整的path</span>
+</span></span></code></pre></div><h3 id="53-数据库与封存">
+  5.3 数据库与封存
+  <a class="heading-link" href="#53-%e6%95%b0%e6%8d%ae%e5%ba%93%e4%b8%8e%e5%b0%81%e5%ad%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>我们可以使用<code>dbm</code>模块来创建和更新数据库，来达到储存类似字典的对象。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">dbm</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span><span class="o">=</span><span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="c1"># 打开创建一个数据库，如果不存在则创建</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">=</span><span class="s1">&#39;a&#39;</span> <span class="c1"># 向数据库内储存一个字符</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;b&#39;</span> <span class="c1"># 更新储存的内容</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># 关闭文件</span>
+</span></span></code></pre></div><p>dbm有个严格的限制，键和值都必须是字符串或者字节，不能使用其他类型。</p>
+<p>对此我们可以使用<code>pickle</code>模块来进行封存。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 将t列表转换为一个字符串对象，进行在数据库内的储存</span>
+</span></span><span class="line"><span class="cl"><span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将封装好的对象重新打开</span>
+</span></span><span class="line"><span class="cl"><span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="c1"># 打开后的对象虽然与封装之前的对象相等，但并不是同一个对象</span>
+</span></span></code></pre></div><hr>
+<h2 id="六面向对象编程">
+  六、面向对象编程
+  <a class="heading-link" href="#%e5%85%ad%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%bc%96%e7%a8%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="61-类">
+  6.1 类
+  <a class="heading-link" href="#61-%e7%b1%bb">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Python是一门面向对象的编程语言</p>
+<ol>
+<li>程序包括类的定义和方法的定义</li>
+<li>大部分计算操作是通过面向对象来实现的</li>
+<li>由对象之间的交互组成</li>
+</ol>
+<p>6.1.1 类的定义</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">name</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    note
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>6.1.2 类的初始化（<code>__init__</code>)</p>
+<p>init方法(initialization)，可以在对象被初始化的时候会调用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">name</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    note
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">first</span><span class="o">=</span><span class="n">firstname</span><span class="p">,</span><span class="n">last</span><span class="o">=</span><span class="n">lastname</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    	<span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="o">=</span><span class="n">first</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="o">=</span><span class="n">last</span>
+</span></span></code></pre></div><h3 id="62-实例">
+  6.2 实例
+  <a class="heading-link" href="#62-%e5%ae%9e%e4%be%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>6.2.1 创建实例</p>
+<p>我们可以使用类来实例化一个对象。</p>
+<p><code>n=name(bob,shen)</code>这样可以把n变成一个name类型的对象，此时具有了first与last两个<strong>属性</strong>。</p>
+<p>为了判断一个属性是否被对象所拥有，我们可以使用<code>hasattr</code>函数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">hasattr</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">first</span><span class="p">)</span>
+</span></span></code></pre></div><p>我们也可以给n这个实例来增加新的属性，但一般建议都在初始化的时候确定。</p>
+<p>另外，我们也可以使用<code>vars</code>函数来把一个对象的所有属性名称和值进行字典映射。</p>
+<p><strong>==注意==</strong>：在进行类的初始化过程中尽量避免<code>def __init__(*self*, *name*, *contents*=[]):</code>的写法，因为这样会导致每一个定义的对象指向的列表都是同一个，会导致数据的错乱。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">contents</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">contents</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">pouch_contents</span> <span class="o">=</span> <span class="n">contents</span>
+</span></span></code></pre></div><h3 id="63-复制">
+  6.3 复制
+  <a class="heading-link" href="#63-%e5%a4%8d%e5%88%b6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		实例是一个可变的对象，而传递给函数的实例这是一个指针而不是一个新的对象，所以在函数内修改实例（即使使用的是别名），仍然会直接修改原本的对象。</p>
+<p>​		为了不使原本的对象发生修改，可以使用copy中的copy函数，将一个对象进行复制，只修改新的对象。而复制的对象与原本的对象，无论是<code>is</code>还是=都是不一样的。</p>
+<p>​		但如果有对象的嵌套，即一个对象的参数是另一个对象，则只复制地址，仍然会导致两个不一样的对象指向了一个对象，为了防止这种情况，可以使用深复制（deep copy），这样复制的对象会把对象的属性的对象也进行复制。</p>
+<h3 id="64-更好的打印">
+  6.4 更好的打印
+  <a class="heading-link" href="#64-%e6%9b%b4%e5%a5%bd%e7%9a%84%e6%89%93%e5%8d%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>我们可以使用<code>__str__</code>这个特殊来返回对象的字符串表达式。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%c</span><span class="s1"> </span><span class="si">%c</span><span class="s1">&#39;</span><span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">last</span><span class="p">)</span>
+</span></span></code></pre></div><p>我们在使用print打印的时候会调用这个方法，并按照我们给定的格式来输出。</p>
+<p><em>我们写一个新的类，使用 init 来初始化，又使用 str 来打印调试</em></p>
+<h3 id="65-操作符重载">
+  6.5 操作符重载
+  <a class="heading-link" href="#65-%e6%93%8d%e4%bd%9c%e7%ac%a6%e9%87%8d%e8%bd%bd">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>6.5.1 基本重载</p>
+<p>​		通过定义其他的特殊方法，可以指定各种操作符的行为。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 使用add重载+</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="fm">__add__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="bp">self</span><span class="o">+</span><span class="n">other</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">使用上面这个方式只能使用左加法，为了可以右加法一样可以，我们可以使用如下代码
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+</span></span></code></pre></div><p>6.5.2 基于类型的分发</p>
+<p>​		我们使用<code>+</code>的时候可能两者的类型并不是我们所希望的样子，我们可以通过if等方式对不同的类型进行相应的处理，使得其可以进行运算。</p>
+<p>6.5.3 多态</p>
+<p>​		比起基于类型的方法，我们更可以使用能处理多个类型的函数：多态。</p>
+<p>​		如：sum函数可以用于任何有定义<code>__add__</code>的对象之间。</p>
+<h3 id="66-继承">
+  6.6 继承
+  <a class="heading-link" href="#66-%e7%bb%a7%e6%89%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>​		继承是指定义一个新类，继承旧的类的大部分属性，再对一部分属性和方法进行修改。</p>
+<p>​		优点：可以大量减少代码的重复量，优化程序结构</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Hand</span><span class="p">(</span><span class="n">Deck</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></div><p>​		使用上述代码，在类的定义后面追加的写另一个类，会首先把括号内的类全部都继承下来，而对于要修改的部分，我们可以在这个类里面进行重新的覆盖式定义。</p>
+<p>​		<em>我们在进行继承或者重载的时候，尽可能要保持接口的一致性，防止代码逻辑混乱</em></p>
+<h3 id="67-数据封装">
+  6.7 数据封装
+  <a class="heading-link" href="#67-%e6%95%b0%e6%8d%ae%e5%b0%81%e8%a3%85">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>从编写函数、读取全局变量开始。</li>
+<li>当程序可以完美运行后，查看全局变量和函数之间的关系。</li>
+<li>将变量封装成对象的属性，将函数封装为对象的方法。</li>
+</ol>
+<h3 id="68-案例扑克牌">
+  6.8 案例（扑克牌）
+  <a class="heading-link" href="#68-%e6%a1%88%e4%be%8b%e6%89%91%e5%85%8b%e7%89%8c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Card</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;创建了一个单张卡片对象&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">suit</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">suit</span><span class="o">=</span><span class="n">suit</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="o">=</span><span class="n">rank</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="n">suit_name</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;草花&#39;</span><span class="p">,</span><span class="s1">&#39;方块&#39;</span><span class="p">,</span><span class="s1">&#39;红心&#39;</span><span class="p">,</span><span class="s1">&#39;黑桃&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rank_name</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span><span class="s1">&#39;ace&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="s1">&#39;9&#39;</span><span class="p">,</span><span class="s1">&#39;10&#39;</span><span class="p">,</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span><span class="s1">&#39;queen&#39;</span><span class="p">,</span><span class="s1">&#39;king&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">Card</span><span class="o">.</span><span class="n">suit_name</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">suit</span><span class="p">],</span><span class="n">Card</span><span class="o">.</span><span class="n">rank_name</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">suit</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">)</span><span class="o">&lt;</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">suit</span><span class="p">,</span><span class="n">other</span><span class="o">.</span><span class="n">rank</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Deck</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;使用单张卡片对象，创建了完整的一套卡牌&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">suit</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">rank</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">card</span><span class="o">=</span><span class="n">Card</span><span class="p">(</span><span class="n">suit</span><span class="p">,</span><span class="n">rank</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">card</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">card</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">pop_card</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">add_card</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">card</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"> <span class="k">class</span> <span class="nc">Hand</span><span class="p">(</span><span class="n">Deck</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;继承了一套完整的卡牌的方法，对于初始化做了修改&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">label</span>
+</span></span></code></pre></div><p><strong>快速定义类</strong>：我们也可以使用命名元组的方式，用简短的语句快速定义一个简单的只具有<code>init</code>和<code>str</code>方法的类</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+</span></span><span class="line"><span class="cl"><span class="n">point</span><span class="o">=</span><span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;point&#39;</span><span class="p">,[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
+</span></span></code></pre></div><p>上面这段代码的第一个参数是类的名字，第二个是参数的列表。</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
