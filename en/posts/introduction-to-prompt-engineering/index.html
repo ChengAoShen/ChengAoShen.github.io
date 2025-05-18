@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  ⚽️Introduction to Prompt Engineering · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="
+  Basic Knowledge
+  
+    
+    Link to heading
+  
+
+Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use large lange models (LLMs) for a wide variety of applications and research topics. Researchers use prompt engineering to improve the safety and the capacity of LLMs on a wide range of common and complex tasks such as question answering and arithmetic reasoning. Developers use prompt engineering to design robust and effective prompting techniques that interface with LLMs and other tools.">
+<meta name="keywords" content="ChengAo Shen, homepage,university of houston, personal blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="⚽️Introduction to Prompt Engineering">
+  <meta name="twitter:description" content="Basic Knowledge Link to heading Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use large lange models (LLMs) for a wide variety of applications and research topics. Researchers use prompt engineering to improve the safety and the capacity of LLMs on a wide range of common and complex tasks such as question answering and arithmetic reasoning. Developers use prompt engineering to design robust and effective prompting techniques that interface with LLMs and other tools.">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/introduction-to-prompt-engineering/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="⚽️Introduction to Prompt Engineering">
+  <meta property="og:description" content="Basic Knowledge Link to heading Prompt engineering is a relatively new discipline for developing and optimizing prompts to efficiently use large lange models (LLMs) for a wide variety of applications and research topics. Researchers use prompt engineering to improve the safety and the capacity of LLMs on a wide range of common and complex tasks such as question answering and arithmetic reasoning. Developers use prompt engineering to design robust and effective prompting techniques that interface with LLMs and other tools.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2024-07-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-15T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/introduction-to-prompt-engineering/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/introduction-to-prompt-engineering/">
+          ⚽️Introduction to Prompt Engineering
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="basic-knowledge">
+  Basic Knowledge
+  <a class="heading-link" href="#basic-knowledge">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><strong>Prompt engineering</strong> is a relatively new discipline for developing and optimizing prompts to efficiently use large lange models (LLMs) for a wide variety of applications and research topics. Researchers use prompt engineering to improve the safety and the capacity of LLMs on a wide range of common and complex tasks such as question answering and arithmetic reasoning. Developers use prompt engineering to design robust and effective prompting techniques that interface with LLMs and other tools.</p>
+<p>When designing and testing prompts, we typically interact with the LLMs via an API. Some paprameters will influence the performance of the model, below are some common settings that will come across when using LLMs:</p>
+<ul>
+<li>
+<p>Temperature - This parameter controls the degree of randomness in the model&rsquo;s output. A higher temperature will result in more random outputs, while a lower temperature will result in more repetitive outputs.</p>
+</li>
+<li>
+<p>Top P - This parameter controls the sampling strategy used by the model when generating multiple possible outputs. A higher value of Top P will result in more diverse outputs, while a lower value will result in more repetitive outputs.</p>
+</li>
+</ul>
+<blockquote>
+<p>The general recommendation is to alter temperature or Top P but not both.</p></blockquote>
+<ul>
+<li>
+<p>Max Length - This parameter controls the number of tokens the model generates in its output. Using a typical max length will help to prevent long or irrelevant responses and control costs.</p>
+</li>
+<li>
+<p>Stop Sequences - This parameter is a string that stops the model from generating tokens. This is another way to control the length and structure of the model&rsquo;s response.</p>
+</li>
+<li>
+<p>Frequency Penalty - This parameter will add a penalty to the same tokens in the model&rsquo;s output when it appears, which can help to prevent a repetition of this word. Higher values of frequency penalty will reduce the repetition of tokens in the model&rsquo;s output.</p>
+</li>
+<li>
+<p>Presence Penalty - This parameter will set a penalty to the appeared word (Not add more penalty when the word appears more than once), which can reduce the repetition of the same word in the model&rsquo;s output. Higher values of presence penalty will reduce the repetition of the same word in the model&rsquo;s output.</p>
+</li>
+</ul>
+<h2 id="prompts">
+  Prompts
+  <a class="heading-link" href="#prompts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="what-is-a-prompt">
+  What is a prompt?
+  <a class="heading-link" href="#what-is-a-prompt">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Prompts are used to guide the model to generate the correct outputs. A prompt can contain information like the <strong>instruction</strong> or <strong>question</strong> you are passing to the model and include other details such as <strong>context</strong>, <strong>inputs</strong>, or <strong>examples</strong>. You can use these elements to instruct the model more effectively to improve the quality of results.</p>
+<p>When using GPT3.5 or GPT4, the prompt can be structured in three different roles: <strong>system</strong>, <strong>user</strong>, and <strong>assistant</strong>.</p>
+<ul>
+<li>System - Setting the behavior, character, and background of the models.</li>
+<li>User - Asking the question or providing the context.</li>
+<li>Assistant - Automatically generated by the System and user prompts.</li>
+</ul>
+<p>Normally we only use user prompts to interact with the model.</p>
+<h3 id="prompt-format">
+  Prompt Format
+  <a class="heading-link" href="#prompt-format">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The prompt can be formatted with different structures divided into zero-shot or few-shot. Zero-shot prompting means it can directly prompt the model for a response without any examples or demonstrations of the task. One typical zero-shot example is the Question/Answering (QA) format:</p>
+<pre tabindex="0"><code>Q: &lt;Question&gt;?
+A: &lt;Answer&gt;
+Q: &lt;Question&gt;?
+A: &lt;Answer&gt;
+Q: &lt;Question&gt;?
+A: 
+</code></pre><p>Different formats of prompts can be used in various tasks, such as classification prompts:</p>
+<pre tabindex="0"><code>This is awesome! // Positive
+This is bad! // Negative
+Wow, that movie was rad! // Positive
+What a horrible show! //
+</code></pre><p>Output:</p>
+<pre tabindex="0"><code>Negative
+</code></pre><p>This format is a few-shot that can enable in-context learning.</p>
+<h3 id="prompt-elements">
+  Prompt Elements
+  <a class="heading-link" href="#prompt-elements">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>One typical prompt often contains any of the following elements:</p>
+<ul>
+<li><strong>Instruction</strong> - a specific task or instruction you want the model to perform</li>
+<li><strong>Context</strong> - external information or additional context that can steer the model to better responses</li>
+<li><strong>Input Data</strong> - the input or question that we are interested in finding a response for</li>
+<li><strong>Output Indicator</strong> - the type or format of the output</li>
+</ul>
+<h3 id="designing-tips">
+  Designing Tips
+  <a class="heading-link" href="#designing-tips">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Start Simple</p>
+<p>In the beginning, use simple models and prompts, and iterate continuously to meet the requirements.</p>
+<p>When there is a large task, try to break it down into multiple subtasks.</p>
+</li>
+<li>
+<p>Obvious Instruction</p>
+<p>Giving clear instructions when designing the prompt can help to improve the output performance.</p>
+</li>
+<li>
+<p>Specificity</p>
+<p>More detailed requirements can help the model output meet the requirements.</p>
+<pre tabindex="0"><code>Extract the name of places in the following text. 
+
+Desired format:
+Place: &lt;comma_separated_list_of_places&gt;
+
+Input: &#34;Although these developments are encouraging to researchers, much is still a mystery. “We often have a black box between the brain and the effect we see in the periphery,” says Henrique Veiga-Fernandes, a neuroimmunologist at the Champalimaud Centre for the Unknown in Lisbon. “If we want to use it in the therapeutic context, we actually need to understand the mechanism.&#34;
+</code></pre></li>
+<li>
+<p>Avoid Imprecisseness</p>
+<p>Use the most straightforward language to communicate.</p>
+<pre tabindex="0"><code>Use 2-3 sentences to explain the concept of prompt engineering to a high school student.
+</code></pre></li>
+<li>
+<p>Say Do What</p>
+<p>Avoid saying what not to do but say what to do instead</p>
+</li>
+</ul>
+
+  </article>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

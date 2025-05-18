@@ -50,6 +50,12 @@
     <loc>https://chengaoshen.com/authors/ziming-zhao/</loc>
     <lastmod>2025-04-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/en/posts/</loc>
+    <lastmod>2024-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/introduction-to-prompt-engineering/</loc>
+    <lastmod>2024-07-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/publications/emoji-kitchen/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
   </url><url>
@@ -59,20 +65,29 @@
     <loc>https://chengaoshen.com/authors/siyuan-mu/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/en/posts/introduction-to-generative-models/</loc>
+    <lastmod>2023-10-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/various-font-in-latex/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/introduction-to-transformer/</loc>
+    <lastmod>2023-10-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/brief-introduction-of-the-tensor-in-pytorch/</loc>
+    <lastmod>2022-10-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/using-custom-dataset-in-pytorch/</loc>
+    <lastmod>2022-10-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/about/</loc>
   </url><url>
     <loc>https://chengaoshen.com/en/news/</loc>
-  </url><url>
-    <loc>https://chengaoshen.com/en/posts/</loc>
-  </url><url>
-    <loc>https://chengaoshen.com/zh-cn/about/</loc>
   </url><url>
     <loc>https://chengaoshen.com/categories/</loc>
   </url><url>
     <loc>https://chengaoshen.com/series/</loc>
   </url><url>
     <loc>https://chengaoshen.com/tags/</loc>
-  </url><url>
-    <loc>https://chengaoshen.com/zh-cn/</loc>
   </url>
 </urlset>

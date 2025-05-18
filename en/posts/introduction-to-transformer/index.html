@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  💡Introduction to Transformer · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="
+Transformer is a really popular method in modern neural networks. We have BERT or GPT to process the natural language and ViT to deal with computer vision. In this essay, you will understand what is the transformer and why the transformer works. But be careful, limited by my knowledge, I can’t show some mathematical theories or code of transformer for you.
+
+  Why do we need the Transformer?
+  
+    
+    Link to heading
+  
+
+In the NLP( Natural Language Processing) field, the text dataset always has some obvious features that prevent us from using MLP.">
+<meta name="keywords" content="ChengAo Shen, homepage,university of houston, personal blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="💡Introduction to Transformer">
+  <meta name="twitter:description" content="Transformer is a really popular method in modern neural networks. We have BERT or GPT to process the natural language and ViT to deal with computer vision. In this essay, you will understand what is the transformer and why the transformer works. But be careful, limited by my knowledge, I can’t show some mathematical theories or code of transformer for you.
+Why do we need the Transformer? Link to heading In the NLP( Natural Language Processing) field, the text dataset always has some obvious features that prevent us from using MLP.">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/introduction-to-transformer/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="💡Introduction to Transformer">
+  <meta property="og:description" content="Transformer is a really popular method in modern neural networks. We have BERT or GPT to process the natural language and ViT to deal with computer vision. In this essay, you will understand what is the transformer and why the transformer works. But be careful, limited by my knowledge, I can’t show some mathematical theories or code of transformer for you.
+Why do we need the Transformer? Link to heading In the NLP( Natural Language Processing) field, the text dataset always has some obvious features that prevent us from using MLP.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2023-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-10-23T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/introduction-to-transformer/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/introduction-to-transformer/">
+          💡Introduction to Transformer
+        </a>
+      </h1>
+    </header>
+
+    <blockquote>
+<p>Transformer is a really popular method in modern neural networks. We have BERT or GPT to process the natural language and ViT to deal with computer vision. In this essay, you will understand what is the transformer and why the transformer works. But be careful, limited by my knowledge, I can’t show some mathematical theories or code of transformer for you.</p></blockquote>
+<h2 id="why-do-we-need-the-transformer">
+  Why do we need the Transformer?
+  <a class="heading-link" href="#why-do-we-need-the-transformer">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In the NLP( Natural Language Processing) field, the text dataset always has some obvious features that prevent us from using MLP.</p>
+<ol>
+<li>
+<p>Too large after being encoder.</p>
+<p>To represent the words, we should embed them into vectors first. Generally, we use the vector of length 1024 to describe one word, meaning the data size will become large after multiplying the size of the vector(1024).</p>
+</li>
+<li>
+<p>Having different length</p>
+<p>Our inputs for the NLP problems have various lengths according to the size of passages or sentences. We should build models that adopt different size inputs.</p>
+</li>
+<li>
+<p>Ambiguous</p>
+<p>The texts don&rsquo;t resemble the numbers having certain meanings from themselves. Some words like “it” refer to others in the context, which means they are ambiguous in different backgrounds.</p>
+</li>
+</ol>
+<p>To sum up, the features or problems we mention above prevent us from using normal structures like MLP to process natural language. So we need new things - Transformer. Let us approach this by self-attention first.</p>
+<h2 id="self-attention">
+  Self-attention
+  <a class="heading-link" href="#self-attention">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="parameter-sharing">
+  Parameter sharing
+  <a class="heading-link" href="#parameter-sharing">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>A standard neural network layer $f[x]$, take $D\times 1$ inputs and return $D&rsquo;\times 1$. When we process embedding text, our input’s dimensions are changed to $D\times N$. To hold enough information in our model, we assume the size of our data remains unchanged, which means the size of outputs is also $D\times N$. Where $D$ is the size of the embedding vector, $N$ is the number of the word.</p>
+<p>Roughly, different words have their meanings just like the dictionary shows, which inspires us to use the neural network to approximate the dictionary - mapping the words to their abstract meanings described by numbers.
+$$
+v=\beta_v+\Omega_vx
+$$</p>
+<p>Where $x$ is embedding word, $v$ is abstract meaning of word(present by number), and $\beta_v,\Omega_v$ is the parameter mapping the words to their meanings.</p>
+<p>As we can use one dictionary to map every word to their meanings, we can just use $\beta_v,\Omega_v$ to map every embedding word, called <strong>parameter sharing</strong></p>
+<p>Normally, the inputs and outputs are represented as $D\times N$ matrix, so we can rewrite our equation as follows
+$$
+V[X]=\beta_v1^T+\Omega_vX
+$$</p>
+<h3 id="from-weight-to-self-attention">
+  From weight to self-attention
+  <a class="heading-link" href="#from-weight-to-self-attention">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In the last section, we use “dictionary” to map words, but the problem is we haven’t considered the context of the words. So, how can we let our “dictionary” know the context?
+One simple thinking is we can give every “meaning” a <strong>weight</strong> and weighted sum the values.
+$$
+O[X]=V[X]\times W
+$$</p>
+<p>$$
+W=\begin{pmatrix}
+w_1 &amp;\dots  &amp;w_n \
+\vdots  &amp;  &amp;\vdots  \
+w_1 &amp; \dots &amp;w_n
+\end{pmatrix}
+$$</p>
+<p>How can we get this weight that measures the relationship between the words in the sentence? Inspired by the search system, we can use “queries” to match “key”. Same as we did before, we can just use linear transformation to get them.
+$$
+\begin{split}
+Q[X]=\beta_q1^T+\Omega_qX\
+K[X]=\beta_k1^T+\Omega_kX
+\end{split}
+$$</p>
+<p>Where $\beta_q,\Omega_q,\beta_k,\Omega_q$ are also shared for every word.</p>
+<p>Then, we can use $K$ to query the $Q$, telling us which word should pay how much <strong>attention</strong> to others. Typically, the attention should sum up as $1$, so we can use the softmax function to achieve this. Because we use $X$ to pay attention to itself, we call this <strong>Self-attention</strong>. To sum up, our model is described as follows:
+$$
+Sa[X]=V[X]\cdot \text{Softmax}[K[X]^TQ[X]]
+$$</p>
+<p><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726112139933.png" alt="Self-attention"></p>
+<p>Typically, the dot products will be really large, which means the small changes to the inputs have nearly no effect on the output because we use the softmax function. So we always use the dimension of the input, always the shape of embedding, to scale the dot products.</p>
+<p>$$
+Sa[X]=V[X]\cdot \text{Softmax}[\frac{K[X]^TQ[X]}{\sqrt{D_q}}]
+$$</p>
+<h3 id="multiple-heads">
+  Multiple heads
+  <a class="heading-link" href="#multiple-heads">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>To increase the information that model learning, we always use more attention units when we calculate the output. We will divide the input to $h$ parts, and calculate the self-attention with them. After that, we will combine all of them to recreate our output.
+$$
+\text{MhSa}[X]=\Omega_c[Sa_1[X]^T,Sa_2[X]^T,\dots,Sa_H[X]^T]^T
+$$</p>
+<p><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726201710681.png" alt="Multiple heads"></p>
+<h2 id="transformer-layers">
+  Transformer layers
+  <a class="heading-link" href="#transformer-layers">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20230726113937045.png" alt="Transformer layers"></p>
+<p>With <strong>self-attention</strong> and <strong>MLP</strong>, we can construct the transformer layers applied in many outstanding models. The process looks like this:
+$$
+\begin{split}
+X \leftarrow X+\text{MhSa}[X]\
+X\leftarrow \text{LayerNorm}[X]\
+x_n\leftarrow x_n+\text{MLP}[x_n]\
+X\leftarrow \text{LayerNorm}[X]
+\end{split}
+$$</p>
+<p>Where $\text{MLP}$ is fully connected network works separately on each word and $\text{LayerNorm}$ is the normalization happens in the channel, like:</p>
+<p>$$
+y=\frac{x-E[x]}{\sqrt{Var[x]+\epsilon }}*\gamma+\beta
+$$</p>
+<h2 id="reference">
+  Reference
+  <a class="heading-link" href="#reference">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>[1] S. J. D. Prince, <em>Understanding Deep Learning</em>. MIT Press, 2023.</p>
+<p>[2] A. Vaswani <em>et al.</em>, ‘Attention Is All You Need’, <em>CoRR</em>, vol. abs/1706.03762, 2017.</p>
+<blockquote>
+<p>All photos in this article are from <a href="https://udlbook.github.io/udlbook/"  class="external-link" target="_blank" rel="noopener">Understanding Deep Learning</a>. It’s a great book and I really recommend it</p></blockquote>
+
+  </article>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
