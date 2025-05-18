@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ge Diao on ChengAo Shen</title>
+    <link>https://chengaoshen.com/authors/ge-diao/</link>
+    <description>Recent content in Ge Diao on ChengAo Shen</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chengaoshen.com/authors/ge-diao/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emoji Kitchen with Controlled Fusion</title>
+      <link>https://chengaoshen.com/en/publications/emoji-kitchen/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/publications/emoji-kitchen/</guid>
+      <description>&lt;p&gt;Abstract: The image fusion method is widely used in many different fields. The fusion processes both need models to extract semantic information and contain details. Traditional image processing techniques used for this issue have limited ability to extract semantic features from images, and advanced deep learning techniques often lose the details. In this work, we propose the Controlled Fusion Network (CFN) that adopts a multi-step progressive generation method and injects control elements at every step. We test the model in the emoji fusion task which accepts various emojis and combines them. We find that the generated emojis sufficiently retain and reasonably combine the semantic information of the input images, while the result images also conform to human intuitive perception. Our source code is released at: &lt;a href=&#34;https://github.com/ChengAoShen/Emoji_fusion&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ChengAoShen/Emoji_fusion&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

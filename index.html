@@ -1,574 +1,46 @@
-<!doctype html>
-<!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: February 20, 2025 --><html lang="en-us" dir="ltr"
-      data-wc-theme-default="system">
-  
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="generator" content="Hugo Blox Builder 0.3.2" />
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-    
-    
-    
-  
-  
-
-  <meta name="author" content="ChengAo Shen" />
-
-  
-  
-  
-    
-  
-  <meta name="description" content="The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website." />
-
-  
-    <link rel="alternate" hreflang="zh" href="https://chengaoshen.com/zh/" />
-  
-  <link rel="alternate" hreflang="en-us" href="https://chengaoshen.com/" />
-
-  
-  
-  
-  
-    
-    <link rel="stylesheet" href="/css/themes/emerald.min.css" />
-  
-
-  
-  
-    
-    <link href="/dist/wc.min.05570f1deda629d4e2d77f73534a63aa04471f012db6735c59424372f467db85.css" rel="stylesheet" />
-  
-
-  
-  
-  
-
-  
-
-  <script>
-     
-    window.hbb = {
-       defaultTheme: document.documentElement.dataset.wcThemeDefault,
-       setDarkTheme: () => {
-        document.documentElement.classList.add("dark");
-        document.documentElement.style.colorScheme = "dark";
-      },
-       setLightTheme: () => {
-        document.documentElement.classList.remove("dark");
-        document.documentElement.style.colorScheme = "light";
-      }
-    }
-
-    console.debug(`Default Hugo Blox Builder theme is ${window.hbb.defaultTheme}`);
-
-    if ("wc-color-theme" in localStorage) {
-      localStorage.getItem("wc-color-theme") === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
-    } else {
-      window.hbb.defaultTheme === "dark" ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
-      if (window.hbb.defaultTheme === "system") {
-        window.matchMedia("(prefers-color-scheme: dark)").matches ? window.hbb.setDarkTheme() : window.hbb.setLightTheme();
-      }
-    }
-  </script>
-
-  <script>
-    
-    document.addEventListener('DOMContentLoaded', function () {
-      
-      let checkboxes = document.querySelectorAll('li input[type=\'checkbox\'][disabled]');
-      checkboxes.forEach(e => {
-        e.parentElement.parentElement.classList.add('task-list');
-      });
-
-      
-      const liNodes = document.querySelectorAll('.task-list li');
-      liNodes.forEach(nodes => {
-        let textNodes = Array.from(nodes.childNodes).filter(node => node.nodeType === 3 && node.textContent.trim().length > 1);
-        if (textNodes.length > 0) {
-          const span = document.createElement('label');
-          textNodes[0].after(span);  
-          span.appendChild(nodes.querySelector('input[type=\'checkbox\']'));
-          span.appendChild(textNodes[0]);
-        }
-      });
-    });
-  </script>
-
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="ChengAo Shen" />
-  
-
-  
-  <link rel="icon" type="image/png" href="/media/icon_hu_e409df0d284c0712.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_93a4420cf32886dd.png" />
-
-  <link rel="canonical" href="https://chengaoshen.com/" />
-
-  
-  
-  
-  
-  
-  
-  
-  
-    
-    
-  
-  
-
-  
-  
-    
-    
-  
-  <meta property="twitter:card" content="summary" />
-  
-    <meta property="twitter:site" content="@GetResearchDev" />
-    <meta property="twitter:creator" content="@GetResearchDev" />
-  
-  <meta property="og:site_name" content="ChengAo Shen" />
-  <meta property="og:url" content="https://chengaoshen.com/" />
-  <meta property="og:title" content="ChengAo Shen" />
-  <meta property="og:description" content="The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website." /><meta property="og:image" content="https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png" />
-    <meta property="twitter:image" content="https://chengaoshen.com/media/icon_hu_5e76b9ed60a85934.png" /><meta property="og:locale" content="en-us" />
-  
-    
-      <meta property="og:updated_time" content="2024-06-05T00:00:00&#43;00:00" />
-    
-  
-
-  
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite","url": "https://chengaoshen.com/"
-}
-</script>
-
-
-  
-
-
   <title>ChengAo Shen</title>
-
-  
-  
-  
-  
-  
-    
-    
-  
-  
-  <style>
-    @font-face {
-      font-family: 'Inter var';
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      src: url(/dist/font/Inter.var.woff2) format(woff2);
-    }
-  </style>
-
-  
-
-  
-  
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-  
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-  
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-  
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 
 
 
 
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="ChengAo Shen&#39;s homepage">
+<meta name="keywords" content="ChengAo Shen, homepage,university of houston, personal blog">
 
 
 
-<link type="text/css" rel="stylesheet" href="/dist/pagefind/pagefind-ui.be766eb419317a14ec769d216e9779bfe8f3737c80e780f4ba0dafb57a41a482.css" integrity="sha256-vnZutBkxehTsdp0hbpd5v&#43;jzc3yA54D0ug2vtXpBpII=" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ChengAo Shen">
+  <meta name="twitter:description" content="ChengAo Shen&#39;s homepage">
 
-
-<script src="/dist/pagefind/pagefind-ui.87693d7c6f2b3b347ce359d0ede762c033419f0a32b22ce508c335a81d841f1b.js" integrity="sha256-h2k9fG8rOzR841nQ7ediwDNBnwoysizlCMM1qB2EHxs="></script>
-
-
-<script>window.hbb.pagefind = {"baseUrl":"/"};</script>
-
-<style>
-  html.dark {
-    --pagefind-ui-primary: #eeeeee;
-    --pagefind-ui-text: #eeeeee;
-    --pagefind-ui-background: #152028;
-    --pagefind-ui-border: #152028;
-    --pagefind-ui-tag: #152028;
-  }
-
-   
-  .search-close > svg {
-    height: calc(64px * var(--pagefind-ui-scale));
-    width: calc(64px * var(--pagefind-ui-scale));
-  }
-</style>
-
-<script>
-  
-  let searchWrapper = null;
-
-  window.addEventListener('DOMContentLoaded', (event) => {
-    
-    new PagefindUI({
-      element: "#search",
-      showSubResults: true,
-      baseUrl: window.hbb.pagefind.baseUrl,
-      bundlePath: window.hbb.pagefind.baseUrl + "pagefind/",
-    });
-
-    
-    searchWrapper = document.getElementById('search-wrapper');
-
-    
-    let triggers = document.querySelectorAll('[data-search-toggle]');
-    triggers.forEach(trigger =>
-      trigger.addEventListener('click', handleSearchToggle)
-    );
-  });
-
-  function handleSearchToggle(event) {
-    if (!searchWrapper) return;
-
-    const isHidden = searchWrapper.classList.contains('hidden');
-    searchWrapper.classList.toggle('hidden');
-    document.body.style.overflow = isHidden ? 'hidden' : '';
-
-    const searchInput = searchWrapper.querySelector("input");
-    if (searchInput) {
-      searchInput.value = "";
-      searchInput.focus();
-    }
-
-    if (!searchWrapper.classList.contains('hidden')) {
-      let clearTrigger = document.querySelector('.pagefind-ui__search-clear');
-
-      if (clearTrigger && !clearTrigger.hasAttribute('listenerOnClick')) {
-        clearTrigger.setAttribute('listenerOnClick', 'true');
-
-        clearTrigger.addEventListener('click', () => {
-          searchInput.focus();
-        });
-      }
-    }
-  }
-
-  
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && searchWrapper && !searchWrapper.classList.contains('hidden')) {
-      searchWrapper.classList.add('hidden');
-    }
-  });
-</script>
+<meta property="og:url" content="https://chengaoshen.com/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="ChengAo Shen">
+  <meta property="og:description" content="ChengAo Shen&#39;s homepage">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
 
 
 
 
+<link rel="canonical" href="https://chengaoshen.com/">
 
 
-
-
-
-
-
-
-
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 
 
   
   
-  
-  
-  
-  
-  
-  <script
-    defer
-    src="/js/hugo-blox-en.min.47736f84e20cae1bb2224dc4605239689e913811575e32b5f86a700ee9d6529d.js"
-    integrity="sha256-R3NvhOIMrhuyIk3EYFI5aJ6ROBFXXjK1&#43;GpwDunWUp0="
-  ></script>
-
-  
-  
-
-
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -577,1548 +49,215 @@
 
   
     
-      
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-      
     
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
   
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="ChengAo Shen" />
+
+
+<meta name="generator" content="Hugo 0.146.6">
+
 
 
 
 
 </head>
 
-  <body class="dark:bg-hb-dark dark:text-white page-wrapper" id="top">
-    <div id="page-bg"></div>
-    <div class="page-header sticky top-0 z-30">
-      
-      
-      
-        
-        
-        
-          <header id="site-header" class="header">
-  <nav class="navbar px-3 flex justify-left">
-    <div class="order-0 h-100">
-      
-      <a class="navbar-brand" href="/" title="ChengAo Shen">
-        ChengAo Shen
-      </a>
-    </div>
-    
-    <input id="nav-toggle" type="checkbox" class="hidden" />
-    <label
-      for="nav-toggle"
-      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
-      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
-        <title>Open Menu</title>
-        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
-      </svg>
-      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
-        <title>Close Menu</title>
-        <polygon
-          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-          transform="rotate(45 10 10)"></polygon>
-      </svg>
-    </label>
-    
 
-    
-    
-    <ul
-      id="nav-menu"
-      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 justify-left
-      ">
-      
-      
-      
-      
-      
-      
-      <li class="nav-item">
-        <a
-          class="nav-link active"
-          
-          href="/"
-        >Bio</a
-        >
-      </li>
-      
-      
-      
-      
-      
-      
-      <li class="nav-item">
-        <a
-          class="nav-link "
-          
-          href="/#research"
-        >Research</a
-        >
-      </li>
-      
-      
-      
-      
-      
-      
-      <li class="nav-item">
-        <a
-          class="nav-link "
-          
-          href="/#papers"
-        >Papers</a
-        >
-      </li>
-      
-      
-      
-      
-      
-      
-      <li class="nav-item">
-        <a
-          class="nav-link "
-          
-          href="/#news"
-        >News</a
-        >
-      </li>
-      
-      
-      
-      
-      
-      
-      <li class="nav-item">
-        <a
-          class="nav-link "
-          
-          href="/blog/"
-        >Blogs</a
-        >
-      </li>
-      
-      
-      
-    </ul>
 
-    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
 
-      
-      
-      
-      <button
-        aria-label="toggle search"
-        class="text-black hover:text-primary  inline-block px-3 text-xl dark:text-white"
-        data-search-toggle>
-        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512" fill="currentColor"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-      </button>
-      
 
-      
-      
-      <div class="px-3 text-black hover:text-primary-700 dark:text-white dark:hover:text-primary-300
-            [&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white">
-        <button class="theme-toggle mt-1" accesskey="t" title="appearance">
-          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-               stroke-linejoin="round" class="dark:hidden">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-               stroke-linejoin="round" class=" dark:block [&:not(dark)]:hidden">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-      </div>
-      
 
-      
-      
-      <div class="pl-1 mr-5 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200
-            [&.active]:font-bold [&.active]:text-black/90 dark:[&.active]:text-white">
-
-
-<div class="flex justify-items-start ">
-    <button
-      title="Languages"
-      data-state="closed"
-      data-hb-language-chooser
-      class="grow h-7 rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors dark:text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-primary-100/5 dark:hover:text-gray-50"
-      type="button"
-      aria-label="Languages"
-    >
-      <div class="flex items-center gap-2 capitalize">
-        <svg height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg><span>English</span></div>
-    </button>
-    <ul
-      class="fixed m-0 min-w-[100px] hidden z-20 max-h-64 overflow-auto rounded-md ring-1 ring-black/5 bg-white py-1 text-sm shadow-lg dark:ring-white/20 dark:bg-neutral-800"
-      style="inset: auto auto 0 0;"
-    >
-      
-        <li class="flex flex-col">
-          <a
-            href="https://chengaoshen.com/zh/"
-            class="relative cursor-pointer text-gray-800 dark:text-gray-100 hover:bg-primary-50 hover:text-primary-600 hover:dark:bg-primary-500/10 hover:dark:text-primary-200 whitespace-nowrap py-1.5 transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
-          >中文 (简体)</a>
-        </li>
-      </ul>
-  </div></div>
-      
-
-      
-      
-    </div>
-  </nav>
-</header>
-
-<div
-  id="search-wrapper"
-  class="hidden fixed inset-0 z-50 bg-white dark:bg-gray-900 flex flex-col overflow-hidden"
->
-  <div class="flex justify-end p-3">
-    <button
-      aria-label="search"
-      class="search-close text-black hover:text-primary dark:text-white"
-      data-search-toggle
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-      </svg>
-    </button>
-  </div>
-
-  <div id="search" class="flex-1 overflow-y-auto p-3">
-    
-  </div>
-</div>
-
-
-        
-      
-    </div>
-    <div class="page-body ">
-      
-
-  
-  
-    
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-    
-    
-  
-  
-    
-    
-  
-  
-    
-    
-  
-
-
-
-  
-
-
-
-  
-    
-    
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="section-resume-biography-3" class="relative hbb-section blox-resume-biography-3  dark" style="padding: 8rem 0 8rem 0;" >
- <div class="home-section-bg  bg-image" style="background-color: black;background-image: url(&#39;https://chengaoshen.com/media/stacked-peaks.svg&#39;);background-size: cover;background-position: center;filter: brightness(1);">
-   
- </div>
-  
-
-  
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="resume-biography px-3 flex flex-col md:flex-row justify-center gap-12">
-  <div class="flex-none m-w-[130px] mx-auto md:mx-0">
-
-  
-  
-
-  <div id="profile" class="flex justify-center items-center flex-col">
-    
-
-    <div class="avatar-wrapper mt-10">
-      
-      <img class="avatar rounded-full bg-white dark:bg-gray-800 p-1" src="/author/chengao-shen/avatar_hu_9337141035d9b699.jpg" alt="ChengAo Shen"
-           width="150" height="150">
-      <span class="avatar-emoji">☕️</span>
-    </div>
-    
-
-    <div class="portrait-title dark:text-white">
-
-      <div class="text-3xl font-bold mb-2 mt-6">ChengAo Shen</div>
-
-      <h3 class="font-semibold mb-1">Ph.D. student</h3>
-
-      
-      <div class="mb-2">
-        <a href="https://uh.edu/" target="_blank" rel="noopener">
-        <div>University of Houston</div>
-        </a>
-      </div>
-      
-    </div>
-
-    <ul class="network-icon dark:text-zinc-100">
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-      <li>
-        <a href="mailto:cshen9@uh.edu"  aria-label="at-symbol"
-            data-toggle="tooltip" data-placement="top" title="E-mail Me">
-          <svg style="height: 1.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"/></svg>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a href="https://github.com/chengaoshen" target="_blank" rel="noopener" aria-label="brands/github"
-           >
-          <svg style="height: 1.5rem;" fill="currentColor" viewBox="3 3 18 18"><path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path></svg>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a href="https://twitter.com/chengao_shen" target="_blank" rel="noopener" aria-label="brands/x"
-           >
-          <svg style="height: 1.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a href="https://www.instagram.com/chengaoshen/" target="_blank" rel="noopener" aria-label="brands/instagram"
-           >
-          <svg style="height: 1.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path fill="currentColor" fill-rule="evenodd" d="M12.91 12.909c.326-.327.582-.72.749-1.151c.16-.414.27-.886.302-1.578c.032-.693.04-.915.04-2.68c0-1.765-.008-1.987-.04-2.68c-.032-.692-.142-1.164-.302-1.578a3.185 3.185 0 0 0-.75-1.151a3.187 3.187 0 0 0-1.151-.75c-.414-.16-.886-.27-1.578-.302C9.487 1.007 9.265 1 7.5 1c-1.765 0-1.987.007-2.68.04c-.692.03-1.164.14-1.578.301a3.2 3.2 0 0 0-1.151.75a3.2 3.2 0 0 0-.75 1.151c-.16.414-.27.886-.302 1.578C1.007 5.513 1 5.735 1 7.5c0 1.765.007 1.987.04 2.68c.03.692.14 1.164.301 1.578c.164.434.42.826.75 1.151c.325.33.718.586 1.151.75c.414.16.886.27 1.578.302c.693.031.915.039 2.68.039c1.765 0 1.987-.008 2.68-.04c.692-.03 1.164-.14 1.578-.301a3.323 3.323 0 0 0 1.151-.75ZM2 6.735v1.53c-.002.821-.002 1.034.02 1.5c.026.586.058 1.016.156 1.34c.094.312.199.63.543 1.012c.344.383.675.556 1.097.684c.423.127.954.154 1.415.175c.522.024.73.024 1.826.024H8.24c.842.001 1.054.002 1.526-.02c.585-.027 1.015-.059 1.34-.156c.311-.094.629-.2 1.011-.543c.383-.344.556-.676.684-1.098c.127-.422.155-.953.176-1.414C13 9.247 13 9.04 13 7.947v-.89c0-1.096 0-1.303-.023-1.826c-.021-.461-.049-.992-.176-1.414c-.127-.423-.3-.754-.684-1.098c-.383-.344-.7-.449-1.011-.543c-.325-.097-.755-.13-1.34-.156A27.29 27.29 0 0 0 8.24 2H7.057c-1.096 0-1.304 0-1.826.023c-.461.021-.992.049-1.415.176c-.422.128-.753.301-1.097.684c-.344.383-.45.7-.543 1.012c-.098.324-.13.754-.156 1.34c-.022.466-.022.679-.02 1.5ZM7.5 5.25a2.25 2.25 0 1 0 0 4.5a2.25 2.25 0 0 0 0-4.5ZM4.25 7.5a3.25 3.25 0 1 1 6.5 0a3.25 3.25 0 0 1-6.5 0Zm6.72-2.72a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5Z" clip-rule="evenodd"/></svg>
-        </a>
-      </li>
-      
-    </ul>
-  </div>
-  </div>
-
-  <div class="flex-auto max-w-prose md:mt-12">
-    
-    <div class="pt-2 justify-content-center prose prose-slate dark:prose-invert">
-      <div class="bio-text" >
-        <h2 id="about-me">About Me</h2>
-<p>I am currently pursuing my PhD at the <a href="https://uh.edu/" target="_blank" rel="noopener">University of Houston</a> under the guidance of Professor <a href="https://nijingchao.github.io/" target="_blank" rel="noopener">Jingchao Ni</a>. My research primarily focuses on applying machine learning and data science methods for time series prediction and anomaly detection. Additionally, I am actively investigating the use of data science techniques to explore causal relationships between entities in different fields, aiming to develop new methods for causal discovery. I am also interested in exploring multimodal learning, particularly the integration of language and vision models, to address challenges in time series analysis and causal discovery.</p>
-<p>Prior to my doctoral studies, I earned a Bachelor of Science degree in Information and Computing Science from <a href="https://www.sicau.edu.cn/" target="_blank" rel="noopener">Sichuan Agricultural University</a> in 2024. During my undergraduate years, I worked under the supervision of Professors Zhaoli Shen and Houhui Huang. For a more comprehensive overview of my academic and professional background, please refer to my CV.</p>
-
-      </div>
-    </div>
-    
-
-    
-    <a href="uploads/resume.pdf" target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-primary-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"><svg class="w-3.5 h-3.5 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"/>
-      <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-    </svg> Download CV</a>
-    
-
-
-
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between mt-6 dark:text-gray-300">
-
-    
-    <div class="">
-      <div class="section-subheading mb-3">Interests</div>
-      <ul class="list-disc list-inside space-y-1 pl-5">
-        
-        <li>
-          Time Series
-        </li>
-        
-        <li>
-          Causal Discovery
-        </li>
-        
-        <li>
-          LLMs
-        </li>
-        
-      </ul>
-    </div>
-    
-
-    
-    <div class="">
-      <div class="section-subheading mb-3">Education</div>
-      <ul class="">
-        
-        <li class="flex items-start gap-3">
-          <svg style="" class='flex-shrink-0 w-5 h-5 me-2 mt-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41a60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84a51.39 51.39 0 0 0-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5m0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
-          <div class="description">
-            <p class="course">Ph.D. Computer Science</p>
-            <p class="text-sm">University of Houston</p>
-          </div>
-        </li>
-        
-        <li class="flex items-start gap-3">
-          <svg style="" class='flex-shrink-0 w-5 h-5 me-2 mt-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41a60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84a51.39 51.39 0 0 0-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5a.75.75 0 0 0 0 1.5m0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
-          <div class="description">
-            <p class="course">BSc Information and Computing Science</p>
-            <p class="text-sm">Sichuan Agricultural University</p>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-    
-
-  </div>
-
-</div>
-</div>
-
-
-  
-
-  
-</section>
-
-  
-
-  
-  
-    
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
-    
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="research" class="relative hbb-section blox-markdown  " style="padding: 8rem 0 8rem 0;" >
- <div class="home-section-bg " >
-   
- </div>
-  
-
-  
-
-    
-
-
-
-
-
-
-
-
-
-<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6">
-
-  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-    📚 My Research
-  </div>
-
-  
-  <div class="prose prose-slate lg:prose-xl dark:prose-invert max-w-prose"><p>I am currently a Ph.D. student at the University of Houston, with my primary research areas including:</p>
-<ul>
-<li>
-<p>Time Series: Developing advanced techniques for forecasting and anomaly detection in complex temporal data across various domains</p>
-</li>
-<li>
-<p>Causal Discovery: Uncovering hidden cause-effect relationships in time series data and designing innovative causal inference models</p>
-</li>
-<li>
-<p>LLMs: Harnessing the power of Large Language Models to enhance time series analysis and facilitate causal discovery in temporal data</p>
-</li>
-</ul>
-<p>I hope that my research can help us better predict the future, and by applying new algorithms to different industrial fields, drive the development of various industries.</p>
-</div>
-</div>
-
-
-  
-
-  
-</section>
-
-  
-
-  
-  
-    
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
-    
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="papers" class="relative hbb-section blox-collection  " style="padding: 8rem 0 8rem 0;" >
- <div class="home-section-bg " >
-   
- </div>
-  
-
-  
-
-    
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6 md:px-0">
-
-  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-    📄Recent Publications
-  </div>
-
-  
-</div>
-
-
-<div class="flex flex-col items-center px-6">
-
-  
-  
-<div class="mt-16 sm:mt-20 container max-w-3xl w-full">
-  <div class="flex flex-col space-y-3">
-
-
-  
-    
-
-
-<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      Jingchao Ni</span>, <span >
-      Ziming Zhao</span>, <span class="font-bold">
-      ChengAo Shen</span>, <span >
-      Hanghang Tong</span>, <span >
-      Dongjin Song</span>, <span >
-      Wei Cheng</span>, <span >
-      Dongsheng Luo</span>, <span >
-      Haifeng Chen</span>
-  </span>
-  (2025).
-  <a href="/publication/v4ts_survey/" class="underline">Harnessing Vision Models for Time Series Analysis: A Survey</a>.
-  arXiv.
-  
-
-  
-  <div class="flex flex-wrap space-x-3">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-<a class="hb-attachment-link hb-attachment-small" href="/publication/v4ts_survey/V4TS_Survey.pdf" target="_blank" rel="noopener">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9"/></svg>
-  PDF
-</a>
-
-
-
-<a class="hb-attachment-link hb-attachment-small" href="/publication/v4ts_survey/cite.bib" target="_blank" data-filename="/publication/v4ts_survey/cite.bib">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"/></svg>
-  Cite
-</a>
-
-
-  
-  
-    
-  
-<a class="hb-attachment-link hb-attachment-small" href="https://github.com/D2I-Group/awesome-vision-time-series" target="_blank" rel="noopener">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-  
-
-  
-  
-</div>
-
-  
-    
-
-
-<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span class="font-bold">
-      ChengAo Shen</span>, <span >
-      Zhengzhang Chen</span>, <span >
-      Dongsheng Luo</span>, <span >
-      Dongkuan Xu</span>, <span >
-      Haifeng Chen</span>, <span >
-      Jingchao Ni</span>
-  </span>
-  (2024).
-  <a href="/publication/matmcd/" class="underline">Exploring Multi-Modal Integration with Tool-Augmented LLM Agents for Precise Causal Discovery</a>.
-  arXiv.
-  
-
-  
-  <div class="flex flex-wrap space-x-3">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-<a class="hb-attachment-link hb-attachment-small" href="/publication/matmcd/MATMCD.pdf" target="_blank" rel="noopener">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9"/></svg>
-  PDF
-</a>
-
-
-
-<a class="hb-attachment-link hb-attachment-small" href="/publication/matmcd/cite.bib" target="_blank" data-filename="/publication/matmcd/cite.bib">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"/></svg>
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-  
-
-  
-  
-</div>
-
-  
-    
-
-
-<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span class="font-bold">
-      ChengAo Shen</span>, <span >
-      Siyuan Mu</span>, <span >
-      Ge Diao</span>
-  </span>
-  (2024).
-  <a href="/publication/emoji_cfn/" class="underline">Emoji kitchen with controlled fusion</a>.
-  The Second Tiny Papers Track at ICLR 2024.
-  
-
-  
-  <div class="flex flex-wrap space-x-3">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-<a class="hb-attachment-link hb-attachment-small" href="/publication/emoji_cfn/Emoji_CFN.pdf" target="_blank" rel="noopener">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9"/></svg>
-  PDF
-</a>
-
-
-
-<a class="hb-attachment-link hb-attachment-small" href="/publication/emoji_cfn/cite.bib" target="_blank" data-filename="/publication/emoji_cfn/cite.bib">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"/></svg>
-  Cite
-</a>
-
-
-  
-  
-    
-  
-<a class="hb-attachment-link hb-attachment-small" href="https://github.com/ChengAoShen/Emoji_fusion" target="_blank" rel="noopener">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-  
-
-  
-  
-</div>
-
-  
-    
-
-
-<div class="pub-list-item view-citation" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      Zhiwei Lu</span>, <span >
-      Yonghui Gong</span>, <span class="font-bold">
-      ChengAo Shen</span>, <span >
-      Etc.</span>
-  </span>
-  (2024).
-  <a href="/publication/sensing_platform/" class="underline">Portable, intelligent MIECL sensing platform for ciprofloxacin detection using a fast convolutional neural networks-assisted Tb@Lu2O3 nanoemitter</a>.
-  Food Chemistry.
-  
-
-  
-  <div class="flex flex-wrap space-x-3">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<a class="hb-attachment-link hb-attachment-small" href="/publication/sensing_platform/cite.bib" target="_blank" data-filename="/publication/sensing_platform/cite.bib">
-  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"/></svg>
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-  
-
-  
-  
-</div>
-
-  
-
-  </div>
-</div>
-
-
-</div>
-
-
-
-
-
-
-  
-
-  
-</section>
-
-  
-
-  
-  
-    
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="news" class="relative hbb-section blox-collection  " style="padding: 0 0 0 0;" >
- <div class="home-section-bg " >
-   
- </div>
-  
-
-  
-
-    
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6 md:px-0">
-
-  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-    📰Recent News
-  </div>
-
-  
-</div>
-
-
-<div class="flex flex-col items-center px-6">
-
-  
-  <div class="mt-16 sm:mt-20 w-fit">
-  <div class="flex max-w-3xl flex-col space-y-16">
-
-
-  
-    
-
-
-
-<article class="md:grid md:grid-cols-4 md:items-baseline">
-  <div class="md:col-span-3 group relative flex flex-col items-start">
-    <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-      <div
-        class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-      <a href="/blogs/join_uh/"><span
-        class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span class="relative z-10">🎉 Joined the University of Houston as a PhD student</span></a>
-    </h2>
-    <time
-      class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-1"
-      datetime="2025-01-07">
-      Jan 7, 2025
-    </time>
-    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400"><p>Hi everyone, I&rsquo;m starting my PhD journey at the University of Houston. I&rsquo;m excited to be part of the UH-D2i-group under the supervision of Professor <a href="https://nijingchao.github.io/" target="_blank" rel="noopener">Jingchao Ni</a>.</p>
-<p>My research focuses on applying machine learning and data science methods for time series prediction and anomaly detection. I am also exploring data science techniques to uncover causal relationships across various fields and develop new methods for causal discovery. Additionally, I am interested in integrating language and vision models through multimodal learning to tackle challenges in time series analysis and causal discovery.</p></p>
-    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-primary-500">
-    Read more
-      <svg aria-hidden="true" class="ml-1 h-4 w-4 stroke-current" fill="none" viewBox="0 0 16 16">
-        <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-      </svg>
-    </div>
-  </div>
-  <time
-    class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
-    datetime="2025-01-07">Jan 7, 2025
-  </time>
-</article>
-
-  
-    
-
-
-
-<article class="md:grid md:grid-cols-4 md:items-baseline">
-  <div class="md:col-span-3 group relative flex flex-col items-start">
-    <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
-      <div
-        class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-      <a href="/blogs/hello/"><span
-        class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span class="relative z-10">🚀 A Brand New Personal Homepage!</span></a>
-    </h2>
-    <time
-      class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-1"
-      datetime="2024-06-06">
-      Jun 6, 2024
-    </time>
-    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">In the upcoming Fall of 2024, I will be completing my undergraduate studies and beginning my Ph.D. journey. To better present my academic experience and personal information, I have used Hugo to create a new personal homepage (which is the page you are currently viewing)!</p>
-    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-primary-500">
-    Read more
-      <svg aria-hidden="true" class="ml-1 h-4 w-4 stroke-current" fill="none" viewBox="0 0 16 16">
-        <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-      </svg>
-    </div>
-  </div>
-  <time
-    class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
-    datetime="2024-06-06">Jun 6, 2024
-  </time>
-</article>
-
-  
-
-  </div>
-</div>
-
-
-</div>
-
-
-
-
-
-
-  
-
-  
-</section>
-
-  
-
-
-    </div>
-    <div class="page-footer">
-      <footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
+<body class="preload-transitions colorscheme-auto">
   
-  
-
-<div class="mx-auto flex gap-3 py-2 px-4">
-  <div class="font-bold"><svg class="inline-block pr-1" style="height: 1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>Languages:
-  </div>
-  <div class="font-bold">English</div>
-  
-  <div><a href="https://chengaoshen.com/zh/">中文 (简体)</a></div>
-  
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-    
-  
-  
-    
-  
-
-  
-
-  
-  <p class="powered-by text-center">
-    © 2025 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
-  </p>
-  
-
-  <p class="powered-by footer-license-icons">
-    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
-      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
-      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
-      
-        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
-      
-      
-        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
-      
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
     </a>
-  </p>
+</div>
 
 
-
-
-
-  <p class="powered-by text-center">
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
     
     
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
     
-      
-      
-      
-      
-      
-      
-      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
-    
-  </p>
+  </section>
+</nav>
 
+
+    <div class="content">
+      
+  <section class="container centered">
+  <div class="about">
+    
+  
+    <div class="avatar"><img src="/images/avatar.jpg" alt="avatar"></div>
+  
+
+
+
+
+    <h1>ChengAo Shen</h1>
+
+<h2>Ph.D. Student<br>University of Houston<br></h2>
+
+
+
+    
+<ul>
+  
+    
+      <li>
+        <a href="mailto:cshen9@uh.edu" aria-label="E-mail"   >
+          <i class="fa-solid fa-at fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://github.com/ChengAoShen" aria-label="Github"   >
+          <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://x.com/chengao_shen" aria-label="X"   >
+          <i class="fa-brands fa-x-twitter fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.linkedin.com/in/chengao-shen/" aria-label="LinkedIn"   >
+          <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+</ul>
+
+  </div>
+
+  
+
+</section>
+
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
 </footer>
 
-    </div>
+  </main>
 
-    
-    
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
 
 
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
+  
 
-  </body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
 </html>

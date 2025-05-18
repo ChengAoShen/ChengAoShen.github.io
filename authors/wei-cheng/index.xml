@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wei Cheng on ChengAo Shen</title>
+    <link>https://chengaoshen.com/authors/wei-cheng/</link>
+    <description>Recent content in Wei Cheng on ChengAo Shen</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chengaoshen.com/authors/wei-cheng/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harnessing Vision Models for Time Series Analysis: A Survey</title>
+      <link>https://chengaoshen.com/en/publications/v4ts_survey/</link>
+      <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/publications/v4ts_survey/</guid>
+      <description>&lt;p&gt;abstract: Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

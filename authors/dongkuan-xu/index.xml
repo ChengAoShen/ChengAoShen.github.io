@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dongkuan Xu on ChengAo Shen</title>
+    <link>https://chengaoshen.com/authors/dongkuan-xu/</link>
+    <description>Recent content in Dongkuan Xu on ChengAo Shen</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chengaoshen.com/authors/dongkuan-xu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Multi-Modal Integration with Tool-Augmented LLM Agents for Precise Causal Discovery</title>
+      <link>https://chengaoshen.com/en/publications/matmcd/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/publications/matmcd/</guid>
+      <description>&lt;p&gt;Abstract: Causal inference is an imperative foundation for decision-making across domains, such as smart health, AI for drug discovery and AIOps. Traditional statistical causal discovery methods, while well-established, predominantly rely on observational data and often overlook the semantic cues inherent in cause-and-effect relationships. The advent of Large Language Models (LLMs) has ushered in an affordable way of leveraging the semantic cues for knowledge-driven causal discovery, but the development of LLMs for causal discovery lags behind other areas, particularly in the exploration of multi-modality data. To bridge the gap, we introduce MATMCD, a multi-agent system powered by tool-augmented LLMs. MATMCD has two key agents: a Data Augmentation agent that retrieves and processes modality-augmented data, and a Causal Constraint agent that integrates multi-modal data for knowledge-driven inference. Delicate design of the inner-workings ensures successful cooperation of the agents. Our empirical study across seven datasets suggests the significant potential of multi-modality enhanced causal discovery.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
