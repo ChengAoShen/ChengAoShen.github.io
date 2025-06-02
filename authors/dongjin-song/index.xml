@@ -6,14 +6,21 @@
     <description>Recent content in Dongjin Song on ChengAo Shen</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chengaoshen.com/authors/dongjin-song/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multi-Modal View Enhanced Large Vision Models for Long-Term Time Series Forecasting</title>
+      <link>https://chengaoshen.com/en/publications/dmmv/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/publications/dmmv/</guid>
+      <description>&lt;p&gt;Abstract: Time series, typically represented as numerical sequences, can also be transformed into images and texts, offering multi-modal views (MMVs) of the same underlying signal. These MMVs can reveal complementary patterns and enable the use of powerful pre-trained large models, such as large vision models (LVMs), for long-term time series forecasting (LTSF). However, as we identified in this work, applying LVMs to LTSF poses an inductive bias towards &amp;ldquo;forecasting periods&amp;rdquo;. To harness this bias, we propose DMMV, a novel decomposition-based multi-modal view framework that leverages trend-seasonal decomposition and a novel backcast residual based adaptive decomposition to integrate MMVs for LTSF. Comparative evaluations against 14 state-of-the-art (SOTA) models across diverse datasets show that DMMV outperforms single-view and existing multi-modal baselines, achieving the best mean squared error (MSE) on 6 out of 8 benchmark datasets.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Harnessing Vision Models for Time Series Analysis: A Survey</title>
       <link>https://chengaoshen.com/en/publications/v4ts_survey/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/en/publications/v4ts_survey/</guid>
-      <description>&lt;p&gt;abstract: Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Abstract: Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis. It provides a comprehensive and in-depth overview of the existing methods, with dual views of detailed taxonomy that answer the key research questions including how to encode time series as images and how to model the imaged time series for various tasks. Additionally, we address the challenges in the pre- and post-processing steps involved in this framework and outline future directions to further advance time series analysis with vision models.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
