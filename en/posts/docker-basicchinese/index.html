@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  🐳Docker Basic(Chinese) · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="
+  一、Doker快速使用
+  
+    
+    Link to heading
+  
+
+
+  1.1 构建一个容器
+  
+    
+    Link to heading
+  
+
+拉取并使用docker的ubuntu镜像构建一个交互式的容器。
+sudo docker run --name containerName -i -t ubuntu /bin/bash
+
+参数解释：
+``&ndash;name`是对于容器的命名
+-i保证容器的STDIN开启，保证持续的标准输入；
+-t为docker为容器分配一个tty终端
+ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
+/bin/bash告知容器需要运行的命令
+
+  1.2 关闭容器与查看
+  
+    
+    Link to heading
+  
+
+在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
+docker ps -a
+来查看所拥有的全部容器。
+
+  1.3 启动并附着到容器
+  
+    
+    Link to heading
+  
+
+当知道容器的名字或者uuid的时候可以使用
+sudo docker start containerName
+sudo docker start UUID
+来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用">
+<meta name="keywords" content="ChengAo Shen, homepage,university of houston, personal blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="🐳Docker Basic(Chinese)">
+  <meta name="twitter:description" content="一、Doker快速使用 Link to heading 1.1 构建一个容器 Link to heading 拉取并使用docker的ubuntu镜像构建一个交互式的容器。
+sudo docker run --name containerName -i -t ubuntu /bin/bash 参数解释：
+``–name`是对于容器的命名
+-i保证容器的STDIN开启，保证持续的标准输入；
+-t为docker为容器分配一个tty终端
+ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
+/bin/bash告知容器需要运行的命令
+1.2 关闭容器与查看 Link to heading 在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
+docker ps -a 来查看所拥有的全部容器。
+1.3 启动并附着到容器 Link to heading 当知道容器的名字或者uuid的时候可以使用
+sudo docker start containerName sudo docker start UUID 来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/docker-basicchinese/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="🐳Docker Basic(Chinese)">
+  <meta property="og:description" content="一、Doker快速使用 Link to heading 1.1 构建一个容器 Link to heading 拉取并使用docker的ubuntu镜像构建一个交互式的容器。
+sudo docker run --name containerName -i -t ubuntu /bin/bash 参数解释：
+``–name`是对于容器的命名
+-i保证容器的STDIN开启，保证持续的标准输入；
+-t为docker为容器分配一个tty终端
+ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
+/bin/bash告知容器需要运行的命令
+1.2 关闭容器与查看 Link to heading 在容器内键入exit可以退出容器，之后在宿主机上可以通过使用
+docker ps -a 来查看所拥有的全部容器。
+1.3 启动并附着到容器 Link to heading 当知道容器的名字或者uuid的时候可以使用
+sudo docker start containerName sudo docker start UUID 来重新运行容器，重新运行的容器会沿用docker run时候的命令，此时我们可以使用">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2020-12-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-12-30T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/docker-basicchinese/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.2cd2ba040eaadea1390f8199e24bd994fabd69b5a7034b43fc2440c58fd09808.css" integrity="sha256-LNK6BA6q3qE5D4GZ4kvZlPq9abWnA0tD/CRAxY/QmAg=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/docker-basicchinese/">
+          🐳Docker Basic(Chinese)
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="一doker快速使用">
+  一、Doker快速使用
+  <a class="heading-link" href="#%e4%b8%80doker%e5%bf%ab%e9%80%9f%e4%bd%bf%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="11-构建一个容器">
+  1.1 构建一个容器
+  <a class="heading-link" href="#11-%e6%9e%84%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ae%b9%e5%99%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>拉取并使用docker的ubuntu镜像构建一个<strong>交互式</strong>的容器。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run --name containerName -i -t ubuntu /bin/bash
+</span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p>``&ndash;name`是对于容器的命名</p>
+<p><code>-i</code>保证容器的STDIN开启，保证持续的标准输入；</p>
+<p><code>-t</code>为docker为容器分配一个tty终端</p>
+<p><code>ubuntu</code>提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找</p>
+<p><code>/bin/bash</code>告知容器需要运行的命令</p></blockquote>
+<h3 id="12-关闭容器与查看">
+  1.2 关闭容器与查看
+  <a class="heading-link" href="#12-%e5%85%b3%e9%97%ad%e5%ae%b9%e5%99%a8%e4%b8%8e%e6%9f%a5%e7%9c%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在容器内键入<code>exit</code>可以退出容器，之后在宿主机上可以通过使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker ps -a
+</span></span></code></pre></div><p>来查看所拥有的全部容器。</p>
+<h3 id="13-启动并附着到容器">
+  1.3 启动并附着到容器
+  <a class="heading-link" href="#13-%e5%90%af%e5%8a%a8%e5%b9%b6%e9%99%84%e7%9d%80%e5%88%b0%e5%ae%b9%e5%99%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>当知道容器的名字或者uuid的时候可以使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker start containerName
+</span></span><span class="line"><span class="cl">sudo docker start UUID
+</span></span></code></pre></div><p>来重新运行容器，重新运行的容器会沿用<code>docker run</code>时候的命令，此时我们可以使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker attach containerName
+</span></span></code></pre></div><p>重新进入容器的会话。</p>
+<h3 id="14-使用非交互的守护式容器">
+  1.4 使用非交互的守护式容器
+  <a class="heading-link" href="#14-%e4%bd%bf%e7%94%a8%e9%9d%9e%e4%ba%a4%e4%ba%92%e7%9a%84%e5%ae%88%e6%8a%a4%e5%bc%8f%e5%ae%b9%e5%99%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>有时候需要长期运行的容器，并不需要交互式会话，这时候我们会选择使用<strong>守护式容器(daemonized container)</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run --name containerName -d ubuntu /bin/sh
+</span></span></code></pre></div><blockquote>
+<p>参数解释:</p>
+<p><code>-d</code>将容器放在后台运行</p></blockquote>
+<h3 id="15-查看守护式容器信息">
+  1.5 查看守护式容器信息
+  <a class="heading-link" href="#15-%e6%9f%a5%e7%9c%8b%e5%ae%88%e6%8a%a4%e5%bc%8f%e5%ae%b9%e5%99%a8%e4%bf%a1%e6%81%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>对于在后台运行的守护式容器，我们可以获取容器的日志。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker logs -f containerName
+</span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p><code>-f</code>跟踪式运行</p></blockquote>
+<p>在运行容器的时候可以选用不同的日志驱动，常见的有</p>
+<ol>
+<li>json-file（默认）</li>
+<li>syslog：禁用docker log命令，并将所有日志输出都重定向到syslog。</li>
+<li>none：禁用一切日志</li>
+</ol>
+<p>另外也可以通过使用<code>docker top name</code>来查看到容器内的<strong>进程</strong>，可以使用<code>docker stats name</code>来查看容器内部的<strong>硬件统计信息</strong>。</p>
+<h3 id="16-在守护式容器内部运行新的进程">
+  1.6 在守护式容器内部运行新的进程
+  <a class="heading-link" href="#16-%e5%9c%a8%e5%ae%88%e6%8a%a4%e5%bc%8f%e5%ae%b9%e5%99%a8%e5%86%85%e9%83%a8%e8%bf%90%e8%a1%8c%e6%96%b0%e7%9a%84%e8%bf%9b%e7%a8%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在docker1.3之后可以使用<code>docker exec</code>命令在容器内部额外启动新的进程</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -d containerName <span class="nb">command</span> 
+</span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p><code>-d</code>表示在后台运行</p>
+<p><code>command</code>是需要的命令</p></blockquote>
+<p>或者使用如下命令来启动前端的程序</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -i -t containerName <span class="nb">command</span>
+</span></span></code></pre></div><h3 id="17-守护式容器的关闭与重启">
+  1.7 守护式容器的关闭与重启
+  <a class="heading-link" href="#17-%e5%ae%88%e6%8a%a4%e5%bc%8f%e5%ae%b9%e5%99%a8%e7%9a%84%e5%85%b3%e9%97%ad%e4%b8%8e%e9%87%8d%e5%90%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>对于后台运行的守护式容器，可以使用<code>docker stop containerName</code>发送SIGTERM信号进行停止。</p>
+<p>而对于快速停止则可以使用<code>docker kill</code>命令发送SIGKILL信号。</p>
+<p>容器有可能因为某种错误而停止，可以通过在run的时候进行标记，来使其自动重启。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run --name containerName --restrat<span class="o">=</span>always -i -t ubuntu /bin/bash
+</span></span></code></pre></div><blockquote>
+<p>这个属性具有两种标价，可以使用always来设置为自动重启，也可以使用<code>on-failure：n</code>中的n来指定最多重启次数。</p></blockquote>
+<h3 id="18-删除容器">
+  1.8 删除容器
+  <a class="heading-link" href="#18-%e5%88%a0%e9%99%a4%e5%ae%b9%e5%99%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>当容器已经不在使用的时候，可以通过rm命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker rm -f containerName
+</span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p>使用f可以无需关闭容器强行删除，不然则需要在删除容器前先关闭当前的容器。</p></blockquote>
+<p>删除所有容器需要多个命令的组合，如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker rm <span class="sb">`</span>sudo docker ps -a -q<span class="sb">`</span>
+</span></span></code></pre></div><blockquote>
+<p>在ps命令中，可以使用<code>-a</code>获得所有的容器，而<code>-q</code>的标志使得这条命令只返回id表</p></blockquote>
+<h2 id="二docker的镜像与容器">
+  二、Docker的镜像与容器
+  <a class="heading-link" href="#%e4%ba%8cdocker%e7%9a%84%e9%95%9c%e5%83%8f%e4%b8%8e%e5%ae%b9%e5%99%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="21-基本概念介绍">
+  2.1 基本概念介绍
+  <a class="heading-link" href="#21-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5%e4%bb%8b%e7%bb%8d">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>  Docker镜像是由文件系统叠加而成，最底端是一个引导文件系统（bootfs）。接下来第二层是root文件系统（rootfs），这可以是一种或者多种操作系统。接下来docker会使用联合加载（union mount)的技术在root文件系统层上加载更多的<strong>只读系统</strong>，将各层文件系统叠加到一起。</p>
+<p>  这样的文件系统就是docker的<strong>镜像</strong>，最底下是一个基础镜像，而最上面会叠加一个读写文件系统，我们的程序会在这上面运行。使用的机制是<strong>写时复制</strong>，当修改一个文件的时候，会从底层复制这个读写层，在对其修改后隐藏下面的层。</p>
+<h3 id="22-管理镜像">
+  2.2 管理镜像
+  <a class="heading-link" href="#22-%e7%ae%a1%e7%90%86%e9%95%9c%e5%83%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>可以使用<code>sudo docker images</code>来列出当前所拥有的全部镜像，也可以使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker images imageName
+</span></span></code></pre></div><p>来查看本地同一个镜像名，不同版本（tag）的镜像。</p>
+<p>  镜像可以从仓库下载，默认的仓库会保存在Docker公司的Registry服务（Docker hub）下。每一个仓库都可以存放很多镜像，如Ubuntu仓库中会保存很多版本的镜像。</p>
+<p>  Docker Hub中有两种类型的仓库，分别是用户仓库（user repository）和顶层仓库（top-level repository）</p>
+<blockquote>
+<p>用户仓库：userName/repositoryName</p>
+<p>顶层仓库：Name</p></blockquote>
+<p>对于镜像文件，可以在使用<code>run</code>之前使用docker拉取相应的镜像文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker pull image:tag
+</span></span></code></pre></div><blockquote>
+<p>参数解释</p>
+<p>tag是image的版本，都在image的仓库之中。</p></blockquote>
+<h3 id="23-查找镜像">
+  2.3 查找镜像
+  <a class="heading-link" href="#23-%e6%9f%a5%e6%89%be%e9%95%9c%e5%83%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>我们可以通过使用search命令查找，所有可用的公共镜像。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker search imageName
+</span></span></code></pre></div><p>这个命令会在docker上查找所有包含这个名字的镜像，我们可以拉去这些镜像并用其创建容器。</p>
+<h3 id="24-构建镜像">
+  2.4 构建镜像
+  <a class="heading-link" href="#24-%e6%9e%84%e5%bb%ba%e9%95%9c%e5%83%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>  我们修改、更新和、管理镜像提供了两种方法。</p>
+<ol>
+<li>使用<code>docker commit</code>命令（不推荐）</li>
+<li>使用<code>docker build</code>命令和dockerfile文件</li>
+</ol>
+<p>在使用<code>commit</code>命令的时候，我们先启动容器，做自己需要的更改退出容器，之后可运行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker commit -m <span class="s2">&#34;informations&#34;</span>  -a <span class="s2">&#34;author&#34;</span> id repositoryName/imageName:tag
+</span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p>id：容器的标识符</p>
+<p><code>-m</code>：指定新创建的镜像的提交信息</p>
+<p><code>-a</code>：作者的信息</p>
+<p>repositoryName：选择的镜像仓库名称，通常为自己的用户名</p>
+<p>imageName：镜像名</p>
+<p>tag：标签名</p>
+<p>注：这个命令提交的只是创建容器的镜像和容器当前状态的差别部分，使得更新十分<strong>轻量</strong>。</p></blockquote>
+<h3 id="25-基于dockerfile来构建镜像">
+  2.5 基于Dockerfile来构建镜像
+  <a class="heading-link" href="#25-%e5%9f%ba%e4%ba%8edockerfile%e6%9d%a5%e6%9e%84%e5%bb%ba%e9%95%9c%e5%83%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>  使用基于DSL语法的dockerfile可以构建镜像，具有更高的重复性、透明性、幂等性。</p>
+<h4 id="251-快速尝试">
+  2.5.1 快速尝试
+  <a class="heading-link" href="#251-%e5%bf%ab%e9%80%9f%e5%b0%9d%e8%af%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>首先可以创建如下的基础Dockerfile</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c"># Version：0.0.1</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">From</span><span class="s"> ubuntu</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">LABEL</span> shenvinci <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;shenvinci@gmail.com&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -y nginx<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 80</span><span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p><code>FROM</code>指定了所用的基础镜像</p>
+<p><code>LABLE</code>可以告知镜像的作者以及邮箱</p>
+<p><code>EXPOSE</code>可以指定应用程序使用容器的端口</p></blockquote>
+<p>在使用Dockfile构建镜像的时候，每一条指令<strong>都会</strong>创建一个<strong>新的镜像</strong>并提交，这样的操作逻辑即使在某一条失败而没有正常的结束，仍可以保留一个最后的镜像文件，可以用于调试。</p>
+<p>  默认情况下<code>RUN</code>指令会使用命令包装器来执行，而对于不希望在Shell中运行的可以使用<code>exec</code>格式来运行指令，这种方式运行使用一个数组来指定要运行的命令和每一个参数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">RUN</span> <span class="o">[</span><span class="s2">&#34;apt-get&#34;</span>,<span class="s2">&#34;install&#34;</span>,<span class="s2">&#34;-y&#34;</span>,<span class="s2">&#34;nginx&#34;</span><span class="o">]</span><span class="err">
+</span></span></span></code></pre></div><p>当有dockerfile存在后，我们可以使用build命令来构建镜像文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker build -t<span class="o">=</span><span class="s2">&#34;repositoryName/imageName:tag&#34;</span> path
+</span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p><code>-t=</code>用于表示镜像的仓库名，镜像名以及标签</p>
+<p><code>path</code>表示dockerfile<strong>所处</strong>的路径，这个路径也可以是远端仓库的位置</p></blockquote>
+<p>当使用构建的时候，dokerfile所处的上下文也会被传送到docker守护进程，如果有不想被传送的文件可以通过设置<code>.dockerignore</code>文件来选择需要过滤匹配的文件。</p>
+<h4 id="252-dockerfile的缓存逻辑">
+  2.5.2 Dockerfile的缓存逻辑
+  <a class="heading-link" href="#252-dockerfile%e7%9a%84%e7%bc%93%e5%ad%98%e9%80%bb%e8%be%91">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>  因为在构建镜像的过程中，每一个步骤都会被构建为单独的镜像层，当再次使用dockerfile进行构建的时候，就会从最新一次有发生更改的部分继续进行构建。如果需要忽略所有缓存，则可以使用<code>--no-cache</code>命令来忽略所有缓存构建。</p>
+<p>  因为这种特性，我们通常选择相似的docker模板，这样就可以不必重新运行前面的指令来构建镜像，而对于需要刷新的部分，我们可以在之前插入环境变量语句，如</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Version：0.0.2</span>
+</span></span><span class="line"><span class="cl">From ubuntu
+</span></span><span class="line"><span class="cl">LABEL shenvinci <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;shenvinci@gmail.com&#34;</span>
+</span></span><span class="line"><span class="cl">ENV REFRESHED_AT 2021-9-30
+</span></span><span class="line"><span class="cl">RUN apt-get update <span class="o">&amp;&amp;</span> apt-get install -y nginx
+</span></span><span class="line"><span class="cl">EXPOSE <span class="m">80</span>
+</span></span></code></pre></div><blockquote>
+<p>参数解释</p>
+<p><code>ENV</code>：设置了一个名为REFRESHED_AT的环境变量，指明了模板最新更新的时间，当更改时间后，后面的所有内容都会重新运行，使得包可以进行刷新。</p></blockquote>
+<h4 id="253-查看与使用新的镜像">
+  2.5.3 查看与使用新的镜像
+  <a class="heading-link" href="#253-%e6%9f%a5%e7%9c%8b%e4%b8%8e%e4%bd%bf%e7%94%a8%e6%96%b0%e7%9a%84%e9%95%9c%e5%83%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker images repositoryName/imageName
+</span></span><span class="line"><span class="cl">docker <span class="nb">history</span> repositoryName/imageName
+</span></span></code></pre></div><blockquote>
+<p>上面的第一个代码，可以查看自己构建的镜像的具体状况，而需要查看具体的构建全步骤过程，则可以使用下面的，查看到每一层的镜像文件以及相应的构建指令。</p></blockquote>
+<p>  当我们使用这种自己构建的镜像运行时候，我们的<code>run</code>命令需要加入新的内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run -d -p 127.0.0.1:8080:80 --name containerName repositoryName/imageName <span class="nb">command</span>
+</span></span></code></pre></div><blockquote>
+<p>参数解释</p>
+<p><code>-p</code>参数用于配置容器与宿主机的端口链接，如上述命令是把容器的80映射到宿主机127ip的8080端口上，当其中有参数被省略时，则会使用默认（随机）参数。当我们使用<code>-P</code>的时候，会将容器的80绑定到一个宿主机随机端口，然后将dockerfile中EXPOSE指定的端口全部公开.</p>
+<p><code>command</code>命令是直接在容器内运行的内容，通常用于打开需要的服务</p></blockquote>
+<p>  我们可以使用<code>docker ps -l</code>命令查看所有容器被映射的端口，也可以使用<code>docker port uuid 80</code>查看这一容器80端口被映射到的宿主机端口位置。</p>
+<h3 id="26-dockerfile指令">
+  2.6 Dockerfile指令
+  <a class="heading-link" href="#26-dockerfile%e6%8c%87%e4%bb%a4">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="261-cmd">
+  2.6.1 CMD
+  <a class="heading-link" href="#261-cmd">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>  CMD指令用于指定容器启动时运行的命令（而RUN指令的只是在被构建时候运行），通常的格式为</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;/bin/bash&#34;</span><span class="p">,</span><span class="s2">&#34;-l&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></div><p>  Docker一直推荐使用数组来设置需要执行的命令。同时我们需要牢记<code>docker run</code>命令会<strong>覆盖</strong>CMD指令，同时要知道再Dockerfile中只能指定一条CMD指令，如果指定了多条则只有最后一条会被运行。</p>
+<h4 id="262-entrypoint">
+  2.6.2 ENTRYPOINT
+  <a class="heading-link" href="#262-entrypoint">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>  这个指令与CMD十分类似，而最大的区别在于其不会被命令中的指令覆盖</p>
+<blockquote>
+<p>实际上所有的指令都会作为参数传入<code>ENTRYPOINT</code>中。</p></blockquote>
+<p>在使用这个指令的时候我们也会使用数组进行内容的传输</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/usr/sbin/nginx&#34;</span><span class="p">,</span><span class="s2">&#34;-g&#34;</span><span class="p">,</span><span class="s2">&#34;daemon off;&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></div><p>将这个命令，<code>CMD</code>命令以及<code>docker run</code>时选择的命令进行组合，可以得到默认参数的使用方法。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/usr/sbin/nginx&#34;</span><span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span><span class="p">[</span><span class="s2">&#34;-h&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -t -i repositoryName/imageName -g  <span class="s2">&#34;daemon off;&#34;</span>
+</span></span></code></pre></div><p>在默认情况下，会使用CMD命令中的-h参数，但在run的时候如果添加了新的参数，则会对其进行覆盖，以此实现默认参数的效果。</p>
+<h4 id="263-workdir">
+  2.6.3 WORKDIR
+  <a class="heading-link" href="#263-workdir">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>这个指令可以在容器内部设置一个工作目录（切换内部的路径），用于<code>CMD</code>与<code>ENTRYPOINT</code>的执行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="s"> /opt/webapp</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> command<span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>我们为command指令设置了路径</p></blockquote>
+<p>我们可以在run的时候通过<code>-w</code>来覆盖工作的目录。</p>
+<h4 id="264-env">
+  2.6.4 ENV
+  <a class="heading-link" href="#264-env">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>在镜像构建的过程中设置环境变量，这个环境变量可以在之后任何RUN指令中使用，就如同<strong>在命令前面指定了环境变量的前缀</strong>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENV</span> <span class="nv">RVM_PATH</span><span class="o">=</span>/home/rvm <span class="nv">TARGET_FIR</span><span class="o">=</span>/opt/app<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> gem install unicorn<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> $TARGET_FIR</span><span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p>设置了<code>RVM_PATH</code>与<code>TARGET_FIR</code>两个环境变量，第一个可以为第二条<code>RUN</code>指令提供前缀条件，变成如<code>RVM_PATH=/home/rvm RUN gem install unicorn</code>而第二个则被用于提供了工作目录的位置。</p></blockquote>
+<p>注意：在Dockerfile中设置的环境变量都是在容器中具有持久化作用的，而如果只是在使用<code>docker run</code>时候加入<code>-e</code>来传递的环境变量则只在运行的时候有效。</p>
+<h4 id="265-user">
+  2.6.5 USER
+  <a class="heading-link" href="#265-user">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>指定这个镜像以什么用户去运行，可以通过指定用户名（或uid）以及组（或gid）来选择。<strong>如果不选择默认会使用root</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">USER</span><span class="s"> user</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> user:group</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> uid</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> uid:gid</span><span class="err">
+</span></span></span></code></pre></div><h4 id="266-volume">
+  2.6.6 VOLUME
+  <a class="heading-link" href="#266-volume">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>用来向基于镜像创建的容器添加卷（可以存在于一个或者多个容器内的特定的目录），卷可以绕过联合文件系统并提供共享以及持久化的数据功能，卷的功能可以让我们**把数据、数据库或者其他内容添加到镜像而不是将内容提交到镜像。**通常用来测试容器和内部的应用程序代码。管理日志，处理内部数据库。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">VOLUME</span> <span class="p">[</span><span class="s2">&#34;/opt/project&#34;</span><span class="p">,</span><span class="err">/data</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p>为基于此镜像的任何容器创建了这两个挂载点。</p></blockquote>
+<h4 id="267-add">
+  2.6.7 ADD
+  <a class="heading-link" href="#267-add">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>将构建环境下的文件和目录复制到镜像之中，需要指定源文件位置和目的文件位置两个参数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ADD</span> contentPath aimPath<span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p><code>contentPath</code>是上下文的文件，通过末尾的字符来判断是目录还是文件，如果以<code>/</code>结尾的就被认为是目录。</p>
+<p>在处理本地文件的时候，当归档文件被指定为源文件的时候，docker会把文件自动解开。（以URL指定目前不行）</p>
+<p><code>aimPath</code>是镜像内的目标位置，如果目录不存在的话，会自动创建这样的新目录，其模式为文件模式为<strong>0755</strong>。</p></blockquote>
+<p><code>ADD</code>指令会使得构建的缓存变得无效，当添加后，所有的后续指令都需要重新进行构建。</p>
+<h4 id="268-copy">
+  2.6.8 COPY
+  <a class="heading-link" href="#268-copy">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>  与<code>ADD</code>命令基本类似，但不会做文件提取以及解压等方面的内容，需要注意，所有的文件源路径<strong>都必须是在Dockerfile</strong>的相对文件夹下，不能复制这个目录以外其他目录的内容。</p>
+<h4 id="269-label">
+  2.6.9 LABEL
+  <a class="heading-link" href="#269-label">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>这个指令可以为docker添加元数据，以键值对的形式展现出来。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">LABEL</span> <span class="nv">version</span><span class="o">=</span><span class="s2">&#34;1.0&#34;</span> <span class="nv">location</span><span class="o">=</span><span class="s2">&#34;China&#34;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&#34;Web&#34;</span><span class="err">
+</span></span></span></code></pre></div><p>推荐将所有的元数据都放入一条LABEL指令中，防止构建过多的镜像层。</p>
+<p>我们可以通过<code>docker inspect repositoryName/imageName</code>来查看容器内部的标签。</p>
+<h4 id="2610-stopsignal">
+  2.6.10 STOPSIGNAL
+  <a class="heading-link" href="#2610-stopsignal">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>用于设置停止容器的时候发送什么系统调用信号给容器，这信号必须是内核系统调用表中合法的数字（9）或者SIGNAME格式中信号名称（如SIGKILL）。</p>
+<h4 id="2611-arg">
+  2.6.11 ARG
+  <a class="heading-link" href="#2611-arg">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>用来定义可以在<code>docker build</code>命令运行的时候传递给构建运行的变量，在构建时候可以根据dockerfile中定义过的变量进行传递</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ARG</span> build<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ARG</span> <span class="nv">webapp_user</span><span class="o">=</span>user
+</span></span></code></pre></div><blockquote>
+<p>参数解释</p>
+<p>定义了两个变量，第二个给了一个默认值，接下来可以在使用<code>docker build --build-arg build=1234</code>这样的命令来添加参数</p></blockquote>
+<h4 id="2612-onbuild">
+  2.6.12 ONBUILD
+  <a class="heading-link" href="#2612-onbuild">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>为当前的镜像添加触发器，当这个镜像被用作为其他镜像的基础镜像的时候，该镜像中的触发器会被执行。触发器会在下一个继承他的镜像的<code>FORM</code>之后添加这些被触发的指令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ONBUILD</span> <span class="k">ADD</span> . /app/src<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ONBUILD</span> <span class="k">RUN</span> <span class="nb">cd</span> /app<span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>此处使用了两条命令，当有新的镜像Dockerfile继承当前的镜像时候，运行后回在FORM之后插入这两句话</p>
+<p><strong>注意</strong>：触发器只能被子镜像继承，当孙镜像运行时候则不会再进行继承。</p></blockquote>
+<h3 id="27-删除自己的镜像">
+  2.7 删除自己的镜像
+  <a class="heading-link" href="#27-%e5%88%a0%e9%99%a4%e8%87%aa%e5%b7%b1%e7%9a%84%e9%95%9c%e5%83%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>当我们不再需要一个镜像的时候，我们可以使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker rmi repositoryName/imageName1 repositoryName/imageName2
+</span></span></code></pre></div><p>来删除这个镜像，这一行为同时也会删除构建这个镜像的时候所产生的每一层镜像，后面也可以不断往后罗列镜像，这将删除这镜像列表里面全部的镜像。</p>
+<h3 id="28-docker镜像的管理">
+  2.8 Docker镜像的管理
+  <a class="heading-link" href="#28-docker%e9%95%9c%e5%83%8f%e7%9a%84%e7%ae%a1%e7%90%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>我们可以把自己在本地构建完成的镜像推送到远程仓库（默认为DockerHub），通过使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker push repositoryName/imageName
+</span></span></code></pre></div><p>就可以将自己的镜像上传至自己的远程仓库之中。</p>
+<p>  而除了这种方式，我们可以选择使用自动构建，这只需要将Github中含有Dockerfile文件的仓库链接到Docker Hub上，当我们向github推送时候，dockerhub也会自动更新（但这种方式就不可以使用<code>docker push</code>来发布镜像）。</p>
+<h2 id="三docker实战操作">
+  三、Docker实战操作
+  <a class="heading-link" href="#%e4%b8%89docker%e5%ae%9e%e6%88%98%e6%93%8d%e4%bd%9c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="31-卷的挂载">
+  3.1 卷的挂载
+  <a class="heading-link" href="#31-%e5%8d%b7%e7%9a%84%e6%8c%82%e8%bd%bd">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>有些时候外面不想把应用或者代码构建到镜像之中</p>
+<blockquote>
+<ul>
+<li>同时对代码进行开发与测试</li>
+<li>代码改动十分频繁，不想在开发过程中重构镜像</li>
+<li>希望在多个容器之间共享代码</li>
+</ul></blockquote>
+<p>这时候我们就需要使用docker的卷挂在来实现，通过在运行容器的时候使用<code>-v 宿主机目录：容器内目录：读写权限</code>来对本地与容器内的文件进行映射挂载。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d -p <span class="m">80</span> --name web -v ./web:/var/www/html/website:ro repositoryName/imageName2 cmd
+</span></span></code></pre></div><h3 id="32-容器的链接">
+  3.2 容器的链接
+  <a class="heading-link" href="#32-%e5%ae%b9%e5%99%a8%e7%9a%84%e9%93%be%e6%8e%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="321docker-networking">
+  3.2.1Docker Networking
+  <a class="heading-link" href="#321docker-networking">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Docker Networking允许用户创建自己的网络，容器可以通过这个网络来互相通信，接下来是一些常用的管理指令。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker network create name <span class="c1">#创建一个桥接网络并命名为name</span>
+</span></span><span class="line"><span class="cl">sudo docker network inspect name <span class="c1">#查看这个网络的信息</span>
+</span></span><span class="line"><span class="cl">sudo docker network ls <span class="c1"># 查看当前系统中的所有网络</span>
+</span></span><span class="line"><span class="cl">sudo docker network rm <span class="c1"># 删除一个网络</span>
+</span></span></code></pre></div><p>当有网络后，我们在运行容器时候可以加上<code>–net=name</code>的标识符，把容器加入指定的网络之中。在网络内部启动的容器，docker会感知到所有在这个网络下的容器，并把这些信息都通过到当前容器的<code>/etc/hosts</code>文件把所有地址都保存到DNS之中。</p>
+<p>在网络之中的任何容器的地址，都可以通过<code>hostname.app</code>的形式被解析，当一个容器重启的时候，它们的IP地址也会被自动更新（即对容器底层的修改不会对程序的正常工作产生影响）</p>
+<h4 id="322-docker链接">
+  3.2.2 Docker链接
+  <a class="heading-link" href="#322-docker%e9%93%be%e6%8e%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>  在使用<code>run</code>对容器进行运行的时候，我们增加<code>--link containerName:linkName</code>创建了客户联系，此时被运行的容器被称为客户容器，而另一个则是服务，我们为这个服务增加了linkName作为别名，这可以让我们一致的访问容器公开的信息，且无须关注底层容器的名字。</p>
+<p>  将容器连接在一起可以让客户容器任意访问另一个容器，而不用对外公开端口。</p>
+<h2 id="四docker编配和服务发现">
+  四、Docker编配和服务发现
+  <a class="heading-link" href="#%e5%9b%9bdocker%e7%bc%96%e9%85%8d%e5%92%8c%e6%9c%8d%e5%8a%a1%e5%8f%91%e7%8e%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="41-docker-compose">
+  4.1 Docker Compose
+  <a class="heading-link" href="#41-docker-compose">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>  Dockers Compose通常被用于简单的Docker容器编配使用<code>YAML</code>文件定义一组需要启动的容器，以及容器运行时的属性，这些容器可以被称为是<strong>服务</strong>。我们可以很快的使用Compose来创建多容器应用栈。</p>
+<p>安装：使用<code>pip install -U docker-compose</code>可以进行最新版本的快速安装</p>
+<p>  当应用的镜像构建完成之后，我们可以使用Compose来创建需要的服务，并定义启动时候需要的属性，这些属性都会被放置与<code>YAML</code>文件之中，样例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">web</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image </span><span class="p">:</span><span class="w"> </span><span class="l">shenvinci/flask</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command </span><span class="p">:</span><span class="w"> </span><span class="l">python app.py</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports </span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s2">&#34;5000:5000&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes </span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">.:/composeapp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">links </span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">redis</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">redis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image </span><span class="p">:</span><span class="w"> </span><span class="l">redis </span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p>参数解释：</p>
+<p>开启了分别名为<code>web</code>与<code>redis</code>的两个容器文件，并为其配置了相应的参数,Compose会使用这些参数生产多个容器并组成相应的容器栈。</p></blockquote>
+<p>当切换至有<code>YAML</code>文件的目录下后，我们有一些常用的指令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker-compose up -d <span class="c1"># 在后台运行容器栈</span>
+</span></span><span class="line"><span class="cl">docker-compose ps <span class="c1"># 列出本地docker-compose.yml 文件中正在运行的所有服务</span>
+</span></span><span class="line"><span class="cl">docker-compose stop <span class="c1"># 停止正在运行的所有服务</span>
+</span></span><span class="line"><span class="cl">docker-compose <span class="nb">kill</span> <span class="c1"># 强制杀死正在运行中的服务</span>
+</span></span><span class="line"><span class="cl">docker-compose rm <span class="c1"># 删除docker-compose服务</span>
+</span></span></code></pre></div>
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

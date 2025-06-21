@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  📜Notes on LaTeX formulas · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="$\LaTeX$ is a document preparation system used for the communication and publication of scientific documents. However, it&rsquo;s not easy to use this to write formulas, especially for the beginners, typically how to choose the right font and Greek letter.
+This essay is a note for me to remember the latex formulas, which have vairous fonts and Greek letter. Furthermore I also record some special symbols that can be used in the Future papers.">
+<meta name="keywords" content="ChengAo Shen, homepage,university of houston, personal blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="📜Notes on LaTeX formulas">
+  <meta name="twitter:description" content="$\LaTeX$ is a document preparation system used for the communication and publication of scientific documents. However, it’s not easy to use this to write formulas, especially for the beginners, typically how to choose the right font and Greek letter.
+This essay is a note for me to remember the latex formulas, which have vairous fonts and Greek letter. Furthermore I also record some special symbols that can be used in the Future papers.">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/various-font-in-latex/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="📜Notes on LaTeX formulas">
+  <meta property="og:description" content="$\LaTeX$ is a document preparation system used for the communication and publication of scientific documents. However, it’s not easy to use this to write formulas, especially for the beginners, typically how to choose the right font and Greek letter.
+This essay is a note for me to remember the latex formulas, which have vairous fonts and Greek letter. Furthermore I also record some special symbols that can be used in the Future papers.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2024-10-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-25T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/various-font-in-latex/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.2cd2ba040eaadea1390f8199e24bd994fabd69b5a7034b43fc2440c58fd09808.css" integrity="sha256-LNK6BA6q3qE5D4GZ4kvZlPq9abWnA0tD/CRAxY/QmAg=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/various-font-in-latex/">
+          📜Notes on LaTeX formulas
+        </a>
+      </h1>
+    </header>
+
+    <p>$\LaTeX$ is a document preparation system used for the communication and publication of scientific documents. However, it&rsquo;s not easy to use this to write formulas, especially for the beginners, typically how to choose the right font and Greek letter.</p>
+<p>This essay is a note for me to remember the latex formulas, which have vairous fonts and Greek letter. Furthermore I also record some special symbols that can be used in the Future papers.</p>
+<h2 id="various-fonts">
+  Various Fonts
+  <a class="heading-link" href="#various-fonts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Normal form
+<ul>
+<li>$A$, $B$, $C$, $D$, $E$, $F$, $G$, $H$, $I$, $J$, $K$, $L$, $M$, $N$, $O$, $P$, $Q$, $R$, $S$, $T$, $U$, $V$, $W$, $X$, $Y$, $Z$</li>
+<li>$a$, $b$, $c$, $d$, $e$, $f$, $g$, $h$, $i$, $j$, $k$, $l$, $m$, $n$, $o$, $p$, $q$, $r$, $s$, $t$, $u$, $v$, $w$, $x$, $y$, $z$</li>
+</ul>
+</li>
+<li>Boldface: <code>\mathbf{}</code>.
+<ul>
+<li>$\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$, $\mathbf{E}$, $\mathbf{F}$, $\mathbf{G}$, $\mathbf{H}$, $\mathbf{I}$, $\mathbf{J}$, $\mathbf{K}$, $\mathbf{L}$, $\mathbf{M}$, $\mathbf{N}$, $\mathbf{O}$, $\mathbf{P}$, $\mathbf{Q}$, $\mathbf{R}$, $\mathbf{S}$, $\mathbf{T}$, $\mathbf{U}$, $\mathbf{V}$, $\mathbf{W}$, $\mathbf{X}$, $\mathbf{Y}$, $\mathbf{Z}$</li>
+<li>$\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$, $\mathbf{d}$, $\mathbf{e}$, $\mathbf{f}$, $\mathbf{g}$, $\mathbf{h}$, $\mathbf{i}$, $\mathbf{j}$, $\mathbf{k}$, $\mathbf{l}$, $\mathbf{m}$, $\mathbf{n}$, $\mathbf{o}$, $\mathbf{p}$, $\mathbf{q}$, $\mathbf{r}$, $\mathbf{s}$, $\mathbf{t}$, $\mathbf{u}$, $\mathbf{v}$, $\mathbf{w}$, $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$</li>
+</ul>
+</li>
+<li>Calligraphic font: <code>\mathcal{}</code>
+<ul>
+<li>$\mathcal{A}$, $\mathcal{B}$, $\mathcal{C}$, $\mathcal{D}$, $\mathcal{E}$, $\mathcal{F}$, $\mathcal{G}$, $\mathcal{H}$, $\mathcal{I}$, $\mathcal{J}$, $\mathcal{K}$, $\mathcal{L}$, $\mathcal{M}$, $\mathcal{N}$, $\mathcal{O}$, $\mathcal{P}$, $\mathcal{Q}$, $\mathcal{R}$, $\mathcal{S}$, $\mathcal{T}$, $\mathcal{U}$, $\mathcal{V}$, $\mathcal{W}$, $\mathcal{X}$, $\mathcal{Y}$, $\mathcal{Z}$</li>
+<li>$\mathcal{a}$, $\mathcal{b}$, $\mathcal{c}$, $\mathcal{d}$, $\mathcal{e}$, $\mathcal{f}$, $\mathcal{g}$, $\mathcal{h}$, $\mathcal{i}$, $\mathcal{j}$, $\mathcal{k}$, $\mathcal{l}$, $\mathcal{m}$, $\mathcal{n}$, $\mathcal{o}$, $\mathcal{p}$, $\mathcal{q}$, $\mathcal{r}$, $\mathcal{s}$, $\mathcal{t}$, $\mathcal{u}$, $\mathcal{v}$, $\mathcal{w}$, $\mathcal{x}$, $\mathcal{y}$, $\mathcal{z}$</li>
+</ul>
+</li>
+<li>Roman font: <code>\mathrm{}</code>
+<ul>
+<li>$\mathrm{A}$, $\mathrm{B}$, $\mathrm{C}$, $\mathrm{D}$, $\mathrm{E}$, $\mathrm{F}$, $\mathrm{G}$, $\mathrm{H}$, $\mathrm{I}$, $\mathrm{J}$, $\mathrm{K}$, $\mathrm{L}$, $\mathrm{M}$, $\mathrm{N}$, $\mathrm{O}$, $\mathrm{P}$, $\mathrm{Q}$, $\mathrm{R}$, $\mathrm{S}$, $\mathrm{T}$, $\mathrm{U}$, $\mathrm{V}$, $\mathrm{W}$, $\mathrm{X}$, $\mathrm{Y}$, $\mathrm{Z}$</li>
+<li>$\mathrm{a}$, $\mathrm{b}$, $\mathrm{c}$, $\mathrm{d}$, $\mathrm{e}$, $\mathrm{f}$, $\mathrm{g}$, $\mathrm{h}$, $\mathrm{i}$, $\mathrm{j}$, $\mathrm{k}$, $\mathrm{l}$, $\mathrm{m}$, $\mathrm{n}$, $\mathrm{o}$, $\mathrm{p}$, $\mathrm{q}$, $\mathrm{r}$, $\mathrm{s}$, $\mathrm{t}$, $\mathrm{u}$, $\mathrm{v}$, $\mathrm{w}$, $\mathrm{x}$, $\mathrm{y}$, $\mathrm{z}$</li>
+</ul>
+</li>
+<li>Sans-serif font: <code>\mathsf{}</code>
+<ul>
+<li>$\mathsf{A}$, $\mathsf{B}$, $\mathsf{C}$, $\mathsf{D}$, $\mathsf{E}$, $\mathsf{F}$, $\mathsf{G}$, $\mathsf{H}$, $\mathsf{I}$, $\mathsf{J}$, $\mathsf{K}$, $\mathsf{L}$, $\mathsf{M}$, $\mathsf{N}$, $\mathsf{O}$, $\mathsf{P}$, $\mathsf{Q}$, $\mathsf{R}$, $\mathsf{S}$, $\mathsf{T}$, $\mathsf{U}$, $\mathsf{V}$, $\mathsf{W}$, $\mathsf{X}$, $\mathsf{Y}$, $\mathsf{Z}$</li>
+<li>$\mathsf{a}$, $\mathsf{b}$, $\mathsf{c}$, $\mathsf{d}$, $\mathsf{e}$, $\mathsf{f}$, $\mathsf{g}$, $\mathsf{h}$, $\mathsf{i}$, $\mathsf{j}$, $\mathsf{k}$, $\mathsf{l}$, $\mathsf{m}$, $\mathsf{n}$, $\mathsf{o}$, $\mathsf{p}$, $\mathsf{q}$, $\mathsf{r}$, $\mathsf{s}$, $\mathsf{t}$, $\mathsf{u}$, $\mathsf{v}$, $\mathsf{w}$, $\mathsf{x}$, $\mathsf{y}$, $\mathsf{z}$</li>
+</ul>
+</li>
+<li>Typewriter font: <code>\mathtt{}</code>
+<ul>
+<li>$\mathtt{A}$, $\mathtt{B}$, $\mathtt{C}$, $\mathtt{D}$, $\mathtt{E}$, $\mathtt{F}$, $\mathtt{G}$, $\mathtt{H}$, $\mathtt{I}$, $\mathtt{J}$, $\mathtt{K}$, $\mathtt{L}$, $\mathtt{M}$, $\mathtt{N}$, $\mathtt{O}$, $\mathtt{P}$, $\mathtt{Q}$, $\mathtt{R}$, $\mathtt{S}$, $\mathtt{T}$, $\mathtt{U}$, $\mathtt{V}$, $\mathtt{W}$, $\mathtt{X}$, $\mathtt{Y}$, $\mathtt{Z}$</li>
+<li>$\mathtt{a}$, $\mathtt{b}$, $\mathtt{c}$, $\mathtt{d}$, $\mathtt{e}$, $\mathtt{f}$, $\mathtt{g}$, $\mathtt{h}$, $\mathtt{i}$, $\mathtt{j}$, $\mathtt{k}$, $\mathtt{l}$, $\mathtt{m}$, $\mathtt{n}$, $\mathtt{o}$, $\mathtt{p}$, $\mathtt{q}$, $\mathtt{r}$, $\mathtt{s}$, $\mathtt{t}$, $\mathtt{u}$, $\mathtt{v}$, $\mathtt{w}$, $\mathtt{x}$, $\mathtt{y}$, $\mathtt{z}$</li>
+</ul>
+</li>
+<li>Blackboard bold: <code>\mathbb{}</code>
+<ul>
+<li>$\mathbb{A}$, $\mathbb{B}$, $\mathbb{C}$, $\mathbb{D}$, $\mathbb{E}$, $\mathbb{F}$, $\mathbb{G}$, $\mathbb{H}$, $\mathbb{I}$, $\mathbb{J}$, $\mathbb{K}$, $\mathbb{L}$, $\mathbb{M}$, $\mathbb{N}$, $\mathbb{O}$, $\mathbb{P}$, $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{S}$, $\mathbb{T}$, $\mathbb{U}$, $\mathbb{V}$, $\mathbb{W}$, $\mathbb{X}$, $\mathbb{Y}$, $\mathbb{Z}$</li>
+<li>$\mathbb{a}$, $\mathbb{b}$, $\mathbb{c}$, $\mathbb{d}$, $\mathbb{e}$, $\mathbb{f}$, $\mathbb{g}$, $\mathbb{h}$, $\mathbb{i}$, $\mathbb{j}$, $\mathbb{k}$, $\mathbb{l}$, $\mathbb{m}$, $\mathbb{n}$, $\mathbb{o}$, $\mathbb{p}$, $\mathbb{q}$, $\mathbb{r}$, $\mathbb{s}$, $\mathbb{t}$, $\mathbb{u}$, $\mathbb{v}$, $\mathbb{w}$, $\mathbb{x}$, $\mathbb{y}$, $\mathbb{z}$,</li>
+</ul>
+</li>
+<li>Script font: <code>\mathscr{}</code>
+<ul>
+<li>$\mathscr{A}$, $\mathscr{B}$, $\mathscr{C}$, $\mathscr{D}$, $\mathscr{E}$, $\mathscr{F}$, $\mathscr{G}$, $\mathscr{H}$, $\mathscr{I}$, $\mathscr{J}$, $\mathscr{K}$, $\mathscr{L}$, $\mathscr{M}$, $\mathscr{N}$, $\mathscr{O}$, $\mathscr{P}$, $\mathscr{Q}$, $\mathscr{R}$, $\mathscr{S}$, $\mathscr{T}$, $\mathscr{U}$, $\mathscr{V}$, $\mathscr{W}$, $\mathscr{X}$, $\mathscr{Y}$, $\mathscr{Z}$</li>
+<li>$\mathscr{a}$, $\mathscr{b}$, $\mathscr{c}$, $\mathscr{d}$, $\mathscr{e}$, $\mathscr{f}$, $\mathscr{g}$, $\mathscr{h}$, $\mathscr{i}$, $\mathscr{j}$, $\mathscr{k}$, $\mathscr{l}$, $\mathscr{m}$, $\mathscr{n}$, $\mathscr{o}$, $\mathscr{p}$, $\mathscr{q}$, $\mathscr{r}$, $\mathscr{s}$, $\mathscr{t}$, $\mathscr{u}$, $\mathscr{v}$, $\mathscr{w}$, $\mathscr{x}$, $\mathscr{y}$, $\mathscr{z}$</li>
+</ul>
+</li>
+<li>Fraktur font: <code>\mathfrak{}</code>
+<ul>
+<li>$\mathfrak{A}$, $\mathfrak{B}$, $\mathfrak{C}$, $\mathfrak{D}$, $\mathfrak{E}$, $\mathfrak{F}$, $\mathfrak{G}$, $\mathfrak{H}$, $\mathfrak{I}$, $\mathfrak{J}$, $\mathfrak{K}$, $\mathfrak{L}$, $\mathfrak{M}$, $\mathfrak{N}$, $\mathfrak{O}$, $\mathfrak{P}$, $\mathfrak{Q}$, $\mathfrak{R}$, $\mathfrak{S}$, $\mathfrak{T}$, $\mathfrak{U}$, $\mathfrak{V}$, $\mathfrak{W}$, $\mathfrak{X}$, $\mathfrak{Y}$, $\mathfrak{Z}$</li>
+<li>$\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$, $\mathfrak{d}$, $\mathfrak{e}$, $\mathfrak{f}$, $\mathfrak{g}$, $\mathfrak{h}$, $\mathfrak{i}$, $\mathfrak{j}$, $\mathfrak{k}$, $\mathfrak{l}$, $\mathfrak{m}$, $\mathfrak{n}$, $\mathfrak{o}$, $\mathfrak{p}$, $\mathfrak{q}$, $\mathfrak{r}$, $\mathfrak{s}$, $\mathfrak{t}$, $\mathfrak{u}$, $\mathfrak{v}$, $\mathfrak{w}$, $\mathfrak{x}$, $\mathfrak{y}$, $\mathfrak{z}$</li>
+</ul>
+</li>
+</ul>
+<h2 id="typical-example">
+  Typical Example
+  <a class="heading-link" href="#typical-example">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Vector：$\mathbf{x}$</li>
+<li>Matrix: $\mathbf{M}$</li>
+</ul>
+
+  </article>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
