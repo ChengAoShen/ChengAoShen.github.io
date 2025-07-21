@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://chengaoshen.com/en/posts/</loc>
+    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/different-normalization/</loc>
+    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/</loc>
+    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/</loc>
+    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/publications/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/authors/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/</loc>
-    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://chengaoshen.com/authors/chengao-shen/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/authors/dongjin-song/</loc>
-    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chengaoshen.com/en/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/publications/av4ts/</loc>
@@ -64,9 +70,6 @@
   </url><url>
     <loc>https://chengaoshen.com/en/publications/v4ts_survey/</loc>
     <lastmod>2025-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chengaoshen.com/en/posts/</loc>
-    <lastmod>2024-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/posts/various-font-in-latex/</loc>
     <lastmod>2024-10-25T00:00:00+00:00</lastmod>

@@ -173,11 +173,11 @@ Latent variable models: mapping the data examples $\mathbf{x}$ to unseen latent 
 <p>Direct generative models, such as generative adversarial models, aim to provide a mechanism for generating samples similar to observed data ${\mathbf{x}_i}$</p>
 </li>
 <li>
-<p>Probabilistic models learn the probability distribution over the train data. These models will assign a probability $Pr(\mathbf{x}|\phi)$ to each data point $\mathbf{x}$. The models aim to maximize the probability of the observed data ${\mathbf{x}<em>i}$.
+<p>Probabilistic models learn the probability distribution over the train data. These models will assign a probability $Pr(\mathbf{x}|\phi)$ to each data point $\mathbf{x}$. The models aim to maximize the probability of the observed data ${\mathbf{x}_i}$.
+</p>
 $$
-L[\phi]=-\sum</em>{i=1}^{I}\mathrm{log}[Pr(\mathbf{x}_i|\phi)]
-$$</p>
-</li>
+  L[\phi]=-\sum_{i=1}^{I}\mathrm{log}[Pr(\mathbf{x}_i|\phi)]
+  $$</li>
 </ul>
 <p>There is an image to describe the training process of the two models.</p>
 <p><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/Training%20of%20generative%20models.png" alt="Training of generative models"></p>
@@ -263,20 +263,23 @@ $$</p>
 <p>To measure the performance of generative models, some metrics are proposed.</p>
 <p><strong>Inception score (IS)</strong>: This metric is used in image generative models which trained on the ImageNet dataset. There are two criteria to design it. First, each generated image $\mathbf{x}^*$ should look like only one class in the ImageNet dataset which has 1000 possible classes. Second, the probability for each class in generated images should be equal.</p>
 <p><img src="https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231026144638161.png" alt="Inception score"></p>
-<p>This metric uses KL divergence between $Pr(y_i|\mathbf{x}<em>i^*)$and $Pr(y)$
+<p>This metric uses KL divergence between $Pr(y_i|\mathbf{x}_i^*)$and $Pr(y)$
+</p>
 $$
-IS=\mathrm{exp}\bigg[\frac{1}{I}\sum</em>{i=1}^{I}D_{KL}\big[Pr(y_i|\mathbf{x}<em>i^*)||Pr(y)\big]\bigg]
-$$
+IS=\mathrm{exp}\bigg[\frac{1}{I}\sum_{i=1}^{I}D_{KL}\big[Pr(y_i|\mathbf{x}_i^*)||Pr(y)\big]\bigg]
+$$<p>
 Where $I$ is the number of generated images and:
+</p>
 $$
-Pr(y)=\frac{1}{I}\sum</em>{i=1}^{I}Pr(y_i|\mathbf{x}_i^*)
-$$
+Pr(y)=\frac{1}{I}\sum_{i=1}^{I}Pr(y_i|\mathbf{x}_i^*)
+$$<p>
 <strong>Fréchet inception distance</strong>: To decrease the reliance on the ImageNet dataset and characterize either distribution, the Fréchet inception distance is estimated.</p>
 <p>First, use the inception model accepting both observed and generated images as input to produce $1\times 2048$ feature vector. And, because the images follow the normal distribution which can be defined by mean and variance, we can use them to calculate the distance between real and generated images.</p>
 <p>Above all, the formula for calculating FID can be written as follows:
+</p>
 $$
 FID(x,g)=||\mu_x-\mu_g||_2^2+Tr\big(\Sigma_x+\Sigma_g-2(\Sigma_x\Sigma_g)^{0.5}\big)
-$$
+$$<p>
 Where $x,g$ present real and generated images, $\mu$ is the mean and $\Sigma$ is the covariance.</p>
 <p>However, this metric uses the inception network output to calculate, which will more focus on the semantic information.</p>
 <p><strong>Manifold precision/recall</strong>: To disentangle the realism of the samples and their diversity, we consider the overlap between the data manifold and the model manifold.</p>

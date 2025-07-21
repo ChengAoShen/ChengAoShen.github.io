@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  📃Different Normalization · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="
+  Introduction
+  
+    
+    Link to heading
+  
+
+Normalization techniques are fundamental to training deep learning models effectively. They help stabilize and accelerate training, improve generalization, and prevent internal covariate shift. Below is a summary of the most common normalization techniques, their mechanisms, key papers, and differences.
+
+  🔑 Summary of different type of Normalization
+  
+    
+    Link to heading
+  
+
+
+  
+      
+          Name
+          Normalized Over
+          Key Paper
+          Common Use Cases
+          Strength
+          Weakness
+      
+  
+  
+      
+          Batch Normalization (BN)
+          For Conv: per channel across B×H×W; For MLP: per feature across B.
+          Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift (ICML 2015)
+          Computer Vision Field like Image Classification, Detection, Segmentation
+          Stabilizes activation scale; Enables larger learning rates, Speeds convergence;  Adds implicit regularization
+          Less suited to online / streaming / RNN small-batch settings, can cause issues in domain shift or micro-batch training
+      
+      
+          Layer Normalization (LN)
+          Per sample (token) across its feature (hidden) dimensions (e.g. For shape B×L×D or B×D: normalize over D; for Conv rarely used, would be over C×H×W of that sample)
+          Layer Normalization (arXiv 2016)
+          Transformers (NLP &amp; Vision), RNNs, small-batch or batch=1 training
+          Independent of batch size, identical behavior in training &amp; inference, stable for variable-length sequences, improves gradient flow (esp. Pre-LN Transformers)
+          Provides less implicit regularization, does not leverage cross-sample statistics
+      
+      
+          Instance Normalization (IN)
+          For conv input BxCxHxW: each sample &amp; channel independently over its spatial pixels HxW (no cross-batch, no cross-channel).
+          Instance Normalization: The Missing Ingredient for Fast Stylization (ECCV 2016)
+          image generation (GAN generators), image-to-image translation (e.g., style/appearance adaptation)
+          Batch size–independent, effectively strips instance-specific style (contrast, color cast), aiding fast stylization
+          Discards global intensity/contrast cues useful for recognition → poorer performance on classification/detection; lacks batch-level regularization
+      
+      
+          Group Normalization (GN)
+          For input BxCxHxW: per sample, split channels into G groups (size C/G); compute mean &amp; var over (C/G)xHxW inside each group.
+          Group Normalization (ECCV 2018)
+          Small-/micro-batch CNN training, cases where BN fails with batch sizes 1–4.
+          Batch-size independent; stable for tiny or variable batches; often better than BN when batch is very small.
+          Extra hyperparameter (G) to tune; less implicit regularization than BN, grouping may not align with the semantic channel structure
+      
+      
+          Weight Normalization (WN)
+          Each weight vector of a neuron/output channel.
+          Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks (NIPS 2016)
+          RNN / seq models where BN is hard, small-batch or online / RL training (policy &amp; value nets)
+          Negligible inference cost (can fold into static weights); works with streaming / RL; complements other norms (can combine with LayerNorm)
+          Scale may drift (need LR tuning); benefit can vanish with strong adaptive optimizers; less helpful for very deep Transformers (other norms preferred)
+      
+      
+          Spectral Normalization (SN)
+          Each weight tensor (e.g. matrix / conv kernel reshaped to 2D)
+          Spectral Normalization for Generative Adversarial Networks (ICLR 2018)
+          GAN discriminators, robustness / Lipschitz-constrained models, etc.
+          Enforces (approx.) 1-Lipschitz per layer (controls gradient explosion)
+          Extra cost (power iteration each step); only constrains the largest singular value (other singular values can still drift)
+      
+      
+          RMS Normalization
+          Per sample (token) feature vector
+          Root Mean Square Layer Normalization (NIPS 2019)
+          Modern Transformer / LLM blocks;  very deep pre-norm architectures, low-precision (FP16/BF16)
+          Simpler &amp; slightly cheaper than LayerNorm, numerically stable in mixed precision, good for very deep stacks (retains strong gradient path)
+          Mean not zeroer,  possible drift, needs careful init/residual scaling, and isn’t fully interchangeable with zero-mean LN methods.
+      
+  
+
+
+  📘 Explanation of How They Work
+  
+    
+    Link to heading
+  
+
+
+  Batch Normalization (BN)
+  
+    
+    Link to heading
+  
+
+The Batch Normalization normally used in computer vision field, typically the CNN. Generally, the input shape of BN is  $\text{Batch}(B)\times \text{Channel}(C) \times \text{Height}(H)\times\text{Width}(W)$.">
+<meta name="keywords" content="ChengAo Shen, Homepage, University of Houston, Personal Blog, 沈骋骜, 个人主页, 博客">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="📃Different Normalization">
+  <meta name="twitter:description" content="Introduction Link to heading Normalization techniques are fundamental to training deep learning models effectively. They help stabilize and accelerate training, improve generalization, and prevent internal covariate shift. Below is a summary of the most common normalization techniques, their mechanisms, key papers, and differences.
+🔑 Summary of different type of Normalization Link to heading Name Normalized Over Key Paper Common Use Cases Strength Weakness Batch Normalization (BN) For Conv: per channel across B×H×W; For MLP: per feature across B. Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift (ICML 2015) Computer Vision Field like Image Classification, Detection, Segmentation Stabilizes activation scale; Enables larger learning rates, Speeds convergence; Adds implicit regularization Less suited to online / streaming / RNN small-batch settings, can cause issues in domain shift or micro-batch training Layer Normalization (LN) Per sample (token) across its feature (hidden) dimensions (e.g. For shape B×L×D or B×D: normalize over D; for Conv rarely used, would be over C×H×W of that sample) Layer Normalization (arXiv 2016) Transformers (NLP &amp; Vision), RNNs, small-batch or batch=1 training Independent of batch size, identical behavior in training &amp; inference, stable for variable-length sequences, improves gradient flow (esp. Pre-LN Transformers) Provides less implicit regularization, does not leverage cross-sample statistics Instance Normalization (IN) For conv input BxCxHxW: each sample &amp; channel independently over its spatial pixels HxW (no cross-batch, no cross-channel). Instance Normalization: The Missing Ingredient for Fast Stylization (ECCV 2016) image generation (GAN generators), image-to-image translation (e.g., style/appearance adaptation) Batch size–independent, effectively strips instance-specific style (contrast, color cast), aiding fast stylization Discards global intensity/contrast cues useful for recognition → poorer performance on classification/detection; lacks batch-level regularization Group Normalization (GN) For input BxCxHxW: per sample, split channels into G groups (size C/G); compute mean &amp; var over (C/G)xHxW inside each group. Group Normalization (ECCV 2018) Small-/micro-batch CNN training, cases where BN fails with batch sizes 1–4. Batch-size independent; stable for tiny or variable batches; often better than BN when batch is very small. Extra hyperparameter (G) to tune; less implicit regularization than BN, grouping may not align with the semantic channel structure Weight Normalization (WN) Each weight vector of a neuron/output channel. Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks (NIPS 2016) RNN / seq models where BN is hard, small-batch or online / RL training (policy &amp; value nets) Negligible inference cost (can fold into static weights); works with streaming / RL; complements other norms (can combine with LayerNorm) Scale may drift (need LR tuning); benefit can vanish with strong adaptive optimizers; less helpful for very deep Transformers (other norms preferred) Spectral Normalization (SN) Each weight tensor (e.g. matrix / conv kernel reshaped to 2D) Spectral Normalization for Generative Adversarial Networks (ICLR 2018) GAN discriminators, robustness / Lipschitz-constrained models, etc. Enforces (approx.) 1-Lipschitz per layer (controls gradient explosion) Extra cost (power iteration each step); only constrains the largest singular value (other singular values can still drift) RMS Normalization Per sample (token) feature vector Root Mean Square Layer Normalization (NIPS 2019) Modern Transformer / LLM blocks; very deep pre-norm architectures, low-precision (FP16/BF16) Simpler &amp; slightly cheaper than LayerNorm, numerically stable in mixed precision, good for very deep stacks (retains strong gradient path) Mean not zeroer, possible drift, needs careful init/residual scaling, and isn’t fully interchangeable with zero-mean LN methods. 📘 Explanation of How They Work Link to heading Batch Normalization (BN) Link to heading The Batch Normalization normally used in computer vision field, typically the CNN. Generally, the input shape of BN is $\text{Batch}(B)\times \text{Channel}(C) \times \text{Height}(H)\times\text{Width}(W)$.">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/different-normalization/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="📃Different Normalization">
+  <meta property="og:description" content="Introduction Link to heading Normalization techniques are fundamental to training deep learning models effectively. They help stabilize and accelerate training, improve generalization, and prevent internal covariate shift. Below is a summary of the most common normalization techniques, their mechanisms, key papers, and differences.
+🔑 Summary of different type of Normalization Link to heading Name Normalized Over Key Paper Common Use Cases Strength Weakness Batch Normalization (BN) For Conv: per channel across B×H×W; For MLP: per feature across B. Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift (ICML 2015) Computer Vision Field like Image Classification, Detection, Segmentation Stabilizes activation scale; Enables larger learning rates, Speeds convergence; Adds implicit regularization Less suited to online / streaming / RNN small-batch settings, can cause issues in domain shift or micro-batch training Layer Normalization (LN) Per sample (token) across its feature (hidden) dimensions (e.g. For shape B×L×D or B×D: normalize over D; for Conv rarely used, would be over C×H×W of that sample) Layer Normalization (arXiv 2016) Transformers (NLP &amp; Vision), RNNs, small-batch or batch=1 training Independent of batch size, identical behavior in training &amp; inference, stable for variable-length sequences, improves gradient flow (esp. Pre-LN Transformers) Provides less implicit regularization, does not leverage cross-sample statistics Instance Normalization (IN) For conv input BxCxHxW: each sample &amp; channel independently over its spatial pixels HxW (no cross-batch, no cross-channel). Instance Normalization: The Missing Ingredient for Fast Stylization (ECCV 2016) image generation (GAN generators), image-to-image translation (e.g., style/appearance adaptation) Batch size–independent, effectively strips instance-specific style (contrast, color cast), aiding fast stylization Discards global intensity/contrast cues useful for recognition → poorer performance on classification/detection; lacks batch-level regularization Group Normalization (GN) For input BxCxHxW: per sample, split channels into G groups (size C/G); compute mean &amp; var over (C/G)xHxW inside each group. Group Normalization (ECCV 2018) Small-/micro-batch CNN training, cases where BN fails with batch sizes 1–4. Batch-size independent; stable for tiny or variable batches; often better than BN when batch is very small. Extra hyperparameter (G) to tune; less implicit regularization than BN, grouping may not align with the semantic channel structure Weight Normalization (WN) Each weight vector of a neuron/output channel. Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks (NIPS 2016) RNN / seq models where BN is hard, small-batch or online / RL training (policy &amp; value nets) Negligible inference cost (can fold into static weights); works with streaming / RL; complements other norms (can combine with LayerNorm) Scale may drift (need LR tuning); benefit can vanish with strong adaptive optimizers; less helpful for very deep Transformers (other norms preferred) Spectral Normalization (SN) Each weight tensor (e.g. matrix / conv kernel reshaped to 2D) Spectral Normalization for Generative Adversarial Networks (ICLR 2018) GAN discriminators, robustness / Lipschitz-constrained models, etc. Enforces (approx.) 1-Lipschitz per layer (controls gradient explosion) Extra cost (power iteration each step); only constrains the largest singular value (other singular values can still drift) RMS Normalization Per sample (token) feature vector Root Mean Square Layer Normalization (NIPS 2019) Modern Transformer / LLM blocks; very deep pre-norm architectures, low-precision (FP16/BF16) Simpler &amp; slightly cheaper than LayerNorm, numerically stable in mixed precision, good for very deep stacks (retains strong gradient path) Mean not zeroer, possible drift, needs careful init/residual scaling, and isn’t fully interchangeable with zero-mean LN methods. 📘 Explanation of How They Work Link to heading Batch Normalization (BN) Link to heading The Batch Normalization normally used in computer vision field, typically the CNN. Generally, the input shape of BN is $\text{Batch}(B)\times \text{Channel}(C) \times \text{Height}(H)\times\text{Width}(W)$.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2025-07-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-21T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/different-normalization/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.2cd2ba040eaadea1390f8199e24bd994fabd69b5a7034b43fc2440c58fd09808.css" integrity="sha256-LNK6BA6q3qE5D4GZ4kvZlPq9abWnA0tD/CRAxY/QmAg=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/different-normalization/">
+          📃Different Normalization
+        </a>
+      </h1>
+    </header>
+
+    <h2 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Normalization techniques are fundamental to training deep learning models effectively. They help <strong>stabilize and accelerate training</strong>, <strong>improve generalization</strong>, and <strong>prevent internal covariate shift</strong>. Below is a summary of the <strong>most common normalization techniques</strong>, their <strong>mechanisms</strong>, <strong>key papers</strong>, and <strong>differences</strong>.</p>
+<h2 id="-summary-of-different-type-of-normalization">
+  <strong>🔑 Summary of different type of Normalization</strong>
+  <a class="heading-link" href="#-summary-of-different-type-of-normalization">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Name</strong></th>
+          <th><strong>Normalized Over</strong></th>
+          <th><strong>Key Paper</strong></th>
+          <th><strong>Common Use Cases</strong></th>
+          <th>Strength</th>
+          <th>Weakness</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Batch Normalization (BN)</strong></td>
+          <td>For Conv: per channel across <strong>B×H×W</strong>; For MLP: per feature across <strong>B.</strong></td>
+          <td><a href="https://arxiv.org/abs/1502.03167"  class="external-link" target="_blank" rel="noopener"><em>Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</em></a> (ICML 2015)</td>
+          <td>Computer Vision Field like Image Classification, Detection, Segmentation</td>
+          <td>Stabilizes activation scale; Enables larger learning rates, Speeds convergence;  Adds implicit regularization</td>
+          <td>Less suited to online / streaming / RNN small-batch settings, can cause issues in domain shift or micro-batch training</td>
+      </tr>
+      <tr>
+          <td><strong>Layer Normalization (LN)</strong></td>
+          <td>Per <em>sample</em> (token) across its <strong>feature (hidden) dimensions</strong> (e.g. For shape B×L×D or B×D: normalize over D; for Conv rarely used, would be over C×H×W of that sample)</td>
+          <td><a href="https://arxiv.org/abs/1607.06450"  class="external-link" target="_blank" rel="noopener"><em>Layer Normalization</em></a> (arXiv 2016)</td>
+          <td>Transformers (NLP &amp; Vision), RNNs, small-batch or batch=1 training</td>
+          <td>Independent of batch size, identical behavior in training &amp; inference, stable for variable-length sequences, improves gradient flow (esp. Pre-LN Transformers)</td>
+          <td>Provides less implicit regularization, does not leverage cross-sample statistics</td>
+      </tr>
+      <tr>
+          <td><strong>Instance Normalization (IN)</strong></td>
+          <td>For conv input BxCxHxW: <strong>each sample &amp; channel independently over its spatial pixels</strong> HxW (no cross-batch, no cross-channel).</td>
+          <td><a href="https://arxiv.org/abs/1607.08022"  class="external-link" target="_blank" rel="noopener"><em>Instance Normalization: The Missing Ingredient for Fast Stylization</em></a> (ECCV 2016)</td>
+          <td>image generation (GAN generators), image-to-image translation (e.g., style/appearance adaptation)</td>
+          <td>Batch size–independent, effectively strips instance-specific style (contrast, color cast), aiding fast stylization</td>
+          <td>Discards global intensity/contrast cues useful for recognition → poorer performance on classification/detection; lacks batch-level regularization</td>
+      </tr>
+      <tr>
+          <td><strong>Group Normalization (GN)</strong></td>
+          <td>For input BxCxHxW: <strong>per sample</strong>, split channels into G groups (size C/G); compute mean &amp; var over (C/G)xHxW inside each group.</td>
+          <td><a href="https://arxiv.org/abs/1803.08494"  class="external-link" target="_blank" rel="noopener"><em>Group Normalization</em></a> (ECCV 2018)</td>
+          <td>Small-/micro-batch CNN training, cases where BN fails with batch sizes 1–4.</td>
+          <td>Batch-size independent; stable for tiny or variable batches; often better than BN when batch is very small.</td>
+          <td>Extra hyperparameter (G) to tune; less implicit regularization than BN, grouping may not align with the semantic channel structure</td>
+      </tr>
+      <tr>
+          <td><strong>Weight Normalization (WN)</strong></td>
+          <td>Each weight vector of a neuron/output channel.</td>
+          <td><a href="https://arxiv.org/abs/1602.07868"  class="external-link" target="_blank" rel="noopener"><em>Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks</em></a> (NIPS 2016)</td>
+          <td>RNN / seq models where BN is hard, small-batch or online / RL training (policy &amp; value nets)</td>
+          <td>Negligible inference cost (can fold into static weights); works with streaming / RL; complements other norms (can combine with LayerNorm)</td>
+          <td>Scale may drift (need LR tuning); benefit can vanish with strong adaptive optimizers; less helpful for very deep Transformers (other norms preferred)</td>
+      </tr>
+      <tr>
+          <td><strong>Spectral Normalization (SN)</strong></td>
+          <td>Each weight tensor (e.g. matrix / conv kernel reshaped to 2D)</td>
+          <td><a href="https://arxiv.org/abs/1802.05957"  class="external-link" target="_blank" rel="noopener"><em>Spectral Normalization for Generative Adversarial Networks</em></a> (ICLR 2018)</td>
+          <td>GAN discriminators, robustness / Lipschitz-constrained models, etc.</td>
+          <td>Enforces (approx.) 1-Lipschitz per layer (controls gradient explosion)</td>
+          <td>Extra cost (power iteration each step); only constrains the largest singular value (other singular values can still drift)</td>
+      </tr>
+      <tr>
+          <td><strong>RMS Normalization</strong></td>
+          <td>Per sample (token) feature vector</td>
+          <td><a href="https://arxiv.org/abs/1910.07467"  class="external-link" target="_blank" rel="noopener"><em>Root Mean Square Layer Normalization</em></a> (NIPS 2019)</td>
+          <td>Modern Transformer / LLM blocks;  very deep pre-norm architectures, low-precision (FP16/BF16)</td>
+          <td>Simpler &amp; slightly cheaper than LayerNorm, numerically stable in mixed precision, good for very deep stacks (retains strong gradient path)</td>
+          <td>Mean not zeroer,  possible drift, needs careful init/residual scaling, and isn’t fully interchangeable with zero-mean LN methods.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-explanation-of-how-they-work">
+  <strong>📘 Explanation of How They Work</strong>
+  <a class="heading-link" href="#-explanation-of-how-they-work">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="batch-normalization-bn">
+  <strong>Batch Normalization (BN)</strong>
+  <a class="heading-link" href="#batch-normalization-bn">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The Batch Normalization normally used in computer vision field, typically the CNN. Generally, the input shape of BN is  $\text{Batch}(B)\times \text{Channel}(C) \times \text{Height}(H)\times\text{Width}(W)$.</p>
+<p>Calculate progress: Compute mean &amp; variance across the batch and apply learnable scale $\gamma$ and shift $\beta$:</p>
+$$
+\mu_c=\frac{1}{B\cdot H\cdot W}\sum_{i=1}^B \sum_{j=1}^H\sum_{k=1}^Wx_{i,c,j,k}
+$$$$
+\sigma_c^2=\frac{1}{B\cdot H\cdot W}\sum_{i=1}^B \sum_{j=1}^H\sum_{k=1}^W(x_{i,c,j,k}-\mu_c)^2
+$$$$
+\hat{x}_{c} = \frac{x_c - \mu_c}{\sqrt{\sigma^2_c + \epsilon}}
+$$$$
+y_c = \gamma_c \hat{x}_c + \beta_c
+$$<ul>
+<li>
+<p>Why separate the Channel dimension during calculating the $\mu, \sigma$?</p>
+<p>The Channel usually represent the different feature of the sample, such as color, texture, which shouldn’t be normalized together.</p>
+</li>
+<li>
+<p>Why cross different sample in the batch?</p>
+<ol>
+<li>Using $B\times H\times W$ numbers gives a smoother (less noisy) mean and variance.</li>
+<li>Remove sample-level shift.</li>
+<li>Add noice between different batch as regulation</li>
+</ol>
+</li>
+</ul>
+<h3 id="layer-normalization-ln">
+  <strong>Layer Normalization (LN)</strong>
+  <a class="heading-link" href="#layer-normalization-ln">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The Layer Normalization normally used in NLP field. Generally, the input shape will look like $\text{Batch}(B)\times \text{Length}(L) \times \text{Token}(D)$.</p>
+$$
+\mu_{b,l} = \frac{1}{D}\sum_{d=1}^{D} x_{b,l,d}
+$$$$
+\sigma_{b,l}^{2} = \frac{1}{D}\sum_{d=1}^{D} (x_{b,l,d}-\mu_{b,l})^{2}
+$$$$
+\hat{x}_{b,l} = \frac{x_{b,l}-\mu_{b,l}}{\sqrt{\sigma_{b,l}^2+\varepsilon}}
+$$$$
+y_{b,l} = \gamma_{d}\,\hat{x}_{b,l} + \beta_{d}
+$$<ul>
+<li>
+<p>Why not treat the sequence length L as part of the feature dimension?</p>
+<p>Because in NLP the feature (channel) dimension is in the hidden size $D$; positions along L are <strong>different tokens</strong>, not different feature subspaces of the same token. Channels describe aspects of one token; sequence positions index different tokens. Mixing over $L$ would entangle token-specific information.</p>
+</li>
+<li>
+<p>Why use Pre-LN?</p>
+<p>Pre-LN moved LN <em>before</em> each sublayer so that residual additions remain pure identity shortcuts, dramatically improving gradient flow and training stability—critical for very deep or large Transformers—at the cost of needing a final normalization and sometimes explicit residual scaling to control activation growth.</p>
+</li>
+</ul>
+<h3 id="instance-normalization-in">
+  <strong>Instance Normalization (IN)</strong>
+  <a class="heading-link" href="#instance-normalization-in">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Normally use in Computer Vision, Generally, the input shape of BN is  $\text{Batch}(B)\times \text{Channel}(C) \times \text{Height}(H)\times\text{Width}(W)$.</p>
+$$
+\mu_{b,c}=\frac{1}{H\cdot W}\sum_{j=1}^H\sum_{k=1}^Wx_{b,c,j,k}
+$$$$
+\sigma_{b,c}^2=\frac{1}{H\cdot W} \sum_{j=1}^H\sum_{k=1}^W(x_{b,c,j,k}-\mu_{b,c})^2
+$$$$
+\hat{x}_{b,l} = \frac{x_{b,l}-\mu_{b,l}}{\sqrt{\sigma^{2}_{b,l}+\varepsilon}}
+$$$$
+y_{b,} = \gamma_{d}\,\hat{x}_{b,l} + \beta_{d}
+$$<ul>
+<li>
+<p>What different Between Layer Normalization and Instance Normalization?</p>
+<p>Also they look like both deal with the last channel, but actually LayerNorm (LN) normalizes the entire feature vector / channel set of a single sample together; InstanceNorm (IN) normalizes each channel’s spatial dimensions of the same sample separately (without mixing channels).</p>
+</li>
+</ul>
+<h3 id="group-normalization-gn">
+  <strong>Group Normalization (GN)</strong>
+  <a class="heading-link" href="#group-normalization-gn">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The Group Normalization widely used in CV when batch-size is lower. This method Divide channels into <strong>G groups</strong>, normalize each group.</p>
+$$
+\mu_{bg}=\frac{1}{(C/G)\cdot H\cdot W}\sum_{i=g(C/G)}^{(g+1)(C/G)} \sum_{j=1}^H\sum_{k=1}^Wx_{b,i,j,k}
+$$$$
+\sigma_{bg}^2=\frac{1}{(C/G)\cdot H\cdot W}\sum_{i=g(C/G)}^{(g+1)(C/G)} \sum_{j=1}^H\sum_{k=1}^W(x_{b,i,j,k}-\mu_{bg})^2
+$$$$
+\hat{x}_{bg} = \frac{x_{bg} - \mu_{bg}}{\sqrt{\sigma^2_{bg} + \epsilon}}
+$$$$
+\ y_{bg} = \gamma_{bg} \hat{x}_{bg} + \beta_{bg}
+$$<p>Flexible continuum between LN (G=1) and IN (G=C);</p>
+<h3 id="weight-normalization-wn">
+  <strong>Weight Normalization (WN)</strong>
+  <a class="heading-link" href="#weight-normalization-wn">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Re-parameterizes weights as:</p>
+$$
+\mathbf{x}=\frac{g}{||\mathbf{v}|| }\cdot\mathbf{v}
+$$<ul>
+<li>$g$ is a learnable scalar.</li>
+<li>$\mathbf{v}$ is a direction vector</li>
+</ul>
+<p><strong>Advantage</strong>:</p>
+<ol>
+<li>More convenient for gradient update</li>
+<li>Adapt with Dropout, BN, etc.</li>
+</ol>
+<h3 id="spectral-normalization-sn">
+  <strong>Spectral Normalization (SN)</strong>
+  <a class="heading-link" href="#spectral-normalization-sn">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Spectral Normalization</strong> is a technique that normalizes the <strong>weights</strong> of a neural network layer by dividing them by their <strong>spectral norm</strong> (i.e., the largest singular value of the weight matrix).</p>
+$$
+||\mathbf{W}||_2=\sigma_{\text{MAX}}(\mathbf{W})\\\hat{\mathbf{W}}=\frac{\mathbf{W}}{||\mathbf{W}||_2}
+$$<h3 id="rms-normalization">
+  <strong>RMS Normalization</strong>
+  <a class="heading-link" href="#rms-normalization">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Variant of LayerNorm that uses <strong>RMS (root mean square)</strong> instead of mean &amp; variance, removing the mean normalization step.</p>
+$$
+\text{RMS}(x)=\sqrt{\frac{1}{d}\sum_{i=1}^{d}x_i^2+\epsilon}
+$$$$
+\text{RMSNorm(x)}=\frac{x}{\text{RMS}(x)}\cdot \gamma
+$$<h2 id="-summary">
+  <strong>📝 Summary</strong>
+  <a class="heading-link" href="#-summary">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This post is a quick field guide to seven of the most widely used normalization methods in deep learning—BatchNorm, LayerNorm, InstanceNorm, GroupNorm, WeightNorm, Spectral Norm, and RMS Norm. For each, it explains <strong>what is being normalized, how it’s computed (with key formulas), where it first appeared, and the typical scenarios in which it shines or struggles</strong>. By contrasting their underlying statistics (batch-level vs. sample-level, feature-wise vs. weight-wise) and listing practical pros / cons, the blog equips researchers and practitioners to choose the right normalizer for everything from tiny-batch CNNs to giant Transformer stacks, GANs, and reinforcement-learning agents.</p>
+
+  </article>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
