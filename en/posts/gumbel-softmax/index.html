@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  ✏️Gumbel Softmax · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="Motivation. In many models we need to select a discrete option inside the computation graph (e.g., pick one branch of a network). A hard argmax is non-differentiable, so gradients can’t flow through it. Gumbel-Softmax provides a continuous, differentiable approximation to this discrete sampling step.
+
+  Gumbel-Max Trick
+  
+    
+    Link to heading
+  
+
+Assume we have discrete distribution
+
+  
+      
+          $X$
+          1
+          2
+          3
+      
+  
+  
+      
+          $p$
+          0.2
+          0.3
+          0.5
+      
+  
+
+And want to get $X$ follow this distribution. If we directly sample from distribution, the $X$ can’t calculate from $p$. Which means $X$ can’t be differentiated w.r.t. $p$. This means we can’t do back propagation.">
+<meta name="keywords" content="ChengAo Shen, Homepage, University of Houston, Personal Blog, 沈骋骜, 个人主页, 博客">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="✏️Gumbel Softmax">
+  <meta name="twitter:description" content="Motivation. In many models we need to select a discrete option inside the computation graph (e.g., pick one branch of a network). A hard argmax is non-differentiable, so gradients can’t flow through it. Gumbel-Softmax provides a continuous, differentiable approximation to this discrete sampling step.
+Gumbel-Max Trick Link to heading Assume we have discrete distribution
+$X$ 1 2 3 $p$ 0.2 0.3 0.5 And want to get $X$ follow this distribution. If we directly sample from distribution, the $X$ can’t calculate from $p$. Which means $X$ can’t be differentiated w.r.t. $p$. This means we can’t do back propagation.">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/gumbel-softmax/">
+  <meta property="og:site_name" content="ChengAo Shen">
+  <meta property="og:title" content="✏️Gumbel Softmax">
+  <meta property="og:description" content="Motivation. In many models we need to select a discrete option inside the computation graph (e.g., pick one branch of a network). A hard argmax is non-differentiable, so gradients can’t flow through it. Gumbel-Softmax provides a continuous, differentiable approximation to this discrete sampling step.
+Gumbel-Max Trick Link to heading Assume we have discrete distribution
+$X$ 1 2 3 $p$ 0.2 0.3 0.5 And want to get $X$ follow this distribution. If we directly sample from distribution, the $X$ can’t calculate from $p$. Which means $X$ can’t be differentiated w.r.t. $p$. This means we can’t do back propagation.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="en">
+    <meta property="article:published_time" content="2025-07-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-22T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/gumbel-softmax/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.2cd2ba040eaadea1390f8199e24bd994fabd69b5a7034b43fc2440c58fd09808.css" integrity="sha256-LNK6BA6q3qE5D4GZ4kvZlPq9abWnA0tD/CRAxY/QmAg=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/news/">News</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/en/about/">About Me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://chengaoshen.com/en/posts/gumbel-softmax/">
+          ✏️Gumbel Softmax
+        </a>
+      </h1>
+    </header>
+
+    <p><strong>Motivation.</strong> In many models we need to <em>select</em> a discrete option inside the computation graph (e.g., pick one branch of a network). A hard argmax is non-differentiable, so gradients can’t flow through it. Gumbel-Softmax provides a continuous, differentiable approximation to this discrete sampling step.</p>
+<h2 id="gumbel-max-trick">
+  <strong>Gumbel-Max Trick</strong>
+  <a class="heading-link" href="#gumbel-max-trick">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Assume we have discrete distribution</p>
+<table>
+  <thead>
+      <tr>
+          <th>$X$</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$p$</td>
+          <td>0.2</td>
+          <td>0.3</td>
+          <td>0.5</td>
+      </tr>
+  </tbody>
+</table>
+<p>And want to get $X$ follow this distribution. If we directly sample from distribution, the $X$ can’t calculate from $p$. Which means $X$ can’t be differentiated w.r.t. $p$. This means we can’t do back propagation.</p>
+<p>Gumbel-max is used to deal with this situation. The sample progress can re-parameters as</p>
+$$
+y=\text{argmax}_k(\text{log} p_k+g_k),\quad g_k\sim \text{Gumbel}(0,1)
+$$<p>$y$ is a one-hot vector. $g_k$ can also define as $g_i=-\text{log}(-\text{log}(u_i)),\quad u_i\sim\text{Uniform}(0,1)$.</p>
+<p>For now, only $\text{argmax}$ is non-differentiable.</p>
+<h2 id="gumbel-softmax">
+  Gumbel Softmax
+  <a class="heading-link" href="#gumbel-softmax">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Change the normal $\text{argmax}$ to a softmax function, and add a parameter $\tau$ to control</p>
+$$
+y_k=\frac{\text{exp}(\text{log}p_k+g_k)/\tau}{\sum_j\text{exp}(\text{log}p_j+g_j)/\tau}
+$$<ul>
+<li>$\tau \to 0$ :almost one-hot (but gradients vanish).</li>
+<li>$\tau \to \infty$: near-uniform (too smooth).</li>
+</ul>
+<h2 id="code-tricky">
+  Code tricky
+  <a class="heading-link" href="#code-tricky">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Forward pass: take hard one-hot (argmax).
+Backward pass: use gradients of the soft \tilde{y} (biased but practical).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">y_soft</span> <span class="o">=</span> <span class="n">gumbel_softmax_sample</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">hard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># forward: using one-hot</span>
+</span></span><span class="line"><span class="cl">    <span class="n">index</span> <span class="o">=</span> <span class="n">y_soft</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_hard</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span><span class="o">.</span><span class="n">scatter_</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># backward: usey_soft</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">y_hard</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">-</span> <span class="n">y_soft</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">+</span> <span class="n">y_soft</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">y_soft</span>
+</span></span></code></pre></div><h2 id="difference-from-vanilla-softmax">
+  <strong>Difference from “Vanilla” Softmax</strong>
+  <a class="heading-link" href="#difference-from-vanilla-softmax">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Aspect</strong></th>
+          <th><strong>Softmax</strong></th>
+          <th><strong>Gumbel-Softmax</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Purpose</td>
+          <td>Get a probability distribution from logits</td>
+          <td>Differentiably approximate sampling a discrete category</td>
+      </tr>
+      <tr>
+          <td>Randomness</td>
+          <td>Deterministic (given logits)</td>
+          <td>Stochastic (via Gumbel noise)</td>
+      </tr>
+      <tr>
+          <td>One-hot?</td>
+          <td>Not during training (probability vector)</td>
+          <td>Can be nearly/actually one-hot (with ST)</td>
+      </tr>
+      <tr>
+          <td>Gradients</td>
+          <td>Exact</td>
+          <td>Biased if ST, but low variance</td>
+      </tr>
+      <tr>
+          <td>Use cases</td>
+          <td>Classification outputs</td>
+          <td>Discrete latent vars, NAS, RL action sampling, VAE with categorical codes</td>
+      </tr>
+  </tbody>
+</table>
+
+  </article>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2025
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

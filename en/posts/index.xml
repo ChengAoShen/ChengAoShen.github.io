@@ -6,8 +6,15 @@
     <description>Recent content on ChengAo Shen</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chengaoshen.com/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>✏️Gumbel Softmax</title>
+      <link>https://chengaoshen.com/en/posts/gumbel-softmax/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/posts/gumbel-softmax/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Motivation.&lt;/strong&gt; In many models we need to &lt;em&gt;select&lt;/em&gt; a discrete option inside the computation graph (e.g., pick one branch of a network). A hard argmax is non-differentiable, so gradients can’t flow through it. Gumbel-Softmax provides a continuous, differentiable approximation to this discrete sampling step.&lt;/p&gt;&#xA;&lt;h2 id=&#34;gumbel-max-trick&#34;&gt;&#xA;  &lt;strong&gt;Gumbel-Max Trick&lt;/strong&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#gumbel-max-trick&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Assume we have discrete distribution&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;$X$&lt;/th&gt;&#xA;          &lt;th&gt;1&lt;/th&gt;&#xA;          &lt;th&gt;2&lt;/th&gt;&#xA;          &lt;th&gt;3&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;$p$&lt;/td&gt;&#xA;          &lt;td&gt;0.2&lt;/td&gt;&#xA;          &lt;td&gt;0.3&lt;/td&gt;&#xA;          &lt;td&gt;0.5&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;And want to get $X$ follow this distribution. If we directly sample from distribution, the $X$ can’t calculate from $p$. Which means $X$ can’t be differentiated w.r.t. $p$. This means we can’t do back propagation.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>📃Different Normalization</title>
       <link>https://chengaoshen.com/en/posts/different-normalization/</link>
