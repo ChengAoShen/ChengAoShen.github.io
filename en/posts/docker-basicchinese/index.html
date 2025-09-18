@@ -108,7 +108,7 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.2cd2ba040eaadea1390f8199e24bd994fabd69b5a7034b43fc2440c58fd09808.css" integrity="sha256-LNK6BA6q3qE5D4GZ4kvZlPq9abWnA0tD/CRAxY/QmAg=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -422,10 +422,10 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>首先可以创建如下的基础Dockerfile</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c"># Version：0.0.1</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">From</span><span class="s"> ubuntu</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">From</span><span class="w"> </span><span class="s">ubuntu</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">LABEL</span> shenvinci <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;shenvinci@gmail.com&#34;</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -y nginx<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 80</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span><span class="err">
 </span></span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
 <p><code>FROM</code>指定了所用的基础镜像</p>
@@ -519,7 +519,7 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
   </a>
 </h4>
 <p>这个指令可以在容器内部设置一个工作目录（切换内部的路径），用于<code>CMD</code>与<code>ENTRYPOINT</code>的执行。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="s"> /opt/webapp</span><span class="err">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/opt/webapp</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> command<span class="err">
 </span></span></span></code></pre></div><blockquote>
 <p>我们为command指令设置了路径</p></blockquote>
@@ -534,7 +534,7 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <p>在镜像构建的过程中设置环境变量，这个环境变量可以在之后任何RUN指令中使用，就如同<strong>在命令前面指定了环境变量的前缀</strong>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENV</span> <span class="nv">RVM_PATH</span><span class="o">=</span>/home/rvm <span class="nv">TARGET_FIR</span><span class="o">=</span>/opt/app<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> gem install unicorn<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> $TARGET_FIR</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">$TARGET_FIR</span><span class="err">
 </span></span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
 <p>设置了<code>RVM_PATH</code>与<code>TARGET_FIR</code>两个环境变量，第一个可以为第二条<code>RUN</code>指令提供前缀条件，变成如<code>RVM_PATH=/home/rvm RUN gem install unicorn</code>而第二个则被用于提供了工作目录的位置。</p></blockquote>
@@ -547,10 +547,10 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
   </a>
 </h4>
 <p>指定这个镜像以什么用户去运行，可以通过指定用户名（或uid）以及组（或gid）来选择。<strong>如果不选择默认会使用root</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">USER</span><span class="s"> user</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> user:group</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> uid</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> uid:gid</span><span class="err">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">user</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="w"> </span><span class="s">user:group</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="w"> </span><span class="s">uid</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="w"> </span><span class="s">uid:gid</span><span class="err">
 </span></span></span></code></pre></div><h4 id="266-volume">
   2.6.6 VOLUME
   <a class="heading-link" href="#266-volume">
