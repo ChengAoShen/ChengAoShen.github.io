@@ -6,8 +6,15 @@
     <description>Recent content on ChengAo Shen</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chengaoshen.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SVTime: Small Time Series Forecasting Models Informed by &#34;Physics&#34; of Large Vision Model Forecasters</title>
+      <link>https://chengaoshen.com/en/publications/svtime/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/publications/svtime/</guid>
+      <description>&lt;p&gt;Abstract: Time series AI is crucial for analyzing dynamic web content, driving a surge of pre-trained large models known for their strong knowledge encoding and transfer capabilities across diverse tasks. However, given their energy-intensive training, inference, and hardware demands, using large models as a one-fits-all solution raises serious concerns about carbon footprint and sustainability. For a specific task, a compact yet specialized, high-performing model may be more practical and affordable, especially for resource-constrained users such as small businesses. This motivates the question: Can we build cost-effective lightweight models with large-model-like performance on core tasks such as forecasting? This paper addresses this question by introducing SVTime, a novel Small model inspired by large Vision model (LVM) forecasters for long-term Time series forecasting (LTSF). Recently, LVMs have been shown as powerful tools for LTSF. We identify a set of key inductive biases of LVM forecasters &amp;ndash; analogous to the &amp;ldquo;physics&amp;rdquo; governing their behaviors in LTSF &amp;ndash; and design small models that encode these biases through meticulously crafted linear layers and constraint functions. Across 21 baselines spanning lightweight, complex, and pre-trained large models on 8 benchmark datasets, SVTime outperforms state-of-the-art (SOTA) lightweight models and rivals large models with 10^3 fewer parameters than LVMs, while enabling efficient training and inference in low-resource settings.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>✏️Gumbel Softmax</title>
       <link>https://chengaoshen.com/en/posts/gumbel-softmax/</link>
