@@ -6,12 +6,12 @@
     <description>Recent content in Haifeng Chen on ChengAo Shen</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chengaoshen.com/authors/haifeng-chen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multi-Modal View Enhanced Large Vision Models for Long-Term Time Series Forecasting</title>
       <link>https://chengaoshen.com/en/publications/dmmv/</link>
-      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/en/publications/dmmv/</guid>
       <description>&lt;p&gt;Abstract: Time series, typically represented as numerical sequences, can also be transformed into images and texts, offering multi-modal views (MMVs) of the same underlying signal. These MMVs can reveal complementary patterns and enable the use of powerful pre-trained large models, such as large vision models (LVMs), for long-term time series forecasting (LTSF). However, as we identified in this work, applying LVMs to LTSF poses an inductive bias towards &amp;ldquo;forecasting periods&amp;rdquo;. To harness this bias, we propose DMMV, a novel decomposition-based multi-modal view framework that leverages trend-seasonal decomposition and a novel backcast residual based adaptive decomposition to integrate MMVs for LTSF. Comparative evaluations against 14 state-of-the-art (SOTA) models across diverse datasets show that DMMV outperforms single-view and existing multi-modal baselines, achieving the best mean squared error (MSE) on 6 out of 8 benchmark datasets.&lt;/p&gt;</description>
     </item>

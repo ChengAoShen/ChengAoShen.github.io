@@ -6,8 +6,15 @@
     <description>Recent content in Ziming Zhao on ChengAo Shen</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://chengaoshen.com/authors/ziming-zhao/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multi-Modal View Enhanced Large Vision Models for Long-Term Time Series Forecasting</title>
+      <link>https://chengaoshen.com/en/publications/dmmv/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/publications/dmmv/</guid>
+      <description>&lt;p&gt;Abstract: Time series, typically represented as numerical sequences, can also be transformed into images and texts, offering multi-modal views (MMVs) of the same underlying signal. These MMVs can reveal complementary patterns and enable the use of powerful pre-trained large models, such as large vision models (LVMs), for long-term time series forecasting (LTSF). However, as we identified in this work, applying LVMs to LTSF poses an inductive bias towards &amp;ldquo;forecasting periods&amp;rdquo;. To harness this bias, we propose DMMV, a novel decomposition-based multi-modal view framework that leverages trend-seasonal decomposition and a novel backcast residual based adaptive decomposition to integrate MMVs for LTSF. Comparative evaluations against 14 state-of-the-art (SOTA) models across diverse datasets show that DMMV outperforms single-view and existing multi-modal baselines, achieving the best mean squared error (MSE) on 6 out of 8 benchmark datasets.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SVTime: Small Time Series Forecasting Models Informed by &#34;Physics&#34; of Large Vision Model Forecasters</title>
       <link>https://chengaoshen.com/en/publications/svtime/</link>
@@ -21,13 +28,6 @@
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://chengaoshen.com/en/publications/av4ts/</guid>
       <description>&lt;p&gt;Abstract: Transformer-based models have gained increasing attention in time series research, driving interest in Large Language Models (LLMs) and foundation models for time series analysis. As the field moves toward multi-modality, Large Vision Models (LVMs) are emerging as a promising direction. In the past, the effectiveness of Transformer and LLMs in time series has been debated. When it comes to LVMs, a similar question arises: are LVMs truely useful for time series analysis? To address it, we design and conduct the first principled study involving 4 LVMs, 8 imaging methods, 18 datasets and 26 baselines across both high-level (classification) and low-level (forecasting) tasks, with extensive ablation analysis. Our findings indicate LVMs are indeed useful for time series classification but face challenges in forecasting. Although effective, the contemporary best LVM forecasters are limited to specific types of LVMs and imaging methods, exhibit a bias toward forecasting periods, and have limited ability to utilize long look-back windows. We hope our findings could serve as a cornerstone for future research on LVM- and multimodal-based solutions to different time series tasks.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Multi-Modal View Enhanced Large Vision Models for Long-Term Time Series Forecasting</title>
-      <link>https://chengaoshen.com/en/publications/dmmv/</link>
-      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/en/publications/dmmv/</guid>
-      <description>&lt;p&gt;Abstract: Time series, typically represented as numerical sequences, can also be transformed into images and texts, offering multi-modal views (MMVs) of the same underlying signal. These MMVs can reveal complementary patterns and enable the use of powerful pre-trained large models, such as large vision models (LVMs), for long-term time series forecasting (LTSF). However, as we identified in this work, applying LVMs to LTSF poses an inductive bias towards &amp;ldquo;forecasting periods&amp;rdquo;. To harness this bias, we propose DMMV, a novel decomposition-based multi-modal view framework that leverages trend-seasonal decomposition and a novel backcast residual based adaptive decomposition to integrate MMVs for LTSF. Comparative evaluations against 14 state-of-the-art (SOTA) models across diverse datasets show that DMMV outperforms single-view and existing multi-modal baselines, achieving the best mean squared error (MSE) on 6 out of 8 benchmark datasets.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Harnessing Vision Models for Time Series Analysis: A Survey</title>
