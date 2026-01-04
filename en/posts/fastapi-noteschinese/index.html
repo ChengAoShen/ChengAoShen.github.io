@@ -319,7 +319,8 @@ from fastapi import FastAPI app = FastAPI() @app.get(&#34;/&#34;) async def root
 <pre tabindex="0"><code>http://127.0.0.1:8000/items/?skip=0&amp;limit=10
 </code></pre><p>对于这一类型的参数，一般会提供默认值，或者使用<code>None</code>来声明，将其变化为可选参数。若不提供任何默认值，则在请求的时候必须提供这一参数，否则会报错。</p>
 <blockquote>
-<p>路径参数与查询参数使用名称进行检测，可以<strong>以任特定的顺序</strong>来进行声明</p></blockquote>
+<p>路径参数与查询参数使用名称进行检测，可以<strong>以任特定的顺序</strong>来进行声明</p>
+</blockquote>
 <p>除了一些基础的校验外，有时候需要为查询参数加入更多的校验（例如字符串长度），可以使用<code>Query</code>来进行实现</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">Query</span>
 </span></span><span class="line"><span class="cl">
@@ -378,7 +379,8 @@ from fastapi import FastAPI app = FastAPI() @app.get(&#34;/&#34;) async def root
 </span></span><span class="line"><span class="cl">        <span class="n">result</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&#34;q&#34;</span><span class="p">:</span> <span class="n">q</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
 </span></span></code></pre></div><blockquote>
-<p><code>item_id</code>根据路径参数获得，<code>item</code>在请求体中获得、<code>q</code>在两者都没有，因此上查询参数获得</p></blockquote>
+<p><code>item_id</code>根据路径参数获得，<code>item</code>在请求体中获得、<code>q</code>在两者都没有，因此上查询参数获得</p>
+</blockquote>
 </li>
 </ul>
 
@@ -395,7 +397,7 @@ from fastapi import FastAPI app = FastAPI() @app.get(&#34;/&#34;) async def root
     
       2024 -
     
-    2025
+    2026
      ChengAo Shen 
     ·
     

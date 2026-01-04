@@ -413,7 +413,8 @@ When importing, first divide into three parts: standard library, third-party mod
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="o">/</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="k">pass</span>
 </span></span></code></pre></div><blockquote>
-<p>Parameters to the left of <code>/</code> must be positional only; parameters to the right of <code>*</code> must be keyword only; parameters in between can be either.</p></blockquote>
+<p>Parameters to the left of <code>/</code> must be positional only; parameters to the right of <code>*</code> must be keyword only; parameters in between can be either.</p>
+</blockquote>
 <h3 id="32-better-use-of-positional-parameters">
   3.2 Better use of positional parameters
   <a class="heading-link" href="#32-better-use-of-positional-parameters">
@@ -486,7 +487,8 @@ When importing, first divide into three parts: standard library, third-party mod
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">values</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">helper</span><span class="p">)</span>
 </span></span></code></pre></div><blockquote>
-<p>The inner function prioritizes sorting elements inside the group, then sorts by value.</p></blockquote>
+<p>The inner function prioritizes sorting elements inside the group, then sorts by value.</p>
+</blockquote>
 <p>In this example, the inner function can read the outer function&rsquo;s variables, but if we modify a variable inside the inner function, it does not affect the outer function&rsquo;s variable. This is because of Python&rsquo;s three-level scope: even if the variable name in the current function shadows the outer variable, assigning to it creates a new variable in the current scope to prevent scope pollution.</p>
 <blockquote>
 <p>Three-level scope</p>
@@ -494,7 +496,8 @@ When importing, first divide into three parts: standard library, third-party mod
 <li>Current function scope</li>
 <li>Enclosing scope (functions containing the current function)</li>
 <li>Module-level scope (global scope)</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <p>If we want to extend the variable&rsquo;s scope, we can use <code>nonlocal</code> to extend to the enclosing scope, or <code>global</code> to extend to the global scope.</p>
 <h3 id="35-function-decorators">
   3.5 Function decorators
@@ -518,7 +521,8 @@ When importing, first divide into three parts: standard library, third-party mod
 </span></span><span class="line"><span class="cl">	<span class="k">def</span> <span class="nf">fun1</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><blockquote>
-<p>The above code is a timing decorator, wrapping a function into another function (<code>wrapper</code>) and returning it, adding start and end time recording code before and after the function.</p></blockquote>
+<p>The above code is a timing decorator, wrapping a function into another function (<code>wrapper</code>) and returning it, adding start and end time recording code before and after the function.</p>
+</blockquote>
 <p>However, the decorated function&rsquo;s name is not the original but becomes the decorator&rsquo;s returned function, and many standard attributes change. To preserve these, we can use another built-in decorator to keep important metadata.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
@@ -583,7 +587,8 @@ When importing, first divide into three parts: standard library, third-party mod
 </span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">                <span class="k">yield</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </span></span></code></pre></div><blockquote>
-<p>When Python runs <code>for x in l</code>, it calls <code>iter(l)</code>, triggering <code>l.__iter__</code>, which returns an iterator object (implementing <code>__next__</code>). Python repeatedly calls <code>next</code> until data is exhausted.</p></blockquote>
+<p>When Python runs <code>for x in l</code>, it calls <code>iter(l)</code>, triggering <code>l.__iter__</code>, which returns an iterator object (implementing <code>__next__</code>). Python repeatedly calls <code>next</code> until data is exhausted.</p>
+</blockquote>
 <p>Sometimes we want to use multiple generators in sequence; <code>yield from</code> can simplify the code.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">period</span><span class="p">,</span><span class="n">speed</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">period</span><span class="p">):</span>
@@ -726,7 +731,7 @@ When importing, first divide into three parts: standard library, third-party mod
     
       2024 -
     
-    2025
+    2026
      ChengAo Shen 
     ·
     

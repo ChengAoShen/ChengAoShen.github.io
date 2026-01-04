@@ -37,6 +37,7 @@ sudo docker run --name containerName -i -t ubuntu /bin/bash
 ubuntu提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找
 /bin/bash告知容器需要运行的命令
 
+
   1.2 关闭容器与查看
   
     
@@ -237,7 +238,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <p><code>-i</code>保证容器的STDIN开启，保证持续的标准输入；</p>
 <p><code>-t</code>为docker为容器分配一个tty终端</p>
 <p><code>ubuntu</code>提供的是镜像名，先从本机查找之后，若无则去dockerHub上查找</p>
-<p><code>/bin/bash</code>告知容器需要运行的命令</p></blockquote>
+<p><code>/bin/bash</code>告知容器需要运行的命令</p>
+</blockquote>
 <h3 id="12-关闭容器与查看">
   1.2 关闭容器与查看
   <a class="heading-link" href="#12-%e5%85%b3%e9%97%ad%e5%ae%b9%e5%99%a8%e4%b8%8e%e6%9f%a5%e7%9c%8b">
@@ -272,7 +274,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run --name containerName -d ubuntu /bin/sh
 </span></span></code></pre></div><blockquote>
 <p>参数解释:</p>
-<p><code>-d</code>将容器放在后台运行</p></blockquote>
+<p><code>-d</code>将容器放在后台运行</p>
+</blockquote>
 <h3 id="15-查看守护式容器信息">
   1.5 查看守护式容器信息
   <a class="heading-link" href="#15-%e6%9f%a5%e7%9c%8b%e5%ae%88%e6%8a%a4%e5%bc%8f%e5%ae%b9%e5%99%a8%e4%bf%a1%e6%81%af">
@@ -284,7 +287,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker logs -f containerName
 </span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
-<p><code>-f</code>跟踪式运行</p></blockquote>
+<p><code>-f</code>跟踪式运行</p>
+</blockquote>
 <p>在运行容器的时候可以选用不同的日志驱动，常见的有</p>
 <ol>
 <li>json-file（默认）</li>
@@ -304,7 +308,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
 <p><code>-d</code>表示在后台运行</p>
-<p><code>command</code>是需要的命令</p></blockquote>
+<p><code>command</code>是需要的命令</p>
+</blockquote>
 <p>或者使用如下命令来启动前端的程序</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker <span class="nb">exec</span> -i -t containerName <span class="nb">command</span>
 </span></span></code></pre></div><h3 id="17-守护式容器的关闭与重启">
@@ -319,7 +324,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <p>容器有可能因为某种错误而停止，可以通过在run的时候进行标记，来使其自动重启。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run --name containerName --restrat<span class="o">=</span>always -i -t ubuntu /bin/bash
 </span></span></code></pre></div><blockquote>
-<p>这个属性具有两种标价，可以使用always来设置为自动重启，也可以使用<code>on-failure：n</code>中的n来指定最多重启次数。</p></blockquote>
+<p>这个属性具有两种标价，可以使用always来设置为自动重启，也可以使用<code>on-failure：n</code>中的n来指定最多重启次数。</p>
+</blockquote>
 <h3 id="18-删除容器">
   1.8 删除容器
   <a class="heading-link" href="#18-%e5%88%a0%e9%99%a4%e5%ae%b9%e5%99%a8">
@@ -331,11 +337,13 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker rm -f containerName
 </span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
-<p>使用f可以无需关闭容器强行删除，不然则需要在删除容器前先关闭当前的容器。</p></blockquote>
+<p>使用f可以无需关闭容器强行删除，不然则需要在删除容器前先关闭当前的容器。</p>
+</blockquote>
 <p>删除所有容器需要多个命令的组合，如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker rm <span class="sb">`</span>sudo docker ps -a -q<span class="sb">`</span>
 </span></span></code></pre></div><blockquote>
-<p>在ps命令中，可以使用<code>-a</code>获得所有的容器，而<code>-q</code>的标志使得这条命令只返回id表</p></blockquote>
+<p>在ps命令中，可以使用<code>-a</code>获得所有的容器，而<code>-q</code>的标志使得这条命令只返回id表</p>
+</blockquote>
 <h2 id="二docker的镜像与容器">
   二、Docker的镜像与容器
   <a class="heading-link" href="#%e4%ba%8cdocker%e7%9a%84%e9%95%9c%e5%83%8f%e4%b8%8e%e5%ae%b9%e5%99%a8">
@@ -366,12 +374,14 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <p>  Docker Hub中有两种类型的仓库，分别是用户仓库（user repository）和顶层仓库（top-level repository）</p>
 <blockquote>
 <p>用户仓库：userName/repositoryName</p>
-<p>顶层仓库：Name</p></blockquote>
+<p>顶层仓库：Name</p>
+</blockquote>
 <p>对于镜像文件，可以在使用<code>run</code>之前使用docker拉取相应的镜像文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker pull image:tag
 </span></span></code></pre></div><blockquote>
 <p>参数解释</p>
-<p>tag是image的版本，都在image的仓库之中。</p></blockquote>
+<p>tag是image的版本，都在image的仓库之中。</p>
+</blockquote>
 <h3 id="23-查找镜像">
   2.3 查找镜像
   <a class="heading-link" href="#23-%e6%9f%a5%e6%89%be%e9%95%9c%e5%83%8f">
@@ -404,7 +414,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <p>repositoryName：选择的镜像仓库名称，通常为自己的用户名</p>
 <p>imageName：镜像名</p>
 <p>tag：标签名</p>
-<p>注：这个命令提交的只是创建容器的镜像和容器当前状态的差别部分，使得更新十分<strong>轻量</strong>。</p></blockquote>
+<p>注：这个命令提交的只是创建容器的镜像和容器当前状态的差别部分，使得更新十分<strong>轻量</strong>。</p>
+</blockquote>
 <h3 id="25-基于dockerfile来构建镜像">
   2.5 基于Dockerfile来构建镜像
   <a class="heading-link" href="#25-%e5%9f%ba%e4%ba%8edockerfile%e6%9d%a5%e6%9e%84%e5%bb%ba%e9%95%9c%e5%83%8f">
@@ -422,15 +433,16 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>首先可以创建如下的基础Dockerfile</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c"># Version：0.0.1</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">From</span><span class="w"> </span><span class="s">ubuntu</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">LABEL</span> shenvinci <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;shenvinci@gmail.com&#34;</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -y nginx<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">From</span><span class="w"> </span><span class="s">ubuntu</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">LABEL</span> shenvinci <span class="nv">maintainer</span><span class="o">=</span><span class="s2">&#34;shenvinci@gmail.com&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get install -y nginx<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span><span class="err">
 </span></span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
 <p><code>FROM</code>指定了所用的基础镜像</p>
 <p><code>LABLE</code>可以告知镜像的作者以及邮箱</p>
-<p><code>EXPOSE</code>可以指定应用程序使用容器的端口</p></blockquote>
+<p><code>EXPOSE</code>可以指定应用程序使用容器的端口</p>
+</blockquote>
 <p>在使用Dockfile构建镜像的时候，每一条指令<strong>都会</strong>创建一个<strong>新的镜像</strong>并提交，这样的操作逻辑即使在某一条失败而没有正常的结束，仍可以保留一个最后的镜像文件，可以用于调试。</p>
 <p>  默认情况下<code>RUN</code>指令会使用命令包装器来执行，而对于不希望在Shell中运行的可以使用<code>exec</code>格式来运行指令，这种方式运行使用一个数组来指定要运行的命令和每一个参数。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">RUN</span> <span class="o">[</span><span class="s2">&#34;apt-get&#34;</span>,<span class="s2">&#34;install&#34;</span>,<span class="s2">&#34;-y&#34;</span>,<span class="s2">&#34;nginx&#34;</span><span class="o">]</span><span class="err">
@@ -439,7 +451,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
 <p><code>-t=</code>用于表示镜像的仓库名，镜像名以及标签</p>
-<p><code>path</code>表示dockerfile<strong>所处</strong>的路径，这个路径也可以是远端仓库的位置</p></blockquote>
+<p><code>path</code>表示dockerfile<strong>所处</strong>的路径，这个路径也可以是远端仓库的位置</p>
+</blockquote>
 <p>当使用构建的时候，dokerfile所处的上下文也会被传送到docker守护进程，如果有不想被传送的文件可以通过设置<code>.dockerignore</code>文件来选择需要过滤匹配的文件。</p>
 <h4 id="252-dockerfile的缓存逻辑">
   2.5.2 Dockerfile的缓存逻辑
@@ -458,7 +471,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </span></span><span class="line"><span class="cl">EXPOSE <span class="m">80</span>
 </span></span></code></pre></div><blockquote>
 <p>参数解释</p>
-<p><code>ENV</code>：设置了一个名为REFRESHED_AT的环境变量，指明了模板最新更新的时间，当更改时间后，后面的所有内容都会重新运行，使得包可以进行刷新。</p></blockquote>
+<p><code>ENV</code>：设置了一个名为REFRESHED_AT的环境变量，指明了模板最新更新的时间，当更改时间后，后面的所有内容都会重新运行，使得包可以进行刷新。</p>
+</blockquote>
 <h4 id="253-查看与使用新的镜像">
   2.5.3 查看与使用新的镜像
   <a class="heading-link" href="#253-%e6%9f%a5%e7%9c%8b%e4%b8%8e%e4%bd%bf%e7%94%a8%e6%96%b0%e7%9a%84%e9%95%9c%e5%83%8f">
@@ -469,13 +483,15 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker images repositoryName/imageName
 </span></span><span class="line"><span class="cl">docker <span class="nb">history</span> repositoryName/imageName
 </span></span></code></pre></div><blockquote>
-<p>上面的第一个代码，可以查看自己构建的镜像的具体状况，而需要查看具体的构建全步骤过程，则可以使用下面的，查看到每一层的镜像文件以及相应的构建指令。</p></blockquote>
+<p>上面的第一个代码，可以查看自己构建的镜像的具体状况，而需要查看具体的构建全步骤过程，则可以使用下面的，查看到每一层的镜像文件以及相应的构建指令。</p>
+</blockquote>
 <p>  当我们使用这种自己构建的镜像运行时候，我们的<code>run</code>命令需要加入新的内容</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run -d -p 127.0.0.1:8080:80 --name containerName repositoryName/imageName <span class="nb">command</span>
 </span></span></code></pre></div><blockquote>
 <p>参数解释</p>
 <p><code>-p</code>参数用于配置容器与宿主机的端口链接，如上述命令是把容器的80映射到宿主机127ip的8080端口上，当其中有参数被省略时，则会使用默认（随机）参数。当我们使用<code>-P</code>的时候，会将容器的80绑定到一个宿主机随机端口，然后将dockerfile中EXPOSE指定的端口全部公开.</p>
-<p><code>command</code>命令是直接在容器内运行的内容，通常用于打开需要的服务</p></blockquote>
+<p><code>command</code>命令是直接在容器内运行的内容，通常用于打开需要的服务</p>
+</blockquote>
 <p>  我们可以使用<code>docker ps -l</code>命令查看所有容器被映射的端口，也可以使用<code>docker port uuid 80</code>查看这一容器80端口被映射到的宿主机端口位置。</p>
 <h3 id="26-dockerfile指令">
   2.6 Dockerfile指令
@@ -503,12 +519,13 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>  这个指令与CMD十分类似，而最大的区别在于其不会被命令中的指令覆盖</p>
 <blockquote>
-<p>实际上所有的指令都会作为参数传入<code>ENTRYPOINT</code>中。</p></blockquote>
+<p>实际上所有的指令都会作为参数传入<code>ENTRYPOINT</code>中。</p>
+</blockquote>
 <p>在使用这个指令的时候我们也会使用数组进行内容的传输</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/usr/sbin/nginx&#34;</span><span class="p">,</span><span class="s2">&#34;-g&#34;</span><span class="p">,</span><span class="s2">&#34;daemon off;&#34;</span><span class="p">]</span><span class="err">
 </span></span></span></code></pre></div><p>将这个命令，<code>CMD</code>命令以及<code>docker run</code>时选择的命令进行组合，可以得到默认参数的使用方法。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/usr/sbin/nginx&#34;</span><span class="p">]</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span><span class="p">[</span><span class="s2">&#34;-h&#34;</span><span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">CMD</span><span class="p">[</span><span class="s2">&#34;-h&#34;</span><span class="p">]</span><span class="err">
 </span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -t -i repositoryName/imageName -g  <span class="s2">&#34;daemon off;&#34;</span>
 </span></span></code></pre></div><p>在默认情况下，会使用CMD命令中的-h参数，但在run的时候如果添加了新的参数，则会对其进行覆盖，以此实现默认参数的效果。</p>
 <h4 id="263-workdir">
@@ -520,9 +537,10 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>这个指令可以在容器内部设置一个工作目录（切换内部的路径），用于<code>CMD</code>与<code>ENTRYPOINT</code>的执行。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/opt/webapp</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> command<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">CMD</span> command<span class="err">
 </span></span></span></code></pre></div><blockquote>
-<p>我们为command指令设置了路径</p></blockquote>
+<p>我们为command指令设置了路径</p>
+</blockquote>
 <p>我们可以在run的时候通过<code>-w</code>来覆盖工作的目录。</p>
 <h4 id="264-env">
   2.6.4 ENV
@@ -533,11 +551,12 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>在镜像构建的过程中设置环境变量，这个环境变量可以在之后任何RUN指令中使用，就如同<strong>在命令前面指定了环境变量的前缀</strong>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ENV</span> <span class="nv">RVM_PATH</span><span class="o">=</span>/home/rvm <span class="nv">TARGET_FIR</span><span class="o">=</span>/opt/app<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> gem install unicorn<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">$TARGET_FIR</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> gem install unicorn<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="w"> </span><span class="s">$TARGET_FIR</span><span class="err">
 </span></span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
-<p>设置了<code>RVM_PATH</code>与<code>TARGET_FIR</code>两个环境变量，第一个可以为第二条<code>RUN</code>指令提供前缀条件，变成如<code>RVM_PATH=/home/rvm RUN gem install unicorn</code>而第二个则被用于提供了工作目录的位置。</p></blockquote>
+<p>设置了<code>RVM_PATH</code>与<code>TARGET_FIR</code>两个环境变量，第一个可以为第二条<code>RUN</code>指令提供前缀条件，变成如<code>RVM_PATH=/home/rvm RUN gem install unicorn</code>而第二个则被用于提供了工作目录的位置。</p>
+</blockquote>
 <p>注意：在Dockerfile中设置的环境变量都是在容器中具有持久化作用的，而如果只是在使用<code>docker run</code>时候加入<code>-e</code>来传递的环境变量则只在运行的时候有效。</p>
 <h4 id="265-user">
   2.6.5 USER
@@ -548,9 +567,9 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>指定这个镜像以什么用户去运行，可以通过指定用户名（或uid）以及组（或gid）来选择。<strong>如果不选择默认会使用root</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">user</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="w"> </span><span class="s">user:group</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="w"> </span><span class="s">uid</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="w"> </span><span class="s">uid:gid</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">user:group</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">uid</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">uid:gid</span><span class="err">
 </span></span></span></code></pre></div><h4 id="266-volume">
   2.6.6 VOLUME
   <a class="heading-link" href="#266-volume">
@@ -562,7 +581,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">VOLUME</span> <span class="p">[</span><span class="s2">&#34;/opt/project&#34;</span><span class="p">,</span><span class="err">/data</span><span class="p">]</span><span class="err">
 </span></span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
-<p>为基于此镜像的任何容器创建了这两个挂载点。</p></blockquote>
+<p>为基于此镜像的任何容器创建了这两个挂载点。</p>
+</blockquote>
 <h4 id="267-add">
   2.6.7 ADD
   <a class="heading-link" href="#267-add">
@@ -576,7 +596,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <p>参数解释：</p>
 <p><code>contentPath</code>是上下文的文件，通过末尾的字符来判断是目录还是文件，如果以<code>/</code>结尾的就被认为是目录。</p>
 <p>在处理本地文件的时候，当归档文件被指定为源文件的时候，docker会把文件自动解开。（以URL指定目前不行）</p>
-<p><code>aimPath</code>是镜像内的目标位置，如果目录不存在的话，会自动创建这样的新目录，其模式为文件模式为<strong>0755</strong>。</p></blockquote>
+<p><code>aimPath</code>是镜像内的目标位置，如果目录不存在的话，会自动创建这样的新目录，其模式为文件模式为<strong>0755</strong>。</p>
+</blockquote>
 <p><code>ADD</code>指令会使得构建的缓存变得无效，当添加后，所有的后续指令都需要重新进行构建。</p>
 <h4 id="268-copy">
   2.6.8 COPY
@@ -614,10 +635,11 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>用来定义可以在<code>docker build</code>命令运行的时候传递给构建运行的变量，在构建时候可以根据dockerfile中定义过的变量进行传递</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ARG</span> build<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ARG</span> <span class="nv">webapp_user</span><span class="o">=</span>user
+</span></span></span><span class="line"><span class="cl"><span class="k">ARG</span> <span class="nv">webapp_user</span><span class="o">=</span>user
 </span></span></code></pre></div><blockquote>
 <p>参数解释</p>
-<p>定义了两个变量，第二个给了一个默认值，接下来可以在使用<code>docker build --build-arg build=1234</code>这样的命令来添加参数</p></blockquote>
+<p>定义了两个变量，第二个给了一个默认值，接下来可以在使用<code>docker build --build-arg build=1234</code>这样的命令来添加参数</p>
+</blockquote>
 <h4 id="2612-onbuild">
   2.6.12 ONBUILD
   <a class="heading-link" href="#2612-onbuild">
@@ -627,10 +649,11 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </h4>
 <p>为当前的镜像添加触发器，当这个镜像被用作为其他镜像的基础镜像的时候，该镜像中的触发器会被执行。触发器会在下一个继承他的镜像的<code>FORM</code>之后添加这些被触发的指令</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">ONBUILD</span> <span class="k">ADD</span> . /app/src<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ONBUILD</span> <span class="k">RUN</span> <span class="nb">cd</span> /app<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ONBUILD</span> <span class="k">RUN</span> <span class="nb">cd</span> /app<span class="err">
 </span></span></span></code></pre></div><blockquote>
 <p>此处使用了两条命令，当有新的镜像Dockerfile继承当前的镜像时候，运行后回在FORM之后插入这两句话</p>
-<p><strong>注意</strong>：触发器只能被子镜像继承，当孙镜像运行时候则不会再进行继承。</p></blockquote>
+<p><strong>注意</strong>：触发器只能被子镜像继承，当孙镜像运行时候则不会再进行继承。</p>
+</blockquote>
 <h3 id="27-删除自己的镜像">
   2.7 删除自己的镜像
   <a class="heading-link" href="#27-%e5%88%a0%e9%99%a4%e8%87%aa%e5%b7%b1%e7%9a%84%e9%95%9c%e5%83%8f">
@@ -672,7 +695,8 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 <li>同时对代码进行开发与测试</li>
 <li>代码改动十分频繁，不想在开发过程中重构镜像</li>
 <li>希望在多个容器之间共享代码</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <p>这时候我们就需要使用docker的卷挂在来实现，通过在运行容器的时候使用<code>-v 宿主机目录：容器内目录：读写权限</code>来对本地与容器内的文件进行映射挂载。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d -p <span class="m">80</span> --name web -v ./web:/var/www/html/website:ro repositoryName/imageName2 cmd
 </span></span></code></pre></div><h3 id="32-容器的链接">
@@ -732,11 +756,12 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">links </span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">redis</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">redis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">redis</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image </span><span class="p">:</span><span class="w"> </span><span class="l">redis </span><span class="w">
 </span></span></span></code></pre></div><blockquote>
 <p>参数解释：</p>
-<p>开启了分别名为<code>web</code>与<code>redis</code>的两个容器文件，并为其配置了相应的参数,Compose会使用这些参数生产多个容器并组成相应的容器栈。</p></blockquote>
+<p>开启了分别名为<code>web</code>与<code>redis</code>的两个容器文件，并为其配置了相应的参数,Compose会使用这些参数生产多个容器并组成相应的容器栈。</p>
+</blockquote>
 <p>当切换至有<code>YAML</code>文件的目录下后，我们有一些常用的指令</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker-compose up -d <span class="c1"># 在后台运行容器栈</span>
 </span></span><span class="line"><span class="cl">docker-compose ps <span class="c1"># 列出本地docker-compose.yml 文件中正在运行的所有服务</span>
@@ -757,7 +782,7 @@ sudo docker start containerName sudo docker start UUID 来重新运行容器，�
     
       2024 -
     
-    2025
+    2026
      ChengAo Shen 
     ·
     
