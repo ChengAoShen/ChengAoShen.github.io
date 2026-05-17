@@ -1,0 +1,22 @@
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-intro-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about-intro .profile-image {
+  width: 200px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-intro .profile-image {
+    display: none;
+  }
+}

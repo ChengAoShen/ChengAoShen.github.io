@@ -56,13 +56,25 @@
     <loc>https://chengaoshen.com/authors/wenchao-yu/</loc>
     <lastmod>2025-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/</loc>
-    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://chengaoshen.com/en/posts/gumbel-softmax/</loc>
     <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/tags/deep-learning/</loc>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/math/</loc>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/</loc>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/</loc>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/posts/different-normalization/</loc>
+    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/normalization/</loc>
     <lastmod>2025-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/authors/dongkuan-xu/</loc>
@@ -80,10 +92,25 @@
     <loc>https://chengaoshen.com/en/posts/various-font-in-latex/</loc>
     <lastmod>2024-10-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/tags/latex/</loc>
+    <lastmod>2024-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/writing/</loc>
+    <lastmod>2024-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/generative-models/</loc>
+    <lastmod>2024-08-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/posts/introduction-to-generative-models/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/posts/introduction-to-prompt-engineering/</loc>
+    <lastmod>2024-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/llm/</loc>
+    <lastmod>2024-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/prompt-engineering/</loc>
     <lastmod>2024-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/publications/emoji-kitchen/</loc>
@@ -98,11 +125,29 @@
     <loc>https://chengaoshen.com/en/posts/using-custom-dataset-in-pytorch/</loc>
     <lastmod>2023-10-26T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/tags/pytorch/</loc>
+    <lastmod>2023-10-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/posts/introduction-to-transformer/</loc>
+    <lastmod>2023-10-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/nlp/</loc>
+    <lastmod>2023-10-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/transformer/</loc>
     <lastmod>2023-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/posts/common-pytorch-code-snippets/</loc>
     <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/snippets/</loc>
+    <lastmod>2023-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/python/</loc>
+    <lastmod>2023-01-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/tips/</loc>
+    <lastmod>2023-01-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/posts/effective-python-tips/</loc>
     <lastmod>2023-01-21T00:00:00+00:00</lastmod>
@@ -113,22 +158,55 @@
     <loc>https://chengaoshen.com/en/posts/organizing-c-pointer-declarations/</loc>
     <lastmod>2022-05-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/tags/c/</loc>
+    <lastmod>2022-05-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/programming/</loc>
+    <lastmod>2022-05-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/posts/git-noteschinese/</loc>
+    <lastmod>2021-08-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/git/</loc>
+    <lastmod>2021-08-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/tools/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/posts/fastapi-noteschinese/</loc>
     <lastmod>2021-03-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/tags/fastapi/</loc>
+    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/web/</loc>
+    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/posts/docker-basicchinese/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://chengaoshen.com/tags/devops/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/docker/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/posts/markdown-noteschinese/</loc>
+    <lastmod>2020-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/markdown/</loc>
     <lastmod>2020-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/posts/python-basicchinese/</loc>
     <lastmod>2020-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/posts/python-with-data-sciencechinese/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/basics/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/tags/data-science/</loc>
     <lastmod>2020-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/about/</loc>
@@ -138,7 +216,5 @@
     <loc>https://chengaoshen.com/categories/</loc>
   </url><url>
     <loc>https://chengaoshen.com/series/</loc>
-  </url><url>
-    <loc>https://chengaoshen.com/tags/</loc>
   </url>
 </urlset>
