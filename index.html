@@ -56,6 +56,11 @@
 
 
  
+  
+    
+    <link rel="stylesheet" href="/css/news.min.1b41a6177d993e040d972c32f34466da3100a2a92ad50de97cbf38eff2b320dc.css" integrity="sha256-G0GmF32ZPgQNlywy80Rm2jEAoqkq1Q3pfL847/KzINw=" crossorigin="anonymous" media="screen" />
+  
+
 
 
 
@@ -143,7 +148,29 @@
   <div class="about">
     
   
-    <div class="avatar"><img src="/images/avatar.jpg" alt="avatar"></div>
+  
+  
+    
+    
+    <div class="avatar" id="avatar-switcher" style="cursor:pointer" title="Click to switch">
+      <img src="/images/avatar.jpg" alt="avatar">
+    </div>
+    
+    <script>
+      (function () {
+        var el = document.getElementById('avatar-switcher');
+        if (!el) return;
+        var img = el.querySelector('img');
+        var list = ["/images/avatar.jpg","/images/avatar-anime.jpg"];
+        var idx = Math.floor(Math.random() * list.length);
+        img.src = list[idx];
+        el.addEventListener('click', function () {
+          idx = (idx + 1) % list.length;
+          img.src = list[idx];
+        });
+      })();
+    </script>
+    
   
 
 
