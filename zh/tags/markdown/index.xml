@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on ChengAo Shen</title>
+    <link>https://chengaoshen.com/zh/tags/markdown/</link>
+    <description>Recent content in Markdown on ChengAo Shen</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 21 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chengaoshen.com/zh/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>✏️Markdown Notes(Chinese)</title>
+      <link>https://chengaoshen.com/zh/posts/markdown-noteschinese/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/posts/markdown-noteschinese/</guid>
+      <description>&lt;h2 id=&#34;使用什么来学习&#34;&gt;&#xA;  〇、使用什么来学习&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%bd%bf%e7%94%a8%e4%bb%80%e4%b9%88%e6%9d%a5%e5%ad%a6%e4%b9%a0&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;01-typora&#34;&gt;&#xA;  0.1 Typora&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#01-typora&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​ 所见即所得的一款免费而好用的编辑器。&lt;/p&gt;&#xA;&lt;h3 id=&#34;02-vs-code&#34;&gt;&#xA;  0.2 VS Code&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#02-vs-code&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​ 宇宙最强大的编辑器&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一基础语法&#34;&gt;&#xA;  一、基础语法&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%b8%80%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-标题的使用&#34;&gt;&#xA;  1.1 标题的使用&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#11-%e6%a0%87%e9%a2%98%e7%9a%84%e4%bd%bf%e7%94%a8&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 文档标题&#xA;&#xA;作者&#xA;&#xA;摘要&#xA;&#xA;目录&#xA;&#xA;## 标题1&#xA;&#xA;### 标题1.1&#xA;&#xA;## 标题2&#xA;&#xA;###标题2.2&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;12-粗体与斜体&#34;&gt;&#xA;  1.2 粗体与斜体&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#12-%e7%b2%97%e4%bd%93%e4%b8%8e%e6%96%9c%e4%bd%93&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;  &lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

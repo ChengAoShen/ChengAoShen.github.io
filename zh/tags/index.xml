@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on ChengAo Shen</title>
+    <link>https://chengaoshen.com/zh/tags/</link>
+    <description>Recent content in Tags on ChengAo Shen</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 30 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chengaoshen.com/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://chengaoshen.com/zh/tags/git/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://chengaoshen.com/zh/tags/tools/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fastapi</title>
+      <link>https://chengaoshen.com/zh/tags/fastapi/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/fastapi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://chengaoshen.com/zh/tags/python/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>https://chengaoshen.com/zh/tags/web/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Devops</title>
+      <link>https://chengaoshen.com/zh/tags/devops/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://chengaoshen.com/zh/tags/docker/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://chengaoshen.com/zh/tags/markdown/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>https://chengaoshen.com/zh/tags/basics/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Science</title>
+      <link>https://chengaoshen.com/zh/tags/data-science/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/zh/tags/data-science/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

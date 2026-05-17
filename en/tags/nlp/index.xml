@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nlp on ChengAo Shen</title>
+    <link>https://chengaoshen.com/en/tags/nlp/</link>
+    <description>Recent content in Nlp on ChengAo Shen</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chengaoshen.com/en/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>💡Introduction to Transformer</title>
+      <link>https://chengaoshen.com/en/posts/introduction-to-transformer/</link>
+      <pubDate>Mon, 23 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://chengaoshen.com/en/posts/introduction-to-transformer/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Transformer is a really popular method in modern neural networks. We have BERT or GPT to process the natural language and ViT to deal with computer vision. In this essay, you will understand what is the transformer and why the transformer works. But be careful, limited by my knowledge, I can’t show some mathematical theories or code of transformer for you.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;why-do-we-need-the-transformer&#34;&gt;&#xA;  Why do we need the Transformer?&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#why-do-we-need-the-transformer&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;In the NLP( Natural Language Processing) field, the text dataset always has some obvious features that prevent us from using MLP.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
