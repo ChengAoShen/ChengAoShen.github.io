@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Generative-Models on ChengAo Shen</title>
-    <link>https://chengaoshen.com/en/tags/generative-models/</link>
-    <description>Recent content in Generative-Models on ChengAo Shen</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://chengaoshen.com/en/tags/generative-models/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>🤗Introduction to Generative Models</title>
-      <link>https://chengaoshen.com/en/posts/introduction-to-generative-models/</link>
-      <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/en/posts/introduction-to-generative-models/</guid>
-      <description>&lt;p&gt;Generative Models are part of unsupervised learning models that can learned from the datasets without any labels. Unlike other unsupervised models to manipulate, denoise, interpolate between, or compress examples, generative models focus on generating plausible new samples having similar properties to the dataset.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231025211322464.png&#34; alt=&#34;Taxonomy of unsupervised learning models&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Latent variable models&lt;/strong&gt;: mapping the data examples $\mathbf{x}$ to unseen latent variables $\mathbf{z}$ which can capture the underlying structure in the dataset.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Generative-Models on ChengAo Shen</title>
+		<link>https://chengaoshen.com/en/tags/generative-models/</link>
+		<description>Recent content in Generative-Models on ChengAo Shen</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://chengaoshen.com/en/tags/generative-models/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>🤗 Introduction to Generative Models</title>
+				<link>https://chengaoshen.com/en/posts/generative_models/</link>
+				<pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
+				<guid>https://chengaoshen.com/en/posts/generative_models/</guid>
+				<description>&lt;p&gt;Generative Models are part of unsupervised learning models that can learned from the datasets without any labels. Unlike other unsupervised models to manipulate, denoise, interpolate between, or compress examples, generative models focus on generating plausible new samples having similar properties to the dataset.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChengAoShen/Image-Hosting/main/images/image-20231025211322464.png&#34; alt=&#34;Taxonomy of unsupervised learning models&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Latent variable models&lt;/strong&gt;: mapping the data examples $\mathbf{x}$ to unseen latent variables $\mathbf{z}$ which can capture the underlying structure in the dataset.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

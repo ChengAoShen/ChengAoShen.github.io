@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Basics on ChengAo Shen</title>
-    <link>https://chengaoshen.com/zh/tags/basics/</link>
-    <description>Recent content in Basics on ChengAo Shen</description>
-    <generator>Hugo</generator>
-    <language>zh</language>
-    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://chengaoshen.com/zh/tags/basics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>🐍Python Basic(Chinese)</title>
-      <link>https://chengaoshen.com/zh/posts/python-basicchinese/</link>
-      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/zh/posts/python-basicchinese/</guid>
-      <description>&lt;h2 id=&#34;一学前准备&#34;&gt;&#xA;  一、学前准备&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%b8%80%e5%ad%a6%e5%89%8d%e5%87%86%e5%a4%87&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-安装&#34;&gt;&#xA;  1.1 安装&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#11-%e5%ae%89%e8%a3%85&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​&#x9;&#x9;建议直接下载anaconda的发行版。同时还包括了所有以后会经常使用到的包。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-编程环境&#34;&gt;&#xA;  1.2 编程环境&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#12-%e7%bc%96%e7%a8%8b%e7%8e%af%e5%a2%83&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​&#x9;&#x9;可以下载并使用pycharm、也可以使用jupyter notebook作为环境。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二python的语言基础&#34;&gt;&#xA;  二、Python的语言基础&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%ba%8cpython%e7%9a%84%e8%af%ad%e8%a8%80%e5%9f%ba%e7%a1%80&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-缩进&#34;&gt;&#xA;  2.1 缩进&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#21-%e7%bc%a9%e8%bf%9b&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​&#x9;&#x9;python中缩进是一切的根本，使用缩进来标识了语言的范围&lt;/p&gt;&#xA;&lt;h3 id=&#34;22标量类型&#34;&gt;&#xA;  2.2标量类型&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#22%e6%a0%87%e9%87%8f%e7%b1%bb%e5%9e%8b&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;2.2.1 &lt;strong&gt;数值类型&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;python中只有两个基本数值类型：int与float&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;int可以储存任意大小的整数值而没有范围限制，float是双精度的64位数值。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Basics on ChengAo Shen</title>
+		<link>https://chengaoshen.com/zh/tags/basics/</link>
+		<description>Recent content in Basics on ChengAo Shen</description>
+		<generator>Hugo</generator>
+		<language>zh</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://chengaoshen.com/zh/tags/basics/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>🐍 Python Basic(Chinese)</title>
+				<link>https://chengaoshen.com/zh/posts/python_basic/</link>
+				<pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>https://chengaoshen.com/zh/posts/python_basic/</guid>
+				<description>&lt;h2 id=&#34;一学前准备&#34;&gt;&#xA;  一、学前准备&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%b8%80%e5%ad%a6%e5%89%8d%e5%87%86%e5%a4%87&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-安装&#34;&gt;&#xA;  1.1 安装&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#11-%e5%ae%89%e8%a3%85&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​&#x9;&#x9;建议直接下载anaconda的发行版。同时还包括了所有以后会经常使用到的包。&lt;/p&gt;&#xA;&lt;h3 id=&#34;12-编程环境&#34;&gt;&#xA;  1.2 编程环境&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#12-%e7%bc%96%e7%a8%8b%e7%8e%af%e5%a2%83&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​&#x9;&#x9;可以下载并使用pycharm、也可以使用jupyter notebook作为环境。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二python的语言基础&#34;&gt;&#xA;  二、Python的语言基础&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%ba%8cpython%e7%9a%84%e8%af%ad%e8%a8%80%e5%9f%ba%e7%a1%80&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-缩进&#34;&gt;&#xA;  2.1 缩进&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#21-%e7%bc%a9%e8%bf%9b&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;​&#x9;&#x9;python中缩进是一切的根本，使用缩进来标识了语言的范围&lt;/p&gt;&#xA;&lt;h3 id=&#34;22标量类型&#34;&gt;&#xA;  2.2标量类型&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#22%e6%a0%87%e9%87%8f%e7%b1%bb%e5%9e%8b&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;2.2.1 &lt;strong&gt;数值类型&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;python中只有两个基本数值类型：int与float&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;int可以储存任意大小的整数值而没有范围限制，float是双精度的64位数值。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

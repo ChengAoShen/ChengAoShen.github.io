@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>LLM Wiki on ChengAo Shen</title>
+		<link>https://chengaoshen.com/en/tags/llm-wiki/</link>
+		<description>Recent content in LLM Wiki on ChengAo Shen</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 28 May 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://chengaoshen.com/en/tags/llm-wiki/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>📚 Reading Note for LLM Wiki</title>
+				<link>https://chengaoshen.com/en/posts/llm_wiki/</link>
+				<pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+				<guid>https://chengaoshen.com/en/posts/llm_wiki/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;TL;DR: Let LLM maintain a persistent wiki by reading → extracting → integrating.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;why-we-need-llm-wiki&#34;&gt;&#xA;  Why we need LLM Wiki?&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#why-we-need-llm-wiki&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;RAG is good, but we still need to retrives relevant chunks at &lt;strong&gt;every query time&lt;/strong&gt;, that is not accumulation.&lt;/p&gt;&#xA;&lt;p&gt;LLM wiki &lt;em&gt;incrementally&lt;/em&gt; build and maintain a &lt;strong&gt;persistent wiki&lt;/strong&gt;, that is a structured interlinked collection of markdown files.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-to-use-it&#34;&gt;&#xA;  How to use it?&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#how-to-use-it&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;three-layer-architecture&#34;&gt;&#xA;  Three layer architecture&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#three-layer-architecture&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Raw sources: immutable source of articles, papers, images, data files, etc.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Wiki&lt;/strong&gt;: directory of LLM-generated markdown files. &lt;em&gt;LLM owns this layer only&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Schema: the document that tells how LLM to build the Wiki. &lt;em&gt;User and LLM can both change this document&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;three-operations&#34;&gt;&#xA;  Three operations&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#three-operations&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ingest: Drop a new source into the raw collection, and tell LLM to process it.&lt;/li&gt;&#xA;&lt;li&gt;Query: Ask the question against the wiki, LLM search for relevant pages, read them and synthesizes a anser with citations.&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Good ansers can be filed back into the wiki as new pages.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

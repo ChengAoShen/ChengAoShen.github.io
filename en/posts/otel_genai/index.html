@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  🤝 OpenTelemetry GenAI · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="The Common Standard for Agent Trajectories">
+<meta name="keywords" content="ChengAo Shen, Homepage, University of Houston, Personal Blog, 沈骋骜, 个人主页, 博客">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="🤝 OpenTelemetry GenAI">
+	<meta name="twitter:description" content="The Common Standard for Agent Trajectories">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/otel_genai/">
+	<meta property="og:site_name" content="ChengAo Shen">
+	<meta property="og:title" content="🤝 OpenTelemetry GenAI">
+	<meta property="og:description" content="The Common Standard for Agent Trajectories">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-05-28T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-05-28T00:00:00+00:00">
+		<meta property="article:tag" content="Agent">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/otel_genai/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7ee04855f01a7f7a311ce189708f520a1a1d93c249cfed3b23e8c27666fc546e.css" integrity="sha256-fuBIVfAaf3oxHOGJcI9SChodk8JJz&#43;07I&#43;jCdmb8VG4=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/fonts.min.4bcad3c16219d42e10bbc40b2b519f2a9befce0e6e1d2c9dd697d4a8a697d169.css" integrity="sha256-S8rTwWIZ1C4Qu8QLK1GfKpvvzg5uHSyd1pfUqKaX0Wk=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/news.min.c07757a08217c2bf3aa7f3b7e9d5d38794b95cf83acd0768cf9aa5468d99a9b3.css" integrity="sha256-wHdXoIIXwr86p/O36dXTh5S5XPg6zQdoz5qlRo2ZqbM=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/about.min.70041f3261f404e2b8621a73de7edff57389ac40d40d728b024069dc0561fc04.css" integrity="sha256-cAQfMmH0BOK4Yhpz3n7f9XOJrEDUDXKLAkBp3AVh/AQ=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/posts.min.c31d1b62b2bf442692f21a7626f4efc779051d4eb57b3a0606cdf79cf192e1a3.css" integrity="sha256-wx0bYrK/RCaS8hp2JvTvx3kFHU61ezoGBs33nPGS4aM=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/float.min.29bd1c055819fd1158857e262450b28780e34b2fcccae09fd45414d7b1e816e6.css" integrity="sha256-Kb0cBVgZ/RFYhX4mJFCyh4DjSy/MyuCf1FQU17HoFuY=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/footer.min.bf1aa17267925872c4f7744ee61c3c5e214a5c3427aee63afefe2b4e995ae80c.css" integrity="sha256-vxqhcmeSWHLE93RO5hw8XiFKXDQnruY6/v4rTpla6Aw=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  <div class="float-container">
+    
+      
+        
+      
+        
+          <a class="language-toggle" href="/zh/" title="中文" aria-label="Switch language">
+              <i class="fa-solid fa-language fa-fw" aria-hidden="true"></i>
+          </a>
+        
+      
+    
+    
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+    
+</div>
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/en/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/posts/">Posts</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/news/">News</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/publications/">Publications</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/about/">About Me</a>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chengaoshen.com/en/posts/otel_genai/">
+              🤝 OpenTelemetry GenAI
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-05-28T00:00:00Z">
+                May 28, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              9-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/en/tags/agent/">Agent</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <blockquote>
+<p>A practical guide to the OTel GenAI Semantic Conventions, for engineers.</p>
+</blockquote>
+<h2 id="the-problem-agents-made-trajectories-complicated">
+  The Problem: Agents Made Trajectories Complicated
+  <a class="heading-link" href="#the-problem-agents-made-trajectories-complicated">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Two years ago, instrumenting an LLM app was simple — one round-trip, prompt in, completion out.</p>
+<p>Today is different. A single agent task often contains a dozen tool calls, the creation and activation of several sub-agents, cross-agent handoffs, and even parallel branches or recursion. Capturing the full trajectory now takes more engineering than a traditional web trace.</p>
+<p>The result is a mess. Every framework has its own trace format; every backend has its own extension fields. Switching frameworks means rewriting instrumentation; switching backends means rewriting exporters; comparing data across sources means writing a pile of adapters.</p>
+<p><strong>OpenTelemetry GenAI Semantic Conventions</strong> (OTel GenAI for short) was created to clean up this mess. Maintained by the GenAI Observability SIG (founded April 2024) under CNCF, it is the closest thing to a <em>de facto</em> standard we have today.</p>
+<blockquote>
+<p><strong>The spec is still in Development status</strong> — field names may still shift, but the skeleton is essentially stable. Datadog, LangChain, AutoGen, CrewAI, OpenAI Agents SDK, and MLflow have all aligned in practice.
+Entry point: <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/"  class="external-link" target="_blank" rel="noopener">GenAI semconv homepage</a></p>
+</blockquote>
+<h2 id="a-standardized-skeleton-five-span-types">
+  A Standardized Skeleton: Five Span Types
+  <a class="heading-link" href="#a-standardized-skeleton-five-span-types">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The first thing OTel GenAI gives you is a standard <em>skeleton</em> for agent trajectories. It abstracts all execution into five span types, distinguished by the field <code>gen_ai.operation.name</code>:</p>
+<ul>
+<li><strong><code>invoke_workflow</code></strong> — the root of a multi-agent collaboration</li>
+<li><strong><code>invoke_agent</code></strong> — a single activation of one agent</li>
+<li><strong><code>create_agent</code></strong> — agent instantiation</li>
+<li><strong><code>chat</code></strong> — a single LLM call</li>
+<li><strong><code>execute_tool</code></strong> — a single tool call</li>
+</ul>
+<p>These spans link up via parent-child relations to form a call tree — <strong>a trajectory, in data, is a span tree</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">invoke_workflow (root)
+</span></span><span class="line"><span class="cl">├── invoke_agent[Planner]
+</span></span><span class="line"><span class="cl">│   ├── chat
+</span></span><span class="line"><span class="cl">│   └── execute_tool[search]
+</span></span><span class="line"><span class="cl">├── invoke_agent[Coder]
+</span></span><span class="line"><span class="cl">│   ├── chat
+</span></span><span class="line"><span class="cl">│   ├── execute_tool[write_file]
+</span></span><span class="line"><span class="cl">│   └── execute_tool[run_tests]
+</span></span><span class="line"><span class="cl">└── invoke_agent[Reviewer]
+</span></span><span class="line"><span class="cl">    └── chat
+</span></span></code></pre></div><p>OTel <strong>does not explicitly model agent-to-agent handoff</strong>. When Planner hands control to Coder, in the data it just looks like two sibling child spans; figuring out &ldquo;how the previous agent&rsquo;s output became the next agent&rsquo;s input&rdquo; requires inspecting message content. This is a pragmatic trade-off — it avoids assuming any particular framework&rsquo;s DAG abstraction, at the cost of leaving cross-agent causal analysis to you.</p>
+<h2 id="a-standardized-vocabulary-common-attributes">
+  A Standardized Vocabulary: Common Attributes
+  <a class="heading-link" href="#a-standardized-vocabulary-common-attributes">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The skeleton determines the <em>shape</em> of a trajectory. What goes <em>inside</em> each span node is the job of a shared set of fields.</p>
+<p>You have actually already met one — <code>gen_ai.operation.name</code>, the field used to distinguish the five span types in the previous section. It belongs to a broader namespace <code>gen_ai.*</code>, which uniformly describes four kinds of information across providers:</p>
+<ul>
+<li><strong>Request parameters</strong>: model, provider, temperature, max_tokens, etc.</li>
+<li><strong>Response content</strong>: input / output messages, finish_reasons, response id</li>
+<li><strong>Usage</strong>: input / output token counts</li>
+<li><strong>Errors</strong>: <code>error.type</code>, hooking into OTel&rsquo;s standard error namespace</li>
+</ul>
+<p>Agent-related fields (<code>gen_ai.agent.name</code> / <code>id</code> / <code>description</code> / <code>version</code>) live on <code>invoke_agent</code>; tool-related fields (<code>gen_ai.tool.name</code>, etc.) live on <code>execute_tool</code>.</p>
+<p><strong>What this directly enables</strong>: anomaly detection can simply read <code>error.type</code> or <code>finish_reasons</code>; agent attribution can walk up the parent chain to the nearest <code>invoke_agent</code> and read <code>agent.name</code> — no need to design your own fields.</p>
+<h2 id="an-easily-overlooked-capability-event-vs-attribute">
+  An Easily Overlooked Capability: Event vs Attribute
+  <a class="heading-link" href="#an-easily-overlooked-capability-event-vs-attribute">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>You may have noticed the phrase &ldquo;input / output messages should go through Event.&rdquo; Here &ldquo;Event&rdquo; isn&rsquo;t the everyday word — it&rsquo;s a specific concept in OTel. Getting this straight matters, because it directly determines <strong>how you manage PII in message bodies</strong>.</p>
+<p>A span is not just a log line — think of it as a small <em>dossier</em> covering a time interval. Two kinds of things can be attached to that dossier (simplified):</p>
+<ul>
+<li><strong>Attribute</strong> — a label on the dossier&rsquo;s cover. Once written, it travels with the span. Can&rsquo;t be turned off.</li>
+<li><strong>Event</strong> — a timestamped sticky note inside the dossier. <strong>Can be filtered independently before transport.</strong></li>
+</ul>
+<p>For LLM applications, <strong>message bodies are a real problem</strong>: they&rsquo;re long, they may contain PII, and you&rsquo;d like to be able to turn them off without touching business code. OTel therefore recommends putting messages on Events rather than Attributes — that way one line of SDK / Processor configuration toggles message capture, and your business code stays untouched.</p>
+<p>This is OTel GenAI&rsquo;s <strong>built-in answer to privacy management</strong> at the spec level — no need to wait for backend redaction.</p>
+<h2 id="collection-three-layers">
+  Collection: Three Layers
+  <a class="heading-link" href="#collection-three-layers">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Collecting OTel GenAI data happens at three layers, and in practice you almost never need to write instrumentation from scratch.</p>
+<p><strong>Layer 1: native framework emission</strong> — the ideal case. The major frameworks of 2025–2026 (OpenAI Agents SDK, AutoGen, CrewAI, LangChain / LangGraph, LlamaIndex, MLflow) have all aligned in practice. Once you adopt one of these frameworks, all you need to do is set the environment variable <code>OTEL_EXPORTER_OTLP_ENDPOINT</code>; <strong>business code is completely unaware</strong>.</p>
+<p><strong>Layer 2: SDK auto-instrumentation</strong> — for low-level LLM clients:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">opentelemetry.instrumentation.openai</span> <span class="kn">import</span> <span class="n">OpenAIInstrumentor</span>
+</span></span><span class="line"><span class="cl"><span class="n">OpenAIInstrumentor</span><span class="p">()</span><span class="o">.</span><span class="n">instrument</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># all openai.chat.completions.create() calls now auto-emit a chat span</span>
+</span></span></code></pre></div><p><strong>Layer 3: manual instrumentation</strong> — to cover custom logic that frameworks / SDKs miss.</p>
+<h2 id="transport-push-model-and-collector">
+  Transport: Push Model and Collector
+  <a class="heading-link" href="#transport-push-model-and-collector">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>OTel uses a <strong>native push model</strong> — spans are pushed the moment they&rsquo;re produced, not pulled by a backend.</p>
+<p>For real-time analysis, monitoring, or anomaly detection, the key is the <strong>two hooks provided by SpanProcessor: <code>on_start</code> and <code>on_end</code></strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyStreamingProcessor</span><span class="p">(</span><span class="n">SpanProcessor</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">span</span><span class="p">,</span> <span class="n">parent_context</span><span class="p">):</span> <span class="o">...</span>   <span class="c1"># span has just started</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">on_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">span</span><span class="p">):</span> <span class="o">...</span>                     <span class="c1"># span has just ended</span>
+</span></span></code></pre></div><p>Each span gives you two chances to intervene, which means you can begin downstream processing <strong>before the trajectory has finished</strong> — this is what sets OTel apart from &ldquo;export the full trace, then batch process&rdquo; approaches.</p>
+<h3 id="collector-a-programmable-middle-layer">
+  Collector: A Programmable Middle Layer
+  <a class="heading-link" href="#collector-a-programmable-middle-layer">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The Collector is a programmable middle layer between the SDK and the backend. A single instrumentation setup can fan out to multiple destinations simultaneously:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">            ┌─&gt; file (JSONL, offline archive)
+</span></span><span class="line"><span class="cl">SDK ─OTLP─&gt; Collector ─┼─&gt; Kafka / Redis (real-time analysis)
+</span></span><span class="line"><span class="cl">            └─&gt; commercial backend (debug visualization)
+</span></span></code></pre></div><p>Business code emits once; where the data ends up is decided by Collector configuration — <strong>the SDK only emits OTLP; which backend it lands in, which queue it&rsquo;s pushed to, is purely a deployment-time decision</strong>.</p>
+<h2 id="current-state-and-recommendations">
+  Current State and Recommendations
+  <a class="heading-link" href="#current-state-and-recommendations">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><strong>Coverage today</strong>:</p>
+<ul>
+<li><strong>LLM call portion</strong> is essentially stable; industrial implementations are everywhere</li>
+<li><strong>Agent portion</strong> is still marked Experimental, but the skeleton has been adopted in practice by the major frameworks</li>
+<li><strong>MCP sub-spec</strong> is a newer addition; its key function is compatibility with <code>execute_tool</code> spans, avoiding double recording</li>
+</ul>
+<p><strong>Open issues not yet fully closed</strong>:</p>
+<ul>
+<li>Agent-to-agent handoff edges can only be inferred from message content</li>
+<li>Provider-specific features (extended thinking, prompt caching strategies, etc.) are not fully covered</li>
+<li>No timeline yet for Stable status</li>
+</ul>
+<p><strong>Practical recommendations</strong>:</p>
+<ul>
+<li>Start using it now; route messages via Event for easy PII management</li>
+<li>Set <code>OTEL_SEMCONV_STABILITY_OPT_IN</code> to control the spec version — don&rsquo;t let instrumentation auto-jump versions</li>
+<li>Put custom fields in a new namespace; don&rsquo;t pollute <code>gen_ai.*</code></li>
+<li>If the spec is missing a field you need, file an issue — that&rsquo;s more valuable than quietly extending it. The SIG is actively iterating.</li>
+</ul>
+<h2 id="extension-mcp--no-double-recording-for-tool-calls">
+  Extension: MCP — No Double Recording for Tool Calls
+  <a class="heading-link" href="#extension-mcp--no-double-recording-for-tool-calls">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Any discussion of GenAI tool calling eventually hits <strong>MCP (Model Context Protocol)</strong> — an open protocol Anthropic proposed in 2024. Think of it as USB-C for LLM tool calls: whether it&rsquo;s an IDE, a database, or an API, anything that speaks MCP plugs straight into an LLM app.</p>
+<p>Inside OTel GenAI, the <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/mcp/"  class="external-link" target="_blank" rel="noopener">MCP sub-spec</a> is functionally solving one critical problem: <strong>don&rsquo;t record the same thing twice</strong>.</p>
+<p>Imagine: you&rsquo;re running an agent in LangChain, and the agent invokes a tool via MCP. LangChain itself emits an <code>execute_tool</code> span. If the MCP library also emits its own MCP Client span, the trajectory ends up with <strong>two nested copies of the same tool call</strong> — anomaly detectors fire false positives, call counts double, cost attribution drifts.</p>
+<p>The MCP sub-spec spells it out:</p>
+<blockquote>
+<p>If an outer GenAI framework is already tracing tool execution, the MCP framework <strong>should add MCP attributes to the existing span rather than open a new one</strong>.</p>
+</blockquote>
+<p>One tool call, one span, all the info you need. This looks unremarkable but is functionally crucial — it directly determines trajectory clarity and prevents observability data from being skewed.</p>
+<h2 id="extension-anthropic-vs-openai--two-provider-styles">
+  Extension: Anthropic vs OpenAI — Two Provider Styles
+  <a class="heading-link" href="#extension-anthropic-vs-openai--two-provider-styles">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The common <code>gen_ai.*</code> namespace can only cover features that <em>every</em> provider has. The moment a vendor introduces something unique, the common conventions fall short. The SIG&rsquo;s response is <strong>provider-specific sub-specs</strong>.</p>
+<p>Anthropic and OpenAI happen to represent two contrasting styles, worth comparing.</p>
+<p><strong>Anthropic&rsquo;s restraint</strong>: the <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/anthropic/"  class="external-link" target="_blank" rel="noopener">Anthropic sub-spec</a> introduces <strong>almost no proprietary new fields</strong> — it just specifies <code>gen_ai.provider.name=&quot;anthropic&quot;</code> and how prompt-cache hit / write tokens should be expressed using common fields. The reasoning: caching isn&rsquo;t Anthropic-only (OpenAI does automatic cache, Gemini has context cache), so put it in the common namespace where other providers can reuse it later.</p>
+<p><strong>OpenAI&rsquo;s expansion</strong>: the <a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/openai/"  class="external-link" target="_blank" rel="noopener">OpenAI sub-spec</a> opens its own <code>openai.*</code> namespace outright, defining fields like service tier, system fingerprint, and API variant (chat completions vs responses). These are tied to OpenAI&rsquo;s commercial model and deployment mechanics — they can&rsquo;t be generalized, so they have to be provider-specific.</p>
+<p><strong>Takeaway for engineers</strong>: if you&rsquo;re writing your own instrumentation, first ask whether the field you want to add is really &ldquo;only this provider has it.&rdquo; If it can be generalized, don&rsquo;t put it in a vendor namespace — otherwise, three years from now when someone else writes the same field, you become the legacy.</p>
+<h2 id="summary">
+  Summary
+  <a class="heading-link" href="#summary">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>OTel GenAI delivers four things at the capability level:</p>
+<ol>
+<li><strong>A standardized execution skeleton</strong>: five span types abstract a trajectory into a span tree</li>
+<li><strong>A standardized vocabulary of fields</strong>: <code>gen_ai.*</code> describes request / response / usage / error consistently across providers</li>
+<li><strong>PII management for message bodies</strong>: the Event vs Attribute distinction lets you toggle PII at the SDK layer</li>
+<li><strong>Unified tool-call recording</strong>: the MCP sub-spec requires attaching to an existing <code>execute_tool</code> span, preventing double recording</li>
+</ol>
+<p>It is not perfect — still in Development, agent spans still Experimental, handoff-edge modeling still contested. But it is the most realistic option we have today: CNCF-neutral, ecosystem active, major frameworks already aligned. <strong>Aligning your data schema with <code>gen_ai.*</code> now is a low-risk, high-reward decision</strong>.</p>
+<blockquote>
+<p>Further reading:</p>
+<ul>
+<li><a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/"  class="external-link" target="_blank" rel="noopener">GenAI semconv homepage</a></li>
+<li><a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/"  class="external-link" target="_blank" rel="noopener">GenAI Agent Spans</a></li>
+<li><a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-events/"  class="external-link" target="_blank" rel="noopener">GenAI Events</a></li>
+<li><a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/anthropic/"  class="external-link" target="_blank" rel="noopener">Anthropic sub-spec</a></li>
+<li><a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/openai/"  class="external-link" target="_blank" rel="noopener">OpenAI sub-spec</a></li>
+<li><a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/mcp/"  class="external-link" target="_blank" rel="noopener">MCP sub-spec</a></li>
+<li><a href="https://github.com/open-telemetry/semantic-conventions-genai"  class="external-link" target="_blank" rel="noopener">open-telemetry/semantic-conventions-genai (GitHub)</a></li>
+</ul>
+</blockquote>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2026
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+  
+  
+  <script src="/js/avatar-switcher.min.76f3ad03ace8f4f2552dff743eb01916d1bde58fbb5cbe1eed411fa3cfded700.js" integrity="sha256-dvOtA6zo9PJVLf90PrAZFtG95Y&#43;7XL4e7UEfo8/e1wA="></script>
+  
+  
+  
+  
+  <script src="/js/posts-filter.min.c2293b3207c2ee7aa0ab14cfb6076d34b148112a56aa32d5e60a86da34f270af.js" integrity="sha256-wik7MgfC7nqgqxTPtgdtNLFIESpWqjLV5gqG2jTycK8="></script>
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "eb93c854f5b84f55a78b48d91cb78bc9"}'></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

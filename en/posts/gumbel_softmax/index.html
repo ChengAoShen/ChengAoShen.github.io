@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  ✏️ Gumbel Softmax · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="Differentiable discrete sampling via the Gumbel-Softmax reparameterization.">
+<meta name="keywords" content="ChengAo Shen, Homepage, University of Houston, Personal Blog, 沈骋骜, 个人主页, 博客">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="✏️ Gumbel Softmax">
+	<meta name="twitter:description" content="Differentiable discrete sampling via the Gumbel-Softmax reparameterization.">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/gumbel_softmax/">
+	<meta property="og:site_name" content="ChengAo Shen">
+	<meta property="og:title" content="✏️ Gumbel Softmax">
+	<meta property="og:description" content="Differentiable discrete sampling via the Gumbel-Softmax reparameterization.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-07-22T00:00:00+00:00">
+		<meta property="article:modified_time" content="2025-07-22T00:00:00+00:00">
+		<meta property="article:tag" content="Deep-Learning">
+		<meta property="article:tag" content="Math">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/gumbel_softmax/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7ee04855f01a7f7a311ce189708f520a1a1d93c249cfed3b23e8c27666fc546e.css" integrity="sha256-fuBIVfAaf3oxHOGJcI9SChodk8JJz&#43;07I&#43;jCdmb8VG4=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/fonts.min.4bcad3c16219d42e10bbc40b2b519f2a9befce0e6e1d2c9dd697d4a8a697d169.css" integrity="sha256-S8rTwWIZ1C4Qu8QLK1GfKpvvzg5uHSyd1pfUqKaX0Wk=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/news.min.c07757a08217c2bf3aa7f3b7e9d5d38794b95cf83acd0768cf9aa5468d99a9b3.css" integrity="sha256-wHdXoIIXwr86p/O36dXTh5S5XPg6zQdoz5qlRo2ZqbM=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/about.min.70041f3261f404e2b8621a73de7edff57389ac40d40d728b024069dc0561fc04.css" integrity="sha256-cAQfMmH0BOK4Yhpz3n7f9XOJrEDUDXKLAkBp3AVh/AQ=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/posts.min.c31d1b62b2bf442692f21a7626f4efc779051d4eb57b3a0606cdf79cf192e1a3.css" integrity="sha256-wx0bYrK/RCaS8hp2JvTvx3kFHU61ezoGBs33nPGS4aM=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/float.min.29bd1c055819fd1158857e262450b28780e34b2fcccae09fd45414d7b1e816e6.css" integrity="sha256-Kb0cBVgZ/RFYhX4mJFCyh4DjSy/MyuCf1FQU17HoFuY=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/footer.min.bf1aa17267925872c4f7744ee61c3c5e214a5c3427aee63afefe2b4e995ae80c.css" integrity="sha256-vxqhcmeSWHLE93RO5hw8XiFKXDQnruY6/v4rTpla6Aw=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  <div class="float-container">
+    
+      
+        
+      
+        
+          <a class="language-toggle" href="/zh/" title="中文" aria-label="Switch language">
+              <i class="fa-solid fa-language fa-fw" aria-hidden="true"></i>
+          </a>
+        
+      
+    
+    
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+    
+</div>
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/en/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/posts/">Posts</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/news/">News</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/publications/">Publications</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/about/">About Me</a>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chengaoshen.com/en/posts/gumbel_softmax/">
+              ✏️ Gumbel Softmax
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-07-22T00:00:00Z">
+                July 22, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/en/tags/deep-learning/">Deep-Learning</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/en/tags/math/">Math</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><strong>Motivation.</strong> In many models we need to <em>select</em> a discrete option inside the computation graph (e.g., pick one branch of a network). A hard argmax is non-differentiable, so gradients can’t flow through it. Gumbel-Softmax provides a continuous, differentiable approximation to this discrete sampling step.</p>
+<h2 id="gumbel-max-trick">
+  <strong>Gumbel-Max Trick</strong>
+  <a class="heading-link" href="#gumbel-max-trick">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Assume we have discrete distribution</p>
+<table>
+	<thead>
+			<tr>
+					<th>$X$</th>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>$p$</td>
+					<td>0.2</td>
+					<td>0.3</td>
+					<td>0.5</td>
+			</tr>
+	</tbody>
+</table>
+<p>And want to get $X$ follow this distribution. If we directly sample from distribution, the $X$ can’t calculate from $p$. Which means $X$ can’t be differentiated w.r.t. $p$. This means we can’t do back propagation.</p>
+<p>Gumbel-max is used to deal with this situation. The sample progress can re-parameters as</p>
+$$
+y=\text{argmax}_k(\text{log} p_k+g_k),\quad g_k\sim \text{Gumbel}(0,1)
+$$<p>$y$ is a one-hot vector. $g_k$ can also define as $g_i=-\text{log}(-\text{log}(u_i)),\quad u_i\sim\text{Uniform}(0,1)$.</p>
+<p>For now, only $\text{argmax}$ is non-differentiable.</p>
+<h2 id="gumbel-softmax">
+  Gumbel Softmax
+  <a class="heading-link" href="#gumbel-softmax">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Change the normal $\text{argmax}$ to a softmax function, and add a parameter $\tau$ to control</p>
+$$
+y_k=\frac{\text{exp}(\text{log}p_k+g_k)/\tau}{\sum_j\text{exp}(\text{log}p_j+g_j)/\tau}
+$$<ul>
+<li>$\tau \to 0$ :almost one-hot (but gradients vanish).</li>
+<li>$\tau \to \infty$: near-uniform (too smooth).</li>
+</ul>
+<h2 id="code-tricky">
+  Code tricky
+  <a class="heading-link" href="#code-tricky">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Forward pass: take hard one-hot (argmax).
+Backward pass: use gradients of the soft \tilde{y} (biased but practical).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">y_soft</span> <span class="o">=</span> <span class="n">gumbel_softmax_sample</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">tau</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">hard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># forward: using one-hot</span>
+</span></span><span class="line"><span class="cl">    <span class="n">index</span> <span class="o">=</span> <span class="n">y_soft</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_hard</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span><span class="o">.</span><span class="n">scatter_</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># backward: usey_soft</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">y_hard</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">-</span> <span class="n">y_soft</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">+</span> <span class="n">y_soft</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">y_soft</span>
+</span></span></code></pre></div><h2 id="difference-from-vanilla-softmax">
+  <strong>Difference from “Vanilla” Softmax</strong>
+  <a class="heading-link" href="#difference-from-vanilla-softmax">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<table>
+	<thead>
+			<tr>
+					<th><strong>Aspect</strong></th>
+					<th><strong>Softmax</strong></th>
+					<th><strong>Gumbel-Softmax</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Purpose</td>
+					<td>Get a probability distribution from logits</td>
+					<td>Differentiably approximate sampling a discrete category</td>
+			</tr>
+			<tr>
+					<td>Randomness</td>
+					<td>Deterministic (given logits)</td>
+					<td>Stochastic (via Gumbel noise)</td>
+			</tr>
+			<tr>
+					<td>One-hot?</td>
+					<td>Not during training (probability vector)</td>
+					<td>Can be nearly/actually one-hot (with ST)</td>
+			</tr>
+			<tr>
+					<td>Gradients</td>
+					<td>Exact</td>
+					<td>Biased if ST, but low variance</td>
+			</tr>
+			<tr>
+					<td>Use cases</td>
+					<td>Classification outputs</td>
+					<td>Discrete latent vars, NAS, RL action sampling, VAE with categorical codes</td>
+			</tr>
+	</tbody>
+</table>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2026
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+  
+  
+  <script src="/js/avatar-switcher.min.76f3ad03ace8f4f2552dff743eb01916d1bde58fbb5cbe1eed411fa3cfded700.js" integrity="sha256-dvOtA6zo9PJVLf90PrAZFtG95Y&#43;7XL4e7UEfo8/e1wA="></script>
+  
+  
+  
+  
+  <script src="/js/posts-filter.min.c2293b3207c2ee7aa0ab14cfb6076d34b148112a56aa32d5e60a86da34f270af.js" integrity="sha256-wik7MgfC7nqgqxTPtgdtNLFIESpWqjLV5gqG2jTycK8="></script>
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "eb93c854f5b84f55a78b48d91cb78bc9"}'></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

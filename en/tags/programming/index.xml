@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Programming on ChengAo Shen</title>
-    <link>https://chengaoshen.com/en/tags/programming/</link>
-    <description>Recent content in Programming on ChengAo Shen</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 30 May 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://chengaoshen.com/en/tags/programming/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>✨Organizing C Pointer Declarations</title>
-      <link>https://chengaoshen.com/en/posts/organizing-c-pointer-declarations/</link>
-      <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://chengaoshen.com/en/posts/organizing-c-pointer-declarations/</guid>
-      <description>&lt;h2 id=&#34;1-common-declarations&#34;&gt;&#xA;  1. Common Declarations&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-common-declarations&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int a&lt;/code&gt;: Declares &lt;code&gt;a&lt;/code&gt; as an integer variable.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int const a&lt;/code&gt;: Declares a constant integer &lt;code&gt;a&lt;/code&gt; (cannot be modified).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int *a&lt;/code&gt;: Can be understood as &amp;ldquo;&lt;code&gt;*a&lt;/code&gt; is an integer&amp;rdquo;, so &lt;code&gt;a&lt;/code&gt; is a pointer to an integer.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int **a&lt;/code&gt;: Since &amp;ldquo;&lt;code&gt;**a&lt;/code&gt; is an integer&amp;rdquo;, &lt;code&gt;a&lt;/code&gt; is a pointer to a pointer to an integer.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: &lt;code&gt;int *a, b;&lt;/code&gt; declares &lt;code&gt;a&lt;/code&gt; as a pointer to an integer, but &lt;code&gt;b&lt;/code&gt; is just an integer—not a pointer.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Programming on ChengAo Shen</title>
+		<link>https://chengaoshen.com/en/tags/programming/</link>
+		<description>Recent content in Programming on ChengAo Shen</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 30 May 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://chengaoshen.com/en/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>✨ Organizing C Pointer Declarations</title>
+				<link>https://chengaoshen.com/en/posts/c_pointer_declarations/</link>
+				<pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
+				<guid>https://chengaoshen.com/en/posts/c_pointer_declarations/</guid>
+				<description>&lt;h2 id=&#34;1-common-declarations&#34;&gt;&#xA;  1. Common Declarations&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-common-declarations&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int a&lt;/code&gt;: Declares &lt;code&gt;a&lt;/code&gt; as an integer variable.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int const a&lt;/code&gt;: Declares a constant integer &lt;code&gt;a&lt;/code&gt; (cannot be modified).&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int *a&lt;/code&gt;: Can be understood as &amp;ldquo;&lt;code&gt;*a&lt;/code&gt; is an integer&amp;rdquo;, so &lt;code&gt;a&lt;/code&gt; is a pointer to an integer.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;int **a&lt;/code&gt;: Since &amp;ldquo;&lt;code&gt;**a&lt;/code&gt; is an integer&amp;rdquo;, &lt;code&gt;a&lt;/code&gt; is a pointer to a pointer to an integer.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Note: &lt;code&gt;int *a, b;&lt;/code&gt; declares &lt;code&gt;a&lt;/code&gt; as a pointer to an integer, but &lt;code&gt;b&lt;/code&gt; is just an integer—not a pointer.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

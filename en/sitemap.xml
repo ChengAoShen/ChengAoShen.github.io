@@ -1,44 +1,83 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://chengaoshen.com/en/posts/llm_wiki/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/tags/agent/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chengaoshen.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/"
+                />
+  </url><url>
+    <loc>https://chengaoshen.com/en/tags/llm-wiki/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chengaoshen.com/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/posts/"
+                />
+  </url><url>
+    <loc>https://chengaoshen.com/en/tags/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://chengaoshen.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/tags/"
+                />
+  </url><url>
+    <loc>https://chengaoshen.com/en/posts/otel_genai/</loc>
+    <lastmod>2026-05-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://chengaoshen.com/en/publications/</loc>
     <lastmod>2025-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/publications/"
+                hreflang="en"
+                href="https://chengaoshen.com/en/publications/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/publications/"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/publications/"
                 />
   </url><url>
     <loc>https://chengaoshen.com/en/authors/</loc>
     <lastmod>2025-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/authors/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="en"
                 href="https://chengaoshen.com/en/authors/"
                 />
-  </url><url>
-    <loc>https://chengaoshen.com/en/</loc>
-    <lastmod>2025-10-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://chengaoshen.com/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/"
+                href="https://chengaoshen.com/zh/authors/"
                 />
   </url><url>
     <loc>https://chengaoshen.com/en/authors/chengao-shen/</loc>
@@ -83,7 +122,7 @@
     <loc>https://chengaoshen.com/en/authors/wenchao-yu/</loc>
     <lastmod>2025-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/gumbel-softmax/</loc>
+    <loc>https://chengaoshen.com/en/posts/gumbel_softmax/</loc>
     <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/deep-learning/</loc>
@@ -92,33 +131,7 @@
     <loc>https://chengaoshen.com/en/tags/math/</loc>
     <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/</loc>
-    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/posts/"
-                />
-  </url><url>
-    <loc>https://chengaoshen.com/en/tags/</loc>
-    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/tags/"
-                />
-  </url><url>
-    <loc>https://chengaoshen.com/en/posts/different-normalization/</loc>
+    <loc>https://chengaoshen.com/en/posts/normalization/</loc>
     <lastmod>2025-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/normalization/</loc>
@@ -136,7 +149,7 @@
     <loc>https://chengaoshen.com/en/publications/v4ts_survey/</loc>
     <lastmod>2025-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/various-font-in-latex/</loc>
+    <loc>https://chengaoshen.com/en/posts/latex_fonts/</loc>
     <lastmod>2024-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/latex/</loc>
@@ -148,10 +161,10 @@
     <loc>https://chengaoshen.com/en/tags/generative-models/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/introduction-to-generative-models/</loc>
+    <loc>https://chengaoshen.com/en/posts/generative_models/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/introduction-to-prompt-engineering/</loc>
+    <loc>https://chengaoshen.com/en/posts/prompt_engineering/</loc>
     <lastmod>2024-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/llm/</loc>
@@ -169,13 +182,13 @@
     <loc>https://chengaoshen.com/en/authors/siyuan-mu/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/using-custom-dataset-in-pytorch/</loc>
+    <loc>https://chengaoshen.com/en/posts/pytorch_custom_dataset/</loc>
     <lastmod>2023-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/pytorch/</loc>
     <lastmod>2023-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/introduction-to-transformer/</loc>
+    <loc>https://chengaoshen.com/en/posts/transformer/</loc>
     <lastmod>2023-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/nlp/</loc>
@@ -184,7 +197,7 @@
     <loc>https://chengaoshen.com/en/tags/transformer/</loc>
     <lastmod>2023-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/common-pytorch-code-snippets/</loc>
+    <loc>https://chengaoshen.com/en/posts/pytorch_snippets/</loc>
     <lastmod>2023-03-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/snippets/</loc>
@@ -194,25 +207,25 @@
     <lastmod>2023-01-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/tags/python/"
+                hreflang="en"
+                href="https://chengaoshen.com/en/tags/python/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/tags/python/"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/tags/python/"
                 />
   </url><url>
     <loc>https://chengaoshen.com/en/tags/tips/</loc>
     <lastmod>2023-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/effective-python-tips/</loc>
+    <loc>https://chengaoshen.com/en/posts/python_tips/</loc>
     <lastmod>2023-01-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/brief-introduction-of-the-tensor-in-pytorch/</loc>
+    <loc>https://chengaoshen.com/en/posts/pytorch_tensor_intro/</loc>
     <lastmod>2022-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chengaoshen.com/en/posts/organizing-c-pointer-declarations/</loc>
+    <loc>https://chengaoshen.com/en/posts/c_pointer_declarations/</loc>
     <lastmod>2022-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chengaoshen.com/en/tags/c/</loc>
@@ -224,49 +237,49 @@
     <loc>https://chengaoshen.com/en/about/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/about/"
+                hreflang="en"
+                href="https://chengaoshen.com/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/about/"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/about/"
                 />
   </url><url>
     <loc>https://chengaoshen.com/en/news/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/news/"
+                hreflang="en"
+                href="https://chengaoshen.com/en/news/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/news/"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/news/"
                 />
   </url><url>
     <loc>https://chengaoshen.com/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/categories/"
+                hreflang="en"
+                href="https://chengaoshen.com/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/categories/"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/categories/"
                 />
   </url><url>
     <loc>https://chengaoshen.com/en/series/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="zh"
-                href="https://chengaoshen.com/zh/series/"
+                hreflang="en"
+                href="https://chengaoshen.com/en/series/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://chengaoshen.com/en/series/"
+                hreflang="zh"
+                href="https://chengaoshen.com/zh/series/"
                 />
   </url>
 </urlset>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  📚 Reading Note for LLM Wiki · ChengAo Shen
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="ChengAo Shen">
+<meta name="description" content="How to organize the LLM knowledge base?">
+<meta name="keywords" content="ChengAo Shen, Homepage, University of Houston, Personal Blog, 沈骋骜, 个人主页, 博客">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="📚 Reading Note for LLM Wiki">
+	<meta name="twitter:description" content="How to organize the LLM knowledge base?">
+
+<meta property="og:url" content="https://chengaoshen.com/en/posts/llm_wiki/">
+	<meta property="og:site_name" content="ChengAo Shen">
+	<meta property="og:title" content="📚 Reading Note for LLM Wiki">
+	<meta property="og:description" content="How to organize the LLM knowledge base?">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-05-28T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-05-28T00:00:00+00:00">
+		<meta property="article:tag" content="LLM Wiki">
+		<meta property="article:tag" content="Agent">
+
+
+
+
+<link rel="canonical" href="https://chengaoshen.com/en/posts/llm_wiki/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7ee04855f01a7f7a311ce189708f520a1a1d93c249cfed3b23e8c27666fc546e.css" integrity="sha256-fuBIVfAaf3oxHOGJcI9SChodk8JJz&#43;07I&#43;jCdmb8VG4=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/fonts.min.4bcad3c16219d42e10bbc40b2b519f2a9befce0e6e1d2c9dd697d4a8a697d169.css" integrity="sha256-S8rTwWIZ1C4Qu8QLK1GfKpvvzg5uHSyd1pfUqKaX0Wk=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/news.min.c07757a08217c2bf3aa7f3b7e9d5d38794b95cf83acd0768cf9aa5468d99a9b3.css" integrity="sha256-wHdXoIIXwr86p/O36dXTh5S5XPg6zQdoz5qlRo2ZqbM=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/about.min.70041f3261f404e2b8621a73de7edff57389ac40d40d728b024069dc0561fc04.css" integrity="sha256-cAQfMmH0BOK4Yhpz3n7f9XOJrEDUDXKLAkBp3AVh/AQ=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/posts.min.c31d1b62b2bf442692f21a7626f4efc779051d4eb57b3a0606cdf79cf192e1a3.css" integrity="sha256-wx0bYrK/RCaS8hp2JvTvx3kFHU61ezoGBs33nPGS4aM=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/float.min.29bd1c055819fd1158857e262450b28780e34b2fcccae09fd45414d7b1e816e6.css" integrity="sha256-Kb0cBVgZ/RFYhX4mJFCyh4DjSy/MyuCf1FQU17HoFuY=" crossorigin="anonymous" media="screen" />
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/footer.min.bf1aa17267925872c4f7744ee61c3c5e214a5c3427aee63afefe2b4e995ae80c.css" integrity="sha256-vxqhcmeSWHLE93RO5hw8XiFKXDQnruY6/v4rTpla6Aw=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  <div class="float-container">
+    
+      
+        
+      
+        
+          <a class="language-toggle" href="/zh/" title="中文" aria-label="Switch language">
+              <i class="fa-solid fa-language fa-fw" aria-hidden="true"></i>
+          </a>
+        
+      
+    
+    
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+    
+</div>
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chengaoshen.com/en/">
+      ChengAo Shen
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/posts/">Posts</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/news/">News</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/publications/">Publications</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link " href="/en/about/">About Me</a>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chengaoshen.com/en/posts/llm_wiki/">
+              📚 Reading Note for LLM Wiki
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-05-28T00:00:00Z">
+                May 28, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/en/tags/llm-wiki/">LLM Wiki</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/en/tags/agent/">Agent</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <blockquote>
+<p>TL;DR: Let LLM maintain a persistent wiki by reading → extracting → integrating.</p>
+</blockquote>
+<h2 id="why-we-need-llm-wiki">
+  Why we need LLM Wiki?
+  <a class="heading-link" href="#why-we-need-llm-wiki">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>RAG is good, but we still need to retrives relevant chunks at <strong>every query time</strong>, that is not accumulation.</p>
+<p>LLM wiki <em>incrementally</em> build and maintain a <strong>persistent wiki</strong>, that is a structured interlinked collection of markdown files.</p>
+<h2 id="how-to-use-it">
+  How to use it?
+  <a class="heading-link" href="#how-to-use-it">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="three-layer-architecture">
+  Three layer architecture
+  <a class="heading-link" href="#three-layer-architecture">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Raw sources: immutable source of articles, papers, images, data files, etc.</li>
+<li><strong>Wiki</strong>: directory of LLM-generated markdown files. <em>LLM owns this layer only</em>.</li>
+<li>Schema: the document that tells how LLM to build the Wiki. <em>User and LLM can both change this document</em>.</li>
+</ul>
+<h3 id="three-operations">
+  Three operations
+  <a class="heading-link" href="#three-operations">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Ingest: Drop a new source into the raw collection, and tell LLM to process it.</li>
+<li>Query: Ask the question against the wiki, LLM search for relevant pages, read them and synthesizes a anser with citations.
+<blockquote>
+<p>Good ansers can be filed back into the wiki as new pages.</p>
+</blockquote>
+</li>
+<li>Lint: Periodically ask the LLM to health-check the wiki.</li>
+</ul>
+<h3 id="two-special-files">
+  Two special files
+  <a class="heading-link" href="#two-special-files">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><code>index.md</code>: contet-oriented, each page in wiki will be listed with a link, a one-line summary, and optionally meta data.</li>
+<li><code>log.md</code>: chronological, append-only record of what happened and when.</li>
+</ul>
+<h3 id="retrieval-strategies">
+  Retrieval strategies
+  <a class="heading-link" href="#retrieval-strategies">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Strategy</th>
+					<th>How</th>
+					<th>Best for</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Agentic Navigation</td>
+					<td>LLM picks entry pages from <code>index.md</code>, follows <code>[[wikilinks]]</code></td>
+					<td>&lt; 1k pages</td>
+			</tr>
+			<tr>
+					<td>Grep / Ripgrep</td>
+					<td>Full-text keyword search</td>
+					<td>&lt; 5k pages</td>
+			</tr>
+			<tr>
+					<td>Hybrid</td>
+					<td>BM25 + embedding + LLM rerank</td>
+					<td>Any size</td>
+			</tr>
+			<tr>
+					<td>Graph Traversal</td>
+					<td>Pull 1–2 hop neighbors via wikilinks</td>
+					<td>Densely interlinked</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="optional-cli-tools">
+  [Optional] CLI tools
+  <a class="heading-link" href="#optional-cli-tools">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Some time we want the LLM can find markdown pages in wiki more efficiently, we can use <code>qmd</code>. It&rsquo;s a lical search engine for markdown files.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2024 -
+    
+    2026
+     ChengAo Shen 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+  
+  
+  <script src="/js/avatar-switcher.min.76f3ad03ace8f4f2552dff743eb01916d1bde58fbb5cbe1eed411fa3cfded700.js" integrity="sha256-dvOtA6zo9PJVLf90PrAZFtG95Y&#43;7XL4e7UEfo8/e1wA="></script>
+  
+  
+  
+  
+  <script src="/js/posts-filter.min.c2293b3207c2ee7aa0ab14cfb6076d34b148112a56aa32d5e60a86da34f270af.js" integrity="sha256-wik7MgfC7nqgqxTPtgdtNLFIESpWqjLV5gqG2jTycK8="></script>
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "eb93c854f5b84f55a78b48d91cb78bc9"}'></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
